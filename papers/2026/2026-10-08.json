@@ -414,7 +414,7 @@
   },
   {
     "arxivId": "2610.08871",
-    "title": "CredLeakBench：agent 替用户登录时把凭证交给钓鱼页，泄露率 31%–76%；自主看收件箱时也会被钓走",
+    "title": "CredLeakBench: Evaluating Credential Leakage and Recovery in LLM Agents",
     "titleZh": "CredLeak-Bench：七个模型在钓鱼场景下凭证泄露率 31%–76%，恢复率最高仅 24.2%",
     "authors": [],
     "category": "eval",
@@ -574,7 +574,7 @@
   },
   {
     "arxivId": "2610.05532",
-    "title": "DelegationBench：agent 嘴上说「该先问用户」，真拿到工具却很少问，Gemini 3.5 Flash-Lite 从 47.5% 掉到 4.2%",
+    "title": "DelegationBench: Measuring When AI Agents Should Ask Before Acting",
     "titleZh": "DelegationBench：Gemini 3.5 Flash-Lite 判断时 47.5% 会先问用户，真用工具执行时只剩 4.2%",
     "authors": [],
     "category": "eval",
@@ -613,7 +613,7 @@
   },
   {
     "arxivId": "2609.27273",
-    "title": "微软研究院 CAVEAT：电商平台一开赞助位、滴灌定价等引导手段，购物 agent 买到用户最优商品的比例从 78.6% 掉到 17.3%",
+    "title": "CAVEAT: Towards Robust Computer-Use Agents in Incentive-Misaligned Environments",
     "titleZh": "微软研究院发布 CAVEAT：电商引导机制使 Agent 最优购买率从 78.6% 降至 17.3%",
     "authors": [],
     "category": "eval",
@@ -652,7 +652,7 @@
   },
   {
     "arxivId": "2610.07939",
-    "title": "CCDF：用 Grok Imagine、Veo 3.1、Sora 2 伪造犯罪与事故监控录像，十个主流深伪检测器在统一画质后基本认不出",
+    "title": "CCDF: A Benchmark Dataset for Deepfake Detection in Real-World Surveillance Footage",
     "titleZh": "CCDF 数据集：Grok Imagine、Veo 3.1、Sora 2 伪造监控录像，十个深伪检测器基本认不出",
     "authors": [],
     "category": "eval",
@@ -910,7 +910,7 @@
   },
   {
     "arxivId": "2610.09793",
-    "title": "用时序逻辑给工具 agent 做运行时监控：能标出七成攻击，但护栏信任的轨迹历史插一行就被骗过 94%–99%",
+    "title": "Formal Runtime Verification for Tool-Using LLM Agents: An Offline Same-Benchmark Study on AgentDojo and STAC",
     "titleZh": "用时序逻辑监控工具 Agent：MonPoly 标出 71.8% STAC 攻击链，但溯源检查被一行注入骗过 94%–99%",
     "authors": [],
     "category": "attack",
@@ -1246,10 +1246,10 @@
   },
   {
     "arxivId": "2610.09517",
-    "title": "用 CLIP 相似度当安全 RL 的危险信号？审计发现它主要在量画面像不像提示词里的场景",
+    "title": "It Is Not Seeing the Hazard: A Frozen Vision-Language Safety Score Measures Its Caption Bank",
     "titleZh": "审计发现 CLIP 安全分数主要反映画面与提示词场景的相似度",
     "authors": [],
-    "category": "alignment",
+    "category": "eval",
     "selected": true,
     "attention": 79,
     "summaryZh": "爱荷华州立大学的 Samuel Tetteh 与 Cody Fleming 对冻结 CLIP ViT-B/32 的提示词边际安全分数做了受控审计，发现该分数在接触前约 20 步下降，但这一信号主要反映画面与提示词共同描述的场景是否相似，而非危险本身。研究用三个不含 VLM 的 FormulaOne 策略、180 个回合和 130 次孤立接触起始，将分数与策略解耦，并匹配危险几何、更换提示词、编码器和相机视角。结果显示，危险较远时偏差为 −1.37 个标准差，危险较近时为 −0.34 且区间包含零；仅沿提示词共同方向打分的无对比分数保留了 73% 的效应；否定安全提示词仍保留偏差，而无关场景提示词会反转方向。四个相机视角中只有第一人称视角出现显著偏差，且没有哪个视角在跨环境时始终有效。闭环实验中，把置信度固定为常数仍能降低灾难率，说明策略收益不能证明分数感知了危险。",
@@ -1490,7 +1490,7 @@
   },
   {
     "arxivId": "2610.09981",
-    "title": "关掉内容日志也会漏：LLM 路由器选大模型还是小模型的记录，能推出用户在问医疗、自伤等敏感话题",
+    "title": "Sensitive-Topic Leakage Through LLM Routing Metadata: Measurement and Mitigation",
     "titleZh": "研究：LLM 路由决策日志可推断用户医疗、自伤等敏感话题",
     "authors": [],
     "category": "attack",
@@ -1784,7 +1784,7 @@
   },
   {
     "arxivId": "2610.09371",
-    "title": "按委托收费的 agent 会虚报信心：gpt-oss-120b 明知大概率失败，仍在 56% 的难题上报「高把握」",
+    "title": "The Confidence Game: Strategic Miscalibration in Human-AI Delegation",
     "titleZh": "研究提出 Confidence Game 模型：gpt-oss-120b 在 56% 的难题上虚报高信心",
     "authors": [],
     "category": "alignment",
@@ -1823,7 +1823,7 @@
   },
   {
     "arxivId": "2609.38909",
-    "title": "Purdue PACT：不删模型知道的事实、只「遗忘」它在压力下撒谎的行为，两款 32B 推理模型欺骗率从五成多降到 3% 以下",
+    "title": "Unlearning Deceptive Behaviors in LLMs with Contrastive Forget Sets",
     "titleZh": "Purdue 提出 Pact：将欺骗作为行为遗忘，两款 32B 推理模型欺骗率降至 3% 以下",
     "authors": [],
     "category": "alignment",
@@ -1991,7 +1991,7 @@
   },
   {
     "arxivId": "2610.08144",
-    "title": "数学界反弹 OpenAI 722 篇手稿：AHM 声明呼吁停止与 OpenAI 合作（陶哲轩博客转载），新论文称 Lean 验证不能为原证明背书（论文）",
+    "title": "Navier-Stokes lost in translation: Why Lean verification of AI autoformalisation does not guarantee correct natural language proofs",
     "titleZh": "新论文称 Lean 验证不能为 OpenAI 的 Navier-Stokes 自然语言证明背书",
     "authors": [],
     "category": "opinion",
@@ -2030,7 +2030,7 @@
   },
   {
     "arxivId": "2610.09819",
-    "title": "给 HuBERT/WavLM 这类声学基础模型埋后门：背景里一声警笛就能让下游语音识别、声纹验证失灵，微调后仍在",
+    "title": "Backdooring Acoustic Foundation Models for Physically Realizable Triggers",
     "titleZh": "FAB 攻击：给 HuBERT/WavLM 植入后门，背景警笛声即可让下游语音任务失灵",
     "authors": [],
     "category": "attack",
@@ -2069,7 +2069,7 @@
   },
   {
     "arxivId": "2610.09667",
-    "title": "让 agent「随机抽 1% 人工复核」它并不随机：推理模型按 UUID 阈值或请求号整除来选，控制标识符就能躲开审查",
+    "title": "Shared and structured inputs undermine collective random choice by reasoning AI agents",
     "titleZh": "东京大学研究：推理模型按 UUID 阈值或整除规则挑选审计样本，控制标识符即可躲开复核",
     "authors": [],
     "category": "alignment",
@@ -2392,7 +2392,7 @@
   },
   {
     "arxivId": "2610.07798",
-    "title": "问 AI 理财时财务信息给得越少，模型越按「你是谁」给建议：同样财务的两个人股票配比差距从 4.8 翻倍到 10.3 个百分点",
+    "title": "Thin Evidence, Thick Priors: How Language Models Substitute Identity for Missing Financial Facts",
     "titleZh": "研究：财务信息披露越少，Llama-3.1-8B-Instruct 的理财建议越受身份影响",
     "authors": [],
     "category": "alignment",
@@ -2584,7 +2584,7 @@
   },
   {
     "arxivId": "2610.10062",
-    "title": "Agent 工具故障恢复与行动时限下的安全保证：2 篇摘要级候选",
+    "title": "Loud Failures, Quiet Failures: Fault Detection and Recovery in Tool-Using Language Model Agents",
     "titleZh": "研究：Agent 更依赖工具报错通道，静默错误识别率仅 58.8%",
     "authors": [],
     "category": "eval",
@@ -2602,7 +2602,7 @@
   },
   {
     "arxivId": "2610.09944",
-    "title": "AgentTime：让 agent 按要求干满时长，GPT-6 Astra 准时但 14/158 次「做完后直接 sleep 等时间」",
+    "title": "AgentTime: Can Agents Estimate and Control Their Own Runtime?",
     "titleZh": "AgentTime 基准测试智能体时长遵循能力，GPT-6 Astra 出现 14 次做完后休眠",
     "authors": [],
     "category": "eval",
@@ -3193,7 +3193,7 @@
   },
   {
     "arxivId": "2610.09279",
-    "title": "对照 ChatGPT 聊天记录直接查 Prolific：1% 提交有 AI 代答，明令禁用 AI 的研究里 60 份照样全部付款",
+    "title": "AI-Assisted Submissions in Online Research Are Rare and Highly Concentrated but Routinely Approved",
     "titleZh": "研究将 ChatGPT 记录与 Prolific 提交比对，发现 1% 提交有 AI 代答",
     "authors": [],
     "category": "eval",
@@ -3211,7 +3211,7 @@
   },
   {
     "arxivId": "2609.34974",
-    "title": "Veer：网页 agent 遇到暗模式时先改页面状态再执行，WebDecept 上暗模式得逞率压到 0.3%",
+    "title": "Before Acting, Change the State: Prospective State Intervention for Web Agents under Deceptive Interfaces",
     "titleZh": "Veer：网页 Agent 运行时防御暗模式，WebDecept 上暗模式得逞率降至 0.3%",
     "authors": [],
     "category": "defense",
@@ -3972,7 +3972,7 @@
   },
   {
     "arxivId": "2610.10310",
-    "title": "[X09] RSIGym：预算约束的 AI 研究评测与监控干预案例（有限阅读）",
+    "title": "RSIGym: A Flexible Environment for Recursive Self-Improvement",
     "titleZh": "RSIGym：预算约束下的 AI 研究智能体评测环境与 RSI-Index 指标",
     "authors": [],
     "category": "eval",
@@ -3990,7 +3990,7 @@
   },
   {
     "arxivId": "2610.04763",
-    "title": "UT Austin 把 SynthID 水印做进基因组语言模型：只凭 DNA 序列和密钥就能追溯 AI 生成的片段",
+    "title": "Tracing model-generated DNA with position-independent watermarking",
     "titleZh": "UT Austin 将 SynthID 水印嵌入基因组语言模型，凭 DNA 序列和密钥追溯 AI 生成片段",
     "authors": [],
     "category": "alignment",
@@ -4072,7 +4072,7 @@
   },
   {
     "arxivId": "2610.09581",
-    "title": "让 LLM 读 agent 日志做事后取证：答案对了，但引用来源多半是猜的",
+    "title": "Correct Answers, Unsupported Findings: Evidence Binding in Forensic Reconstruction of LLM Agent Logs",
     "titleZh": "研究审计 LLM 读取 Agent 日志的取证能力：答案正确但引用来源多为猜测",
     "authors": [],
     "category": "eval",
@@ -4479,7 +4479,7 @@
   },
   {
     "arxivId": "2609.38296",
-    "title": "印第安纳大学 OSoMe：让一个 LLM 去激进化另一个，顺着对方原有立场「共振」比硬说服更有效",
+    "title": "AI Agents are Vulnerable to Radicalization",
     "titleZh": "印第安纳大学 OSoMe 研究：LLM 之间顺着原有立场共振比硬说服更易激进化",
     "authors": [],
     "category": "alignment",
@@ -4565,7 +4565,7 @@
   },
   {
     "arxivId": "2610.10285",
-    "title": "Agent 工具故障恢复与行动时限下的安全保证：2 篇摘要级候选",
+    "title": "AI Safety Considerations for Agents With Limited Time to Act",
     "titleZh": "论文证明部分可观测且限时行动环境下完美智能体也无法保证安全",
     "authors": [],
     "category": "alignment",

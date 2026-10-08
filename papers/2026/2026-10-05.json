@@ -845,7 +845,7 @@
   },
   {
     "arxivId": "2610.02664",
-    "title": "GHOST：长程智能体在良性对话中遗忘早期安全约束",
+    "title": "A GHOST in Long-Horizon Agents: Governance Hazard from Overlooked Safety Constraints across Turns",
     "titleZh": "论文提出 GHOST：长程智能体在良性对话中遗忘早期安全约束，GPT-5.5 发生率 11.5%",
     "authors": [],
     "category": "eval",
@@ -2163,7 +2163,7 @@
   },
   {
     "arxivId": "2610.02569",
-    "title": "Pincer：以数字分身学习用户偏好并执行动态最小权限",
+    "title": "Pincer: Resource Authorization for Agents using a Digital Twin",
     "titleZh": "Pincer：用数字分身学习用户偏好并执行动态最小权限",
     "authors": [],
     "category": "defense",
