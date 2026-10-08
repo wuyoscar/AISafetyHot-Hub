@@ -1,0 +1,20 @@
+[
+  {
+    "arxivId": "2610.07258",
+    "title": "Lineage-Aware Memory Governance: A Derivation-Gated Framework for Privacy-Preserving Column-Level Access Control in Enterprise AI Agents",
+    "titleZh": "研究者提出 AMU 记忆模式，用血缘门控实现企业 Agent 列级访问控制",
+    "authors": [],
+    "category": "defense",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 Analytical Memory Unit（AMU）记忆模式，为每条缓存结果附加完整的数据血缘图，检索策略仅在请求方对结果涉及的每一列都有权限时才返回命中，以阻断通过合法计算结果间接泄露敏感数据。作者按构造证明该策略可阻止检索越权敏感列派生的结果，最坏情况复杂度为 O(n)，并说明这是有条件的设​​计保证而非实证结论。六组实验显示，血缘门控检索消除了朴素内容门控记忆存在的 18.8-25.5% 跨部门泄漏，同时保留 81.5-82.6% 的记忆复用率，最坏情况额外开销为 13.8 微秒；消除可测量的泄漏需要 75-90% 的血缘记录完整度，作者将 90% 视为保守部署目标。基于 LLM 生成 SQL 的真实 Agent 概念验证在 9 轮往返中未出现泄漏，并自动捕获两处冲突，作者称其为可行性演示而非生产可用性证据。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.07258",
+      "aisafetyhot": "https://aisafetyhot.com/items/ae6wzmjy79ty642x78uxmduyz"
+    },
+    "publishedAt": "2026-10-04T20:00:00.000Z",
+    "timelineAt": "2026-10-08T16:18:25.387Z",
+    "discoveredAt": "2026-10-08T16:18:25.387Z"
+  }
+]
