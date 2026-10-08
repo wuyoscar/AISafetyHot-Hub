@@ -1,5 +1,23 @@
 [
   {
+    "arxivId": "2610.08902",
+    "title": "Agent Plasticity: Measuring Self-Improvement Through Experience",
+    "titleZh": "研究提出 agent plasticity 指标衡量 AI 智能体的自我改进效率",
+    "authors": [],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究提出 agent plasticity 指标，用来衡量 AI 智能体把过往经验转化为未来留存性能提升的效率。方法上让智能体把经验固化为可复用产物并交给后续实例继承，在每个检查点同时测量训练与留存环境交互上的表现并计入学习成本。在多个环境中，前沿模型即使学习机会相当，改进轨迹差异明显：部分模型取得持续大幅提升，另一些则停留在初始水平附近甚至更低，训练环境内的收益向分布外条件迁移往往只是部分实现。研究还发现最终表现最好的智能体未必是改进效率最高的，低可塑性智能体常无法复用相关产物，而高可塑性智能体即便复用了产物也可能因产物质量、泛化或应用环节受限而失败。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.08902",
+      "aisafetyhot": "https://aisafetyhot.com/items/yne8hp6vy14r1ah2gfz371lo1"
+    },
+    "publishedAt": "2026-10-05T20:00:00.000Z",
+    "timelineAt": "2026-10-08T21:50:24.912Z",
+    "discoveredAt": "2026-10-08T21:50:24.912Z"
+  },
+  {
     "arxivId": "2610.07258",
     "title": "Lineage-Aware Memory Governance: A Derivation-Gated Framework for Privacy-Preserving Column-Level Access Control in Enterprise AI Agents",
     "titleZh": "AMU：用派生血缘门控实现企业 AI Agent 列级访问控制",
