@@ -1,5 +1,7 @@
 <p align="center"><img src="assets/logo.svg" width="80" alt="AI Safety HOT"></p>
 
+<p align="center"><strong>简体中文</strong> · <a href="README.en.md">English</a> · <a href="README.ja.md">日本語</a></p>
+
 <h1 align="center">AI Safety HOT Hub</h1>
 
 <p align="center"><strong>让你的 Agent 查新闻、读论文、追事件，整理 AI 安全简报。</strong></p>
