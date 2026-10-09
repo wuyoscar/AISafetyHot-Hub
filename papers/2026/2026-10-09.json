@@ -1730,6 +1730,42 @@
     "discoveredAt": "2026-10-09T08:05:41.943Z"
   },
   {
+    "arxivId": "2512.20677",
+    "title": "Learning-Based Automated Adversarial Red-Teaming for Robustness Evaluation of Large Language Models",
+    "titleZh": "基于学习的自动化对抗红队测试用于大语言模型鲁棒性评估",
+    "authors": [
+      "Zhang Wei",
+      "Hanxuan Chen",
+      "Peilu Hu",
+      "Zhenyuan Wei",
+      "Chenwei Liang",
+      "Jiayi Gu",
+      "Wenqian Weng",
+      "Jacqueline Pang",
+      "Hao Yan",
+      "Li Mei",
+      "Shengning Lang",
+      "Kuan Lu",
+      "Xi Xiao",
+      "Zhimo Han",
+      "Yijin Wang",
+      "Yichao Zhang",
+      "Chen Ya"
+    ],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": null,
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2512.20677",
+      "aisafetyhot": "https://aisafetyhot.com/items/nr275vaj6f68939z0pgzdwv3c"
+    },
+    "publishedAt": "2025-12-21T19:12:44.000Z",
+    "timelineAt": "2026-10-09T08:05:41.951Z",
+    "discoveredAt": "2026-10-09T08:05:41.951Z"
+  },
+  {
     "arxivId": "2601.05339",
     "title": "Multi-turn Jailbreaking Attack in Multi-Modal Large Language Models",
     "titleZh": "多模态大语言模型中的多轮越狱攻击",
