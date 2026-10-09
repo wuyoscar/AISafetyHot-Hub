@@ -1,0 +1,20 @@
+[
+  {
+    "arxivId": "2610.04888",
+    "title": "研究：事实核查评测可能混入声明发布后的证据，抬高 LLM 判定分数",
+    "titleZh": "研究：事实核查评测可能混入声明发布后的证据，抬高 LLM 判定分数",
+    "authors": [],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "一项研究测量了事实核查评测中两类未来信息泄漏：预训练中记住的结果，以及声明发布后才出现的检索证据。作者在 AVeriTeC 和 QuanTemp++ 上重建声明时点的证据条件，并探测模型表示中编码的结果信息，发现存在明显的参数化泄漏，且这种泄漏可能被总体准确率掩盖。一个简单的表示瓶颈比基于互信息的训练惩罚更有效地减少这种未来泄漏。允许使用声明发布后的证据会使 AVeriTeC 的零样本准确率虚高 6.3 个百分点，而在 QuanTemp++ 上影响可忽略，因为其检索几乎不提供声明发布后的证据。作者据此认为，若不考虑声明时点实际可获得的信息，虚假信息基准会高估事实核查性能。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.04888",
+      "aisafetyhot": "https://aisafetyhot.com/items/of8dpno9hcfswb26ubo3vxvru"
+    },
+    "publishedAt": "2026-10-04T02:53:23.000Z",
+    "timelineAt": "2026-10-09T16:05:52.690Z",
+    "discoveredAt": "2026-10-09T16:05:52.690Z"
+  }
+]

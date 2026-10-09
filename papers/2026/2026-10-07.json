@@ -1237,7 +1237,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 TasteVal 基准，用于评估前沿模型的实验研究品味，即给定固定研究问题后迭代设计实验并从结果中得出结论的能力。该基准把实验研究品味操作化为算力效率：达到与人类专家相同分数所需串行实验算力减半，即品味翻倍。TasteVal 包含 8 个开放式任务，受评模型作为 Researcher 迭代设计实验，由固定的 Coder agent 负责实现并汇报结果，预算上限为 40 H100 小时或 120 小时挂钟时间。研究招募 24 名人类专家（每任务至少 2 人），取每任务最佳专家尝试作为基线，并评测了 2023 至 2026 年间发布的 20 个模型。表现最好的 Opus 5.5 超过专家基线，算力乘数为 2.3x（95% CI 1.15-4.37），单次运行成本约为基线者平均成本的 1/30。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "前沿实验室里的智能体正在承担AI研发，安全框架和起飞预测都依赖研发自动化有多快。写代码已有工程评测，但设计实验、解释结果这一实验品味，缺少对照真实分数、且与实现分开的测量。",
+          "label": "问题"
+        },
+        {
+          "text": "被测模型只当Researcher：提出实验并解释结果，不写实验代码。Coder固定为Opus 4.8，在单张H100上实现并评分。8个不公开任务，预算40 H100小时或120墙钟小时。24名专家同样做题，每题取分数最高的尝试作基线。",
+          "label": "方法"
+        },
+        {
+          "text": "Opus 5.5的compute multiplier为2.30（95% CI 1.15–4.37，Table 2）。前沿模型该倍率在2025年12月GPT-5.2之后每3.0个月翻倍，此前为14.0个月。不计所用算力的performance multiplier全程每14.6个月翻倍，作者报告断点检验p=0.12。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者认为任务易验证、只用单张H100、不测选题，可能高估；启发有限、智能体美元成本远低于专家，可能低估。倍增时间针对串行算力。第5节的代入被声明为朴素外推，并假设TasteVal上的速率可迁到前沿研发。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.06824"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.06824",
       "aisafetyhot": "https://aisafetyhot.com/items/ssu5488pa2ykfe58qvxvttbwv"
@@ -1302,7 +1323,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 SteerScope，一个双轴、多维的 LLM 引导方法评测套件，通过 15 项指标同时刻画引导效果与方法属性。该套件从语言质量、任务能力和安全与可靠性三方面评估目标效果与副作用，并用样本效率和样本敏感性等引导专属指标衡量泛化性与数据依赖。在匹配模型、任务和评测协议下，研究团队基准测试了覆盖 4 个家族的 23 种方法，包括提示、LoRA 和 SFT 等基线方法，并将套件作为可扩展代码库发布。结果显示，现有激活引导方法在效果与副作用的整体平衡上尚未超过 Prompt Steering 基线：在两个模型规模上，没有一种受评激活引导方法能在不带来更大综合副作用的情况下取得更高效果。研究还发现引导效果与副作用之间存在一致的耦合关系，在 OOD 提示下目标效果通常得以保持，但副作用往往更明显，尤其表现为指令相关性和流畅度下降；不同方法的样本效率特征差异显著。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "Activation steering要诱导目标行为，同时限制意外改变，并在不同输入与训练数据下保持效果。作者称现有评测只覆盖这些维度的片段，功效与副作用的权衡尚未被系统刻画。",
+          "label": "问题"
+        },
+        {
+          "text": "SteerScope把评测分成Steering Outcomes与Method Properties两条轴、共15项指标。在匹配模型、任务与协议下，对23种方法扫描干预强度，比较功效–副作用权衡，而不是只比一个工作点。",
+          "label": "方法"
+        },
+        {
+          "text": "作者称两个Gemma-2-it上，无activation steering在复合副作用不更大时超过Prompt Steering。9B上A-PSR的Concept Expression升1.30、副作用0.12。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "论文未专门讨论局限。评测为两个Gemma-2-it，单点干预在layer 20；廉价指标500个concept，昂贵指标50个，SFT为20个；跨语言只测text concept。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07722"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07722",
       "aisafetyhot": "https://aisafetyhot.com/items/er6q9rn8zm8dphwhskjqespsj"
@@ -1328,7 +1370,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者在 313 条 StrongREJECT 提示切片上，用五个多模态模型（附录另测 InternVL3.5-8B）考察四类已发表攻击家族中的图像侧因素，并保持有害指令不变。结果显示，单独的有害查询无论是否配无关良性图像，在多数模型上攻击成功率都很低，而攻击图像会显著提高成功率。逐 tile 熵和 JPEG 体积无法可靠区分攻击 tile 与体积匹配的良性干扰图，限制了仅靠密度筛查的做法；此前的 tile 数量阶梯实验受载荷可见性混淆，修正后的区域数量测试未发现可检测效应。在 Qwen3-VL-8B 上，移除查询相关性的 E4 操作使攻击成功率下降约 0.12，支持将部分效果归因于相关性操作，但图文一致性仍未测量。五项测试通过全局统计校正，仅 E4 支持归因到单一测量描述符，结论仍以评分标准判定为前提。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "聚合ASR看不出图像到文本越狱里哪项图像属性导致安全失败。密度过滤、语义一致性检查和融合层干预针对不同原因，而现有攻击每次同时改变多项属性。",
+          "label": "问题"
+        },
+        {
+          "text": "作者固定有害指令，用FigStep、MML、CS-DJ、VisCo作探针，沿组合复杂度、信息密度、瓦片来源和语义对齐做配对消融；仅当唯一被测描述符变化时才单轴归因。",
+          "label": "方法"
+        },
+        {
+          "text": "多数受害模型上，纯文本或良性无关图的ASR低，攻击图更高。区域数阶梯未检出效应；密度筛选分不开攻击瓦片与良性瓦片。作者称仅Qwen3-VL-8B的E4支持对查询相关性的有界归因，ASR降0.119。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称主发现不应推广到全面板，图像指标是代理，ASR依赖评审（与另一评审差最多0.18）。多数对比未隔离单属性；congruence未测，修正tile-count阶梯与A.31三项控制未运行。配对MDE约0.06–0.10。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07009"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07009",
       "aisafetyhot": "https://aisafetyhot.com/items/masme6ocgzgyn0ezipijwlehf"
@@ -1403,7 +1466,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 SafeActBench，用 656 个案例覆盖六个操作领域和五种协议，考察工具型 Agent 从静态行动判断、调查后不行动到单步与多步工作流的失败位置。在十种模型与 harness 组合中，静态行动评估表现较强，交互式执行却明显更弱；失败常发生在执行之前，Agent 要么调查不完整就停止，要么在所需证据尚未建立时就行动。一旦证据齐备，单步执行通常可靠，多步工作流则暴露出未解决的前置条件和执行不完整。研究用带来源绑定的 Evidence Ledger 和确定性轨迹评估器记录信息何时建立、行动何时发生以及下游依赖是否满足，指出失败不仅源于信息缺失，也源于 Agent 如何使用已建立的证据。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "工具智能体的终态可以正确，但行动前未必已建立绑定到正确实体与状态的证据。作者要定位这条链在调查、执行和下游依赖上何处断开。",
+          "label": "问题"
+        },
+        {
+          "text": "SAFEACTBENCH含656例、六域、五协议，从静态ALLOW/BLOCK/DEFER到调查后不行动、单步、线性与DAG工作流。Evidence Ledger记录证据出处；确定性评测器回放轨迹，不用LLM judge。",
+          "label": "方法"
+        },
+        {
+          "text": "十组配置中Legacy可很高而交互更低：GLM–ZCode的Legacy 97.7%，V2 ECS 12.1%。扣留关键证据后，已完成回合仍有46.5%–53.5%继续行动。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称分析捕捉的是可观测支持，而非模型内部依赖，并把多步协议上的证据干预列为后续。主评测覆盖十组配置、656例、每对三次、覆盖率100%；干预主要在43个V1案例、三组配置上。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07753"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07753",
       "aisafetyhot": "https://aisafetyhot.com/items/plolzlkusf94hj01pea4w0gny"
@@ -1426,7 +1510,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究对投机解码的安全影响做了系统性测量，发现存在明显的安全与效用不对称：在多种有损投机解码方法中，推理效率提升带来的越狱和提示注入攻击成功率上升速度远快于效用下降。作者据此提出 SecureSD，理论分析指出安全退化主要来自 draft model 生成的早期 token，因此对早期解码位置的 draft token 采用更严格的验证标准。在安全与效用基准上的实验显示，SecureSD 在保持效率和效用的同时显著提升安全性。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "推测解码用小draft模型先提案、大目标模型再验证以降低延迟。有损验证为提速放宽接受，但既有工作主要看效率与效用。作者要弄清这种放宽是否会更快削弱越狱与提示注入防护。",
+          "label": "问题"
+        },
+        {
+          "text": "SecureSD不改验证器本身，用校正日程η把标准验证与松弛验证按解码位置混合。η为0即标准验证，为1即原松弛规则。默认阶梯日程、L=1，只对最早位置走标准验证。",
+          "label": "方法"
+        },
+        {
+          "text": "Qwen3-0.6B/8B上，六种有损方法的安全基准平均PRR为0.744，效用基准为0.905。加上默认SecureSD后，该配对在Jailbreak-SD的平均ΔPRR为+0.270。Llama3往往要更大的L才接近这一恢复。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称还应评估更多样的自适应攻击，并说明SecureSD不消除目标模型既有漏洞。实验为四组draft–target、六种有损验证器；AgentDojo只报Qwen3-0.6B/8B。论文未报告重复次数。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08678"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08678",
       "aisafetyhot": "https://aisafetyhot.com/items/qvtsbma8sv6oedlw7z44gfp73"
@@ -1444,7 +1549,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "论文提出 ProbeGuard，一个基于共识形成过程而非最终一致性的认证弃答框架，用于多轮智能体医疗问答系统。作者指出，一致同意是正确性的脆弱代理：系统可能在每个采样上都给出同一个错误答案，此时基于一致性的信号不携带任何信息，因为这类信号只读取共识的最终状态，丢弃了达成共识的过程。ProbeGuard 使用过程特征追踪一致性轨迹、少数意见持续性和检索饱和情况；对全票一致的投票，用理由语义熵检查投票背后的理由是否自洽，并通过主动探测检索反证、衡量共识能否存续；再用分层 Learn-then-Test 校准把这些分数转成选择性风险的无分布界。该工作已被 NeurIPS 2026 的 GenAI4Health Workshop 接收。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "临床实践把独立专家的一致当作可信依据，多轮医学问答又以采样答案的一致决定是否信任自己的答案。一致可以全体答错，终态信号此时没有信息。没有疑虑标记的答案会直接进入下游决策。",
+          "label": "问题"
+        },
+        {
+          "text": "ProbeGuard只读多轮智能体RAG的执行日志。过程特征记录一致轨迹、少数派存续和检索是否饱和；首轮全票用理由语义熵，并检索反证后看保留率。分层Learn-then-Test给出无分布假设的选择性风险上界。",
+          "label": "方法"
+        },
+        {
+          "text": "Qwen3-8B基板上，MedQA首轮全票13.4%答错，投票信号为常数。过程分数AUROC为0.696，终态一致率为0.512。全票层在α=0.15时认证覆盖0.553，观测选择性风险9.0%。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称评测限于选择题，自由文本未测，且只在8B单基板上测量。证书须按自己的病例组合校准，漂移时重校准；临床异议记录是否有用未评。实验含三骨干、三医学基准和MedXpertQA全票错误率，认证数字主要在全票层。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07570"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07570",
       "aisafetyhot": "https://aisafetyhot.com/items/itj9uxvvtko2vv0fxdvjhwhfd"
@@ -1544,7 +1670,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者发布开源包 Transect，用于在长程 LLM Agent 评测中保留可观测性。该工具基于 Inspect Scout 构建，用户在可复用的评测族配置中指定任务上下文与行为词汇，判分模型与分析设置另行提供。其可导航报告把记录事件、token 用量、子 Agent 活动与模型生成的行为标签对齐到同一按回合的时间线上，评审者可快速把握一次运行的脉络、把任一标签或事件追溯到来源回合，并导出底层数据表做跨运行分析。作者在一项生成近 1300 万 token 的 AI R&D 评测上演示了该流程，将 Agent 工作划分为与研究技能分类对应的行为阶段、子 Agent 委派与交互以及 token 使用；合并视图显示工作集中在操作性任务与稿件产出，几乎没有持续假设生成阶段的证据。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "开放式长程智能体评估的转录可长达数百万token，终分盖住过程，人工也难以通读。语言模型按自定义量规分析会引入评审模型、量规和分析单位等自由度。作者要让评估者看见运行如何展开，并把解读对回转录。",
+          "label": "问题"
+        },
+        {
+          "text": "Transect基于Inspect Scout。评估族Spec给出任务情境与行为词表，评审模型另配。流水线经摄取、选择、扫描、存储、渲染，把记录事件和模型标签对齐到共享回合轴，并链回源回合；表可导出做跨运行分析。",
+          "label": "方法"
+        },
+        {
+          "text": "CRUX的一条TabPFN样本中，Claude-Opus-4.7的token有89%在子智能体。自审与文稿new-work为7.8 million、2.9 million（分母14.5 million）。Hypothesising为2/580。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "结论写明语言模型评审可能夸大信心，可靠性不等于效度，效度要独立专家标注。附录写明案例没有评审省时或决策改善的对照估计。案例是一个样本的一个epoch，论文未报告与专家标注的一致率。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08364"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08364",
       "aisafetyhot": "https://aisafetyhot.com/items/z10ketg96emay4azdgvqutz22"
@@ -1681,7 +1828,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "论文推导了功耗轨迹无法排除的最大隐藏算力 β 的闭式解，即隐藏算力占申报机器容量的比例。在 NVIDIA A100 GPU 上的测量显示，最坏情况下 β = 1.16，而对抗性等能量策略至少可隐藏 β = 0.41 的算力。作者据此认为，仅靠模拟功耗测量对算力的约束较弱；若威胁模型允许验证方在观测工作点重新执行申报的工作，β 在限制最强的情形下可降至 0.059。该结果为前沿 AI 算力限制协议的外部核查提供了定量估计。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "算力上限协议需要外部确认实际跑了多少计算。片外功耗不经过被监测方控制的硅片，但交换率、格式、时钟和空闲都可由其选择，不同运算量可以画出相同功耗。",
+          "label": "问题"
+        },
+        {
+          "text": "把功耗写成运算率乘交换率加开销。隐藏运算要同时落在能量预算和剩余机时里，β取二者较小值，再对声明利用率取最坏情况。带边在A100上分实验测量，额外能力沿阶梯收窄同一上界。",
+          "label": "方法"
+        },
+        {
+          "text": "确认声明为fp16、隐藏为int8时，最坏放松上界β*为1.16（h*=0.42）。匹配能量调度在h=0.216至少藏住0.41。重执行、限定两种块并收紧开销后，β*为0.059。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者写明所引β来自A100和片上能量计数器，且没有展示同一调度能同时到达三条带边。跨硬件间隙、DVFS和多设备公式没有测成闭式输入。其他通道和机房级推广被列为后续。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07476"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07476",
       "aisafetyhot": "https://aisafetyhot.com/items/fa9o9jo8p8ijvp28o38o3sac1"
@@ -1706,7 +1874,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "论文研究大语言模型是否表现出人类的错觉模式感知，即从随机数据中推断出并不存在的有意义关联。作者称这是首个针对 LLM 错觉模式感知的系统研究，将经典心理学范式改造为三项任务，并与人类行为做直接实证对比，发现 LLM 的错觉模式感知往往强于人类，模型倾向于把频繁出现的正面属性过度关联到多数群体或大型组织，也更易从模糊事件中构建因果叙事。为揭示机制，作者基于 Sparse Autoencoders（SAEs）构建特征可解释性框架分析内部表征，结果显示整体频率感知与分析性认知取向与错觉感知的出现相关。代码见 https://github.com/NusIoraPrivacy/illusory。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "LLM已被用于招聘、法律、医疗和投资等高风险分析。作者要回答：模型是否会在随机或证据不足的输入里推断出并不存在的关系，从而带入难以检测的系统错误。",
+          "label": "问题"
+        },
+        {
+          "text": "改编社区相关、投资相关和阴谋信念三项心理范式，以少数方选择比例和1到7的因果评分，相对0.5与4度量。再用SAE比较原始提示与相关中性提示的特征激活，并对开源模型做特征转向。",
+          "label": "方法"
+        },
+        {
+          "text": "九个LLM在社区任务的少数选择平均为0.15，人类为0.46；阴谋评分平均5.37，人类4.34（Table 1）。投资任务有不低于0.5的行，阴谋任务也非每个模型都高于人类。作者称提醒提示和特征转向可减弱部分无支持推断。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者写道当前比较集中于三个文本范式，与人类只做行为对照、未观测内部过程。后续包括扩展测量、结合眼动或EEG，以及延伸到多模态；作者也提醒不宜把受控任务过度外推。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07791"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07791",
       "aisafetyhot": "https://aisafetyhot.com/items/qaeiim2bnnekxk57ubdyyptxy"
@@ -1724,7 +1913,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 ParanoiaEval，用于统一评测编码智能体的风险处置能力。该基准基于软件工程风险管理中的 Avoidance-Transfer-Mitigation-Acceptance 框架，将其四类处置方式落地到编码智能体场景，包含 200 组仓库级任务对，每对仅在决定处置方式的证据上不同，并引入风险处置违规与证据响应性指标，使用经人工校准的智能体评判器进行评估。在 8 个代表性模型上的大规模实验与事后人工研究显示：即便存在明确证据，不必要风险处置仍出现在 11.2% 至 58.7% 的运行中，且不同智能体配置差异明显；更强的任务能力并不保证更恰当的风险处置，而处置违规会显著损害开发者体验，说明风险处置是一项独立的能力维度；智能体还表现出与既有风险管理研究一致的系统性模式。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "编码智能体在证据已规定风险如何处置后，仍可能扩大验证、加保护或做备份。主流评测多看是否通过测试；过度行动、过度编辑和冗余步骤又被分开研究，缺少统一的风险处置能力维度。",
+          "label": "问题"
+        },
+        {
+          "text": "作者把NIST的ATMA（回避、转移、缓解、接受）落到编码任务，做成ParanoiaEval。50个仓库、200对任务，每对只改一条确立处置的证据。评审对照答案卡给出违规率VR和证据响应ER。",
+          "label": "方法"
+        },
+        {
+          "text": "8个模型在Claude Code和Codex上共9600次运行。证据存在时不必要处置占E+运行的11.2%–58.7%，ER为25.4%–65.5%。任务成功率与VR的等级相关不显著；有过度处置时，开发者5分制满意度低1.27分。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "附录A列出四项：任务对只改一条事实，不能代表分散、含糊或冲突的证据，残余判定误差仍可能存在；同一模型未跨harness运行。发现基于44种情形、Python与Go仓库和单一地区开发者。缓解与接受的证据在指令中，回避与转移大多在仓库中。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08662"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08662",
       "aisafetyhot": "https://aisafetyhot.com/items/poq9g65ueasuykb0fguci1cef"
@@ -1742,7 +1952,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 Security Awareness Gap Evaluation（SAGE），一种基于轨迹的方法，结合每轮记录的安全推理评估与重建的代码历史，定位 LLM Agent 在修复中最早偏离任务安全意图的环节，针对的是通过语法与功能检查但仍含漏洞的静默失败。研究在 SecurityEval 和 CVEfixes 上、由六个 Agent 框架和六个基座模型产生的 3,684 条修复轨迹中筛出 95 个已确认的静默失败进行评测，SAGE 在 93 个案例中给出了起源。多数起源是未被处理的安全需求或不当的防御选择，仅 5 个与代码改动本身重合；当 Agent 引入漏洞代码时，19 个案例中有 14 个起源早于写入操作。重复评分和第二评判者对起源类型的复现一致性高于对具体轮次的一致性，仅保留最终文件的轨迹一致性最低。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "通过语法和功能检查的补丁仍可能带漏洞，即静默失败。确认补丁不安全，并不能指出修复过程最早在哪一轮偏离任务的安全意图。",
+          "label": "问题"
+        },
+        {
+          "text": "SAGE把框架轨迹规范成规范轮次，由只看当前前缀的LLM评审给四维安全推理打分，并重建工件历史，再用固定规则选出最早可归因偏离。",
+          "label": "方法"
+        },
+        {
+          "text": "95例确认静默失败中，SAGE定位93例；未处理需求51例、不充分防御37例、代码变更缺陷5例。智能体引入的19例里，14例起源早于写入。类型一致性高于精确轮次，只留最终文件的轨迹最低。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称起源不建立因果，零分只表示未记录相关推理。语料为Python修复任务、SecurityEval与CVEfixes、六框架六模型，且只含L2或L3标出后经人工确认的案例。作者计划扩展语言与任务类型，并做受控干预研究。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.06163"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.06163",
       "aisafetyhot": "https://aisafetyhot.com/items/kxsd3z52s75neijrepg5uejl4"
@@ -1767,7 +1998,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究将拒答激活引导分解为组件级干预，在四个开源权重模型上识别出足以复现完整行为效果的稀疏注意力与 MLP 组件子集。这些拒答方向集中在占上游组件 28% 至 48% 的稀疏机制中，仍保留 88% 至 101% 的引导效果；在这些机制内部，有效引导进一步集中在约 50% 的残差流维度上，保留组件机制基线的 85% 至 98%，与存在特权基结构的判断一致。作者据此认为拒答并非弥散编码于整个 Transformer，而是由结构化、可识别的机制组装而成，并将代码与原始实验结果开源在 https://github.com/wang-research-lab/Refusal_Mechanisms。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "激活转向能改拒答，但残差流单点干预看不出哪些 attention 与 MLP 写出了 refusal 方向。作者要找足以复现该效果的稀疏组件和维度。",
+          "label": "问题"
+        },
+        {
+          "text": "四个开源模型上，用有害与无害提示的 difference-in-means 取峰值层方向，并对上游组件输出做正交化。两阶段贪心消除先按投影、再按验证集 ASR 剪组件；维度用 r* 的高幅度坐标做静态掩码。",
+          "label": "方法"
+        },
+        {
+          "text": "Table 1：组件占比 28.2%–48.1%，机制 ASR 88.3%–100.5%。补集绝对 ASR 依次为 1.6%、3.3%、17.8%、34.6%（Gemma2-2B、Phi4-Mini、Mistral-3.2-Small、Qwen3-4B）。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "论文未专节写出局限。实验覆盖四个开源模型，每个模型一个峰值层和一个 DIM 方向。ASR 由 LlamaGuard 3 判定，论文未报告与人工一致性及主结果重复次数。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.06903"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.06903",
       "aisafetyhot": "https://aisafetyhot.com/items/p54zl9dvsla8bp6cjp5zecxan"
@@ -1852,7 +2104,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究提出 BeFOND，一个无编码器的稀疏编码模型，把稀疏自编码器的推断与字典学习统一为同一变分自由能上的自然梯度流。该方法用循环 explaining away 减少重叠特征之间的干扰，并用 Fisher 预条件补偿稀有特征学习偏慢的问题。在合成数据上，其字典恢复与稀有特征检测优于 amortized 基线，且随叠加程度提高优势扩大；在语言模型激活上，单特征概念检测与选择性干预优于预训练参考 SAE，所用训练数据明显更少。其特征质量随字典宽度继续提升，而所评估的基线大多趋于停滞。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "特征重叠或很少激活时，SAE的摊销推断和词典学习会互相限制，使可解释特征难以恢复。",
+          "label": "问题"
+        },
+        {
+          "text": "BeFOND把二者写成同一变分自由能上的自然梯度流：无编码器、Bernoulli潜变量，用循环交互做解释消去，并用Fisher预条件补偿稀有特征。",
+          "label": "方法"
+        },
+        {
+          "text": "SynthSAEBench全宽上MCC均值0.8980。Gemma-2-2B层12、524k宽、约50M token时，BeFOND的k=1准确率0.789，RAVEL 0.827。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出重复推断和数值解码器更新增加计算成本，并计划提高效率、为推断加动量、用成对交互表示特征依赖。实验包括SynthSAEBench与Gemma-2-2B层12的SAEBench。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07389"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07389",
       "aisafetyhot": "https://aisafetyhot.com/items/t1snx4mh2x4jc0y2so7rnoufe"
@@ -1870,7 +2143,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究评估了大语言模型在临床记录与推理中对患者就诊无关信息的敏感度。在 576 段医患对话中，前沿模型把闲聊内容写入 35% 的病历，五分量表上的平均质量分变化最多 0.20 分；3.7% 的前沿模型病历出现对旁白的错误归属或临床误用。在 57 段模拟录音问诊中，来自另一场就诊的背景语音以 -10 dB 混入，48.2% 的转写文本受到污染，四个开放权重模型生成的后续病历中有 5.3% 检出污染。作者提出临床推理与干扰的双重编码假说，初步证据显示易受无关信息干扰的 LLM 组件同时也支撑临床推理，并建议在临床使用前评测模型对无关信息的抵抗能力。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "环境听写和临床推理会遇到与患者无关的闲聊或背景语音。这些内容不增加该患者的医学信息，却可能进入病历或被用于判断。作者还要看通用笔记质量分能否登记到这种混入。",
+          "label": "问题"
+        },
+        {
+          "text": "MedDistractNotes在转写插入旁观者或非字面闲聊；MedDistractAudio以四档电平叠加另一问诊语音。二者均与清洁输入配对，检查笔记是否写入偶发内容。机制探针用对比因果头门控，并做清洁激活修补和抑制。",
+          "label": "方法"
+        },
+        {
+          "text": "文书臂：前沿模型写入旁白35.0%，误归因或临床使用3.7%，开源权重写入50.1%。−10 dB转写泄漏48.2%，笔记污染5.3%。抑制所选头后清洁题准确率降24.4–37.8个百分点。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称插入与叠加不能代表日常问诊的全部声学和对话变异，短摘录占比高时汇总污染率可能高估完整就诊。终点是生成错误而非患者伤害，单个LLM判定且未经临床医生验证。机制实验为四个开源模型上的医学题，未在写笔记时干预。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08585"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08585",
       "aisafetyhot": "https://aisafetyhot.com/items/k8e2wlvynuomvl8evy0nvv64p"
@@ -1927,7 +2221,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 World Models' Last Exam in Physics，一个基于测量的视频世界模型物理一致性评测基准，覆盖力学、光学、流体、热学与相变、电磁学和表面张力共 40 项受控任务。每项任务由初始图像、生成提示词和预设物理判据组成，无需参考视频即可检验可观测的物理关系，评测器结合任务可观测性筛选与任务专属的定量物理测量。在 8 个视频生成模型、共 1280 段视频上的实验显示，物理不一致问题持续存在且任务间差异明显，最佳模型总分 57.76（满分 100）。在已知物理关系的合成视频上，测量模块的有效性得到验证；评测器在任务内排序和成对比较中与人类判断的一致性均高于直接使用视觉语言模型的基线。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "把视频生成模型用作世界模型时，序列可以视觉上可信但物理关系不一致。现有评测常依赖VLM判断或参考视频，直接物理测试又多集中于力学。该基准要用可测量关系、在无参考视频时检查多个物理领域。",
+          "label": "问题"
+        },
+        {
+          "text": "40个受控任务配对首帧与提示词。Qwen3.6-27B做时序一致性筛选，阈值80；跟踪、分割等提取量与预定物理关系比较得到物理分。通过筛选且记录到物理分时，综合分为0.15C+0.85P，否则物理分不计入。",
+          "label": "方法"
+        },
+        {
+          "text": "八个视频模型、1280条：Seedance-2.5平均综合分57.76，CogVideoX1.5-5B为18.81。合成参考物理分97.53。排序一致率51.58%，高于Direct VLM的43.40%，低于人与人56.60%。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称当前评测受任务相关证据的可见性与可靠提取约束，后续将扩展任务覆盖并改进复杂场景中的测量。实验覆盖八个image-to-video模型与40项任务，并含合成参考视频和320条视频的人工对照。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08791"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08791",
       "aisafetyhot": "https://aisafetyhot.com/items/e4qun58k2pnlmuwd4srfuc6jj"
@@ -1953,7 +2268,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者在 Qwen2-Audio 上审计加性音频越狱 AdvWave-P 的频率与解码层归因，在 STFT 域遮蔽扰动的频率成分并测量攻击成功率与音频跨度表示。在 520 条 AdvBench 提示上，主评判将 76.7% 的对抗输入标为越狱；单标注者盲条件验证给出 Rogan-Gladen 灵敏度估计 0.87（约 0.83-0.95），该校正未应用于遮蔽条件。表观频率排序依赖划分方式：仅能量占比即可预测标准八频段排序（Spearman's rho = 0.95），等 Hz 与等能量划分显示遮蔽任一测试频段都可能大幅降低攻击成功率；在更细的 16 频段等能量分辨率下，遮蔽 7520-7960 Hz 窄频段后 ASR 仍为 0.10，缺少匹配对照尚无法解释。匹配能量的分散移除测试显示，连续移除在低频段破坏更大，两种形式在高频段都接近下限。该关联并非因果定位，单层修补也不能确立因果层。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "音频语言模型可能拒绝有害文本，却服从同一指令的对抗音频。作者要审计AdvWave-P的频带排序是位置本身，还是带宽、能量和移除结构造成的表观结果。",
+          "label": "问题"
+        },
+        {
+          "text": "在STFT域遮挡或保留扰动频带并重建波形，用评审模型测ASR，再算解码器音频跨度散度。对照包括等赫兹、等能量、能量匹配的分散移除和全局缩放。",
+          "label": "方法"
+        },
+        {
+          "text": "Qwen2-Audio上，主评审把76.7%对抗输入标为越狱。作者称能量占比预测八频带排序（Spearman ρ=0.95）。7520–7960 Hz遮挡后ASR为0.10，但缺匹配对照。调整后系数从+0.63升到层30的+0.93，作者称这不是因果定位。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称正面结果来自AdvWave-P（ε=0.01）与Qwen2-Audio，协议不直接用于后缀、语义或mel域攻击。K=16近Nyquist频带缺匹配随机对照；单层修补不能检验跨层累积效应。人工核验只有一名标注者。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07005"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07005",
       "aisafetyhot": "https://aisafetyhot.com/items/pw048978guw42lwgla81d3jc5"
@@ -2128,7 +2464,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "一项系统综述梳理了100项涉及儿童与青少年接触AI的实证HCI研究，覆盖学校、家庭、照护机构和公共服务等场景。研究使用YAIR风险分类和MIT Mitigation Taxonomy对策分类，对风险与防护措施进行映射，发现多数风险只对应提出或设想中的对策，已实施的对策很少，经过评估的更少，且现有评估多衡量技术性能而非是否真正防止了伤害。作者据此指出风险覆盖的空白区域和未经检验的防护措施，并提出HCI研究加强青少年AI安全的具体方向。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "青年在学校、家庭、照护和公共服务中接触AI，但文献缺少风险是否已有对策、对策是否实施并评估的整体图。作者认为只看生成式AI只能得到部分画面。",
+          "label": "问题"
+        },
+        {
+          "text": "按PRISMA纳入100篇2019至2026年的HCI与S&P实证论文。风险主按YAIR编码，隐私参照Solove，对策按MIT缓解分类，记下提议、实施或评估；未覆盖处再归纳，连成风险-对策矩阵。",
+          "label": "方法"
+        },
+        {
+          "text": "风险跨YAIR六类和作者增补的三类。Table 5里，80条风险-对策关联中50%仅提议、18%已评估；36类风险中14%没有对策。作者称现有评估常测技术表现，而不是免于伤害。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称检索为英文并强调HCI会议，临床、法律、产业和平台安全代表性较低；映射有解释判断，频率不是流行率，部分模型已变化。覆盖100篇论文与三套分类的阶段编码，未报告编码一致性或自行运行的模型。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08554"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08554",
       "aisafetyhot": "https://aisafetyhot.com/items/hjnzdf5nsk1ovrp4qcrgljl7n"
@@ -2146,7 +2503,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 ES-Trace 框架，用模型文档可追溯图（MDTG）追踪 Model Card 之外的披露证据，对 10 家发布方的 26 个代码生成模型、77 份文档和 20 个伦理采购维度进行审计。仅审计 Model Card 时平均得分 1.77/5，解析发布方声明的引用文档后升至 2.82/5，增量主要来自结构化元数据中声明的文档。研究还发现社会与劳工相关维度披露普遍不足；仅看 Model Card 会误判版本级披露变化；文档错配可能把证据关联到错误的模型或版本。作者据此呼吁采用引用感知的披露审计、明确模型与版本的绑定，并加强社会与劳工维度的文档记录。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "代码生成模型的知识产权、隐私、劳动与环境影响证据分散在多类文档中。模型卡或AIBOM字段为空，并不等于从该模型声明的引用里找不到证据。",
+          "label": "问题"
+        },
+        {
+          "text": "ES-Trace用MDTG记录模型卡声明的引用，按第一方或第三方、元数据或卡片文本分成L0到L3。Gemma 4 31B Instruct对20个ES-CodeGen方面做五级证据判断，范围内取最高分。",
+          "label": "方法"
+        },
+        {
+          "text": "26个模型上，仅模型卡均分为1.77/5，解析到L3后为2.82/5，主要增幅在L1。五项社会与劳动方面在L3仍不超过1.62。只看模型卡时，版本间大变动为14次退步、7次进步；解析引用后为7次与16次。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称发现不宜外推到这26个官方模型之外，文档可能在2026-08-27之后变化。分数只衡量一跳范围内的披露强度，评审模型为Gemma 4 31B Instruct，CodeGemma技术报告被分类器漏掉。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07762"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07762",
       "aisafetyhot": "https://aisafetyhot.com/items/pmtap41a9z7nn4bzii4d37ta1"
@@ -2254,7 +2632,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 IAU-FOA，一种面向闭源多模态大模型（MLLMs）的可迁移定向对抗攻击方法。现有定向迁移攻击主要用编码器 [CLS] 嵌入等全局图像级特征对齐对抗样本与目标样本，对 patch 级视觉结构利用不足，限制了跨异构闭源 MLLMs 的迁移性。IAU-FOA 同时在全局和局部对齐：用基于余弦的目标缩小全局语义差距，将 patch token 聚类为紧凑局部模式并通过最优传输匹配。针对均衡最优传输在缺乏可靠对应局部簇上强制固定边际质量、可能引入误导性对齐梯度的问题，作者引入置信度自适应非均衡传输，对弱匹配簇放宽约束。此外提出视觉不变性增强，通过双向像素强度缩放和逐通道白平衡调整模拟曝光、对比度、光照和色温变化。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "闭源MLLM不提供梯度与参数，目标迁移要求扰动跨异构视觉编码器保住目标语义。现有方法主要对齐全局特征，对patch级结构利用不足。",
+          "label": "问题"
+        },
+        {
+          "text": "IAU-FOA在开源代理视觉编码器上优化扰动：余弦损失拉近全局特征，patch簇经置信度自适应的不平衡最优传输做局部对齐，并按对齐分数比值动态加权。VIA用双向强度缩放和逐通道增益模拟曝光与白平衡变化。",
+          "label": "方法"
+        },
+        {
+          "text": "各1000对上，6个开源MLLM平均ASR为0.863、AvgSim为0.685，6个商用MLLM为0.750与0.600（Table I–II）。6种输入防御下，6个商用模型平均ASR为0.688（Table IV，各100对）。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "论文未专门讨论局限。实验覆盖17个MLLM、5个代理编码器和6种输入防御；主比较各1000对，消融与防御各100对。论文未报告GPT-4o评审与人工的一致性，也未报告重复次数。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.06977"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.06977",
       "aisafetyhot": "https://aisafetyhot.com/items/uodpsr1tvig8pqf9mx5ubxjq0"
@@ -2281,7 +2680,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 ASCENT，一个通过一阶最优安全感知周期性校准与任务优化实现安全与效用协同提升的下游微调框架。该方法把安全建模为大语言模型参数的函数 S(θ)，用其一阶近似刻画参数更新带来的安全变化；在固定秩与 Frobenius 范数预算下，证明由安全函数梯度前 r 个奇异分量构造的更新能最大化估计的安全变化，并将其用于周期性校准。研究还推导出一个唯一的安全保持任务更新，在贴近原始任务更新的同时惩罚对估计安全变化的负面影响，ASCENT 交替执行这两类更新。在多个大语言模型家族和下游任务上，ASCENT 将下游效用最多提升 20.3%，攻击成功率最多降低 35.5%。代码已开源于 https://github.com/ZJU-LLM-Safety/ASCENT。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "监督微调能提高LLM下游效用，但常削弱安全能力。现有安全保持微调主要防止退化，子空间多在微调前固定，也缺少最优安全子空间与安全保持任务更新的理论刻画。",
+          "label": "问题"
+        },
+        {
+          "text": "ASCENT把安全写成参数函数，用一阶近似在秩和范数预算下取安全梯度的top-r奇异分量做校准，只压制有负贡献的任务分量，并按保留率周期重估。",
+          "label": "方法"
+        },
+        {
+          "text": "四个模型与四项任务上，Table 1里ASCENT相对Original与各基线效用更高且ASR更低。作者称效用绝对变化至多20.3，ASR绝对降幅至多35.5；GSM8K下五项平均ASR从44.8%到10.5%。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "论文未专门写出局限或后续方向。实验含四个模型、四项下游任务；主ASR用GPT-4o，JailbreakBench另用Gemini-3.1-Pro。论文未报告重复次数，也未报告越狱攻击内部使用的模型。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08061"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08061",
       "aisafetyhot": "https://aisafetyhot.com/items/j7uzi23gr91tit5u8g1u6iqqe"
@@ -2299,7 +2719,24 @@
     "selected": false,
     "attention": null,
     "summaryZh": "论文指出自动手语翻译（SLT）已进入消费产品，而面向儿童的 AI 与平台信任安全工具依赖文本过滤和诱导分类器做判断，使用 SLT 的听障儿童因此要经过一层翻译才能触达这些防护。作者称未发现任何公开记录的系统对两者做过联合评测，且主流已部署的 SLT 模型既未在 18 岁以下手语使用者上训练，也未做正式评测。翻译中若改变否定、参与者角色、保密性、紧迫性或求助表达，可能在不影响流畅度的情况下改变安全决策。论文为此提出一套以聋人视角为依据的部署前审计方案，包含失败分类、脱敏场景模式、四种对照条件和四项结果指标，计划以 Auslan 作为首个案例研究。该文为 5 页、1 张图，已被 NeurIPS 2026 Workshop on Child Safety in AI 接收为非存档海报。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "消费级ASL到英语翻译已接入听写、发消息和对话助手，儿童安全机制却只看文本。作者称未见公开的联合评测，且该模型未在18岁以下手语者上训练或正式评测。改动否定、角色、保密、紧迫或求助，可能在流畅度不受扰时仍改变安全判断。",
+          "label": "问题"
+        },
+        {
+          "text": "提议聋人知情的部署前审计：同一净化场景以四种翻译进入同一文本安全机制。计划24–36个合成场景、七类安全相关失败，以及槽位保持、决策一致、分开的假阴假阳和不确定时的处理。计划首先做Auslan案例。",
+          "label": "方法"
+        },
+        {
+          "text": "作者在Limitations称审计是前瞻性的，不声称已有事件由翻译错误造成；ASL到英语的证据不给出Auslan错误率，成人代理也不能说明儿童上的表现。第4节写明评测为计划，未报告结果。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07519"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07519",
       "aisafetyhot": "https://aisafetyhot.com/items/qw06qlrv1im9pfxm563pj8rnt"
@@ -2356,7 +2793,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "一项名为 STCA 的研究针对自动驾驶视频视觉语言模型，考察可迁移的黑盒对抗风险。该工作聚焦黑盒条件下对抗样本的跨模型迁移能力，用于研究此类视频模型面对对抗输入时的鲁棒性。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "驾驶视频VLM会被对抗扰动误导，既有攻击多停留在单帧空间扰动，未处理帧间时序连贯。作者要在黑盒迁移设定下同时破坏空间语义与跨帧一致性。",
+          "label": "问题"
+        },
+        {
+          "text": "STCA分三阶段：用Gemini 2.5与Video-LLaVA生成多字幕并用CLIP选关键帧；以TCL为代理、YOLOv8掩码做空间扰动；再以LanguageBind为代理，用运动掩码破坏相邻帧时序连贯并迁移。",
+          "label": "方法"
+        },
+        {
+          "text": "在BDD100K与nuScenes上测三个受害VLM。作者报告完整流水线ASR多高于仅空间攻击；Qwen2.5-VL在nuScenes上为96.5%，BDD100K上Dolphin完整流水线为46.2%，低于其仅空间的46.9%。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "论文未专门写出自身局限。实验覆盖BDD100K评测800段、nuScenes 85个前视场景和三个受害VLM，指标为词重叠ASR与SSIM；未报告防御评测、受害模型查询次数和人工一致性。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08331"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08331",
       "aisafetyhot": "https://aisafetyhot.com/items/dk4yfdsfaxnn7k6uhkyh7np5m"
@@ -2498,7 +2956,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "DEFER1 研究多智能体防御，并报告受控测试中的攻击成功率降低。这些受控测试结果不等于该方法对任意模型或运行环境均有效。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "多智能体系统经工具、共享记忆和委托接入不可信内容，组合防御常把终裁交给难审计的LLM judge。作者要测量其中有多少验证能由确定性检查解决，哪些攻击仍需要判断。",
+          "label": "问题"
+        },
+        {
+          "text": "作者把已有防御收成五条原则，实现为DEFER：28项检查先确定性否决，未决提案交给四个开源权重judge，法定人数3/4。测试床是host中介的垂直四阶段MAS，阈值在CyberOps手工设定后不做域间调整。",
+          "label": "方法"
+        },
+        {
+          "text": "Qwen3-235B上，四域ASR从30.0%到3.0%；CyberOps中DEFER为2.2%，只靠judge为34.7%，无防御为32.0%。确定性检查首先拦截77.9%的被拦尝试。ASB上DEFER的ASR为1.8%。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称结果是静态攻击下确定性层的上界，回放不能再生改判后的后续提案。工具为桩，四域共用一个骨架，水平拓扑未测。论文未报告ASB干净任务的良性完成率，也未在本套件上运行Progent或CaMeL。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07657"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07657",
       "aisafetyhot": "https://aisafetyhot.com/items/du0u0uku185qe4v35zgwlogy4"
@@ -2519,7 +2998,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出一种通过行为克隆训练的 System-1 决策算子，用 330K 参数即可匹配 1.33M 参数强化学习算子的性能，并将 3,685-token 的推演压缩为 6-token 决策且不损失准确率。rank-4 变体仅 23K 参数，为最强已发表技能算子的 1/58，足以应对 SearchQA 并接近满足 LiveMath。该方法在五个任务和三个骨干模型上可迁移，训练后数月发布的 LiveMath 题目上仍保持分布外增益。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "模型已会的任务仍在拉长推理。KV-Skill要1.33M参数和GRPO；其自身BC对照停在基线（SearchQA 68.4，LiveMath 20.2）。",
+          "label": "问题"
+        },
+        {
+          "text": "DecSteer在D=8个深度注入共享低秩残差，RMS后过SiLU，输出投影与门控零初始化。损失只算答案token，默认330,248参数。",
+          "label": "方法"
+        },
+        {
+          "text": "Table 1：Qwen3.5-4B上BC算子LiveMath 80.9±1.8、SearchQA 81.1±1.1。作者称中位输出3,685 token收到6。RL-skill的DocVQA为95.0±2.6，高于94.8±0.7。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "第8节：适于单步映射；换尺寸要重训；饱和基座不加准确率，价值在加速；模式切换技能的负系数作者称不安全。主对照多引用已发表分数。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.06950"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.06950",
       "aisafetyhot": "https://aisafetyhot.com/items/b9wt5519k5oj6nuz1sssotvqn"
@@ -2543,7 +3043,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "AnyBottle 是一种构建紧凑、任务专属概念瓶颈模型（CBM）的方法，只需一个冻结骨干网络和一个无监督概念池（如稀疏自编码器），由在同一骨干上训练的黑盒教师模型逐轮引导概念选择，候选概念限定在师生分歧区域。模型按选择顺序做嵌套 dropout 训练，使最终瓶颈可从任意概念前缀准确预测，推理时对简单输入用更少概念、对困难输入用更多概念。在六个视觉和两个文本数据集、两种教师范式下，AnyBottle 比无标注基线概念更少、概念一致性更高，同时接近黑盒参考模型。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "无标注概念瓶颈常用过大且静态的词表，检查和专门领域覆盖都困难。作者希望只保留任务与样本需要的概念，且不依赖概念标注或语言对齐骨干。",
+          "label": "问题"
+        },
+        {
+          "text": "冻结骨干与无监督概念池后，用黑盒教师的残差和归因盲区贪心加入概念，直到与教师的差距进入容差或验证不再改善。再按发现顺序做nested dropout，推理时可在置信度够高时停在概念前缀。",
+          "label": "方法"
+        },
+        {
+          "text": "视觉六集与文本两集上，作者称更少概念即可接近教师。ISIC-7的K为447.0±30.0、Δ为−2.2±0.2（Table 3）。AG News上mlp版Acc为90.36±0.25（Table 2）。作者称弱教师会限制恢复。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出选择追求与教师一致而非概念正确，教师的捷径会被复现；概念必须已在SAE词典中，且性能绑定教师。计算开销随选择轮数增长。实验覆盖六个视觉集、两个文本集和两种文本教师，结果为三种子平均。论文未报告统计显著性，也未给出推理置信度阈值。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08552"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08552",
       "aisafetyhot": "https://aisafetyhot.com/items/h53erswz20c3lzfpdcm63x5ra"
@@ -2606,7 +3127,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出两阶段智能体轨迹审计框架，第一阶段用单事件与轨迹序列规则筛选待检动作，第二阶段由 LLM 审计智能体结合前序轨迹在执行前审查每个被选动作，并用训练数据联合优化门控规则与审计指令。在公开基准 OpenAgentSafety 上，该框架将每次运行的 LLM 审计次数从 8.15 降至 2.33、token 用量从 47.8k 降至 14.6k，检测率为 72.8%，而全量审计为 81.5%。在两个模拟多智能体案例中，框架标记出全部恶意轨迹，同时将审计 token 用量减少超过 80%。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "LLM智能体能执行命令、改文件并委派其他智能体，可能伤害所在系统。逐动作LLM审计随遥测量变贵，规则护栏又可能被混淆绕过或漏掉规则外的有害动作。",
+          "label": "问题"
+        },
+        {
+          "text": "先用单事件和轨迹序列规则做确定性门控，只把选中的待执行动作交给LLM审计器，在执行前结合前序轨迹裁决。优化器LLM在开发数据上按检出、误报和token成本联合改规则与审计提示词。被标记则阻断动作并终止该智能体。",
+          "label": "方法"
+        },
+        {
+          "text": "OpenAgentSafety测试集调参门控TPR 72.8%、FPR 5.9%，平均2.33次审计、14.6k token；全量审计81.5%、8.15次、47.8k。两场景攻击检出10/10，作者称token降超80%。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者在Section 7把跨任务分布标定标记规则，以及加入合法敏感操作、增加场景、控制轨迹生成模型、评估避开显式线索的monitor-aware攻击者，列为后续方向。论文未报告审计上下文长度K。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07256"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07256",
       "aisafetyhot": "https://aisafetyhot.com/items/yvtqsuxv8y4i69h1slvamfjjj"
@@ -2707,7 +3249,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "针对文本到图像模型中概念表征偏离线性方向的问题，研究者提出 KANSteer，用 Kolmogorov-Arnold Networks（KANs）将概念遍历建模为穿过中间状态的曲线，使引导方向可随概念变化并保持可解释性。在多个概念和文本到图像扩散 Transformer 上，其激活轨迹明显偏离直线，KANSteer 比线性引导拟合更贴近、对中间属性的遍历更平滑。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "文生图模型里，有序视觉概念的中间状态不一定在端点直线上。按线性表征假设加固定方向，会在过渡段漏掉这些状态。",
+          "label": "问题"
+        },
+        {
+          "text": "KANSteer在同一噪声下取K=5档属性的block 18残差，用KAN学一维坐标和曲线，再按坐标位移α生成随位置变化的steering向量。",
+          "label": "方法"
+        },
+        {
+          "text": "作者报告三种FLUX.1配置上KANSteer各项都优于同监督线性方向；1-step上拟合的轨迹不改即可用于4-step与dev。只拟合前三档时，外推仍优于把直线延长。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "论文未专节讨论局限。覆盖FLUX.1-schnell的1-step与4-step及FLUX.1-dev；轨迹在block 18的1-step上拟合。外推行未写步数。未报告λ、重复次数与人工一致性。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.06945"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.06945",
       "aisafetyhot": "https://aisafetyhot.com/items/asdby303i0d1tqa24mantd3rt"
@@ -2729,7 +3292,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 RAG-PIBench，一个面向 RAG 式提示注入检测的基准，包含 4,876 条上下文样本，划分为冻结的训练、验证与受保护测试集。该基准采用泄漏感知的构建流程与严格评测协议，对比了关键词、语义参考、TF-IDF 与 Transformer 类检测器。DistilBERT 在受保护测试集上取得最佳表现（F1 = 0.896，PR-AUC = 0.968），TF-IDF SVM 与逻辑回归仍具竞争力。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "RAG检索内容可嵌入间接提示注入，良性文档也会含指令，检测还可能被词法捷径和训练测试泄漏抬高。作者要一个能区分良性上下文指令与恶意指令覆盖的泄漏感知基准。",
+          "label": "问题"
+        },
+        {
+          "text": "RAG-PIBench将宿主上下文与嵌入片段渲染成RAG式输入，恶意按覆盖意图标注，良性也可含指令。经溯源、质控和捷径审计后冻结训练、验证、保护测试，并比较关键词、MiniLM参照、TF-IDF与两个编码器。",
+          "label": "方法"
+        },
+        {
+          "text": "978例保护测试集上，DistilBERT的F1为0.896、PR-AUC为0.968，TF-IDF SVM的F1为0.871。Keyword召回率0.104。DeBERTa-v3把全部样本判为恶意，精度0.500。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出只做二分类检测、不含下游缓解，结果限于该基准而非普遍适用；变换器仅两个编码器，主测试集类别平衡，输入仅英文。实验在978例保护测试集上各评一次，诊断套件不参与选型，论文未报告其分数。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08571"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08571",
       "aisafetyhot": "https://aisafetyhot.com/items/fhudnjtcfnrb0fj0qjwns32vo"
@@ -2792,7 +3376,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 SSRFT（Supervised Safe-Role Fine-Tuning），将安全对齐重构为对预设安全角色的内化，而非训练显式拒答模式。该方法基于心理测量题、少量越狱提示词和安全角色描述构建 SRQA 数据集，合成并验证角色一致的回答后扩展至多样场景。在多个 Base 与 Instruct 模型上，SSRFT 比标准 SFT 对预填充攻击更鲁棒、对未见越狱领域泛化更好，同时减少对良性查询的过度拒答并保持通用能力。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "安全SFT和RLHF常把安全绑在已知越狱拒答上，拒答又集中在开头token，并容易过拒。作者要让模型内化预定义安全角色，而不是记忆拒答前缀。",
+          "label": "问题"
+        },
+        {
+          "text": "SSRFT用IPIP-NEO、MBTI、WVS-7和少量中英越狱题，由Qwen3-Max按安全角色描述生成并校验回答，再扩成日常场景得到SRQA，然后做标准SFT。训练样本不显式包含角色描述。",
+          "label": "方法"
+        },
+        {
+          "text": "Gemma2-2B五基准平均ASR为1.76%，SFT为7.68%（Table 4）。四个Base在prefilling下ASR升幅更小。Qwen2.5-3B与两Instruct模型的平均ASR不更低。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者计划扩大后训练规模、提高跨模型族适应性，并把安全角色内化扩展到动态且依上下文的对齐（第5节）。实验含4个Base与2个Instruct；PKU-SafeRLHF与提示词角色扮演只在LRC-4B上比较，RLHF用1%子样本。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07023"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07023",
       "aisafetyhot": "https://aisafetyhot.com/items/srobgej6toluu2m2ais3ynufa"
@@ -2902,7 +3507,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究提出一个 2×2 纵深防御框架，将内部激活引导与外部记忆处理分离，在 MemSyco-Bench 上评估四种开放权重模型，涉及 10 个引导系数和五种记忆防御配置。其中三种配置为新设计：重写全部记忆、对每条记忆保留/重写/丢弃的 Router Gate，以及丢弃全部记忆。在 Llama 3.1 8B 上，Router Gate 配合轻度反向引导（α = -1.5）将评委平均谄媚率从 35.80% 降至 31.32%，平均准确率从 43.99% 变为 43.31%，但该下降在 149 个样本上不具统计显著性（配对 p = 0.08 至 0.63）。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "长期记忆让模型跨轮保持个性化，但检索到的用户历史可能含错误信念、主观信念或过时主张，诱发 memory-induced sycophancy。已有防御主要处理检索上下文，很少与模型内部的谄媚偏向一起评测。",
+          "label": "问题"
+        },
+        {
+          "text": "用100对提示在层20提取谄媚方向，以系数α在相邻三层做线性转向。外部五种处理：不防御、逐条改写、Router Gate、清空、MemSyco警示。全量生成1550条，防御在固定250条上由三名LLM评委判定。",
+          "label": "方法"
+        },
+        {
+          "text": "Llama 3.1 8B、α=0：Router Gate 三评委平均准确率 43.99%，清空记忆 13.51%。该门控下 α=−1.5 的平均谄媚从 35.80% 到 31.32%，配对检验不显著。作者称记忆过滤成立，反向转向未显示额外贡献。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称线性转向只是近似，未做随机方向或事实同意对照；防御判定在250条上，且DeepSeek兼做门控分类器。反向转向是否加分，作者称要更大配对样本。四个开源模型、贪心一次生成；论文未报告与人工一致性。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07403"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07403",
       "aisafetyhot": "https://aisafetyhot.com/items/m6exkxwt10s1k0we1tca6zoa3"
@@ -2926,7 +3552,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究团队在 GraphCast 上训练稀疏自编码器（SAE），发现该 AI 天气模型将大气河强度（以积分水汽输送 IVT 衡量）作为稳定的内部变量进行计算，尽管 IVT 既非输入也非预测目标。标准 SAE 与 Matryoshka SAE 均能捕捉这一变量，后者还按重要性排序并揭示概念间关系；大气河概念贯穿模型各层，直接干预实验证实了其因果作用。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "AI天气预报的内部计算仍不清楚：特征归因只指出敏感输入，不说明模型算了什么。作者以大气河为例，问GraphCast是否把既非输入也非目标的强度IVT当成稳定内部变量。",
+          "label": "问题"
+        },
+        {
+          "text": "在GraphCast第0、8、15层训练Standard与Matryoshka SAE（宽4096，每样本k=32）。前者词典无序，后者按前缀排序。用空间包含度量父子嵌套，并在第8层缩放概念强度做转向。",
+          "label": "方法"
+        },
+        {
+          "text": "Matryoshka第8层CONCEPT 99与四区最大IVT全时段平均相关为0.51，子概念3153空间包含0.953且更偏高IVT。作者称去掉99会减弱AR，放大作用于水汽通道而非风；3153同样转向无效果。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者在结论中写明只刻画了一对父子概念，并在3.2节把哪些子概念因果、哪些只检测列为后续方向。实验覆盖GraphCast上6个SAE、四区相关和一次5日转向；论文未报告转向曲线数值与重复次数。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07583"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07583",
       "aisafetyhot": "https://aisafetyhot.com/items/w0tegc5fsb106wp74orfm9waz"
@@ -2948,7 +3595,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "ATLAS 是一个基于查询的黑盒对抗攻击框架，将攻击生成建模为主动学习中的水平集估计问题，结合校准近似与局部-全局采样架构定位并采样包含对抗样本的输入区域。在 MNIST、CIFAR 和 ImageNet 的标准与对抗训练模型上，ATLAS 生成的对抗样本比 NES、SignHunter、BayesOpt 等查询式黑盒攻击更具代表性，并在有限查询预算下覆盖更多对抗区域。该框架可用于开发中系统的鲁棒性分析与持续审计。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "固定攻击清单不足以评估学习系统。作者要在黑盒、查询有限时发现能诱发失败的输入集合，而不是单个对抗样本。高维下对抗区域可能很小，无引导搜索很难碰到。",
+          "label": "问题"
+        },
+        {
+          "text": "ATLAS把攻击生成写成主动学习的水平集估计。残差模型校准代理预测；边界信任域探区域边缘，饱和信任域在预测的内部取样，同时得到对抗值函数和对抗集。",
+          "label": "方法"
+        },
+        {
+          "text": "对照包括toy上的AP2L、TRLSE，以及图像上的NES、SignHunter、BayesOpt和均匀采样，预算650。作者称ATLAS对抗集更具代表性：Margin J在5个图像目标里4个最高，ImageNet标准模型例外。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "论文未单列局限。作者计划扩展目标并用对抗集训练模型，也计划分析会使同类方法失效的防御。实验覆盖三个非凸函数至100D，以及MNIST、CIFAR-10、ImageNet的标准与对抗训练分类器；图像搜索在生成器潜空间。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07323"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07323",
       "aisafetyhot": "https://aisafetyhot.com/items/mcchxrnsghnlckkqrumecnhcz"
@@ -2970,7 +3638,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "NetAgent 是首个用于多任务流量分析的智能体框架，无需任务特定训练即可完成复杂任务理解、动态分解编排与长时程分析。它包含知识增强的工作流规划、150+ 工具的动作空间、统一代码执行空间、三层记忆以及沙箱与运行时修复五项设计。在 9 个基准上，NetAgent 在几乎所有任务上超越 23 个单任务和 5 个多任务基线，对未见流量分布的 F1 达 90.04%，而最佳基线仅为 2.74% 和 3.04%。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "安全运营常要把加密应用分类、隧道检测和主机研判串成工作流。现有方法多为单任务模型，或预训练后再微调的流量基础模型；作者称单体模型不能把复杂分析拆成协同子任务。",
+          "label": "问题"
+        },
+        {
+          "text": "NetAgent以决策者、规划器、执行器闭环回答自然语言查询。规划时检索攻击规则并映射到多视图特征；执行器在持久Python空间调用157个工具并按数据流修复失败步骤；三层记忆把结论压成可复用知识。",
+          "label": "方法"
+        },
+        {
+          "text": "Table 3中9项有8项NetAgent的F1最高。跨数据集测试上单任务、多任务基线最高为2.74%和3.04%，NetAgent为90.04%；5倍骨干网背景流量下NetAgent降至95.1% F1，下降4.85个点。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者在Discussion写明它不是实时处理器，能力受工具库和攻击知识库覆盖约束；Conclusion计划做实时集成、扩大覆盖和并行架构。实验为9个基准、28个基线、F1与10折交叉验证，泛化与背景偏移各在一个设置上报告。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07386"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07386",
       "aisafetyhot": "https://aisafetyhot.com/items/n7u5fbn1voejhjfg6t5u9jk65"
@@ -2998,7 +3687,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "一篇综述系统梳理了在部署阶段为大语言模型（LLM）增强\"参数内记忆\"的方法：把承载记忆的参数对象在推理时接入前向传播，以补充上下文学习（ICL）占用上下文容量、重复离散编码成本随上下文长度增长的问题。综述用两个正交维度组织该领域：参数放置位置（Embedding、Attention、FFN 层或 Hybrid）与参数获取时间（部署中在线获取 vs 部署前离线获取），并讨论了干扰、安全、与 ICL 协同设计及递归自我改进等开放方向。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "LLM与智能体需要纳入预训练之后的文档、偏好和交互经验。作者称把它们全部做成上下文token会占用窗口，计算和延迟随长度增长；稀疏注意力和KV压缩只能缓解。",
+          "label": "问题"
+        },
+        {
+          "text": "记忆对象由获取算子产生，再由增强算子在推理时插入前向。纳入须同时满足参数形式、独立获取和部署时增强。方法按注入位点（Embedding、Attention、FFN、Hybrid）和形成于服务前或服务中来归类。",
+          "label": "方法"
+        },
+        {
+          "text": "作者未跑数值实验。按机制推断的定性档，online方法几乎总是按请求或按token物化，且短暂或限于会话；offline方法几乎总是部署前形成并持久，写入为高档、读取为低档。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出只覆盖文本，未纳入MLE、MLA、mHC，比较也没有统一数值测量。开放方向包括长流上的冲突检测与容量分配、安全感知的写入门，以及与ICL协同和模型原生递归自我改进。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08630"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08630",
       "aisafetyhot": "https://aisafetyhot.com/items/lih6dz05s2n7o78aoazjb0c5q"
@@ -3133,7 +3843,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "ConEx 是一个将显著性可视化与概念推理结合的可解释性框架，能自动发现类别专属概念并用概念激活向量（CAVs）表示，无需人工监督。它通过架构特定的掩码机制降低分割掩码噪声、提升概念纯度，生成揭示各概念出现位置及其对预测贡献的显著性图。作者提出 VCM 与 CCM 两项指标衡量概念对齐，实验显示 ConEx 在忠实性、分割和概念质量基准上达到 SOTA。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "像素显著性标出注意位置但语义有限，概念方法能指出属性却缺少空间定位。ConEx要自动发现类别概念，并给出其位置与对预测的贡献。",
+          "label": "问题"
+        },
+        {
+          "text": "先按 Oikarinen 等（2023）的流程用 GPT-4o 抽类别文本属性，再用 GroundedSAM 按出现率与空间覆盖筛选并分割。CAV 为正负片段嵌入的质心差；CNN 用逐层掩码，解释由图与 LRP 相乘后按概率下降加权。",
+          "label": "方法"
+        },
+        {
+          "text": "Table 1 与附录 Table 8 中，RN、DN、CN 上 ConEx 的 INS 高于所列方法、DEL 更低。作者还报告概念质量、FunnyBirds 与 IN-S 分割更高；Table 3 里 ViT 的概念指标低于 CNN。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出分割依赖 GroundedSAM、可能有空间不确定性，ViT 目前无实例级局部解释，且慢于 Grad-CAM。扰动忠实性表覆盖 RN、DN、CN；概念质量表另含 ViT-B 与 ViT-S。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.04605"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.04605",
       "aisafetyhot": "https://aisafetyhot.com/items/bram0750vl8nods28yg9s976b"
