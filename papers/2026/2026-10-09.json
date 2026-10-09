@@ -18,24 +18,6 @@
     "discoveredAt": "2026-10-08T21:50:24.912Z"
   },
   {
-    "arxivId": "2610.10845",
-    "title": "Real Long-Term Memory for AI: A 50-Million-Token Window That Is Faster and Cheaper Than Recompute",
-    "titleZh": "galahad-kv 在单张 H100 上实现 5000 万 token 的 KV 状态复用",
-    "authors": [],
-    "category": "tip",
-    "selected": false,
-    "attention": null,
-    "summaryZh": "研究者测试了公开软件包 galahad-kv，它把每块约 16,000 token 的 KV 状态按字节精确存入加密本地 NVMe 磁盘，之后直接加载而无需重新计算。测试在单张 NVIDIA H100 上通过 vLLM 服务 5000 万 token 的公开文本，使用 Gemma 4 12B 和 Gemma 4 31B，在 0 到 5000 万 token 深度上探测的 100 个块全部从加密存储加载且未重算。加载一个块比重新计算快 2.8 至 4.3 倍，GPU 能耗低 8.8 至 12.3 倍，整个 5000 万 token 流中 GPU 显存保持平稳。对数百万 token 之前植入的事实提问，12B 模型 100 次中答对 82 次，31B 模型答对 98 次，两者均未编造答案。",
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2610.10845",
-      "aisafetyhot": "https://aisafetyhot.com/items/q08gsuv2g64qfcmo7w2buzku3"
-    },
-    "publishedAt": "2026-10-06T20:00:00.000Z",
-    "timelineAt": "2026-10-09T00:24:34.356Z",
-    "discoveredAt": "2026-10-09T00:24:34.356Z"
-  },
-  {
     "arxivId": "2610.07258",
     "title": "Lineage-Aware Memory Governance: A Derivation-Gated Framework for Privacy-Preserving Column-Level Access Control in Enterprise AI Agents",
     "titleZh": "AMU：用派生血缘门控实现企业 AI Agent 列级访问控制",
