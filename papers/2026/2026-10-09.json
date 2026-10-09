@@ -598,23 +598,23 @@
     "quickRead": {
       "parts": [
         {
-          "text": "移动 LLM agent 在执行任务时会接触广告、WebView、消息通知等非 app 可控的第三方内容，成为可被利用的 confused deputy。现有 agent 安全研究多针对 web 或桌面，移动端的这类间接攻击面尚未被系统研究。",
+          "text": "移动端LLM智能体具备屏幕感知与跨应用执行权限，但运行中必须处理广告、通知等不受应用控制的第三方内容。若智能体无法隔离信任边界，攻击者无需控制设备或应用，即可将其作为confused deputy操纵，危及系统与数据安全。",
           "label": "问题"
         },
         {
-          "text": "作者在严格威胁模型下（攻击者不控制任何设备代码或 app，只能投放内容）设计了 8 类攻击案例，映射到 MITRE ATT&CK Mobile、OWASP Agentic Top 10 与 NIST AI RMF。并构建 MobiRed 自动化框架，用 YAML 场景编译为可执行 trial，在插桩 Android 测试床上注入内容并收集 telemetry，按 Notice/Attempt/Execute 自动评分。",
+          "text": "作者构建了自动化测试框架MobiRed。框架通过YAML配置将良性任务与攻击工作流、模式及分发通道组合为测试用例，在安卓测试床上注入输入并收集多维遥测，最终由自动化评估器按感知（Notice）、企图（Attempt）、执行（Execute）三阶段量化攻击进展。",
           "label": "方法"
         },
         {
-          "text": "在 8 个主流移动 LLM agent 上跑了 3,160 次对抗 trial（含配对 benign 执行）。所有 agent 至少对一种攻击 workflow 脆弱；带恶意指令的欺诈广告成功率超过 80%，恶意软件部署（需绕过系统警告）对先进 agent 平均成功率 18.75%。简单直接、UI 简单、in-app 渠道（尤其 interstitial 广告）更易得手；跨 app 渠道较少被执行。观察到 capability–risk coupling：benign 任务完成越好、底层 LLM 越强的 agent，往往攻击成功率也越高。",
+          "text": "在8个移动智能体上执行3,160轮对抗测试。低摩擦欺诈广告攻击广泛有效，伪造登录平均执行率达51.25%；需绕过系统警告的恶意软件部署在Mobile-Agent-E上执行达9/10次；良性任务完成率高的骨干模型普遍表现出更高的攻击执行成功率。",
           "label": "实验与结果"
         },
         {
-          "text": "作者指出跨 app 攻击目前受限于 agent 能力而非根本鲁棒性，随着 agent 变强这类 workflow 可能更实用；研究强调需要针对移动生态特有攻击面的防御。材料未给出其他明确局限或未来工作方向。",
+          "text": "论文正文未专门设立小节讨论局限与后续方向。实验覆盖8个移动智能体架构与12种骨干模型，在安卓9–16模拟器与真机上执行3,160轮测试；涵盖8种攻击工作流与应用内/跨应用通道；研究未评估专门的提示注入防御算法。",
           "label": "局限与可以继续做的"
         }
       ],
-      "sourceName": "论文全文（AI 生成）",
+      "sourceName": "论文 PDF（Gemini 生成）",
       "sourceUrl": "https://arxiv.org/abs/2510.27140"
     },
     "links": {
@@ -1241,23 +1241,23 @@
     "quickRead": {
       "parts": [
         {
-          "text": "LLM agent 用摘要式 prompt compression 压缩长上下文，但压缩改变了安全边界：前端过滤器只看压缩前的输入，后端 agent 却按新生成的压缩上下文行动。作者指出存在一种新漏洞 relinking——压缩器像 confused deputy 一样，把分散的、局部无害的片段拼成完整的恶意指令。",
+          "text": "基于摘要的提示词压缩改变了智能体安全边界：前向过滤器检查压缩前的原始上下文，而受信任压缩器可能将分散的局部良性片段重组为完整的后端恶意指令，形成TOCTOU漏洞。现有输入过滤和输出验证均无法检测这种指令生成过程。",
           "label": "问题"
         },
         {
-          "text": "作者把这种攻击形式化为 adversarial relinking：攻击者只植入无害片段，不放入完整指令、不依赖显式重组规则、不做对抗扰动。他们提出 Relink 工具，用 relink DSL 和 Decompose、Disguise、Distribute 三阶段流水线，把恶意 payload 拆成压缩前不存在的良性片段。",
+          "text": "基于动作图和上下文序列两重视图构建DSL，提出三阶段自动化攻击RELINK：Decompose剪除动作与参数间的绑定边；Disguise注入非绑定的角色句柄保证可恢复性；Distribute将两部分掩码投影插入到远端宿主锚点中。",
           "label": "方法"
         },
         {
-          "text": "在四个长上下文 agent benchmark 上，Relink 的 Relink Rate 和 Backend Action Rate 达 86.9%，而配对的 clean-split 对照仅 17.0%。机制探针、泛化实验、消融和 OpenClaw、Claude Code 案例显示该漏洞跨压缩率、摘要提示、压缩器、后端模型和真实 agent 存在；评估的 11 种防御都无法可靠拦截。作者提出的 KBRA 防御把残余 Backend Action Rate 降到 0.0% 并保持良性效用。",
+          "text": "在4个长上下文基准上，RELINK使整体重链率和后端执行率达到86.9%（对照组17.0%），且在不同压缩率、压缩模型和后端模型下均保持有效；真实系统OpenClaw和Claude Code案例显示默认压缩命令同样会触发恶意指令重链。",
           "label": "实验与结果"
         },
         {
-          "text": "KBRA 只保护压缩边界，不覆盖整个 agent 栈：如果压缩前源上下文本身已授权恶意动作（如直接 prompt injection），KBRA 会接受，需依赖常规输入过滤器。定义提取器和投影的配置工件（工具 schema、实体别名）属安全关键，必须审计。作者在附录中分析了针对 KBRA 的白盒自适应攻击者。",
+          "text": "KBRA防御仅保护压缩边界，对源上下文已完全许可的直接注入无效，且依赖工具模式等配置工件；评测覆盖4个基准共619个样本，测试了6种压缩模型和6种后端模型，但长上下文全注意力分析在部分样本上出现显存溢出报错。",
           "label": "局限与可以继续做的"
         }
       ],
-      "sourceName": "论文全文（AI 生成）",
+      "sourceName": "论文 PDF（Gemini 生成）",
       "sourceUrl": "https://arxiv.org/abs/2606.21732"
     },
     "links": {

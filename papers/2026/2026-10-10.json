@@ -16,5 +16,23 @@
     "publishedAt": "2026-10-04T02:53:23.000Z",
     "timelineAt": "2026-10-09T16:05:52.690Z",
     "discoveredAt": "2026-10-09T16:05:52.690Z"
+  },
+  {
+    "arxivId": "2610.09296",
+    "title": "论文用生成式 Agent 建模模拟私有测试集对评分与用户体验差距的影响",
+    "titleZh": "论文用生成式 Agent 建模模拟私有测试集对评分与用户体验差距的影响",
+    "authors": [],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "一篇 arXiv 论文提出用结合规则市场动态与 LLM 驱动策略主体的模拟架构，研究基准测试设计如何影响模型提供方、用户、资助方和监管者的决策。作者将基准、消费者需求和提供方能力建模为推理、编程、知识、安全、沟通、智能体六个能力维度上的向量，并以基准留出集设计为案例。模拟发现，从公开基准转向私有留出基准在多数基准上缩小了评分与用户满意度的差距，但在少数基准上会扩大差距，取决于留出权重把评分归给哪些能力。作者称该模拟可作为研究评测与政策选择如何反过来重塑生态的假设生成沙盒。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.09296",
+      "aisafetyhot": "https://aisafetyhot.com/items/fw1b4bwqs4596pq2vfdhzvbro"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T17:19:19.856Z",
+    "discoveredAt": "2026-10-09T17:19:19.856Z"
   }
 ]
