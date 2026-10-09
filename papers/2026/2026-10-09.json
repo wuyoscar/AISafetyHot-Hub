@@ -18,6 +18,42 @@
     "discoveredAt": "2026-10-08T21:50:24.912Z"
   },
   {
+    "arxivId": "2610.08215",
+    "title": "Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments?",
+    "titleZh": "Learn2Play Bench：LLM Agent 在陌生环境中从经验学习的能力评测",
+    "authors": [],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 Learn2Play Bench，用规则新颖或反直觉的文本游戏评测 LLM Agent 从交互经验中学习的能力，这些游戏提供可复现反馈与自动评分，并变换游戏实例以检验迁移。评测考察基座模型、自演化方法和 Agent harness 对学习能力的影响，得出三点发现：保留完整的动作与反馈记录比把经验总结成规则或策略更有利于学习；顶尖人类玩家的峰值分数高于受测 Agent，且人类探索的策略更多样、重复动作更少；在基座固定时更换 harness 可提升表现并降低估计推理成本。项目网站为 https://liushiliushi.github.io/learn2play-bench-website/。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.08215",
+      "aisafetyhot": "https://aisafetyhot.com/items/cejurtw6duj1oseaicoegdhzg"
+    },
+    "publishedAt": "2026-10-07T20:00:00.000Z",
+    "timelineAt": "2026-10-09T03:30:35.806Z",
+    "discoveredAt": "2026-10-09T03:30:35.806Z"
+  },
+  {
+    "arxivId": "2610.12402",
+    "title": "SpaceCast-Bench: Evaluating Predictive Spatial Reasoning in Vision-Language Models",
+    "titleZh": "SpaceCast-Bench 发布：评测视觉语言模型的预测性空间推理",
+    "authors": [],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 SpaceCast-Bench，称其为首个直接诊断式评测预测性空间推理的基准，围绕观察-变换-推断框架，从 182 个真实场景构建 3862 道题，覆盖静态感知、局部预测与全局预测三个层级的 16 种任务类型。评测 21 个模型显示明显差距：最强模型仅达 58.0%，人类表现为 87.2%，空间专用模型接近随机水平。对照分析显示桥接视图对整合分散观察至关重要，显式 3D 证据比生成的结果图像或视频更稳定地帮助模型。用程序化生成的数据微调后，Qwen3-VL-4B 从 34.0% 提升到 65.7%，并在六个域外基准上取得宏平均增益。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.12402",
+      "aisafetyhot": "https://aisafetyhot.com/items/cx2fcgkhvut1fmka6hv8gl2k2"
+    },
+    "publishedAt": "2026-10-07T20:00:00.000Z",
+    "timelineAt": "2026-10-09T03:30:35.773Z",
+    "discoveredAt": "2026-10-09T03:30:35.773Z"
+  },
+  {
     "arxivId": "2610.07258",
     "title": "Lineage-Aware Memory Governance: A Derivation-Gated Framework for Privacy-Preserving Column-Level Access Control in Enterprise AI Agents",
     "titleZh": "AMU：用派生血缘门控实现企业 AI Agent 列级访问控制",
