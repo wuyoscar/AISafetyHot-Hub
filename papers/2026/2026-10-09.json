@@ -70,5 +70,23 @@
     "publishedAt": "2026-10-04T20:00:00.000Z",
     "timelineAt": "2026-10-08T16:18:25.387Z",
     "discoveredAt": "2026-10-08T16:18:25.387Z"
+  },
+  {
+    "arxivId": "2610.08740",
+    "title": "Kosoy 提出鲁棒老虎机多项式时间学习器，推进 AI 对齐",
+    "titleZh": "Kosoy 提出鲁棒老虎机多项式时间学习器，推进 AI 对齐",
+    "authors": [],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "针对不可实现学习问题，Kosoy 在鲁棒老虎机框架下找到一个可用多项式时间学习器求解的特例，其遗憾界为 Õ(√T)。作者证明该特例的若干小幅推广均为 NP-hard，表明这一特例处于可处理性的边界。作者称，不可实现学习问题的高效学习器对解决 AI 对齐问题至关重要，本工作是该方向的一小步。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.08740",
+      "aisafetyhot": "https://aisafetyhot.com/items/vinc5ifuodyf2mpgaqdkdu7dh"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T02:35:42.826Z",
+    "discoveredAt": "2026-10-09T02:35:42.826Z"
   }
 ]
