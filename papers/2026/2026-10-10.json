@@ -39,24 +39,6 @@
     "discoveredAt": "2026-10-09T18:56:24.268Z"
   },
   {
-    "arxivId": "2609.33987",
-    "title": "Opera: A Verbal Critic Framework for Long-horizon Coding Agents",
-    "titleZh": "Opera：面向长程编码 Agent 的语言评论家框架开源",
-    "authors": [],
-    "category": "tip",
-    "selected": false,
-    "attention": null,
-    "summaryZh": "研究者提出 Opera，一个面向长程编码 Agent 的语言评论家（verbal critic）框架，把每条纠错当作持续跟踪的待办事项，直到被诊断的问题真正解决。Opera 通过周期性与事件驱动触发决定何时审查，用类型化操作符诊断问题，在交付前依据可见证据审核反馈，并跟踪 Agent 后续动作，以区分表面顺从与实际问题解决。作为测试时评论家，Opera 在 Terminal-Bench 2.1、SWE-Bench Pro 子集和 DeepSWE v1.1 上，跨四个策略模型将非评论家 Agent 的解决率分别提升最多 12.4、15.0 和 8.9 个百分点，并在三个基准上取得竞争性评论家基线中最高的平均解决率；策略模型自我评论时同样有提升。代码已在 GitHub 开源。",
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2609.33987",
-      "aisafetyhot": "https://aisafetyhot.com/items/lytkh18wwq0isocm0bhktp3ov"
-    },
-    "publishedAt": "2026-09-27T22:42:57.000Z",
-    "timelineAt": "2026-10-09T21:31:24.915Z",
-    "discoveredAt": "2026-10-09T21:31:24.915Z"
-  },
-  {
     "arxivId": "2610.04888",
     "title": "研究：事实核查评测可能混入声明时不可知的未来证据",
     "titleZh": "研究：事实核查评测可能混入声明时不可知的未来证据",
@@ -75,6 +57,24 @@
     "discoveredAt": "2026-10-09T16:05:52.690Z"
   },
   {
+    "arxivId": "2609.33987",
+    "title": "Opera: A Verbal Critic Framework for Long-horizon Coding Agents",
+    "titleZh": "Opera：面向长程编码 Agent 的口头批评者框架",
+    "authors": [],
+    "category": "tip",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 Opera，一个面向长程编码 Agent 的口头批评者框架，把每次纠正当作持续跟踪的笔记，直到被诊断的问题真正解决。它通过周期性与事件驱动触发决定何时审查，用带类型的算子诊断问题，在交付前依据可见证据审核反馈，并跟踪 Agent 后续动作以区分表面服从与实际解决。作为测试时批评者，Opera 在 Terminal-Bench 2.1、SWE-Bench Pro 子集和 DeepSWE v1.1 上，跨四个策略模型把非批评者 Agent 的解决率分别提升最多 12.4、15.0 和 8.9 个百分点，并在三个基准上取得竞争性批评者基线中最高的平均解决率，也能在策略模型自我批评时带来提升。代码已开源于 https://github.com/dongyuanjushi/Opera。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2609.33987",
+      "aisafetyhot": "https://aisafetyhot.com/items/lytkh18wwq0isocm0bhktp3ov"
+    },
+    "publishedAt": "2026-09-27T22:42:57.000Z",
+    "timelineAt": "2026-10-09T21:31:24.915Z",
+    "discoveredAt": "2026-10-09T21:31:24.915Z"
+  },
+  {
     "arxivId": "2610.09296",
     "title": "论文用生成式 Agent 建模模拟私有测试集对评分与用户体验差距的影响",
     "titleZh": "论文用生成式 Agent 建模模拟私有测试集对评分与用户体验差距的影响",
@@ -91,23 +91,5 @@
     "publishedAt": "2026-10-07T01:58:25.000Z",
     "timelineAt": "2026-10-09T17:19:19.856Z",
     "discoveredAt": "2026-10-09T17:19:19.856Z"
-  },
-  {
-    "arxivId": "2610.11233",
-    "title": "MiniVer-V：以证据充分性检验短视频事实的基准",
-    "titleZh": "MiniVer-V：以证据充分性检验短视频事实的基准",
-    "authors": [],
-    "category": "eval",
-    "selected": false,
-    "attention": null,
-    "summaryZh": "作者发布 MiniVer-V 基准，含 195 段短视频、5510 个多模态证据单元，用于区分视频内部一致性与需外部佐证的事实判断，证据池耗尽仍不充分时输出 insufficient。作者报告 Claude Sonnet 4 平均使用 4.5 个证据单元（约全量 16%），Macro-F1 为 0.510，全量为 0.518，差异未达统计显著；GPT-5.5 复现效率结论，Qwen2.5-72B 仅部分成立。外部检索未排除已有同题事实核查文章且未设事前日期截止，样本规模小、claim 均为中文，数据与代码仅计划发布。",
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2610.11233",
-      "aisafetyhot": "https://aisafetyhot.com/items/wjxromusnhtmcp5a3jrhklxob"
-    },
-    "publishedAt": "2026-10-08T04:33:14.000Z",
-    "timelineAt": "2026-10-09T22:00:28.308Z",
-    "discoveredAt": "2026-10-09T22:00:28.308Z"
   }
 ]
