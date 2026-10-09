@@ -3649,6 +3649,26 @@
     "discoveredAt": "2026-10-09T08:05:50.825Z"
   },
   {
+    "arxivId": "2610.07003",
+    "title": "论文：招聘 Agent 评分变化可能来自评分者偏差",
+    "titleZh": "论文：招聘 Agent 评分变化可能来自评分者偏差",
+    "authors": [
+      "Liu Zhang; Mark Esposito"
+    ],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文基于部署中的语音与视频面试 Agent 的 2611 份评分面试记录、重叠评审人、变更日志和支持工单，研究重复人工评分能否可靠反映 Agent 变化。研究发现评审人严厉程度差异明显，两位评审同一批次的综合指数相差 0.79 个标准差，评审人构成变化会抹平原始趋势。在调整评审人效应并平滑批次估计后，2026 年 3 月至 8 月被评估的可靠性上升 0.53 个标准差；可靠性也随已记录的部署发生变化。按未解释变动的估计速度，约五周后预测不确定性会达到观测到的最大部署差异量级，但该时间跨度估计不精确且基于少量阶跃式变化。同期面试相关支持工单相对技术问题工单每月下降约 10%。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.07003",
+      "aisafetyhot": "https://aisafetyhot.com/items/sgb1pzacmpxxeloi6815fyqdt"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T15:26:07.420Z",
+    "discoveredAt": "2026-10-09T15:26:07.420Z"
+  },
+  {
     "arxivId": "2610.08215",
     "title": "Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments?",
     "titleZh": "Learn2Play Bench 发布：用规则陌生的文本游戏评测 LLM Agent 从经验中学习的能力",
