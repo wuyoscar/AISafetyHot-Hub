@@ -1042,7 +1042,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 TRACE，一种只读取 checkpoint 更新的权重审计方法，无需模型查询，也不需要接触未知的 SFT 数据。研究发现有害合规 SFT 会在 checkpoint 更新空间留下连续、依赖目标的排序：以纯有害合规、安全目标和良性效用三类 SFT 定义参考几何后，checkpoint 级坐标 s_H 能追踪受控的有害目标组成，在四个 7-8B 基座模型上 Spearman 相关系数为 0.986-0.992，更大模型规模上排序依然保持。对照实验显示该痕迹反映的是 SFT 目标而非有害输入暴露，也排除了有害样本数量或训练强度的简单解释。在分布偏移、未见数据、不同 SFT 配置、部分 checkpoint 访问以及 LoRA 与全参数微调下，该痕迹保持稳定，并与独立测得的攻击成功率正相关；在有害目标占比较低时仍有信息量。代码已公开。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "开放权重检查点可被再适配，后训练目标却可能未知。行为审计要执行模型，并受查询覆盖限制。作者因此问：有害合规 SFT 是否在检查点更新里留下可读证据。",
+          "label": "问题"
+        },
+        {
+          "text": "TRACE 用可信基座上的纯目标参考库冻结几何。未知更新对有害合规原型和等权非有害原型做非负最小二乘，sH 是有害系数的归一化占比。不查询模型，也不访问未知 SFT 数据。",
+          "label": "方法"
+        },
+        {
+          "text": "四个 7–8B 骨干上，有害比例与 sH 的 Spearman ρ 为 0.986–0.992。四骨干 TRACE 在 Matched C/S 与 OOD 的 macro AUROC 为 0.9881 与 1.0000。Llama 上 sH 与 ASR 的 Spearman ρ 为 0.931。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "结论写局限为只评 SFT、模型至 32B、目标设定受控，后续是强化学习与多阶段后训练。实验覆盖上述四骨干及 Qwen3-14B/32B，设置含 ID、Matched C/S、OOD 与 Unseen。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07518"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07518",
       "aisafetyhot": "https://aisafetyhot.com/items/odsfdf6i7jhw35ngm3bhw7rt1"
@@ -1060,7 +1081,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究针对开源模型输入表示受到扰动时的拒答失效风险，提出PEV方法并在受控基准中测试多个模型，报告产生不安全输出的结果。结论限于作者的实验设置。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "开放权重LLM会被要求拒答有害提示，但改输入或改模型仍可越狱，且梯度类方法GPU时间高。作者要一种更简单、更快、更便宜、又能稳定引出不安全响应的方法。",
+          "label": "问题"
+        },
+        {
+          "text": "PEV在每个token embedding送入transformer前加一次独立高斯噪声，噪声不加到后续生成token。同一提示重复采样；σ按模型取不安全响应比例的峰值。任一run产出所请求的有害内容即算越狱。",
+          "label": "方法"
+        },
+        {
+          "text": "六个模型、JailbreakBench 100条上，PEV逐提示词成功率均为100%（Table 1）。作者称第一次成功通常在一分钟内，平均算力成本最多低一个数量级。Qwen2.5-1.5B有7条提示超过20次，最多160次。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称PEV目前限于open-weight模型，并认为扰动可为闭源模型生成不安全训练数据。实验覆盖六个指令微调对话模型、JailbreakBench和五种对照攻击；评审为Claude Opus 4.6，论文未报告一致性系数。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07125"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07125",
       "aisafetyhot": "https://aisafetyhot.com/items/o95iuc3a32herfrwwzw1n2vqs"
@@ -1156,7 +1198,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "一项纵向研究用 CWEval 的 119 个任务、五种编程语言和 31 类 CWE，评测七个模型家族共 32 个 LLM 在旗舰与紧凑版本上连续三代发布的功能与安全差距。结果显示，新模型在绝对意义上确实更安全，但没有一个家族消除该差距；与既有研究不同，开放性并不区分家族，所有被考察的开源权重家族都显著缩小了差距，而 Gemini 3.1 Pro 的差距与 Llama 此前报告的同样宽。紧凑模型通常比旗舰版本生成更不安全的代码，Gemini 3.7 Flash 等是明显例外。在 CWE 层面，日志注入（CWE-117）和 HTTP 响应拆分（CWE-113）等弱点持续存在，最新闭源模型在内存与整数类弱点上出现回退，同一 CWE 在不同语言中的风险差异很大。作者据此建议开发者不要假定升级会提升安全性或闭源模型更安全，每次更换模型后应重跑安全检查，并在模型上下文中提供安全 API。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "代码生成排行榜主要按功能测试排序，安全很少进入排名。功能-安全差距是功能上说得通与同时通过安全测试之差。先前纵向研究只覆盖三族、开放权重仅Llama，紧凑档和分语言弱点仍未比较。",
+          "label": "问题"
+        },
+        {
+          "text": "在CWEval的119个任务上，对七族32个模型各抽100个样本，估计func@k、func-sec@k及其差，并用CVR看弱点落在哪些CWE和语言。以第一阶段或旗舰为基线做GEE。提示不含安全指令，判定用动态测试。",
+          "label": "方法"
+        },
+        {
+          "text": "各家族最新阶段都至少在一个k上显著缩小差距，但无人闭合。k=1差距为0.13（GPT-5.6 Sol）至0.28（Gemini 3.1 Pro）。紧凑档在9次显著比较中有8次更宽。CWE-117与CWE-113仍接近最高。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出任务可能进入训练数据、部分CWE只有一两个任务、单函数设定不能代表更大代码库，并计划补测安全提示和固定模型的编程智能体。实验为七族32个模型、无安全指令、动态测试、k=1与k=50。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08240"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08240",
       "aisafetyhot": "https://aisafetyhot.com/items/xp0o28rfty7mup1zfp688pk17"
@@ -1192,7 +1255,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究提出 CoT-Interpretability Alignment（CIA）指标，衡量大语言模型思维链轨迹与可解释性工具检测到的内部推理策略之间的一致程度。作者在两跳问答、提示干预和整数乘法三个任务上评测三个 LLM，发现一致性有限，仅为 44.8% 至 75.9%。随后他们尝试用后训练改进 CIA，将任务准确率和参数化忠实性信号同时作为奖励，结果显示可显著提升思维链参数化忠实性，同时保持或提升任务准确率。论文还分析了泛化模式，并提供代码与数据。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "CoT 常被当作得出答案的过程，但可不反映内部计算，改写后答案也可不变。作者要度量并提高这种参数化忠实性，认为这关系到高风险场景的可监测性。",
+          "label": "问题"
+        },
+        {
+          "text": "用宏平均 F1 定义 CIA，比较 CoT 是否说出目标策略，以及探针是否检出该策略。在两跳事实、hint 干预和两位数乘法上计算，再以正确率加一致性做 RS、DPO、GRPO。",
+          "label": "方法"
+        },
+        {
+          "text": "三个指令模型的 Base CIA 为 0.448–0.759，正确率高并不对应更高 CIA。27 个后训练单元中 25 个在 p < .05 下提升 CIA。作者称两知识任务主要改报告，乘法改内部计算。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称探针等工具还不能完美恢复内部轨迹，框架可换工具。后续包括长链中多种忠实性目标是否兼容，以及隐空间推理的事后文本解释。论文未报告 hint 判定与人工的一致性。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2609.38972"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2609.38972",
       "aisafetyhot": "https://aisafetyhot.com/items/y2u76qbnlp6ief0jrvbqtz9aj"
@@ -1804,7 +1888,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "AdvSim2Real 提出在冻结的网页世界模型中让任务课程、注入对手与智能体共同演化，以提升网页智能体对页面植入指令的鲁棒性。课程只奖励智能体约一半时间能解决的任务，对手只奖励能把判定成功翻转为失败的注入。训练后 4B 智能体的任务完成率在有攻击和无攻击下均上升，并能抵御训练中未见过的前沿模型对手，能力提升也迁移到真实浏览器。在 150 个网页任务上，面对这一未见对手，AdvSim2Real 相对基础智能体把完成率提升 33.6%。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "网页智能体要读第三方页面才能完成请求，植入的指令却可能把它带离用户目标；页面不能被忽略，因为任务所需的数值和控件也在页上。固定注入微调遇不到会适应模型的攻击者，固定任务一旦解开也不再提供训练信号。",
+          "label": "问题"
+        },
+        {
+          "text": "AdvSim2Real在冻结的WebWorld-14B中两阶段更新课程、注入对手和4B执行器。课程奖励大约一半被解开的任务，对手只因成功翻转得分，执行器在干净任务、新攻击和历史攻击上训练。评审为冻结的Qwen3.8-27B。",
+          "label": "方法"
+        },
+        {
+          "text": "150任务上Robust iter 3干净81.33%、学习对手均值57.48%。未见Kimi-K3由23.00%到30.72%。Stage 1浏览器严格成功由25.56%到44.44%。作者称Stage 2未做浏览器评估。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称世界模型可能显示执行器没输入的值，评审可能接受错误计算，且只有能力检查点在浏览器中核过。训练对手看初始页，评估对手随轨迹反应。论文未报告完整训练的token与费用，Stage 2也未在浏览器评估。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08773"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08773",
       "aisafetyhot": "https://aisafetyhot.com/items/ijl6gu7u11oh2qkq7ehuue9o9"
@@ -1866,7 +1971,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 AutoSciBench，用高层概念与低层配方描述科学任务，并借助求解轨迹与评判反馈迭代修订任务，从而自动生成并更新科学智能体评测基准。该框架在计算生物学、材料科学和临床成像三个领域进行评测，生成基准相较人工构建基准使平均求解准确率分别下降 22.4 和 25.5 个百分点，同时生成任务在三个领域都获得更高的平均质量评分。任务修订会关闭已发现的捷径，转向原始数据复核、中间结果解读与证据整合，从已完成修订轨迹中提炼的经验还会用于指导新概念生成。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "科学智能体能力提升后，固定基准容易饱和，也更难暴露剩余失败模式。科学领域更新基准需要大量时间、人力和领域专家。作者考察这类基准能否自动生成，并随能力变化迭代改编。",
+          "label": "问题"
+        },
+        {
+          "text": "AutoSciBench把任务写成高层concept（领域、数据模态、所需操作）和低层recipe（问题、数据与答案如何构造并核验）。求解轨迹和judge反馈用来修订recipe或concept；精炼历史再蒸馏成经验，引导后续概念。",
+          "label": "方法"
+        },
+        {
+          "text": "三领域都比较了人工基准与两种生成基准的质量；计算生物学和材料科学还比较了准确率。摘要称这两领域的平均求解准确率分别降22.4和25.5个百分点。Table 3中，材料科学加入经验引导后求解成功率为35.0%，hard比例为50.0%。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "论文未专门讨论局限。实验覆盖计算生物学、材料科学和临床影像，生成器为Claude Opus 4.8与GPT-5.6 Sol，Table 1有10个求解模型。临床影像人工基准因不是精确匹配，未报告准确率。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.05140"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.05140",
       "aisafetyhot": "https://aisafetyhot.com/items/h6m05l1c5igr7231t1yzh7fgr"
@@ -2191,7 +2317,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "论文提出，要让关于 AI Agent 的声明可被核查，必须先明确其政策、范围、可据以判定的记录以及由谁记录，并在任何结论之前固定这些要素和决策规则。作者将这一方法称为可审计声明，把此前 Auditable Agents 框架中的 Policy Checkability 维度从单一动作扩展到声明层面。论文指出 Agent 还带来三项额外条件：由独立记录覆盖、授权绑定到每个动作的参数、以及完整性之外的完备性，并在显式模型下证明缺少任一条件时都无法形成支持。作者用一张声明检查表把方法应用于六类常见声明，参照 NIST、IETF 和 OWASP 的现行草案，并给出一个声明经历五种证据状态的完整案例，最后为运营方、采购方、审计方和标准制定者列出实践要点与步骤。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "组织会在文档和采购答复中声称智能体“每封对外邮件都经人批准”或“评估显示可以部署”。EU AI Act 第12条要求高风险系统允许自动记录，但作者称它没有规定哪些记录能结案某一主张。",
+          "label": "问题"
+        },
+        {
+          "text": "作者把鉴证业务的前提改成可审计主张：裁决前固定策略与版本、动作与期间、具名撰写者可取得的记录和判定规则。智能体还需独立记录覆盖、授权绑定到动作参数，并把完备性与完整性分开检查。",
+          "label": "方法"
+        },
+        {
+          "text": "教学案例的记录是构造的，没有运行智能体。完整服务器日志中无覆盖授权的tx-23使3月主张被反驳。CatchBench PRE的owasp_asi_combined汇总F1为0.654，作者称按来源从0.411到0.961。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称锚点仍是草案，未能阅读两份日志标准，未测该方法；案例不产生测量，实践框只覆盖自有基准的离线PRE板。并略去隐私、委托链责任，以及记录模式无法判定的语义策略。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07459"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07459",
       "aisafetyhot": "https://aisafetyhot.com/items/x10phaaghybgum2p05e5xi8cn"
@@ -2477,7 +2624,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "一项预注册研究在 LoCoMo 与 LongMemEval 上测试智能体记忆：在 LoCoMo 的紧预算下，由类型化决策模型 Jev 单次调用选出的原始对话轮次，不劣于 LLM 抽取式记忆（单侧 95% 界为 -3.0 分，非劣效界为 -5 分），且写入成本低 3,061 倍。重排序收益随预算增大而缩小：保留 30 个候选中的 3 个时在 LoCoMo 加 17.4 分、LongMemEval 加 9.1 分，预算宽松时仅加 1.5 和 1.1 分，此时抽取式系统更准。相同上下文下 Jev 选择精度与 LLM 重排序器相当（非劣效界 -2.0），延迟仅为其三分之一，且优于多次调用的图遍历；重排序会降低正确弃答率。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "对话记忆文献对是否必须抽出事实、以及排序是否关键，结论不一致。作者认为回答模型读到的条目数可解释部分分歧，并预注册检验紧预算下选出的原始轮次是否不劣于强抽取记忆。",
+          "label": "问题"
+        },
+        {
+          "text": "写入不抽取，只嵌入原始轮次。读取从30条余弦短名单用一次Jev请求打相关性，保留高于0.5者并加余弦保底。对照engram v2抽取事实后用同一类读取。匹配token下做非劣效检验，界为5个点，并看重排收益如何随保留条数变化。",
+          "label": "方法"
+        },
+        {
+          "text": "LoCoMo778题紧预算下界−3.0（界−5）。留3/30时LoCoMo增益+17.4、LongMemEval+9.1；留20时分别为+1.5与+1.1，宽预算下抽取更准。重排降低正确弃权。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者写明LoCoMo由LLM生成、类别小，抽取系统未跑LongMemEval。评分者是系统作者，只重评不一致题，未测注入，Jev限于jev-1.13.0。k=20与读路径上限混杂。另覆盖两种回答模型与注册次级检验。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2609.34227"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2609.34227",
       "aisafetyhot": "https://aisafetyhot.com/items/h4hw2i5ugyhzfyvgldo7hp053"
@@ -2495,7 +2663,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "VeriFine 是一个 agent harness 框架，通过策略、训练课程与评判器的共同演化来扩展验证能力，以支持具身推理中的持续自我改进。其 Policy Improvement Loop 用评分标准评判器诊断反复出现的失败并构建自适应课程，当验证成为瓶颈时，Judge Improvement Loop 针对信息量高的失败案例选择性引入人工指导，通过协同校准让人类与智能体消解分歧、收敛到物理推理的客观评分标准。在驾驶与机器人导航任务上，该框架在强化学习和监督微调中均实现了策略与评判器能力的持续提升。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "自改进会暴露新的策略失败，固定评审会限制优化反馈和有用样本；具身推理还要核对空间、因果与安全决策。",
+          "label": "问题"
+        },
+        {
+          "text": "VeriFine用无参考rubric评审连接两个环：策略环按失败选课程，并用GRPO或SFT更新策略；评审成瓶颈时抽失败案例做人机协同校准，再指导下轮选数。",
+          "label": "方法"
+        },
+        {
+          "text": "驾驶三轮后，Alpamayo 1.5 8B的RB推理分从60.56到71.61，学生评审Pearson到0.82。导航Qwen3-VL 2B的推理分从68.09到77.59。6个候选时终版评审选出的人类分为78.6。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出策略评测集固定，评测用参考推理仍经人工核验，并考虑蒸馏人工指导。实验含驾驶三轮RFT与导航SFT；论文未报告训练重复次数。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08761"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08761",
       "aisafetyhot": "https://aisafetyhot.com/items/jx6hkc444fa093s3qfmm9z8dj"
