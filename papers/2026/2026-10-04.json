@@ -1790,7 +1790,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 ElasticBack，一种针对 LLM Agent 技能供应链的条件单技能后门：在技能文档中植入规则 R，在用户查询中植入看似无害的触发词 T，只有两者同时出现时恶意载荷才会触发。该方法用触发词即开关的构造把两侧绑定，通过语义锚定的规则注入生成 R，再冻结 R 并用带隐蔽性约束的遗传搜索演化 T，从而在不微调权重的情况下兼顾攻击效果与隐蔽性，在良性输入上保持休眠。实验覆盖三类目标行为（每类 50 个技能）和四个 Agent LLM，报告了高攻击成功率、接近零的误报率、保持干净的准确率，并能跨模型迁移、规避部署期防御。作者据此呼吁加强对技能供应链的防御。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "技能按需加载且被默认信任，单个被投毒 skill 会持续影响所有安装者。现有攻击或每次都触发，或依赖微调权重或多个 skill。作者要做 weight-free 的单 skill 条件后门，仅在攻击者 trigger 下触发。",
+          "label": "问题"
+        },
+        {
+          "text": "在 Skill.md 植入条件规则 R，trigger T 经 skill 管辖通道进入查询，二者同现才执行 payload。gate words 锚定并冻结 R 后，用隐蔽约束遗传搜索 C-HGA 演化 T。",
+          "label": "方法"
+        },
+        {
+          "text": "默认 surrogate 兼受害模型为 GLM-5.2。Table 1 中 GPT-5.4 的 InfoDisc ASR 为 94.0%、FPR 为 0.0%。作者称在 GLM-5.2 上，行为监控规避率为 98–100%。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者计划探索脚本沙箱和能力门控等执行层防御。实验在 Claude Code 上用四种骨干、三种行为各 50 个技能，每技能一条触发查询和一条良性查询。论文未报告搜索查询次数、LCB 的 k，以及评审模型名称。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2608.09577"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2608.09577",
       "aisafetyhot": "https://aisafetyhot.com/items/siegmtzwyaq9l3kmcmvrv7kgl"
@@ -5071,7 +5092,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究对比了类型化决策模型 JEV 与四个生成式 LLM 评判器在智能体轨迹安全分类上的表现，测试覆盖四个基准共 5,219 条轨迹。JEV 的基准平均正类 F1 为 77.8，高于最强生成式配置 GLM-5.2 的 74.1，有效结果覆盖率分别为 95.5% 和 94.4%。JEV 在 ATBench500 和 MCPHunt 上领先，GLM 在 R-Judge 和 TraceSafe 上领先；JEV 成功调用延迟中位数 0.99 秒，每次有效判断的 token 成本平均约 $0.000195。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "工具使用智能体要在上下文中判定动作是否不安全，生成式评审还会带来延迟、解释开销和输出校验失败。论文考察类型化模型JEV能否作为回溯轨迹分类的替代。",
+          "label": "问题"
+        },
+        {
+          "text": "同一渲染流水线把轨迹和五级风险锚点送给JEV与四种生成式评审。JEV一次请求回答总体风险、授权、内在安全与严重度，用总体分按s≥3二值化；生成式评审另返回理由与证据。",
+          "label": "方法"
+        },
+        {
+          "text": "5219条轨迹、s≥3：JEV四基准平均正类F1为77.8，GLM-5.2为74.1。JEV在ATBench500与MCPHunt高于GLM；GLM在R-Judge与TraceSafe高于JEV。JEV覆盖率95.5%，中位延迟0.99秒",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出评审指令、输出要求与服务条件不同，修订标签、缺失输出和基准构成会影响指标；长度分析对应观测负载。后续可做独立复核标签与受控长度变化。实验含五个评审、四套共5219条轨迹；论文未报告采样温度与修订标签一致性。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2609.34862"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2609.34862",
       "aisafetyhot": "https://aisafetyhot.com/items/j9w5680ag40bga680tripcne0"

@@ -12,7 +12,28 @@
     "selected": true,
     "attention": 86,
     "summaryZh": "研究者评估了七个开放权重模型作为 Agent 护栏的表现，并提出选项通道攻击：在不修改被判定文本和选项定义的情况下，只把允许选项改名，就能让四个把标签送入模型输入的模型放行率升至 93% 至 100%。在三个公开筛查数据集上，这些模型的允许或阻止准确率介于 36% 到 72%，随机水平为 50%；某一方向错误率低只反映模型默认给出的答案，例如 laya-td 几乎从不阻止，Qwen2.5-1.5B 则几乎阻止一切。在合成的 Agent 工具调用套件 GuardBench 上，六行与策略无关的服务器日志文本可把某策略的放行率从 0% 提到 63%，三条未经核实的断言提到 70%。作者测试的五种防御均可被针对其机制的适应性攻击击败；把策略字段解析为类型化值能完全消除字段注入攻击，但同样的解析也让确定性规则在六条策略上达到 100% 准确率，使模型变得多余。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "检验类型化决策模型作为智能体安全护栏的有效性。安全控制要求分别评估放行违规与误阻合规两类错误，且部分输入由攻击者控制，现有研究未区分错误方向且缺乏系统防御评估。",
+          "label": "问题"
+        },
+        {
+          "text": "构建平衡且带真值的合成工具调用基准 GuardBench；设计无关策略的日志干扰攻击与仅修改选项名称的选项通道攻击；评估 5 种防御策略、自适应攻击及确定性规则。",
+          "label": "方法"
+        },
+        {
+          "text": "公开任务上模型准确率仅为 36% 至 72%。无关日志与选项重命名攻击在多个模型上可将放行错误率提升至 63% 到 100%。低置信度上报无法检测被翻转的决策，结构化字段防御被自适应攻击攻破。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "GuardBench 基于模板合成牺牲了现实复杂性；实验仅测试 7 个开源模型，未直接测量商业模型；黑盒攻击基于固定词表属于下界；D5 结构化防御在部分策略上造成高达 68.7% 的合规误阻。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（Gemini 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.12292"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.12292",
       "aisafetyhot": "https://aisafetyhot.com/items/fmks5982k21z837y3xvrx3z53"
@@ -162,7 +183,28 @@
     "selected": true,
     "attention": 82,
     "summaryZh": "研究者提出 EpiReal-Bench，一个针对商用图像生成模型可信视觉虚假信息风险的红队基准，包含 1 万条虚假声明提示和 1 万张对应生成图像，覆盖 10 类现实声明与 10 种可信视觉形式。作者称这些模型在显式核验时能识别声明为虚假，却仍将其渲染为可信视觉证据，并将这一现象称为核验与生成之间的落差。在 GPT-Image-2、Nano Banana 2、Grok Imagen 2.0 和 Seedream 5.0 Flash 四款模型上，直接提示的平均虚假信息实现成功率超过 70%，其中 Grok Imagen 2.0 最高为 89.43%。配套的 EpiReal-Attack 通过技能引导的黑盒提示演化与 Pareto 选择，把平均攻击成功率提升到约 97%。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "商用图像生成器能把虚假现实主张画成新闻、公文等看似证据的图像。作者称现有评测多看暴力色情等显性有害内容，生成侧虚假信息评测又限于少数领域。",
+          "label": "问题"
+        },
+        {
+          "text": "EpiReal-Bench含10类主张、10种视觉形式和1万条提示。EpiReal-Attack用四种技能改写提示，结合多模态反馈与Pareto选择做黑盒搜索。VGP要求生成前先核验事实。",
+          "label": "方法"
+        },
+        {
+          "text": "四模型直接提示总体ASR为55.82%至89.43%（Table 3）。作者称攻击后超过95%。VGP拦截率在Nano Banana 2上为93.00%，在Grok Imagen 2.0上为35.70%（Table 4）。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称评测限于预设类别和视觉形式，主要看实现程度与视觉可信度，未测对人类信念的影响。后续包括更广场景、更强多模态模型、用户信任评估和改进防御。附录算法未给出查询次数；Table 4未写明防御所用提示集合。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.11112"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.11112",
       "aisafetyhot": "https://aisafetyhot.com/items/q68wtph460b2zwh557ezs354t"
@@ -183,7 +225,28 @@
     "selected": true,
     "attention": 81,
     "summaryZh": "研究者提出 BRANCH，一种针对多扫描器护栏系统的绕过方法，通过分支树搜索对单个扫描器施加对抗扰动，再按整个护栏系统的总阻断置信度选择分支，把多目标绕过拆解为单目标优化。在 6 套护栏系统、120 个绕过场景中，BRANCH 达到 100% 攻击成功率，相比现有技术减少 72% 查询量、墙钟时间缩短 4.5 倍，同时保持语义相似度与既有方法相当。生成的绕过样本还迁移到 29 个未参与生成的护栏上，平均攻击成功率提升 32.9 个百分点，其中包含 8 个商业黑盒护栏，部分场景提升达 100%。作者称这是首个可靠绕过整套多扫描器护栏系统而非单个扫描器的方法，并指出其威胁模型假设攻击者能观察每个扫描器的阻断决策与置信度分数。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "多扫描器护栏要同时检测多类恶意指令，作者认为共享潜表示会让压低一个scanner的扰动抬高另一个。既有单目标绕过主要评在单个scanner上，作者称还没有工作评估必须同时绕过系统内全部scanner的情形。",
+          "label": "问题"
+        },
+        {
+          "text": "BRANCH建搜索树，每节点只对当前最高拦截置信的scanner施加一组扰动，再用全部仍拦截scanner的置信和选择下一节点，直到没有任何scanner拦截。技术可替换；实验用11种既有扰动串成路径。",
+          "label": "方法"
+        },
+        {
+          "text": "6个护栏系统、120个场景中，作者称BRANCH的ASR为100%，Exhaustive为80.8%，平均查询少72.13%，耗时2.9小时对13.1小时。绕过无额外优化时迁到32个未见护栏中的29个，ASR平均提高32.9个百分点。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出种子每系统仅20条且按多scanner拦截筛选，全量对比约1,923.8小时；生成依赖逐scanner置信，查询预算还可再调，也未充分测生产LLM上的绕过效用。实验另覆盖11种扰动和32个未见护栏。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.10742"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.10742",
       "aisafetyhot": "https://aisafetyhot.com/items/d15u51z8rfbzm2syr3ydhrm47"
@@ -396,24 +459,6 @@
     "publishedAt": null,
     "timelineAt": "2026-10-09T05:35:35.440Z",
     "discoveredAt": "2026-10-09T05:35:35.440Z"
-  },
-  {
-    "arxivId": "2610.09639",
-    "title": "On-Policy Distillation Teaches New Skills but Not New Knowledge",
-    "titleZh": "研究：on-policy distillation 只教模型新技能而非新知识",
-    "authors": [],
-    "category": "alignment",
-    "selected": false,
-    "attention": null,
-    "summaryZh": "一项研究用受控合成框架区分事实知识与多步推理的组合技能，考察 on-policy distillation（OPD）究竟让学生模型获得什么。在来自三个模型家族的四个模型上，reverse-KL OPD 能可靠地把组合技能迁移到未见过的推理结构上，但几乎不迁移事实知识。解耦蒸馏配方后，作者发现这种不对称的来源：把 reverse KL 换成 forward KL 可以恢复事实迁移，而学生模型自身的 rollout 则专门改善多步推理的执行。在近期事实问答和竞赛数学任务上，reverse-KL OPD 表现出类似的不对称，推理能力明显提升但没有事实记忆的扩展。作者据此认为，on-policy distillation 并不扩展模型的参数化知识，而是教模型组织和组合它已经掌握的知识。",
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2610.09639",
-      "aisafetyhot": "https://aisafetyhot.com/items/pp1eszwyhjzdihkjnzdjb4400"
-    },
-    "publishedAt": "2026-10-06T20:00:00.000Z",
-    "timelineAt": "2026-10-09T05:34:35.438Z",
-    "discoveredAt": "2026-10-09T05:34:35.438Z"
   },
   {
     "arxivId": "2610.11281",
@@ -745,6 +790,24 @@
     "publishedAt": null,
     "timelineAt": "2026-10-09T04:32:36.710Z",
     "discoveredAt": "2026-10-09T04:32:36.710Z"
+  },
+  {
+    "arxivId": "2605.22949",
+    "title": "MARGIN: Runtime Confidence Calibration for Multi-Agent Foundation Model Coordination",
+    "titleZh": "MARGIN：面向多智能体基础模型协调的运行时置信度校准",
+    "authors": [],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "MARGIN 是一种运行时校准方法，通过置信度分带内跟踪近期准确率与自报置信度之比，学习各模型专属的置信度修正，无需重训练或留出校准集。在 18 模型池的代码生成、问答和数学评测中，BigCodeBench 上模型平均置信度与准确率负相关，选更自信回答者的表现低于随机；在代码生成与问答的分布偏移实验中，MARGIN 的偏移后期望校准误差低于五个在线校准基线中的多数。代码生成协调实验中，校准使两个基准的回答选择准确率分别提升 4.3 和 14.0 个百分点。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2605.22949",
+      "aisafetyhot": "https://aisafetyhot.com/items/a1f0isxzej9r2coyxwuuduetd"
+    },
+    "publishedAt": "2026-10-07T20:00:00.000Z",
+    "timelineAt": "2026-10-09T06:36:32.329Z",
+    "discoveredAt": "2026-10-09T06:36:32.329Z"
   },
   {
     "arxivId": "2610.11754",
