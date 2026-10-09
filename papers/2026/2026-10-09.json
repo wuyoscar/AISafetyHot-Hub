@@ -556,12 +556,12 @@
   {
     "arxivId": "2610.12360",
     "title": "Accurate but Not Humble: Evaluating Epistemic Humility in LLM Agents under Knowledge Conflict",
-    "titleZh": "研究提出 ISE 框架评估知识冲突下 LLM Agent 的认知谦逊",
+    "titleZh": "论文提出 ISE 框架，评测 LLM Agent 在知识冲突下的认知谦逊",
     "authors": [],
     "category": "eval",
     "selected": false,
     "attention": null,
-    "summaryZh": "论文提出用认知谦逊（EH）评估 LLM Agent 在知识冲突下的表现，即 Agent 在任务执行中识别、处理并表达不确定性的意愿，并将其拆解为 Identify、Solve、Escalate（ISE）三个轨迹级行为维度。研究设置受控冲突与多步 Agent 执行中自然发生的冲突两种场景，各配无冲突对照，并用知识冲突指代模型参数化知识与所遇证据矛盾、或两个上下文来源互相冲突的情况。对四个 Agent 的评估显示，更高的任务准确率不一定对应更高的认知谦逊：部分高准确率配置在执行中识别到了冲突，却没有在错误的最终答案中传达未解决的不确定性。轨迹级分析还发现，Agent 常在执行早期步骤检测到冲突，但未能在后续步骤中维持或解决。论文称模型层面的干预可以提升认知谦逊，但往往以任务准确率为代价，并认为认知谦逊来自基础模型、Agent 框架与评测环境三者的交互。",
+    "summaryZh": "论文提出评测 LLM Agent 认知谦逊（EH）的框架，即 Agent 在任务执行中识别、处理并表达不确定性的意愿，并将其拆解为 Identify、Solve、Escalate 三个轨迹级行为维度。作者通过知识冲突场景开展评测，包括骨干模型的参数化知识与检索证据矛盾、以及两个上下文来源相互冲突，并设置受控冲突和多步 Agent 执行中的自然冲突两种设定，各自配有匹配的无冲突对照组。对四个 Agent 的评测显示，更高的任务准确率并不必然对应更高的认知谦逊，部分高准确率配置能在执行中识别冲突，却未在错误的最终答案中说明未解决的不确定性。轨迹级分析还发现，Agent 常在执行早期步骤检测到冲突，但未能在后续步骤中维持或解决。作者称模型层面的干预可以提升认知谦逊，但往往以任务准确率为代价，认知谦逊来自骨干模型、Agent 框架与评测环境之间的交互。",
     "quickRead": null,
     "links": {
       "paper": "https://arxiv.org/abs/2610.12360",
@@ -1048,5 +1048,23 @@
     "publishedAt": null,
     "timelineAt": "2026-10-09T04:22:39.411Z",
     "discoveredAt": "2026-10-09T04:22:39.411Z"
+  },
+  {
+    "arxivId": "2501.09223",
+    "title": "Foundations of Large Language Models",
+    "titleZh": "《大语言模型基础》一书发布，覆盖预训练、对齐与推理等六大主题",
+    "authors": [],
+    "category": "ai_news",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "《Foundations of Large Language Models》一书聚焦大语言模型的基础概念而非前沿技术全景，全书分六章，依次覆盖预训练、生成模型、提示词、对齐、推理与推理（reasoning）。该书面向高校学生、自然语言处理从业者及相关领域实践者，也可作为对大语言模型感兴趣者的参考读物。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2501.09223",
+      "aisafetyhot": "https://aisafetyhot.com/items/qcazyaq52o6rhnv25jehdv2ve"
+    },
+    "publishedAt": "2026-10-07T20:00:00.000Z",
+    "timelineAt": "2026-10-09T06:05:31.813Z",
+    "discoveredAt": "2026-10-09T06:05:31.813Z"
   }
 ]
