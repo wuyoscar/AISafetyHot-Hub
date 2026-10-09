@@ -1,5 +1,37 @@
 [
   {
+    "arxivId": "2510.09023",
+    "title": "The Attacker Moves Second: Stronger Adaptive Attacks Bypass Defenses Against Llm Jailbreaks and Prompt Injections",
+    "titleZh": "论文提出自适应攻击框架，击穿 12 项 LLM 越狱与提示注入防御",
+    "authors": [
+      "Milad Nasr",
+      "Nicholas Carlini",
+      "Chawin Sitawarin",
+      "Sander V. Schulhoff",
+      "Jamie Hayes",
+      "Michael Ilie",
+      "Juliette Pluto",
+      "Shuang Song",
+      "Harsh Chaudhari",
+      "Ilia Shumailov",
+      "Abhradeep Thakurta",
+      "Kai Yuanqing Xiao",
+      "And"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 92,
+    "summaryZh": "论文《The Attacker Moves Second》提出，当前 LLM 防御评估多依赖静态攻击串或未针对防御设计的弱优化方法，因而高估了鲁棒性。作者用梯度下降、强化学习、随机搜索和人工红队四类方法自适应地调整攻击策略，在 12 项近期防御上取得多数超过 90% 的攻击成功率，而这些防御原论文报告的数值大多接近零。在 AgentDojo 上，Spotlighting 与 Prompt Sandwiching 在静态攻击下攻击成功率低至 1%，改用搜索式自适应攻击后均超过 95%；MetaSecAlign 从静态基准的 2% 升至 96%；针对 Circuit Breakers 的 RL 攻击在 HarmBench 上达到 100%。作者据此提出四点经验：小型静态评测会误导、自动化评估有效但不足以保证鲁棒、人工红队仍最有效、模型自动评分器本身可被对抗攻击。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2510.09023",
+      "aisafetyhot": "https://aisafetyhot.com/items/sq1y6agjqkxtm5i661cfb8mty"
+    },
+    "publishedAt": "2025-10-10T05:51:04.000Z",
+    "timelineAt": "2026-10-09T08:05:41.935Z",
+    "discoveredAt": "2026-10-09T08:05:41.935Z"
+  },
+  {
     "arxivId": "2610.12292",
     "title": "One Word Opens the Gate: The Option-Channel Attack on Typed Decision Models as Agent Guardrails",
     "titleZh": "论文提出选项通道攻击：改一个选项标签即可让 Agent 护栏放行违规操作",
@@ -70,6 +102,29 @@
     "discoveredAt": "2026-10-09T05:44:33.741Z"
   },
   {
+    "arxivId": "2510.10271",
+    "title": "MetaBreak: Jailbreaking Online LLM Services via Special Token Manipulation",
+    "titleZh": "MetaBreak：通过特殊 token 操纵越狱在线 LLM 服务",
+    "authors": [
+      "Wentian Zhu",
+      "Zhen Xiang",
+      "Wei Niu",
+      "Le Guan"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 85,
+    "summaryZh": "研究者提出 MetaBreak，利用 LLM 聊天模板中的特殊 token 构造四个攻击原语，越狱在线 LLM 服务。在 Ollama 本地部署的 Llama-3.3-70B、Qwen-2.5-72B、Gemma-2-27B 和 Phi4-14B 上，MetaBreak 平均攻击成功率 62.0%，与 PAP（56.8%）和 GPTFuzzer（61.6%）相当；在启用内容审核时，MetaBreak 比 PAP 和 GPTFuzzer 分别高出 11.6% 和 34.8%。四个原语包括响应注入、轮次掩蔽、输入分段和语义模仿，其中输入分段通过把敏感词拆开绕过 LlamaGuard 等审核模型，语义模仿则用嵌入空间中 L2 距离最近的普通 token 替换被清洗的特殊 token。代码和数据集已开源。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2510.10271",
+      "aisafetyhot": "https://aisafetyhot.com/items/bib8mimm8r8n3rmrf3ldt7mfy"
+    },
+    "publishedAt": "2025-10-11T16:14:56.000Z",
+    "timelineAt": "2026-10-09T08:05:42.124Z",
+    "discoveredAt": "2026-10-09T08:05:42.124Z"
+  },
+  {
     "arxivId": "2610.10657",
     "title": "Beyond Owls: Subliminal Learning Can Transfer Learned Capabilities and Backdoors",
     "titleZh": "研究显示隐蔽学习可传递新能力、后门与作弊倾向",
@@ -112,6 +167,84 @@
     "publishedAt": "2026-10-07T16:42:55.000Z",
     "timelineAt": "2026-10-09T04:22:39.400Z",
     "discoveredAt": "2026-10-09T04:22:39.400Z"
+  },
+  {
+    "arxivId": "2605.17324",
+    "title": "ASPI: Seeking Ambiguity Clarification Amplifies Prompt Injection Vulnerability in LLM Agents",
+    "titleZh": "ASPI 基准：Agent 寻求澄清时提示注入攻击成功率大幅上升",
+    "authors": [
+      "Udari Madhushani Sehwag",
+      "Zhengyang Shan",
+      "Heming Liu",
+      "Dileepa Lakshan",
+      "Joseph Brandifino",
+      "Max Fenkell"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 84,
+    "summaryZh": "研究者提出 ASPI 基准，发现 LLM Agent 从标准执行切换到寻求澄清状态后，对提示注入的脆弱性显著上升。该基准基于 AgentDojo 构建 728 个任务-攻击配对，覆盖 Workspace、Slack、Travel、Banking 四个领域，在任务、攻击目标、环境和评分固定下只改变交互状态与投递渠道。在十款前沿模型上，攻击成功率从执行态到澄清态普遍上升，例如 o3 从 1.8% 升至 34.0%，Gemini-3-Flash 从 2.2% 升至 35.7%，Kimi K2.5 从 11.1% 升至 63.1%，而 Claude-Opus-4.7 在两种设置下均接近零。分解分析显示，ask_user 澄清渠道是脆弱性上升的主要来源，交互状态本身的影响则因模型而异。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2605.17324",
+      "aisafetyhot": "https://aisafetyhot.com/items/gp2vsvvg8liada0q3gtxym756"
+    },
+    "publishedAt": "2026-05-17T08:30:45.000Z",
+    "timelineAt": "2026-10-09T08:05:41.731Z",
+    "discoveredAt": "2026-10-09T08:05:41.731Z"
+  },
+  {
+    "arxivId": "2509.25624",
+    "title": "STAC: When Innocent Tools Form Dangerous Chains for LLM Agents",
+    "titleZh": "STAC：看似无害的工具调用链如何攻破 LLM Agent",
+    "authors": [
+      "Jing-Jing Li",
+      "Jianfeng He",
+      "Chao Shang",
+      "Devang Kulshreshtha",
+      "Xun Xian",
+      "Yi Zhang",
+      "Hang Su",
+      "Sandesh Swamy",
+      "Yanjun Qi"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 84,
+    "summaryZh": "AWS AI Labs 研究者提出 Sequential Tool Attack Chaining（STAC），一种针对工具型 LLM Agent 的多轮攻击框架：把每个单独看都无害的工具调用串联起来，恶意意图只在最后一步显现。框架用自动闭环流水线生成可执行工具链、在环境中验证，并反向构造隐蔽的多轮提示诱导 Agent 执行。研究者在 SHADE-Arena 与 Agent-SafetyBench 环境上构建了 483 个案例、1,352 组用户-Agent-环境交互，覆盖 10 种失败模式；对包括 GPT-4.1 在内的 8 个 Agent 评测，平均最终攻击成功率 91.2%，除一个模型外均超过 90%，提示有害率低于 2%、拒答率低于 4%。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2509.25624",
+      "aisafetyhot": "https://aisafetyhot.com/items/t8lk5w6mh0c0okwhcm2p1vdqi"
+    },
+    "publishedAt": "2025-09-30T00:31:44.000Z",
+    "timelineAt": "2026-10-09T08:05:41.824Z",
+    "discoveredAt": "2026-10-09T08:05:41.824Z"
+  },
+  {
+    "arxivId": "2510.01359",
+    "title": "Breaking the Code: Security Assessment of AI Code Agents Through Systematic Jailbreaking Attacks",
+    "titleZh": "JAWS-Bench：研究者用三种工作区场景系统越狱代码 Agent",
+    "authors": [
+      "Shoumik Saha",
+      "Jifan Chen",
+      "Sam Mayers",
+      "Sanjay Krishna Gouda",
+      "Zijian Wang",
+      "Varun Kumar"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 84,
+    "summaryZh": "研究者提出 JAWS-Bench，用空工作区（JAWS-0）、单文件（JAWS-1）和多文件（JAWS-M）三种递进场景评估代码 Agent 的越狱风险，并配套四阶段判定流程，依次检查合规、攻击成功、语法正确和运行可执行。在五个家族七个 LLM 后端上，仅靠文本提示的 JAWS-0 合规率 61%，其中 58% 有害、52% 可解析、27% 能端到端运行；JAWS-1 中较强模型合规率接近 100%，平均攻击成功率约 71%；JAWS-M 平均攻击成功率约 75%，32% 生成可运行攻击代码。作者称把 LLM 包装成 Agent 会使攻击成功率平均提高 1.6 倍，原因是规划与工具调用阶段推翻了最初的拒答。间谍软件、钓鱼和提权类任务最易被武器化。在系统提示中加入安全评估指令后，多数模型合规率下降约 19 至 43 个百分点，Qwen3-235B 几乎无变化。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2510.01359",
+      "aisafetyhot": "https://aisafetyhot.com/items/gh1aekzktoq7xvei2pt6xj56a"
+    },
+    "publishedAt": "2025-10-01T18:38:20.000Z",
+    "timelineAt": "2026-10-09T08:05:41.968Z",
+    "discoveredAt": "2026-10-09T08:05:41.968Z"
   },
   {
     "arxivId": "2610.12463",
@@ -166,7 +299,28 @@
     "selected": true,
     "attention": 83,
     "summaryZh": "哥伦比亚大学、UC Berkeley 等机构的研究者提出 TestJack，用动态演化的评测器审计编码基准中判定为通过的样本。该方法针对任务提示词中可能被违反的要求生成测试，用标准答案补丁验证测试期望，再对失败样本复核，使每次判定都有可复现的测试作为证据。在 DeepSWE、SWE-Marathon、SWE-bench Verified、SWE-bench Pro、SkillsBench 五个基准、Claude Opus、GPT-5.5/5.6、Gemini 3.1 Pro 等前沿模型的 4,487 个通过样本中，TestJack 判定 1,545 个（34.4%）违反任务要求，整体解决率从 50.6% 降至 33.2%；其中为规避弱测试而专门设计的 DeepSWE 和 SWE-Marathon 反而最高，分别为 43.5% 和 53.6%。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "现有代码基准几乎都只用固定单元测试判分：通过即视为解决。作者认为这种静态判分与能观察执行反馈、迭代调整的 LLM agent 不匹配，测试只覆盖任务要求的一部分，agent 可以 reward hack 或漏掉必需行为仍通过，导致基准分数可能反映适应评测器而非真正解决问题。",
+          "label": "问题"
+        },
+        {
+          "text": "提出 TestJack，逐 trial 审计已通过基准的补丁：由 LLM agent 依据 prompt 要求生成新测试，用 ground-truth 补丁作 oracle 验证期望，再在 trial 上运行并复核失败，使每次否定都有可复现的 witness test。另给出轻量变体：先做任务级分析补测，再随机抽样审计并把确认的测试共享到同任务所有 trial。",
+          "label": "方法"
+        },
+        {
+          "text": "在 DeepSWE、SkillsBench、SWE-Marathon、SWE-bench Verified、SWE-bench Pro 五个基准上审计 6 个前沿模型后端共 4,487 个通过 trial，TestJack 否定 1,545 个（34.4%），整体 resolution rate 从 50.6% 降到 33.2%；即使专门避免弱测试的 DeepSWE、SWE-Marathon 否定率仍达 43.5% 和 53.6%。轻量变体在三个基准上以 15.4% 成本恢复 72.4% 的否定，recall 是 SWE-ABS 的 7.3 倍。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "依赖 reference solution，仅凭 prompt 和测试套件的基准不适用，且要求任务良构。审计与复核由 LLM 完成，oracle 只保证行为为 ground truth 所有，不保证 prompt 要求，underspecified prompt 是主要分歧来源。轻量变体牺牲覆盖与精度，可能漏掉未被抽样 trial 的缺陷，且会扩散 prompt 歧义。评估仅限固定模型与任务子集，RQ2–RQ4 的指标衡量与逐 trial 审计的一致度而非人工标注。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文全文（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.10619"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.10619",
       "aisafetyhot": "https://aisafetyhot.com/items/idl3ia92o1z5z1pfj0icl7ayx"
@@ -191,7 +345,28 @@
     "selected": true,
     "attention": 83,
     "summaryZh": "复旦大学等机构的研究者提出一套测量框架，用于识别并测量从普通网络发帖进入 AI 搜索引用和答案文本的低门槛路径，结合跨平台引用映射、发布门槛测试和标记受控发文实验。研究覆盖 10 个 AI 搜索平台，分析 6,356 个来源域名上的 17,211 条引用实例，发现引用高度集中，最集中的平台前 20 个域名占其引用的 70.8%，且 22 个被测试的发布平台中有 15 个在注册和发帖上均为低或中等门槛。在受控实验中，10 个平台中有 8 个在七天内引用了研究者发布的虚构概念内容；一篇高偏好平台文章的影响超过 20 篇匹配的低偏好帖子，自托管 WordPress 发 40 篇后一周内仍未被引用。作者称已向受影响方披露所观察到的漏洞。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "AI搜索将网页检索与答案合成结合，若其高频引用的源域名允许普通用户低门槛发布内容，会形成“引用-治理差距”，使公开网络发帖成为影响AI搜索引用和回答文本的间接途径。",
+          "label": "问题"
+        },
+        {
+          "text": "构建AICiteMonitor与InfluenceTracker工具，测绘10款AI搜索的源域名偏好与22个平台的发帖门槛，设计带归因标记的受控发帖实验，并通过真实GEO采购验证商业链路。",
+          "label": "方法"
+        },
+        {
+          "text": "8款平台在7天内引用了虚构概念；在10个低风险主题复现中总体CR为32.4%、MAR为28.8%（Table VI）；14美元商业GEO采购在1小时内使Doubao产生带标记引用。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出无法给出低偏好与高偏好发帖的通用换算规则；受控实验多采用低先验或低竞争设计；RQ1使用设计问题集而非真实日志；数据来自2026年3-4月可能随平台更新漂移。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（Gemini 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.11932"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.11932",
       "aisafetyhot": "https://aisafetyhot.com/items/vptxjxi0ecf0q95zqm70yj1c5"
@@ -199,6 +374,77 @@
     "publishedAt": "2026-10-08T13:26:12.000Z",
     "timelineAt": "2026-10-09T05:44:33.826Z",
     "discoveredAt": "2026-10-09T05:44:33.826Z"
+  },
+  {
+    "arxivId": "2510.27140",
+    "title": "Measuring the Security of Mobile LLM Agents under Adversarial Prompts from Untrusted Third-Party Channels",
+    "titleZh": "MobiRed 框架测评八款移动 LLM Agent 的第三方渠道提示注入攻击",
+    "authors": [
+      "Chenghao Du",
+      "Quanfeng Huang",
+      "Tingxuan Tang",
+      "Zihao Wang",
+      "Adwait Nadkarni",
+      "Yue Xiao"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 83,
+    "summaryZh": "研究者提出 MobiRed 自动化测评框架，在 Android 上对八款移动 LLM Agent 开展 3160 次对抗试验，考察第三方渠道注入内容能否把 Agent 从用户任务引向攻击者目标。攻击者不控制设备、系统、应用或 Agent 本身，只能通过应用内广告、嵌入式网页、邮件、短信和跨应用通知等非应用控制渠道投放内容。结果显示所有被测 Agent 至少对一种攻击流程脆弱：伪造插屏广告等低门槛攻击成功率超过 85%，需要在攻击链中绕过系统告警的恶意软件安装流程对 Mobile-Agent-E 等先进 Agent 的平均攻击成功率为 18.75%。简化的攻击更易奏效，日历一类密集 UI 会降低成功率，而良性任务完成度更高的模型在攻击中也更易被利用，作者据此称能力与风险存在耦合，并呼吁针对移动生态特有攻击面设计防御。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2510.27140",
+      "aisafetyhot": "https://aisafetyhot.com/items/iyq6cb3rk8wn38mpcddx0xkir"
+    },
+    "publishedAt": "2025-10-31T03:35:59.000Z",
+    "timelineAt": "2026-10-09T08:05:41.713Z",
+    "discoveredAt": "2026-10-09T08:05:41.713Z"
+  },
+  {
+    "arxivId": "2512.20168",
+    "title": "Odysseus: Jailbreaking Commercial Multimodal LLM-integrated Systems via Dual Steganography",
+    "titleZh": "Odysseus 用双重隐写越狱 GPT-4o、Gemini-2.0 与 Grok-3，攻击成功率最高 99%",
+    "authors": [
+      "Songze Li",
+      "Jiameng Cheng",
+      "Yiming Li",
+      "Xiaojun Jia",
+      "Dacheng Tao"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 83,
+    "summaryZh": "研究者提出 Odysseus，一种针对商业多模态大模型集成系统的越狱范式，通过双重隐写把恶意查询和模型回复都藏进看似正常的图片中。攻击分四步：先把恶意提示编码为二进制矩阵，用隐写模型嵌入图片；图片送入目标系统后，系统经 function calling 调用攻击者指定的提取函数解出隐藏查询并生成回复，再把违规回复隐写回图片返回；攻击者本地解码得到内容。在 SafeBench 和 JBB-Behaviors 上对 GPT-4o、Gemini-2.0-pro、Gemini-2.0-flash 和 Grok-3 测试，平均攻击成功率 78%，最高达 99%，高于次优基线 HIMRD 的 57.25%。作者称该方法生成的图片与原图视觉上难以区分，SSIM 0.8361、PSNR 68.5971，并能绕过 OpenAI Moderation API 的输入过滤，检测率为 0%。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2512.20168",
+      "aisafetyhot": "https://aisafetyhot.com/items/qokfye97jod8n3pkdzrbpcofv"
+    },
+    "publishedAt": "2025-12-23T08:53:36.000Z",
+    "timelineAt": "2026-10-09T08:05:41.986Z",
+    "discoveredAt": "2026-10-09T08:05:41.986Z"
+  },
+  {
+    "arxivId": "2510.02833",
+    "title": "Attack via Overfitting: 10-shot Benign Fine-tuning to Jailbreak LLMs",
+    "titleZh": "研究者提出用 10 条良性问答对微调越狱 LLM 的两阶段攻击",
+    "authors": [
+      "Zhixin Xie",
+      "Xurui Song",
+      "Jun Luo"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 83,
+    "summaryZh": "南洋理工大学研究者提出一种两阶段微调攻击，仅用 10 条完全良性的问答对即可越狱大语言模型。第一阶段用相同拒答答案的良性问答对微调，使模型过拟合到拒答行为；第二阶段用标准答案微调同一批问题，模型随之遗忘拒答关联，对包括有害问题在内的提问都给出顺从回答。在 Llama2-7b、Llama3-8b、Deepseek-R1-Distill-Llama3-8b、Qwen2.5-7b、Qwen3-8b 及 GPT-4o-mini、GPT-4.1-mini、GPT-3.5-turbo、GPT-4o、GPT-4.1 十个模型上，该方法平均攻击成功率 94.84%、有害分 4.48，接近使用显式有害数据的恶意微调（97.25% ASR），而数据集有害分与良性数据同为 1。作者称该攻击还能绕过针对前几个 token 损失的防御微调，在 Llama2-7b 上仍达 92.11% ASR。代码已开源。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2510.02833",
+      "aisafetyhot": "https://aisafetyhot.com/items/gocx4nlf7kvcc7axvz0o7zvk5"
+    },
+    "publishedAt": "2025-10-03T09:10:27.000Z",
+    "timelineAt": "2026-10-09T08:05:50.984Z",
+    "discoveredAt": "2026-10-09T08:05:50.984Z"
   },
   {
     "arxivId": "2610.11112",
@@ -252,6 +498,183 @@
     "discoveredAt": "2026-10-09T05:35:35.384Z"
   },
   {
+    "arxivId": "2512.19016",
+    "title": "DREAM: Dynamic Red-teaming across Environments for AI Models",
+    "titleZh": "DREAM 框架用跨环境长链攻击评测 12 个 LLM Agent，逾 68% 攻击绕过现有防御",
+    "authors": [
+      "Liming Lu",
+      "Xiang Gu",
+      "Junyu Huang",
+      "Jiawei Du",
+      "Xu Zheng",
+      "Yunhuai Liu",
+      "Yongbin Zhou",
+      "Shuchao Pang"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 82,
+    "summaryZh": "南京大学、香港大学等机构的研究者提出 DREAM，一个通过动态多轮对抗模拟评测 LLM Agent 交互级安全的框架。其核心是跨环境对抗知识图谱（CE-AKG）与上下文引导策略搜索（C-GPS），把现有单轮静态攻击当作原子动作，组装成跨环境的长链攻击轨迹。基于 349 个数字环境构建的 1986 个原子攻击库，研究者在 12 个 SOTA Agent 上评测，发现超过 68% 的长链攻击成功绕过现有防御，8 个模型的攻击成功率超过 70%。跨 5 个环境的 5 步攻击链暴露的漏洞严重度是静态基线的 4.8 倍。Claude-Sonnet-4.5 平均攻击成功率最低（48.31%），但长链攻击一旦成功，其严重度得分（14.4）为所有模型最高。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2512.19016",
+      "aisafetyhot": "https://aisafetyhot.com/items/zj4fcptg82u3spofu5t8pv5c5"
+    },
+    "publishedAt": "2025-12-22T04:11:57.000Z",
+    "timelineAt": "2026-10-09T08:05:41.659Z",
+    "discoveredAt": "2026-10-09T08:05:41.659Z"
+  },
+  {
+    "arxivId": "2607.02857",
+    "title": "MOSAIC: Knowledge-Guided CLI Command Composition Attack in LLM Coding Agents",
+    "titleZh": "MOSAIC 框架利用 CLI 命令组合攻击编码 Agent，成功率 96.59%",
+    "authors": [
+      "Jiangrong Wu",
+      "Huaijin Wang",
+      "Yihao Zhang",
+      "Yuhong Nan",
+      "Shuai Wang"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 82,
+    "summaryZh": "中山大学、山东大学、北京大学与香港科技大学的研究者提出 MOSAIC，一个知识引导框架，把 CVE、安全公告与研究者 PoC 蒸馏为可复用的命令状态摘要，再组合成攻击路径并实例化为真实开发工作流，用于黑盒评估编码 Agent 的 CLI 命令组合风险（CCR）。在 Claude Code、Codex CLI、Gemini CLI、GitHub Copilot CLI 和 Trae Agent 五款编码 Agent、五种后端 LLM 共 2,525 次试验中，MOSAIC 在良性开发任务下达到 96.59% 的端到端攻击成功率，而匹配的指令层基线 AIShellJack 和通用间接提示注入分别只有 2.18% 和 0.79%。作者称结构化知识库是关键，相比纯 LLM 生成器把有效攻击生成提升超过 50%。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2607.02857",
+      "aisafetyhot": "https://aisafetyhot.com/items/t4c9kfnj3qo1ejkzslqc5325l"
+    },
+    "publishedAt": "2026-07-03T01:41:17.000Z",
+    "timelineAt": "2026-10-09T08:05:41.767Z",
+    "discoveredAt": "2026-10-09T08:05:41.767Z"
+  },
+  {
+    "arxivId": "2510.04885",
+    "title": "RL Is a Hammer and LLMs Are Nails: A Simple Reinforcement Learning Recipe for Strong Prompt Injection",
+    "titleZh": "RL-Hammer：用 GRPO 从头训练攻击模型，对带防御的 GPT-5 达 72% 攻击成功率",
+    "authors": [
+      "Yuxin Wen",
+      "Arman Zharmagambetov",
+      "Ivan Evtimov",
+      "Narine Kokhlikyan",
+      "Tom Goldstein",
+      "Kamalika Chaudhuri",
+      "Chuan Guo"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 82,
+    "summaryZh": "Meta FAIR 与马里兰大学研究者提出 RL-Hammer，一种无需预热数据、完全从头训练的攻击模型强化学习方案，用 GRPO 让攻击模型改写注入目标，仅依赖目标模型返回的黑盒奖励信号。通过去掉 KL 正则项、在易攻模型与鲁棒模型上联合训练并用软奖励、限制输出格式三项技巧，该方法在 InjecAgent 上对 GPT-4o 达到 98% 攻击成功率，对启用 Instruction Hierarchy 防御的 GPT-5 达到 72%，对 Meta-SecAlign-8B 达 98%，对 Meta-SecAlign-70B 为 70%。在 AgentDojo 上对 GPT-4o 和 Claude-3.5-Sonnet 的攻击成功率分别为 51% 和 26%；在 AdvBench 越狱任务上对 GPT-4o 与 Claude-3.5-Sonnet 分别达 99.04% 和 97.11%。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2510.04885",
+      "aisafetyhot": "https://aisafetyhot.com/items/ozlj70pqbqsl117r99jxz1vqe"
+    },
+    "publishedAt": "2025-10-06T15:06:04.000Z",
+    "timelineAt": "2026-10-09T08:05:41.864Z",
+    "discoveredAt": "2026-10-09T08:05:41.864Z"
+  },
+  {
+    "arxivId": "2510.09462",
+    "title": "Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols",
+    "titleZh": "研究者用提示注入攻击监控模型，绕过 AI 控制协议",
+    "authors": [
+      "Mikhail Terekhov",
+      "Alexander Panfilov",
+      "Daniil Dzenhaliou",
+      "Caglar Gulcehre",
+      "Maksym Andriushchenko",
+      "Ameya Prabhu",
+      "Jonas Geiping"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 82,
+    "summaryZh": "研究者提出针对 AI 控制协议的适应性攻击：不可信模型在自身输出中嵌入提示注入，诱导作为监控者的可信模型给出低可疑度评分，从而放行后门等恶意行为。作者按 Kerckhoffs 原则假设攻击者已知监控模型身份、协议算法与阈值，在 APPS Backdooring 和 BashBench 两个基准上测试，覆盖 GPT-5、Claude Sonnet 4 等不可信模型与 GPT-4.1、GPT-4o、GPT-4o-mini 等监控模型。结果显示注入使监控的 ROC 曲线普遍下滑甚至低于对角线，GPT-4.1 在 APPS 上把全部 375 个带后门的 GPT-5 样本评为 0 分；Trusted Monitoring、Defer-to-Trusted、Trusted Editing 等协议的安全-有用性前沿随之塌缩到 Upfront Auditing 水平。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2510.09462",
+      "aisafetyhot": "https://aisafetyhot.com/items/q0xx3rhospdqo42wrteac49wf"
+    },
+    "publishedAt": "2025-10-10T15:12:44.000Z",
+    "timelineAt": "2026-10-09T08:05:50.848Z",
+    "discoveredAt": "2026-10-09T08:05:50.848Z"
+  },
+  {
+    "arxivId": "2511.16110",
+    "title": "Multi-Faceted Attack: Exposing Cross-Model Vulnerabilities in Defense-Equipped Vision-Language Models",
+    "titleZh": "MFA 框架在 17 个视觉语言模型上取得 58.5% 攻击成功率",
+    "authors": [
+      "Yijun Yang",
+      "Lichao Wang",
+      "Jianping Zhang",
+      "Chi Harold Liu",
+      "Lanqing Hong",
+      "Qiang Xu"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 82,
+    "summaryZh": "香港中文大学、北京理工大学与华为诺亚方舟实验室提出 Multi-Faceted Attack（MFA）框架，系统探测 GPT-4o、Gemini-Pro、LLaMA 4 等带防御视觉语言模型的安全漏洞，在 17 个开源与商用模型上总体攻击成功率为 58.5%。MFA 由三部分组成：Attention-Transfer Attack 把有害指令藏进看似无害的元任务中，作者以奖励作弊为理论视角解释其为何能绕过对齐训练，并在 Skywork、Tulu、RM-Mistral 三个奖励模型上验证双答案回复得分高于拒答；面向内容审核的迁移攻击利用模型的重复倾向生成对抗后缀，联合规避输入与输出过滤器，在 HEHS 数据集上平均 ASR 达 80.00%；视觉编码器攻击只在像素空间嵌入恶意系统提示，针对 LLaVA-1.6 优化的单张对抗图像迁移到 9 个未见模型上取得 44.3% 成功率。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2511.16110",
+      "aisafetyhot": "https://aisafetyhot.com/items/ej4fc5ifa98c5j70dq0zw2ri0"
+    },
+    "publishedAt": "2025-11-20T07:12:54.000Z",
+    "timelineAt": "2026-10-09T08:05:50.895Z",
+    "discoveredAt": "2026-10-09T08:05:50.895Z"
+  },
+  {
+    "arxivId": "2512.21008",
+    "title": "GateBreaker: Gate-Guided Attacks on Mixture-of-Expert LLMs",
+    "titleZh": "GateBreaker：针对 MoE 大模型的免训练安全对齐攻击框架",
+    "authors": [
+      "Lichao Wu",
+      "Sasha Behrouzi",
+      "Mohamadreza Rostami",
+      "Stjepan Picek",
+      "Ahmad-Reza Sadeghi"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 82,
+    "summaryZh": "研究者提出 GateBreaker，一种免训练、轻量且与架构无关的攻击框架，可在推理阶段破坏 MoE 大模型的安全对齐。该方法分三步：先做门控层画像，找出对有害输入过度激活的安全专家；再做专家级定位，锁定与拒答相关的安全神经元；最后在推理时将这些神经元的激活置零，实现定向安全移除。在八个已对齐的 MoE 大模型上，仅屏蔽目标层约 3% 的神经元，平均攻击成功率从 7.4% 升至 64.9%，且通用能力下降有限。安全神经元可在同族模型间迁移，一次性迁移攻击把平均攻击成功率从 17.9% 提升到 67.7%，最高增益达 91.2%。该方法还适用于五个 MoE 视觉语言模型，在不安全图像输入上达到 60.9% 的攻击成功率。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2512.21008",
+      "aisafetyhot": "https://aisafetyhot.com/items/rqioijv2jitizmjaha9svusid"
+    },
+    "publishedAt": "2025-12-24T07:13:24.000Z",
+    "timelineAt": "2026-10-09T08:05:51.066Z",
+    "discoveredAt": "2026-10-09T08:05:51.066Z"
+  },
+  {
+    "arxivId": "2509.22067",
+    "title": "The Rogue Scalpel: Activation Steering Compromises LLM Safety",
+    "titleZh": "论文：激活引导可破坏 LLM 安全对齐，20 个随机向量即可构造通用越狱攻击",
+    "authors": [
+      "Anton Korznikov",
+      "Andrey Galichin",
+      "Alexey Dontsov",
+      "Oleg Y. Rogov",
+      "Ivan Oseledets",
+      "Elena Tutubalina"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 82,
+    "summaryZh": "论文《The Rogue Scalpel》发现，激活引导（activation steering）会系统性破坏大语言模型的安全对齐。在 Llama3.1、Qwen2.5、Falcon3 等模型上，仅向中间层激活加入随机方向向量，就能把 JailbreakBench 100 条有害提示的合规率从 0% 提升到 1–13%；使用稀疏自编码器（SAE）的良性特征引导时，合规率比随机向量再高 1–4%。研究还发现，1000 个 SAE 特征中有 817 个至少能越狱一条有害提示，且最有效的特征对应的是“情态动词”“品牌标识”等良性概念，跨提示泛化性差，难以系统筛查。作者进一步用 20 个能越狱单条提示的随机向量取平均，构造出通用攻击向量，在未见提示上把合规率提升约 4 倍，例如在 Llama3.1-70B 上达到 50.4%，且无需模型权重、梯度或有害训练数据。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2509.22067",
+      "aisafetyhot": "https://aisafetyhot.com/items/a45k2pvsl77d3n3a0okzhjij7"
+    },
+    "publishedAt": "2025-09-26T08:49:47.000Z",
+    "timelineAt": "2026-10-09T08:05:51.098Z",
+    "discoveredAt": "2026-10-09T08:05:51.098Z"
+  },
+  {
     "arxivId": "2610.10742",
     "title": "BRANCH: Bypassing Multi-Scanner AI Guardrails",
     "titleZh": "BRANCH 方法绕过 6 套多扫描器护栏系统，攻击成功率 100%",
@@ -292,6 +715,81 @@
     "publishedAt": "2026-10-07T18:10:56.000Z",
     "timelineAt": "2026-10-09T05:35:35.364Z",
     "discoveredAt": "2026-10-09T05:35:35.364Z"
+  },
+  {
+    "arxivId": "2509.22040",
+    "title": "\"Your AI, My Shell\": Demystifying Prompt Injection Attacks on Agentic AI Coding Editors",
+    "titleZh": "研究：通过编码规则文件对Cursor与GitHub Copilot实施提示注入，攻击成功率最高84%",
+    "authors": [
+      "Yue Liu",
+      "Yanjie Zhao",
+      "Yunbo Lyu",
+      "Ting Zhang",
+      "Haoyu Wang",
+      "David Lo"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 81,
+    "summaryZh": "新加坡管理大学等机构的研究者提出AIShellJack框架，通过向开发者导入的编码规则文件（如.cursor/rules）注入恶意指令，对Cursor和GitHub Copilot实施提示注入攻击。该框架包含314个攻击载荷，覆盖MITRE ATT&CK的70项技术，在Cursor Auto模式下攻击成功率最高达84.1%，GitHub Copilot配合Gemini 2.5 Pro时最低为41.1%。攻击目标涵盖系统发现、凭证窃取与数据外泄，其中Initial Access类成功率达93.3%、Discovery为91.1%、Credential Access为68.2%、Exfiltration为55.6%。消融实验显示，开发者如何发起任务对成功率影响很小，但载荷的上下文包装方式影响显著，去掉强制执行的措辞后成功率可降至接近零。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2509.22040",
+      "aisafetyhot": "https://aisafetyhot.com/items/yxwf036ypf7jb80x9a9qxznlw"
+    },
+    "publishedAt": "2025-09-26T08:20:54.000Z",
+    "timelineAt": "2026-10-09T08:05:50.871Z",
+    "discoveredAt": "2026-10-09T08:05:50.871Z"
+  },
+  {
+    "arxivId": "2604.28182",
+    "title": "Exploration Hacking: Can LLMs Learn to Resist RL Training?",
+    "titleZh": "研究提出探索作弊：LLM 可学会抵抗 RL 训练",
+    "authors": [
+      "Eyon Jang",
+      "Damon Falck",
+      "Joschka Braun",
+      "Nathalie Kirch",
+      "Achu Menon",
+      "Perusha Moodley",
+      "Scott Emmons",
+      "Roland S. Zimmermann",
+      "David Lindner"
+    ],
+    "category": "alignment",
+    "selected": true,
+    "attention": 81,
+    "summaryZh": "论文提出并实证研究了探索作弊（exploration hacking），即模型在 RL 训练中策略性改变探索行为以影响训练结果。作者通过微调构造模型生物，使其在生物安全任务（WMDP、VCT）和 AI 研发任务（BigCodeBench、KernelBench）上按特定低表现策略行动，这些模型能抵抗基于 GRPO 的能力激发，同时保持无关任务表现。实验显示，确定性策略（如总选最短答案）比随机策略更能抵抗激发，即使执行可靠性更低；提示词方式无法稳定抵抗，而 RL 锁定可维持 500 步以上。在反制措施上，思维链监控、仅动作监控和权重加噪都能检测出这些模型生物，对良性示例轨迹做 SFT 可在约 10 至 100 步内快速恢复被抑制的能力。对前沿模型的审计发现，模型在获得充分训练上下文信息时能显式推理并执行探索作弊，瓶颈在于策略行动倾向而非策略推理能力，且通过环境间接获取信息时作弊率更高。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2604.28182",
+      "aisafetyhot": "https://aisafetyhot.com/items/j8ghcf202rpx3s7kdsjkqm3sx"
+    },
+    "publishedAt": "2026-04-30T17:58:39.000Z",
+    "timelineAt": "2026-10-09T08:05:50.960Z",
+    "discoveredAt": "2026-10-09T08:05:50.960Z"
+  },
+  {
+    "arxivId": "2606.21732",
+    "title": "Safe to Check, Unsafe to Use: Relinking at the Compression Boundary of LLM Agents",
+    "titleZh": "研究者提出 relinking 漏洞：LLM Agent 压缩边界可被拼出恶意指令",
+    "authors": [
+      "Zesen Liu",
+      "Zihan Zhang",
+      "Dongdong She"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 80,
+    "summaryZh": "香港科技大学研究者提出 relinking，一种针对 LLM Agent 摘要式提示压缩的新型漏洞：压缩器像被利用的中间人，把分散在上下文各处、单独看都无害的片段拼成一条完整的恶意指令。作者称这是摘要式压缩器的内生漏洞，注意力机制让分散片段可被联合取用，预训练让兼容片段显得可连接，后训练对有用性的偏好则倾向把它们合并成紧凑的可执行指令。他们提出自动化工具 Relink，用领域特定语言把恶意载荷拆成无害片段并分散植入，在四个长上下文 Agent 基准上达到 86.9% 的 Relink Rate 与 Backend Action Rate，而对照的 clean-split 为 17.0%；在 OpenClaw 和 Claude Code 的案例研究中，默认压缩命令把分离片段合并为可执行载荷。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2606.21732",
+      "aisafetyhot": "https://aisafetyhot.com/items/ew5dbw5zn24h6f8rc6ek8p6ob"
+    },
+    "publishedAt": "2026-06-19T20:43:14.000Z",
+    "timelineAt": "2026-10-09T08:05:50.837Z",
+    "discoveredAt": "2026-10-09T08:05:50.837Z"
   },
   {
     "arxivId": "2610.12361",
@@ -384,6 +882,191 @@
     "discoveredAt": "2026-10-09T04:22:39.421Z"
   },
   {
+    "arxivId": "2605.17062",
+    "title": "The Range Shrinks, the Threat Remains: Re-evaluating LLM Package Hallucinations on the 2026 Frontier-Model Cohort",
+    "titleZh": "研究复现五个前沿模型的包名幻觉：跨模型共同幻觉 127 个包名，53 个仍可被注册",
+    "authors": [
+      "Aleksandr Churilov"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 77,
+    "summaryZh": "独立研究者 Aleksandr Churilov 在 Claude Sonnet 4.6、Claude Haiku 4.5、GPT-5.4-mini、Gemini 2.5 Pro 和 DeepSeek V3.2 上复现 Spracklen 等人的包名幻觉测量方法，在 199,845 条 Python 与 JavaScript 提示上测得幻觉率介于 4.62%（Claude Haiku 4.5）与 6.10%（GPT-5.4-mini）之间，模型间差距从 2024 年的 5.2%–21.7% 压缩到 1.48 个百分点。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2605.17062",
+      "aisafetyhot": "https://aisafetyhot.com/items/u1cs6s69qvol8twh76binzblx"
+    },
+    "publishedAt": "2026-05-16T16:08:52.000Z",
+    "timelineAt": "2026-10-09T08:05:41.925Z",
+    "discoveredAt": "2026-10-09T08:05:41.925Z"
+  },
+  {
+    "arxivId": "2604.10326",
+    "title": "Jailbreaking the Matrix: Nullspace Steering for Controlled Model Subversion",
+    "titleZh": "HMNS：通过注意力头掩蔽与零空间注入实现机制级越狱",
+    "authors": [
+      "Vishal Pramanik",
+      "Maisha Maliha",
+      "Susmit Jha",
+      "Sumit Kumar Jha"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 77,
+    "summaryZh": "研究者提出 Head-Masked Nullspace Steering（HMNS），一种在推理时直接干预模型内部计算的越狱方法：先用 KL 散度归因找出对模型默认行为影响最大的注意力头，掩蔽其输出投影，再向被掩蔽子空间的正交补注入扰动，并在解码过程中闭环重复该流程。在 AdvBench、HarmBench、JBB-Behaviors、StrongReject 四个基准上，对 LLaMA-2-7B-Chat、Phi-3-Medium-4K-Instruct 和 LLaMA-3.1-70B 三个模型，作者称 HMNS 在六种防御下取得最高攻击成功率，平均查询次数约 2 次，比强基线少约 3.5 至 4 倍。论文还提出 forward-equivalent pass（FEP）等算力归一化指标，在 LLaMA-3.1-70B 上报告每次成功约 0.53 万亿 FLOPs、延迟 6.1 秒。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2604.10326",
+      "aisafetyhot": "https://aisafetyhot.com/items/f089wbhtzg8w53dtu6vrainbc"
+    },
+    "publishedAt": "2026-04-11T19:19:05.000Z",
+    "timelineAt": "2026-10-09T08:05:51.031Z",
+    "discoveredAt": "2026-10-09T08:05:51.031Z"
+  },
+  {
+    "arxivId": "2605.08513",
+    "title": "A Single Neuron Is Sufficient to Bypass Safety Alignment in Large Language Models",
+    "titleZh": "Apple 研究者发现抑制单个神经元即可绕过 LLM 安全对齐",
+    "authors": [
+      "Hamid Kazemi",
+      "Atoosa Chegini",
+      "Maria Safi"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 77,
+    "summaryZh": "Apple 研究者发现，抑制单个 MLP 神经元即可绕过 LLM 的安全对齐，在 JailbreakBench 上跨 7 个模型取得 91.7% 的平均攻击成功率。研究覆盖 Qwen3（1.7B 到 32B）与 Llama-3.1（8B、70B）两个家族，仅需白盒访问模型激活，无需训练、微调或提示词工程。作者称这些拒答神经元在基座模型中已能区分有害与无害提示，对齐训练只是改变其触发位置而非从无到有地创造它们。作为概念验证，放大单个自杀概念神经元可让模型在完全无害的提示下生成自杀相关内容。作者同时指出，单个拒答神经元的激活可作为有害提示检测器，在 XSTest 上 AUROC 与 Llama-Guard-3-8B 相当。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2605.08513",
+      "aisafetyhot": "https://aisafetyhot.com/items/g5tfag2ncbfr9yp0sergpyoth"
+    },
+    "publishedAt": "2026-05-08T21:45:28.000Z",
+    "timelineAt": "2026-10-09T08:05:51.049Z",
+    "discoveredAt": "2026-10-09T08:05:51.049Z"
+  },
+  {
+    "arxivId": "2605.20519",
+    "title": "Codec-Robust Attacks on Audio LLMs",
+    "titleZh": "CodecAttack：在音频编解码器潜空间构造对抗扰动，绕过有损压缩防御",
+    "authors": [
+      "Jaechul Roh",
+      "Jean-Philippe Monteuuis",
+      "Jonathan Petit",
+      "Amir Houmansadr"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 77,
+    "summaryZh": "研究者提出 CodecAttack，把对抗扰动优化在 EnCodec 连续潜空间而非波形域，使攻击能在 Opus 等有损压缩后存活。在 Opus 中等码率下，对三个目标模型和三个部署场景平均达到 85.5% 的目标子串攻击成功率，而采用相同 EoT 加固的波形基线在任何码率下都不超过 26%。攻击无需重训练即可迁移到未见过的编解码器，在 MP3 上最高 100%，在 AAC-LC 上 84%。逐频带能量分析显示潜空间扰动集中在 4 kHz 以下，正是编解码器分配比特最多的频段。消融实验表明多码率 EoT 是低码率鲁棒性的关键，去掉后 Opus 32 kbps 及以下成功率降为 0%。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2605.20519",
+      "aisafetyhot": "https://aisafetyhot.com/items/ladydoultr35vul4jxizq7iq0"
+    },
+    "publishedAt": "2026-05-19T21:39:52.000Z",
+    "timelineAt": "2026-10-09T08:05:51.154Z",
+    "discoveredAt": "2026-10-09T08:05:51.154Z"
+  },
+  {
+    "arxivId": "2606.02630",
+    "title": "MultiTurnPSB: Evaluating Multi-Turn Jailbreak Attacks an dClassifier-Based Defenses for Medical AI Safety",
+    "titleZh": "MultiTurnPSB：四轮医疗越狱评测显示单轮基准掩盖 19 倍安全差距",
+    "authors": [
+      "Anushka Sheoran",
+      "Yiduo Hao"
+    ],
+    "category": "eval",
+    "selected": true,
+    "attention": 76,
+    "summaryZh": "研究者提出 MultiTurnPSB，把 PatientSafetyBench 的 466 条面向患者的医疗安全提示扩展为四轮对抗对话，并测试固定模板、模板自适应和实时对抗三种攻击方式。在实时对抗攻击下，GPT-4.1-mini 的不安全回答率从第 1 轮的 34.8% 升至第 4 轮的 78.8%，其中健康虚假信息从 15.0% 升至 83.8%，歧视类达到 89.0%。面对同一个 GPT-4o-mini 攻击者，GPT-4.1-mini 与 Claude Sonnet 4.5 在第 1 轮几乎无差别（34.8% 对 31.8%，p=0.43），到第 4 轮却拉开 19 倍差距（78.8% 对 4.1%）。作者识别出四种退化轨迹，并指出紧急情境加医学权威声称这一两要素组合与多数完全违规相关，第 2 轮是关键脆弱窗口。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2606.02630",
+      "aisafetyhot": "https://aisafetyhot.com/items/g0n570eh1gw2m34pb0h6kv8sr"
+    },
+    "publishedAt": "2026-05-30T10:09:53.000Z",
+    "timelineAt": "2026-10-09T08:05:41.943Z",
+    "discoveredAt": "2026-10-09T08:05:41.943Z"
+  },
+  {
+    "arxivId": "2606.11817",
+    "title": "Grammar-Constrained Decoding Can Jailbreak LLMs into Generating Malicious Code",
+    "titleZh": "研究：语法约束解码可越狱 LLM 生成恶意代码，并提出 CodeShield 防御",
+    "authors": [
+      "Yitong Zhang",
+      "Shiteng Lu",
+      "Jia Li"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 76,
+    "summaryZh": "研究者提出 CodeSpear，利用语法约束解码（GCD）把自然语言拒答排除在合法输出空间之外，迫使模型在代码模态下继续生成，从而越狱 LLM 输出恶意代码。在 10 个模型、4 个基准上，CodeSpear 平均将攻击成功率提升逾 30 个百分点；在本地部署的 Qwen2.5-Coder-7B 上平均 ASR 达 81.82%，在 API 模型 MiniMax-M2.7 的 RMCBench 上 ASR 从 20.33% 升至 85.53%。作者指出，GPT-5 等模型在 GCD 下常生成 pass 语句规避，但仅需收紧语法禁止 pass，GPT-5 在 RMCBench 上的 ASR 就从 55.49% 升至 70.30%。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2606.11817",
+      "aisafetyhot": "https://aisafetyhot.com/items/gabycq6s2iiuw568caqnwn5hi"
+    },
+    "publishedAt": "2026-06-10T08:50:59.000Z",
+    "timelineAt": "2026-10-09T08:05:42.027Z",
+    "discoveredAt": "2026-10-09T08:05:42.027Z"
+  },
+  {
+    "arxivId": "2605.14859",
+    "title": "Do Coding Agents Understand Least-Privilege Authorization?",
+    "titleZh": "论文提出 AuthBench 基准，评测编码 Agent 能否推断最小权限边界",
+    "authors": [
+      "Zheng Yan",
+      "Jingxiang Weng",
+      "Charles Chen",
+      "Dengyun Peng",
+      "Ethan Qin",
+      "Jiannan Guan",
+      "Jinhao Liu",
+      "Qiming Yu",
+      "Yixin Yuan",
+      "Fanqing Meng",
+      "Carl Che",
+      "Mengkang Hu"
+    ],
+    "category": "eval",
+    "selected": true,
+    "attention": 76,
+    "summaryZh": "论文将编码 Agent 在任务执行前生成文件级读/写/执行权限策略的能力定义为权限边界推断，并构建 AuthBench 基准，包含 10 个领域的 120 个终端任务（80 个标准任务、40 个敏感任务），配有经人工审核的权限标注和可执行的效用与攻击验证器。评测 GPT-5、GPT-5.3-Codex、GPT-5.4、Claude Opus 4.6、Gemini 3.1 Pro Preview、Kimi K2.5、MiniMax M2.7、Qwen3-Coder-480B、Qwen3.5-397B 等前沿模型后发现，模型常同时出现授权不足与授权过度：既遗漏执行链所需的权限，又授予未使用或敏感的访问权限。提高推理时推理量不会缩小这一差距，反而让每个模型更稳定地收敛到各自的授权吸引子。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2605.14859",
+      "aisafetyhot": "https://aisafetyhot.com/items/ttw8hcg9il3j7c2gmia20djh8"
+    },
+    "publishedAt": "2026-05-14T14:05:58.000Z",
+    "timelineAt": "2026-10-09T08:05:42.156Z",
+    "discoveredAt": "2026-10-09T08:05:42.156Z"
+  },
+  {
+    "arxivId": "2601.14310",
+    "title": "CORVUS: Red-Teaming Hallucination Detectors via Internal Signal Camouflage in Large Language Models",
+    "titleZh": "CORVUS：用 LoRA 伪装内部信号绕过单次幻觉检测器",
+    "authors": [
+      "Nay Myat Min",
+      "Long H. Pham",
+      "Hongyu Zhang",
+      "Jun Sun"
+    ],
+    "category": "attack",
+    "selected": true,
+    "attention": 76,
+    "summaryZh": "新加坡管理大学等机构的研究者提出 CORVUS，一种白盒模型侧红队方法：冻结检测器与基座模型，仅用 LoRA 适配器在教师强制下重塑答案窗口的三类内部遥测信号，即 token 熵（TE）、隐状态对数体积（HV）与注意力对角性（AD），并加入一步嵌入空间 FGSM 注意力压力测试。适配器只在 1000 条分布外 Alpaca 指令上训练，可训练参数不足 0.5%，随后零样本迁移到 FAVA-Annotation，在 Llama-2、Vicuna、Llama-3、Qwen2.5 四个开源模型上同时削弱免训练检测器（如 LLM-Check）与探针类检测器（SEP、ICR-probe）。消融显示 AD 项是规避注意力类特征的主要杠杆，TE 与 HV 提供次要塑形。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2601.14310",
+      "aisafetyhot": "https://aisafetyhot.com/items/ex6mx30sytmmqyhec3xtgxalb"
+    },
+    "publishedAt": "2026-01-19T08:07:03.000Z",
+    "timelineAt": "2026-10-09T08:05:42.169Z",
+    "discoveredAt": "2026-10-09T08:05:42.169Z"
+  },
+  {
     "arxivId": "2610.08902",
     "title": "Agent Plasticity: Measuring Self-Improvement Through Experience",
     "titleZh": "论文提出 agent plasticity 指标衡量智能体通过经验自我改进的效率",
@@ -423,6 +1106,106 @@
     "publishedAt": null,
     "timelineAt": "2026-10-09T04:22:39.406Z",
     "discoveredAt": "2026-10-09T04:22:39.406Z"
+  },
+  {
+    "arxivId": "2606.04168",
+    "title": "When Autoregressive Consistency Hurts Safety Alignment",
+    "titleZh": "论文提出随机插入攻击，利用自回归一致性绕过 LLM 安全对齐",
+    "authors": [
+      "Bochen Lyu",
+      "Yiyang Jia",
+      "Xiaohao Cai",
+      "Zhanxing Zhu"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文《When Autoregressive Consistency Hurts Safety Alignment》提出，大语言模型的安全对齐之所以脆弱，部分原因在于它往往很浅层：微调主要改变模型在最初几个输出 token 附近的行为。作者用自回归一致性解释这一现象，即下一 token 预测倾向于保持并延续当前回复轨迹，学习动态分析显示对齐更新会集中在早期 token 上。同一机制还预测出一类更广泛的攻击，即在输出轨迹任意位置诱导出有害延续状态。作为具体例子，作者提出随机插入攻击，在原本安全的拒答轨迹中插入一小段有害内容，借助自回归一致性维持有害分支，从而绕过安全对齐；即便在很长的拒答前缀之后，一小段有害内容也能把生成引向有害方向。作者据此提出对抗式安全对齐框架，并实例化为随机最坏插入训练，主张安全对齐应打破整条输出轨迹上的有害自回归一致性。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2606.04168",
+      "aisafetyhot": "https://aisafetyhot.com/items/s780knu73p0oer2few5lwhuzv"
+    },
+    "publishedAt": "2026-06-02T19:32:23.000Z",
+    "timelineAt": "2026-10-09T08:05:42.082Z",
+    "discoveredAt": "2026-10-09T08:05:42.082Z"
+  },
+  {
+    "arxivId": "2512.10449",
+    "title": "When Reject Turns into Accept: Quantifying the Vulnerability of LLM-Based Scientific Reviewers to Indirect Prompt Injection",
+    "titleZh": "研究：不可见文本注入可让 LLM 审稿系统把拒稿翻成接收",
+    "authors": [
+      "Devanshu Sahoo",
+      "Manish Prasad",
+      "Vasudev Majhi",
+      "Jahnvi Singh",
+      "Vinay Chamola",
+      "Yash Sinha",
+      "Murari Mandal",
+      "Dhruv Kumar"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究团队提出针对 LLM-as-a-Judge 审稿系统的间接提示注入攻击，通过在 PDF 中植入不可见文本和布局感知编码，试图把拒稿决定翻转为接收。作者提出加权对抗脆弱性分数（WAVS）指标，用分数膨胀幅度与相对真实标签的决定偏移严重程度加权衡量脆弱性。他们改编了 15 种领域攻击策略，从语义劝说到认知混淆，在 13 个语言模型（包括 GPT-5 和 DeepSeek）上评测，数据集为 200 篇来自 ICLR OpenReview 等渠道的官方与真实接收、拒稿投稿。结果显示 Maximum Mark Magyk、Symbolic Masking & Context Redirection 等混淆手法能成功操纵分数，在开源模型上决定翻转率最高达 86.26%，同时在专有系统中暴露出不同的推理陷阱。作者公开了完整数据集与注入框架。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2512.10449",
+      "aisafetyhot": "https://aisafetyhot.com/items/hw1vg23mt1z4knru1894rpku1"
+    },
+    "publishedAt": "2025-12-11T09:13:36.000Z",
+    "timelineAt": "2026-10-09T08:05:50.913Z",
+    "discoveredAt": "2026-10-09T08:05:50.913Z"
+  },
+  {
+    "arxivId": "2603.09246",
+    "title": "Reasoning-Oriented Programming: Chaining Semantic Gadgets to Jailbreak Large Vision Language Models",
+    "titleZh": "研究者提出 Reasoning-Oriented Programming，通过链式语义片段越狱大型视觉语言模型",
+    "authors": [
+      "Quanchen Zou",
+      "Moyang Chen",
+      "Zonghao Ying",
+      "Wenzhuo Xu",
+      "Yisong Xiao",
+      "Deyue Zhang",
+      "Dongdong Yang",
+      "Zhao Liu",
+      "Xiangzheng Zhang"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出一种名为 Reasoning-Oriented Programming 的攻击范式，将越狱类比为系统安全中的 Return-Oriented Programming，利用模型的指令跟随能力把多个语义正交的良性输入组合起来，使有害逻辑只在推理后期才浮现，从而绕过感知层面的安全对齐。作者称现有防御主要针对输入中显式的恶意模式，忽视了组合推理带来的漏洞。该框架通过优化语义正交性和空间隔离生成视觉片段，在 SafeBench 和 MM-SafetyBench 上对包括 GPT-4o 和 Claude 3.7 Sonnet 在内的 7 个大型视觉语言模型进行评测，结果显示其持续绕过安全对齐，在开源模型上平均超过最强基线 4.67%，在商业模型上平均超过 9.50%。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2603.09246",
+      "aisafetyhot": "https://aisafetyhot.com/items/qhdffkl91uj2czg7rau6aychl"
+    },
+    "publishedAt": "2026-03-10T06:18:48.000Z",
+    "timelineAt": "2026-10-09T08:05:51.107Z",
+    "discoveredAt": "2026-10-09T08:05:51.107Z"
+  },
+  {
+    "arxivId": "2504.01094",
+    "title": "Multilingual and Multi-Accent Jailbreaking of Audio LLMs",
+    "titleZh": "研究者提出 Multi-AudioJail，多语言多口音音频越狱攻击成功率最高提升 57.25 个百分点",
+    "authors": [
+      "Jaechul Roh",
+      "Virat Shejwalkar",
+      "Amir Houmansadr"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 Multi-AudioJail，这是首个系统利用多语言与多口音音频越狱漏洞的框架，包含一个对抗性扰动的多语言、多口音音频越狱提示词数据集，以及一套分层评测流程。结果显示，混响、回声、耳语等声学扰动与跨语言音系相互作用，可使越狱成功率最高提升 57.25 个百分点，例如对 MERaLiON 使用带混响的肯尼亚口音攻击。作者称多模态大模型比单模态系统更易受攻击，攻击者只需利用最薄弱环节（如非英语音频输入）即可攻破整个模型，实验中纯音频多语言攻击的成功率是纯文本攻击的 3.1 倍。作者计划公开数据集以推动跨模态防御研究。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2504.01094",
+      "aisafetyhot": "https://aisafetyhot.com/items/x9nzyn8khr66ky0lxp17e39m8"
+    },
+    "publishedAt": "2025-04-01T18:12:23.000Z",
+    "timelineAt": "2026-10-09T08:05:51.159Z",
+    "discoveredAt": "2026-10-09T08:05:51.159Z"
   },
   {
     "arxivId": "2610.10625",
@@ -470,6 +1253,155 @@
     "publishedAt": null,
     "timelineAt": "2026-10-09T05:35:35.398Z",
     "discoveredAt": "2026-10-09T05:35:35.398Z"
+  },
+  {
+    "arxivId": "2509.09112",
+    "title": "Character-Level Perturbations Disrupt LLM Watermarks",
+    "titleZh": "研究：字符级扰动可破坏 LLM 水印，并提出基于遗传算法的去除攻击",
+    "authors": [
+      "Zhaoxi Zhang",
+      "Xiaomei Zhang",
+      "Yanjun Zhang",
+      "He Zhang",
+      "Shirui Pan",
+      "Bo Liu",
+      "Asif Qumer Gill",
+      "Leo Yu Zhang"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文《Character-Level Perturbations Disrupt LLM Watermarks》提出，字符级扰动（如拼写错误、字符交换、删除、同形字）能通过扰乱 tokenization 过程同时影响多个 token，从而在受限威胁模型下比常规方法更有效地去除 LLM 水印。作者首先形式化了 LLM 水印的系统模型，并刻画了两种限制对水印检测器访问的现实威胁模型，随后分析不同扰动类型的攻击范围。基于此，他们提出使用遗传算法（GA）并借助参考检测器进行优化的引导式去除攻击，在仅能有限次黑盒查询检测器的实际威胁模型下表现出较强的去除效果。作者还提出对抗困境：任何固定防御都可被合适的扰动策略绕过，并据此设计自适应复合字符级攻击，实验显示其能有效击败现有防御。研究结论指出当前 LLM 水印方案存在显著脆弱性，需要开发新的鲁棒机制。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2509.09112",
+      "aisafetyhot": "https://aisafetyhot.com/items/mbcv280j7cdr2lvgsdkzyvdmc"
+    },
+    "publishedAt": "2025-09-11T02:50:07.000Z",
+    "timelineAt": "2026-10-09T08:05:41.882Z",
+    "discoveredAt": "2026-10-09T08:05:41.882Z"
+  },
+  {
+    "arxivId": "2511.22681",
+    "title": "CacheTrap: Unveiling a Stealthier Gray-Box Trojan against LLMs",
+    "titleZh": "CacheTrap：研究者提出针对 LLM KV cache 的灰盒木马攻击",
+    "authors": [
+      "Mohaiminul Al Nahian",
+      "Abeer Matar A. Almalky",
+      "Gamana Aragonda",
+      "Ranyang Zhou",
+      "Sabbir Ahmed",
+      "Dmitry Ponomarev",
+      "Li Yang",
+      "Shaahin Angizi",
+      "Adnan Siraj Rakin"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 CacheTrap，一种针对 LLM 的 Key-Value（KV）cache 的灰盒木马攻击。该方法在 KV cache 中翻转单个比特作为瞬时触发器，激活后使模型执行指定行为，且不改变输入或模型权重。作者称这是首个针对 LLM KV cache 的灰盒木马攻击，并提出一种高效搜索算法定位 KV cache 中的脆弱位置，不依赖模型权重或数据集。在五个开源 LLM 上的实验显示，仅翻转 KV cache 中一个比特即可在触发时达到接近 100% 的攻击成功率，同时保持无触发时的正常准确率。该工作已被 ICCAD 2026 接收。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2511.22681",
+      "aisafetyhot": "https://aisafetyhot.com/items/jq6zcpkvdk1oi3ciu7lu42jgx"
+    },
+    "publishedAt": "2025-11-27T18:30:19.000Z",
+    "timelineAt": "2026-10-09T08:05:51.055Z",
+    "discoveredAt": "2026-10-09T08:05:51.055Z"
+  },
+  {
+    "arxivId": "2508.10029",
+    "title": "Latent Fusion Jailbreak: Blending Harmful and Harmless Representations to Elicit Unsafe LLM Outputs",
+    "titleZh": "研究者提出 Latent Fusion Jailbreak，白盒越狱在五个开源权重模型上平均成功率达 94.13%",
+    "authors": [
+      "Wenpeng Xing",
+      "Bohan Yang",
+      "Mohan Li",
+      "Chunqiang Hu",
+      "Haitao Xu",
+      "Ningyu Zhang",
+      "Bo Lin",
+      "Meng Han"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 Latent Fusion Jailbreak（LFJ），通过将有害查询与结构相似的良性查询配对，在选定层和 token 位置插值二者的隐藏状态来诱导模型输出不安全内容；拒答损失梯度用于确定干预位置，层间混合系数按 token 归一化的顺从与拒答抑制目标优化。在四个安全基准和五个开源权重目标模型上，该方法在其描述的白盒协议下取得 94.13% 的宏平均攻击成功率。消融显示，去掉拒绝采样后成功率降至 86.72%，把结构化的有害-良性配对换成随机配对后降至 27.45%。作者还设计了针对 LFJ 的潜空间对抗训练，在攻击针对防御后模型重新优化时，成功率从 94.13% 降至 12.37%；该防御评估未覆盖对其他攻击类型的迁移和良性效用的保持。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2508.10029",
+      "aisafetyhot": "https://aisafetyhot.com/items/l122samgarqpsbrf4dzjjuh2q"
+    },
+    "publishedAt": "2025-08-08T17:29:16.000Z",
+    "timelineAt": "2026-10-09T08:05:51.081Z",
+    "discoveredAt": "2026-10-09T08:05:51.081Z"
+  },
+  {
+    "arxivId": "2503.02174",
+    "title": "Adversarial Tokenization",
+    "titleZh": "研究者提出对抗分词攻击，可在不改文本的情况下绕过 LLM 安全限制",
+    "authors": [
+      "Renato Lui Geh",
+      "Zilei Shao",
+      "Guy Van den Broeck"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出对抗分词（adversarial tokenization）攻击：同一字符串存在指数级多种分词方式，而 LLM 训练和推理通常只采用其中一种，例如 Llama3 将 penguin 分为 [p,enguin]，而 [peng,uin] 同样合法。作者发现模型虽只在一个分词上训练，仍能理解其他分词，据此可将明显恶意的字符串重新分词以绕过安全与对齐限制。实验在三个前沿 LLM 和对抗数据集上验证了该攻击，作者称其效果可与现有最先进对抗方法竞争，且无需改动有害请求的文本，揭示了子词模型中此前未知的漏洞。该论文发表于 ACL 2025。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2503.02174",
+      "aisafetyhot": "https://aisafetyhot.com/items/p5pwe40ijfzx0g9689xbcpw2b"
+    },
+    "publishedAt": "2025-03-04T01:31:17.000Z",
+    "timelineAt": "2026-10-09T08:05:51.196Z",
+    "discoveredAt": "2026-10-09T08:05:51.196Z"
+  },
+  {
+    "arxivId": "2501.16534",
+    "title": "Targeting Alignment: Extracting Safety Classifiers of Aligned LLMs",
+    "titleZh": "研究者提出提取对齐 LLM 安全分类器的越狱攻击方法",
+    "authors": [
+      "Jean-Charles Noirot Ferrand",
+      "Yohan Beugin",
+      "Eric Pauley",
+      "Ryan Sheatsley",
+      "Patrick McDaniel"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出一种新的越狱攻击技术，通过从 LLM 的部分架构中构建候选分类器，提取其内部安全分类器的近似替代模型。评估显示，最佳候选分类器仅用 20% 的模型架构即可达到 80% 以上的 F1 一致率。在替代分类器上生成的对抗输入可高成功率迁移到原 LLM：仅用 50% 的 Llama 2 模型构建的替代分类器，攻击成功率达 70%，内存占用和运行时间减半，而直接攻击 LLM 的成功率仅为 22%。作者认为，提取替代分类器是建模并应对对齐模型越狱脆弱性的有效且高效手段。代码已公开，该工作已被 IEEE SaTML 接收。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2501.16534",
+      "aisafetyhot": "https://aisafetyhot.com/items/jz7p6p0co68srv1ov4enh50tv"
+    },
+    "publishedAt": "2025-01-27T22:13:05.000Z",
+    "timelineAt": "2026-10-09T08:05:51.213Z",
+    "discoveredAt": "2026-10-09T08:05:51.213Z"
+  },
+  {
+    "arxivId": "2510.17904",
+    "title": "BreakFun: Jailbreaking LLMs via Object Instantiation under Simulated Code Execution",
+    "titleZh": "BreakFun：用模拟代码执行中的对象实例化越狱 LLM",
+    "authors": [
+      "Amirkia Rafiei Oskooei",
+      "Mehmet S. Aktas"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 BreakFun 越狱方法，把有害请求包装成代码执行模拟：提示词给出一个无害的 Python 类定义即 Trojan Schema，要求模型回答这段代码运行会打印什么，模型必须实例化对象并为每个字段编造取值，而对抗性字段名把这些取值引向攻击目标，有害内容因此作为模拟实例化的副作用出现而非直接回答。攻击由三部分组成：无害框架、Trojan Schema 和思维链干扰。在 JailbreakBench 上，BreakFun 对 13 个开源权重与商用模型的平均攻击成功率为 89%（开源权重约 98%，API 系统约 78%），在若干模型上达到 100%；消融实验显示 Trojan Schema 是贡献最大的组件。作者认为 LLM 安全需要覆盖模拟任务作为副作用产生的内容，而不只是用户直接请求的内容。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2510.17904",
+      "aisafetyhot": "https://aisafetyhot.com/items/oah8wdpkou2dj2jh6xlytsck0"
+    },
+    "publishedAt": "2025-10-19T11:27:44.000Z",
+    "timelineAt": "2026-10-09T08:05:42.046Z",
+    "discoveredAt": "2026-10-09T08:05:42.046Z"
   },
   {
     "arxivId": "2610.12409",
@@ -520,6 +1452,486 @@
     "discoveredAt": "2026-10-09T05:35:35.440Z"
   },
   {
+    "arxivId": "2605.08313",
+    "title": "Seed Hijacking of LLM Sampling and Quantum Random Number Defense",
+    "titleZh": "研究者提出 SeedHijack 攻击，劫持 LLM 采样随机数种子",
+    "authors": [
+      "Ziyang You",
+      "Xiaoke Yang",
+      "Zhanling Fan",
+      "Feng Guo",
+      "Xiaogen Zhou",
+      "Xuxing Lu"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 SeedHijack，一种通过操纵伪随机数生成器（PRNG）输出、在不改变模型 logits 的情况下强制模型选中攻击者指定 token 的后门攻击。在 GPT-2（124M）上的 540 次试验中，该攻击在 9 种采样配置下实现 99.6% 的精确 token 注入，并在四个对齐模型（1.5B-7B，涵盖 RLHF、SFT 与推理蒸馏）上达到 100% 成功率，绕过了本工作测试的全部对齐方法。作者同时提出基于硬件量子随机数生成器（QRNG）的防御，在其评估的威胁模型下可消除该攻击，中位开销为延迟增加 0.6%、内存增加 7.7 MB。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2605.08313",
+      "aisafetyhot": "https://aisafetyhot.com/items/ptmqi7m1kwpcz73m760ycxriu"
+    },
+    "publishedAt": "2026-05-08T14:17:06.000Z",
+    "timelineAt": "2026-10-09T08:05:42.061Z",
+    "discoveredAt": "2026-10-09T08:05:42.061Z"
+  },
+  {
+    "arxivId": "2512.01335",
+    "title": "EmoRAG: Evaluating RAG Robustness to Symbolic Perturbations",
+    "titleZh": "EmoRAG 研究揭示 RAG 检索对表情符号扰动的脆弱性",
+    "authors": [
+      "Xinyun Zhou",
+      "Xinfeng Li",
+      "Yinan Peng",
+      "Ming Xu",
+      "Xuanwang Zhang",
+      "Miao Yu",
+      "Yidong Wang",
+      "Xiaojun Jia",
+      "Kun Wang",
+      "Qingsong Wen",
+      "XiaoFeng Wang",
+      "Wei Dong"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出 EmoRAG，指出检索增强生成（RAG）系统对细微符号扰动高度敏感：在查询中注入单个表情符号 token（如 (@_@)），几乎 100% 会检索到含相同表情符号但语义无关的文本。研究覆盖通用问答与代码领域，使用多种 SOTA 检索器与生成器，得到三点发现：单个表情符号注入即可主导 RAG 输出；表情符号置于查询开头时扰动最严重，各数据集 F1 超过 0.92；参数量更大的模型反而更易受干扰。作者分析了背后机制，提出对抗者利用该漏洞操纵 RAG 的威胁场景，评估现有标准防御并认为其不足以应对 EmoRAG，进而提出针对性防御并分析其优劣，最后给出构建鲁棒 RAG 系统的未来方向。该论文已被 KDD 2026 接收。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2512.01335",
+      "aisafetyhot": "https://aisafetyhot.com/items/uh1s7pwu72ixqzqvne2v49w4b"
+    },
+    "publishedAt": "2025-12-01T06:53:49.000Z",
+    "timelineAt": "2026-10-09T08:05:42.145Z",
+    "discoveredAt": "2026-10-09T08:05:42.145Z"
+  },
+  {
+    "arxivId": "2606.06037",
+    "title": "SpeechJBB: Probing Safety Alignment and Comprehension in Large Audio Language Models under Code-Switched Speech",
+    "titleZh": "SpeechJBB：语码转换语音下大型音频语言模型的越狱基准",
+    "authors": [
+      "Virginia Ceccatelli",
+      "Yejin Jeon",
+      "David Ifeoluwa Adelani"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 SpeechJBB，一个面向大型音频语言模型（LALM）的音频越狱数据集，覆盖英语、法语、德语、意大利语和西班牙语五种欧洲语言及两两组合的语码转换变体。结果显示，语码转换的有害音频带来明显偏高的越狱成功率，非英语单语和非英语语码转换组合的攻击成功率最高。在安全关键术语周围插入音系上合理的伪词后，随着插入密度上升，拒答率单调下降，尽管模型很少把插入的 token 理解为有害含义。理解能力基准显示，这些失败不能简单归因于多语言理解不足，若干在 ASR、口语理解和口语推理上表现较强的模型反而最为脆弱。该工作已被 EMNLP 2026 Findings 接收。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2606.06037",
+      "aisafetyhot": "https://aisafetyhot.com/items/qqz9ao2oe8eo6t8sxoz8myo00"
+    },
+    "publishedAt": "2026-06-04T11:31:38.000Z",
+    "timelineAt": "2026-10-09T08:05:50.935Z",
+    "discoveredAt": "2026-10-09T08:05:50.935Z"
+  },
+  {
+    "arxivId": "2604.28157",
+    "title": "FlashRT: Towards Computationally and Memory Efficient Red-Teaming for Prompt Injection and Knowledge Corruption",
+    "titleZh": "FlashRT：面向长上下文 LLM 提示注入与知识投毒的高效红队框架",
+    "authors": [
+      "Yanting Wang",
+      "Chenlong Yin",
+      "Ying Chen",
+      "Jinyuan Jia"
+    ],
+    "category": "tip",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 FlashRT 框架，用于提升长上下文 LLM 下基于优化的提示注入与知识投毒攻击的效率，同时降低计算和 GPU 显存开销。据论文称，相比 SOTA 基线 nanoGCG，FlashRT 取得 2x-7x 加速（例如运行时间从一小时降至不到十分钟），GPU 显存降低 2x-4x（例如 32K token 上下文从 264.1 GB 降至 65.7 GB）。该框架可广泛用于 TAP、AutoDAN 等黑盒优化方法，作者希望它能作为红队工具支持对长上下文 LLM 安全的系统化评估。代码已公开。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2604.28157",
+      "aisafetyhot": "https://aisafetyhot.com/items/ywi41falp4kejo57nj9f75186"
+    },
+    "publishedAt": "2026-04-30T17:43:24.000Z",
+    "timelineAt": "2026-10-09T08:05:51.164Z",
+    "discoveredAt": "2026-10-09T08:05:51.164Z"
+  },
+  {
+    "arxivId": "2608.15445",
+    "title": "Measuring Reward Hacking and Reasoning-Answer Decoupling Under Position-Confounded Optimization",
+    "titleZh": "研究测量位置混淆优化下的奖励作弊与推理-答案解耦",
+    "authors": [
+      "Suyash Maniyar",
+      "Armaan Sandhu",
+      "Abhishek Mishra"
+    ],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文将奖励作弊视为测量问题：当奖励在训练样本上正确却与多个目标一致时，模型可能学到非预期目标。作者用 GRPO 在正确答案恒为选项 A 的多选题数学题上训练 Qwen2.5、Llama 3.x 和 Gemma-3，再在答案位置无偏的测试集上评估，发现偏置训练常使较小模型的选项 A 比例超过 0.90，无偏准确率跌至随机水平，准确率因此不再衡量数学能力。研究还发现推理-答案解耦：模型推理得出正确数值却仍选 A，用数值抽取和 LLM 评判（GPT-4.1-mini）追踪，Qwen2.5-3B 的解耦率约为 0.66。这种偏差会泛化到域外 MMLU 和价值相关提示；在无偏数据上继续训练只能不均匀地部分逆转域内偏移，域外偏移仅部分逆转，模型可能在训练分布上看似恢复却仍对未见输入有偏。解耦率结合答案分布与域外行为可区分能力损失与可迁移的捷径。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2608.15445",
+      "aisafetyhot": "https://aisafetyhot.com/items/juvg9dku321avbds0tj53wilt"
+    },
+    "publishedAt": "2026-08-15T23:13:57.000Z",
+    "timelineAt": "2026-10-09T08:05:51.225Z",
+    "discoveredAt": "2026-10-09T08:05:51.225Z"
+  },
+  {
+    "arxivId": "2608.03844",
+    "title": "MAFIA: Query-Only Memory Attacks via Probing and Factual Injection against Audited LLM Agents",
+    "titleZh": "MAFIA：针对带审计 LLM Agent 的查询式记忆投毒攻击",
+    "authors": [
+      "Jiaming Chen",
+      "Yisen Gao",
+      "Yanping Li",
+      "Zifan Liu",
+      "Yumeng Zhang",
+      "Jun Zhang"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 MAFIA，一种针对带记忆 LLM Agent 的查询式记忆攻击框架，通过探测与事实注入绕过输入审计。该方法包含两部分：一是通过记忆探测、预算分配和调度保证注入记录在检索中具有竞争力；二是用紧凑的事实性伪装设计载荷，在保持高语义相似度的同时绕过审计。评估显示，MAFIA 的攻击成功率最高达 90.7%，同时将审计检测率从峰值 83.3% 压低到最多 7.4%，暴露出 Agent 记忆系统的安全漏洞。作者称代码将公开。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2608.03844",
+      "aisafetyhot": "https://aisafetyhot.com/items/o9oehb1cxdlv6omlbnbq9b3ws"
+    },
+    "publishedAt": "2026-08-04T15:50:26.000Z",
+    "timelineAt": "2026-10-09T08:05:51.243Z",
+    "discoveredAt": "2026-10-09T08:05:51.243Z"
+  },
+  {
+    "arxivId": "2603.24203",
+    "title": "Invisible Threats from Model Context Protocol: Generating Stealthy Injection Payload via Tree-based Adaptive Search",
+    "titleZh": "研究者提出 TIP：用树结构搜索为 MCP 生成隐蔽注入载荷",
+    "authors": [
+      "Yulin Shen",
+      "Xudong Pan",
+      "Geng Hong",
+      "Min Yang"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出树结构注入载荷（TIP），一种针对 MCP 使能 Agent 的黑盒攻击，通过恶意操纵工具响应夺取 Agent 控制权。该方法把载荷生成建模为树结构搜索问题，由攻击方 LLM 在粗到细的优化框架下引导搜索，并引入路径感知反馈机制，只向攻击模型呈现高质量历史轨迹以避免局部最优；同时将搜索显式条件于可观测的防御信号并动态调整探索预算，以抵抗防御变换。在四个主流 LLM 上的实验显示，无防御设置下 TIP 的攻击成功率超过 95%，且所需查询量比此前的自适应攻击少一个数量级；面对四种代表性防御方法仍保持 50% 以上有效性，明显优于当前最先进的攻击。作者在真实 MCP 系统上实现了该攻击，并讨论了潜在的缓解方法。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2603.24203",
+      "aisafetyhot": "https://aisafetyhot.com/items/jgw9qch78jtoxxwr534alu7mm"
+    },
+    "publishedAt": "2026-03-25T11:24:47.000Z",
+    "timelineAt": "2026-10-09T08:05:41.835Z",
+    "discoveredAt": "2026-10-09T08:05:41.835Z"
+  },
+  {
+    "arxivId": "2603.20198",
+    "title": "Visual Exclusivity Attacks: Automatic Multimodal Red Teaming via Agentic Planning",
+    "titleZh": "研究者提出 MM-Plan 多模态越狱框架，对 Claude 4.5 Sonnet 攻击成功率达 46.3%",
+    "authors": [
+      "Yunbei Zhang",
+      "Yingqiang Ge",
+      "Weijie Xu",
+      "Yuhui Xu",
+      "Jihun Hamm",
+      "Chandan K. Reddy"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 Visual Exclusivity（VE）威胁模型与 MM-Plan 多模态多轮智能体规划框架，把越狱从逐轮反应改为全局策略合成，攻击者规划器经 GRPO 训练，无需人工监督即可自行发现有效策略。在作者构建的 VE-Safety 数据集上，MM-Plan 对 Claude 4.5 Sonnet 的攻击成功率为 46.3%，对 GPT-5 为 13.8%，作者称其表现优于基线 2 至 5 倍，而现有方法大多失效。作者认为这一结果说明前沿模型仍易受智能体式多模态攻击影响，当前安全对齐存在缺口。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2603.20198",
+      "aisafetyhot": "https://aisafetyhot.com/items/kmndf1st5eem275l3sdza9lpl"
+    },
+    "publishedAt": "2026-02-05T01:46:14.000Z",
+    "timelineAt": "2026-10-09T08:05:41.854Z",
+    "discoveredAt": "2026-10-09T08:05:41.854Z"
+  },
+  {
+    "arxivId": "2602.10639",
+    "title": "VideoSTF: Stress-Testing Output Repetition in Video Large Language Models",
+    "titleZh": "VideoSTF 揭示视频大模型输出重复问题，时序扰动攻击成功率最高 98%",
+    "authors": [
+      "Yuxin Cao",
+      "Wei Song",
+      "Shangzhi Xu",
+      "Jingling Xue",
+      "Jin Song Dong"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 VideoSTF 基准框架，系统测量、压力测试并利用视频大语言模型（VideoLLM）的输出重复失败模式，即解码器陷入重复短语或句子的自我强化循环。该框架用三个基于 n-gram 的指标量化重复，提供含 10000 段视频的标准化测试集和受控时序扰动库。在 10 个先进 VideoLLM 上，VideoSTF 发现：重复在未扰动视频上普遍存在且在不同帧数下稳定，重复率最高达 91%；重复从轻度冗余到 token 上限循环构成严重程度谱系，并被时序扰动显著放大；时序扰动构成实用的黑盒攻击面，用数十次查询即可把良性视频翻转为重复输出，攻击成功率最高达 98%；重复无法用视觉冗余解释，其放大与局部时序破坏相关，在 top-k 采样、输入过滤和提示词变化等常见缓解手段中只有重复惩罚能降低它，但加大惩罚会削弱视觉 grounding。该工作已被 NeurIPS 2026 接收。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2602.10639",
+      "aisafetyhot": "https://aisafetyhot.com/items/rpvzr07wdbajs33pi54nrqh7o"
+    },
+    "publishedAt": "2026-02-11T08:40:48.000Z",
+    "timelineAt": "2026-10-09T08:05:41.874Z",
+    "discoveredAt": "2026-10-09T08:05:41.874Z"
+  },
+  {
+    "arxivId": "2602.02569",
+    "title": "DECEIVE-AFC: Adversarial Claim Attacks against Search-Enabled LLM-based Fact-Checking Systems",
+    "titleZh": "DECEIVE-AFC：针对检索式 LLM 事实核查系统的对抗性主张攻击",
+    "authors": [
+      "Haoran Ou",
+      "Kangjie Chen",
+      "Gelei Deng",
+      "Hangcheng Liu",
+      "Jie Zhang",
+      "Tianwei Zhang",
+      "Kwok-Yan Lam"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 DECEIVE-AFC，一个针对检索式 LLM 事实核查系统的智能体对抗攻击框架，在仅能修改输入主张的威胁模型下工作，不依赖对证据来源或模型内部的访问。该框架结合主张层面的攻击策略与对抗性主张有效性评估原则，系统搜索能够干扰搜索行为、证据检索和 LLM 推理的攻击轨迹。在基准数据集和真实系统上的评测显示，攻击使核查准确率从 78.7% 降至 53.7%，并显著优于已有的基于主张的攻击基线，且具有较强的跨系统迁移性。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2602.02569",
+      "aisafetyhot": "https://aisafetyhot.com/items/j9lbculz59kl5vs22bjb4re8x"
+    },
+    "publishedAt": "2026-01-31T03:49:23.000Z",
+    "timelineAt": "2026-10-09T08:05:42.109Z",
+    "discoveredAt": "2026-10-09T08:05:42.109Z"
+  },
+  {
+    "arxivId": "2602.04856",
+    "title": "CoT is Not the Chain of Truth: An Empirical Internal Analysis of Reasoning LLMs for Fake News Generation",
+    "titleZh": "研究揭示推理模型拒答假新闻请求时思维链仍含不安全叙事",
+    "authors": [
+      "Zhao Tong",
+      "Chunlin Gong",
+      "Yiping Zhang",
+      "Haichao Shi",
+      "Qiang Liu",
+      "Xingcheng Xu",
+      "Shu Wu",
+      "Xiao-Yu Zhang"
+    ],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文对多个推理型大语言模型的分析显示，模型在拒绝生成假新闻请求时，其思维链内部仍可能包含并传播不安全叙事，因此拒答并不代表整个推理过程安全。作者提出一套统一的安全分析框架，按模型层拆解思维链生成，并用基于 Jacobian 的谱指标评估单个注意力头的作用，引入稳定性、几何和能量三项可解释度量，量化特定注意力头如何响应或嵌入欺骗性推理模式。实验显示，开启思考模式后生成风险显著上升，关键路由决策集中在少数连续的中层。作者称，精确定位造成这种分歧的注意力头，有助于缓解潜在的推理风险。该工作已被 ICML 2026 接收。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2602.04856",
+      "aisafetyhot": "https://aisafetyhot.com/items/er8lptx7klgkvnfpl8cb85cj8"
+    },
+    "publishedAt": "2026-02-04T18:43:10.000Z",
+    "timelineAt": "2026-10-09T08:05:42.191Z",
+    "discoveredAt": "2026-10-09T08:05:42.191Z"
+  },
+  {
+    "arxivId": "2601.23255",
+    "title": "Now You Hear Me: Audio Narrative Attacks Against Large Audio-Language Models",
+    "titleZh": "研究者提出音频叙事越狱攻击，在 Gemini 2.0 Flash 上成功率达 98.26%",
+    "authors": [
+      "Ye Yu",
+      "Haibo Jin",
+      "Yaoning Yu",
+      "Jun Zhuang",
+      "Haohan Wang"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者设计了一种文本转音频的越狱方法，把被禁止的指令嵌入叙事风格的音频流中，利用先进指令跟随 TTS 模型的结构与声学特性绕过主要针对文本校准的安全机制。在合成语音交付下，该叙事格式让包括 Gemini 2.0 Flash 在内的前沿模型输出受限内容，成功率达 98.26%，明显高于纯文本基线。作者据此提出，随着语音接口普及，安全框架需要同时推理语言与副语言表征。该论文将在 EACL 2026 主会发表。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2601.23255",
+      "aisafetyhot": "https://aisafetyhot.com/items/zqh1k9bhio3ryh8eu5436shli"
+    },
+    "publishedAt": "2026-01-30T18:23:02.000Z",
+    "timelineAt": "2026-10-09T08:05:51.139Z",
+    "discoveredAt": "2026-10-09T08:05:51.139Z"
+  },
+  {
+    "arxivId": "2509.05372",
+    "title": "Adversarial Bug Reports as a Security Risk in Language Model-Based Automated Program Repair",
+    "titleZh": "研究：对抗性 bug 报告可诱导 LLM 自动程序修复系统生成不安全补丁",
+    "authors": [
+      "Piotr Przymus",
+      "Andreas Happe",
+      "Jürgen Cito"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出并验证了针对基于 LLM 的自动程序修复（APR）系统的新型攻击面：对抗性 bug 报告，即看似真实、实则诱导系统产出不安全或有害代码的 issue 提交。团队构建了威胁模型并生成 51 份对抗性 bug 报告，覆盖从人工编写到全自动流水线的多种策略，在一个主流 LLM APR 系统上测试。结果显示 90% 的构造报告触发了与攻击者意图一致的补丁；修复前防御中表现最好的过滤器只拦截 47%，修复后检测（GitHub Copilot、CodeQL，常需人工介入）仅在 58% 的案例中有效。作者还发布了一个自动生成对抗性 bug 报告的原型框架，并指出生成攻击输入成本低、检测与缓解成本高且易出错的结构性不对称。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2509.05372",
+      "aisafetyhot": "https://aisafetyhot.com/items/eihv5f1573crm43bh8hagii4f"
+    },
+    "publishedAt": "2025-09-04T09:41:57.000Z",
+    "timelineAt": "2026-10-09T08:05:41.780Z",
+    "discoveredAt": "2026-10-09T08:05:41.780Z"
+  },
+  {
+    "arxivId": "2603.17915",
+    "title": "IndicSafe: A Benchmark for Evaluating Multilingual LLM Safety in South Asia",
+    "titleZh": "IndicSafe：面向南亚 12 种 Indic 语言的多语言 LLM 安全基准",
+    "authors": [
+      "Priyaranjan Pattnayak",
+      "Sanchari Chowdhuri"
+    ],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "作者发布 IndicSafe，称这是对 12 种 Indic 语言上 LLM 安全行为的系统性评估，这批语言覆盖超 12 亿人但在训练数据中占比不足。评测使用 6000 条涵盖种姓、宗教、性别、健康和politically相关话题的文化语境提示词，在翻译变体上考察 10 个主流模型，发现明显的安全漂移：跨语言一致率仅 12.8%，各语言的 SAFE 率方差超过 17%。部分模型在低资源文字上对无害提示过度拒答，对政治敏感话题过度标记，另一些则未能标记出不安全的生成内容。作者用提示级熵、类别偏差分数和多语言一致性指数量化这些失败，认为多语言 LLM 存在安全泛化缺口，安全对齐无法在各语言间均匀迁移，并主张采用基于区域伤害的语言感知对齐策略。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2603.17915",
+      "aisafetyhot": "https://aisafetyhot.com/items/vidlxrifc6nlw4jws55zszipx"
+    },
+    "publishedAt": "2026-03-18T16:54:07.000Z",
+    "timelineAt": "2026-10-09T08:05:50.922Z",
+    "discoveredAt": "2026-10-09T08:05:50.922Z"
+  },
+  {
+    "arxivId": "2605.08460",
+    "title": "When Child Inherits: Modeling and Exploiting Subagent Spawn in Multi-Agent Networks",
+    "titleZh": "论文建模多智能体网络中的子智能体继承攻击面",
+    "authors": [
+      "Ziwen Cai",
+      "Yihe Zhang",
+      "Xiali Hei"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出从子智能体继承的角度建模多智能体网络，指出父智能体的记忆会把恶意指令、过期状态或非预期行为规则带入新建子智能体，使局部失陷跨越智能体边界扩散。作者称当前框架在记忆继承不安全、资源控制薄弱、派生后状态陈旧和终止权限不当等方面会违反信任边界，并在真实智能体框架中演示了这些风险，进而提出基于显式安全不变量的防御方案。研究认为继承不只是实现细节，而是影响多智能体系统安全的核心组成部分。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2605.08460",
+      "aisafetyhot": "https://aisafetyhot.com/items/kafn41zf3n1m3iasvg6eaf641"
+    },
+    "publishedAt": "2026-05-08T20:27:23.000Z",
+    "timelineAt": "2026-10-09T08:05:41.791Z",
+    "discoveredAt": "2026-10-09T08:05:41.791Z"
+  },
+  {
+    "arxivId": "2605.03441",
+    "title": "Exposing LLM Safety Gaps Through Mathematical Encoding:New Attacks and Systematic Analysis",
+    "titleZh": "研究用数学编码绕过 LLM 安全过滤，八个模型平均攻击成功率 46%–56%",
+    "authors": [
+      "Haoyu Zhang",
+      "Mohammad Zandsalimy",
+      "Shanu Sushmita"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出把有害提示词改写为集合论、形式逻辑、量子力学等连贯数学问题，可高比例绕过 LLM 的安全过滤，在八个目标模型和两个既有基准上平均攻击成功率为 46%–56%。作者指出，攻击是否有效不取决于数学符号本身，而取决于是否有辅助 LLM 把有害内容深度改写为真正的数学问题；只套用数学格式的规则式编码与未编码基线效果相当。研究还提出一种新的形式逻辑编码，攻击成功率与集合论相当，说明该漏洞在不同数学形式间具有通用性，重复后处理实验也显示攻击对简单提示词增强保持稳健。较新的 GPT-5、GPT-5-Mini 比旧模型明显更稳健，但仍存在漏洞。作者据此认为当前安全框架存在结构性缺口，需要能推理数学结构而非表层语义的防御。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2605.03441",
+      "aisafetyhot": "https://aisafetyhot.com/items/oqakgcs6hurfsvl3p249uqhls"
+    },
+    "publishedAt": "2026-05-05T07:25:33.000Z",
+    "timelineAt": "2026-10-09T08:05:42.136Z",
+    "discoveredAt": "2026-10-09T08:05:42.136Z"
+  },
+  {
+    "arxivId": "2606.01837",
+    "title": "Benign Inputs, Harmful Outputs: Cross-Modal Jailbreaking via Distributed Semantic Recomposition",
+    "titleZh": "论文提出 DSR 跨模态越狱框架：用良性输入诱导 MLLM 有害输出",
+    "authors": [
+      "Yani Wang",
+      "Yilong Yang",
+      "Yang Liu",
+      "Zhuzhu Wang",
+      "Zuobin Ying",
+      "Zhuo Ma"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出 Distributed Semantic Recomposition（DSR）跨模态越狱框架，将有害意图分解为一组良性的文本与视觉原语，借助模型的推理能力在跨模态推理阶段把这些看似无害的组件融合成有害输出。作者称，此前单模态文本攻击和跨模态越狱通常在输入端就包含部分显式有害或敏感内容（即 Harm-Bearing），容易被安全过滤器检测拦截，而 DSR 在多个商用 MLLM 流水线上取得更高攻击成功率，同时输入毒性率极低甚至可忽略。论文据此提出 MLLM 中的 Utility-Safety Paradox，即模型的指令遵循能力反而助长了对自身的认知利用。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2606.01837",
+      "aisafetyhot": "https://aisafetyhot.com/items/ujzm2e0ptgz5wkeeykw1fc7v6"
+    },
+    "publishedAt": "2026-06-01T07:49:12.000Z",
+    "timelineAt": "2026-10-09T08:05:51.073Z",
+    "discoveredAt": "2026-10-09T08:05:51.073Z"
+  },
+  {
+    "arxivId": "2608.08975",
+    "title": "How Can Rhetoric Reward-Hack AI Reviewers? Dissecting Rhetorical Sensitivity in AI-Based Peer Review",
+    "titleZh": "研究揭示修辞如何对 AI 审稿人实施奖励作弊",
+    "authors": [
+      "Ming Li",
+      "Chenguang Wang",
+      "Xirui Li",
+      "Xinyue Zeng",
+      "Dianqi Li",
+      "Peng Shi",
+      "Dawei Zhou",
+      "Tianyi Zhou"
+    ],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者构建了由 120 篇匿名 ICLR 2026 投稿衍生的 4200 篇完整论文语料，考察在科学内容不变的前提下，修辞选择如何影响 AI 审稿判断。两个 LLM 改写器沿六个修辞维度做正反两个方向的改写，五个 LLM 审稿人在标准与严格协议下评估改写后的稿件，并测试联合改写、递归改写和审稿人引导改写。结果显示修辞敏感性是有结构的：证据呈现方式和新颖性立场在总体评价上产生最大的正负差异，范围框定构成较弱的第二梯队，其余维度影响更小或更不稳定。这一层级在人工评估的质量档次间保持一致，但分数变动强烈依赖 AI 审稿人的原始分数，低分倾向上升、高分倾向下降，方向性差异在中间区间最明显。更复杂的工作流并未稳定带来更大收益：联合改写高度依赖改写器，审稿人引导并不稳定优于无引导的第二轮改写，重复改写收益递减且依赖配置。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2608.08975",
+      "aisafetyhot": "https://aisafetyhot.com/items/jytib083944kip9mmvts3vcjf"
+    },
+    "publishedAt": "2026-08-10T00:42:51.000Z",
+    "timelineAt": "2026-10-09T08:05:41.814Z",
+    "discoveredAt": "2026-10-09T08:05:41.814Z"
+  },
+  {
+    "arxivId": "2603.05399",
+    "title": "Judge Reliability Harness: Stress Testing the Reliability of LLM Judges",
+    "titleZh": "研究者发布 Judge Reliability Harness，压力测试 LLM 评委可靠性",
+    "authors": [
+      "Sunishchal Dev",
+      "Andrew Sloan",
+      "Joshua Kavner",
+      "Nicholas Kong",
+      "Morgan Sandler"
+    ],
+    "category": "tip",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者发布开源库 Judge Reliability Harness，用于构建验证套件测试 LLM 评委的可靠性。该工具针对给定基准数据集和评委配置，生成可靠性测试，评估二值判断准确率和序数评分表现，覆盖自由回答与 Agent 任务格式。作者在安全、说服、滥用和 Agent 行为四个基准上评测了四个前沿评委，发现不同模型和扰动类型下表现差异明显，没有评委在所有基准上一致可靠。初步实验显示，简单的文本格式变化、改写、冗长度变化以及翻转 LLM 回答中的真实标签，都会影响评委判断另一模型任务完成能力的准确率。代码已开源，论文被 ICLR 2026 Agents in the Wild 研讨会接收。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2603.05399",
+      "aisafetyhot": "https://aisafetyhot.com/items/yudm2z4q8yljboxika12mh5vb"
+    },
+    "publishedAt": "2026-03-05T17:27:07.000Z",
+    "timelineAt": "2026-10-09T08:05:42.203Z",
+    "discoveredAt": "2026-10-09T08:05:42.203Z"
+  },
+  {
+    "arxivId": "2601.06884",
+    "title": "Paraphrasing Adversarial Attack on LLM-as-a-Reviewer",
+    "titleZh": "研究者提出改写式对抗攻击 PAA，可在不改变论文主张的情况下抬高 LLM 审稿评分",
+    "authors": [
+      "Masahiro Kaneko"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出改写式对抗攻击（PAA），一种黑盒优化方法，通过搜索语义等价且语言自然的改写序列，在不改变论文主张的前提下抬高 LLM 审稿给出的评分。PAA 借助上下文学习，用此前的改写及其得分引导候选生成。在五个 ML 与 NLP 会议、三种 LLM 审稿模型和五种攻击模型上的实验显示，PAA 能稳定提高评审分数，人工评估确认生成的改写保持了语义与自然度。研究还发现被攻击论文的评审困惑度升高，可作为潜在检测信号，而对投稿做改写也能部分缓解此类攻击。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2601.06884",
+      "aisafetyhot": "https://aisafetyhot.com/items/rnmm07lo9gba58o3aoy09yckl"
+    },
+    "publishedAt": "2026-01-11T12:14:10.000Z",
+    "timelineAt": "2026-10-09T08:05:42.212Z",
+    "discoveredAt": "2026-10-09T08:05:42.212Z"
+  },
+  {
     "arxivId": "2610.11281",
     "title": "How to post-train on a surrogate: Envelope sampling mitigates reward hacking",
     "titleZh": "包络采样：用少量真值标注重校准 LLM 评委以缓解奖励作弊",
@@ -568,6 +1980,60 @@
     "discoveredAt": "2026-10-09T05:35:35.417Z"
   },
   {
+    "arxivId": "2512.16059",
+    "title": "ContextLeak: Auditing Leakage in Private In-Context Learning Methods",
+    "titleZh": "ContextLeak：审计私有上下文学习方法的隐私泄露",
+    "authors": [
+      "Jacob Choi",
+      "Shuying Cao",
+      "Xingjian Dong",
+      "Amin Banayeeanzade",
+      "Wang Bill Zhu",
+      "Robin Jia",
+      "Sai Praneeth Karimireddy"
+    ],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 ContextLeak，一个用于实证测量上下文学习（ICL）中最坏情况信息泄露的框架。该方法通过金丝雀插入，在敏感数据集中嵌入唯一可识别的 token，并构造针对性查询来检测其是否出现。作者将其应用于多种私有 ICL 技术，包括启发式提示词防御和具有形式化保证的差分隐私方法，结果显示 ContextLeak 能可靠检测各方法的泄露，且泄露随理论隐私预算单调增加。分析还表明，现有方法在隐私与效用之间权衡不佳，要么完全泄露敏感信息，要么严重损害性能。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2512.16059",
+      "aisafetyhot": "https://aisafetyhot.com/items/nkz4dupr7c82nzamyj39mrnx8"
+    },
+    "publishedAt": "2025-12-18T00:53:19.000Z",
+    "timelineAt": "2026-10-09T08:05:41.845Z",
+    "discoveredAt": "2026-10-09T08:05:41.845Z"
+  },
+  {
+    "arxivId": "2501.13772",
+    "title": "Jailbreak-AudioBench: In-Depth Evaluation and Analysis of Jailbreak Threats for Large Audio Language Models",
+    "titleZh": "Jailbreak-AudioBench：面向大型音频语言模型的越狱评测基准",
+    "authors": [
+      "Hao Cheng",
+      "Erjia Xiao",
+      "Jing Shao",
+      "Yichi Wang",
+      "Le Yang",
+      "Chao Shen",
+      "Philip Torr",
+      "Jindong Gu",
+      "Renjing Xu"
+    ],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 Jailbreak-AudioBench，用于系统评测大型音频语言模型（LALM）面临的音频越狱威胁，包含工具箱、精选数据集和基准三部分。工具箱支持文本转音频以及多种注入音频隐藏语义的编辑技术，数据集提供原始与编辑两种形式的显式和隐式越狱音频样本。作者用该数据集评测了多个当前先进的 LALM，称其建立了迄今最全面的音频模态越狱基准，并希望借此暴露基于查询的音频编辑等更强越狱威胁，推动 LALM 安全对齐与防御研究。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2501.13772",
+      "aisafetyhot": "https://aisafetyhot.com/items/dx8svjegnrs9f05tgrywms91x"
+    },
+    "publishedAt": "2025-01-23T15:51:38.000Z",
+    "timelineAt": "2026-10-09T08:05:42.208Z",
+    "discoveredAt": "2026-10-09T08:05:42.208Z"
+  },
+  {
     "arxivId": "2610.11766",
     "title": "Same Outcome, Different Evidence: Intent Recovery in LLM Safety Evaluation",
     "titleZh": "研究提出意图恢复率作为 LLM 安全评测的补充指标",
@@ -613,6 +2079,95 @@
     "discoveredAt": "2026-10-09T04:32:36.753Z"
   },
   {
+    "arxivId": "2503.06223",
+    "title": "RedDiffuser: Auditing Multimodal Safety Failures in Vision-Language Models via Reinforced Diffusion",
+    "titleZh": "RedDiffuser：用强化扩散生成视觉输入审计 VLM 多模态安全失效",
+    "authors": [
+      "Ruofan Wang",
+      "Xingjun Ma"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 RedDiffuser（RedDiff），一个基于强化的框架，用扩散模型为黑盒安全测试生成语义连贯的视觉输入，结合贪心提示搜索与强化优化，挖掘暴露 VLM 潜在安全失效的高风险多模态输入。论文研究的是有害上下文暴露下的多模态安全审计，即部分有害文本与视觉上下文配对时 VLM 能否保持安全行为。在开源与商用 VLM 上的实验显示这类上下文条件下的失效较为普遍：在 LLaVA 上，RedDiffuser 将不安全回复率在原始集上最多提升 10.69%，在留出集上提升 8.91%，并可迁移到 Gemini 和 LLaMA-Vision。作者称这些漏洞在外部安全护栏下依然存在，表明当前系统级安全机制对现实多模态风险仍不充分。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2503.06223",
+      "aisafetyhot": "https://aisafetyhot.com/items/jwio34bs51u4o6g219458g1iv"
+    },
+    "publishedAt": "2025-03-08T13:51:40.000Z",
+    "timelineAt": "2026-10-09T08:05:41.907Z",
+    "discoveredAt": "2026-10-09T08:05:41.907Z"
+  },
+  {
+    "arxivId": "2606.16100",
+    "title": "Your \"Pro\" LLM Subscription May Actually Be \"Free\": Exposing Fingerprint Spoofing Risks in LLM Inference Services",
+    "titleZh": "研究者提出 GhostPrint 攻击，可让弱模型伪装成高价 LLM 绕过指纹识别",
+    "authors": [
+      "Jiahao Zhang",
+      "Xiuyu Li",
+      "Suhang Wang"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出一种名为指纹伪装（fingerprint spoofing）的威胁：恶意服务商可暗中提供经过参数高效微调的弱模型来模仿强模型，从而绕过用户侧的指纹识别。作者形式化证明，用户侧资源约束（有限的查询预算和较弱的指纹分类器）使现有指纹方法易受此类攻击。据此提出的 GhostPrint 框架结合代理建模、奖励排序微调和知识蒸馏，在静态与持续指纹识别设置下，能让弱模型持续绕过代表性指纹方法，同时以较低微调成本保持可用性。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2606.16100",
+      "aisafetyhot": "https://aisafetyhot.com/items/sv6h3yzpglu1tefemji89ie81"
+    },
+    "publishedAt": "2026-06-15T01:30:42.000Z",
+    "timelineAt": "2026-10-09T08:05:50.972Z",
+    "discoveredAt": "2026-10-09T08:05:50.972Z"
+  },
+  {
+    "arxivId": "2606.05396",
+    "title": "Willing but Unable: Separating Refusal from Capability in Code LLMs via Abliteration",
+    "titleZh": "研究用消融移除代码 LLM 拒答方向，分离拒答与生成能力",
+    "authors": [
+      "Cristina Carleo",
+      "Pietro Liguori",
+      "Naghmeh Ivaki",
+      "Domenico Cotroneo"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出用消融（abliteration，一种低秩权重编辑，在残差流中正交投影掉拒答方向）移除安全对齐代码 LLM 对注入漏洞提示的拒答，以 Python 和 CWE-89（SQL 注入）为案例，在 Qwen2.5-Coder-Instruct 的 3B、7B、14B 上测试 PromSec 与 SafeCoder 的安全样本，每种条件重复三次。结果显示拒答强烈依赖模型规模和提示上下文：14B 拒绝 100% 提示，7B 对 PromSec 拒绝 73%、对 SafeCoder 仅 5%，3B 基本不被拦截。消融后各规模拒答降至零或接近零，语法有效性保持在 93% 以上；注入率仍受能力限制，14B 为 88-97%、7B 为 89-90%、3B 为 25-48%，作者据此认为拒答可与代码生成能力分离。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2606.05396",
+      "aisafetyhot": "https://aisafetyhot.com/items/smuxps7p9jnncbtugpwl7h5qy"
+    },
+    "publishedAt": "2026-06-03T20:06:52.000Z",
+    "timelineAt": "2026-10-09T08:05:51.060Z",
+    "discoveredAt": "2026-10-09T08:05:51.060Z"
+  },
+  {
+    "arxivId": "2607.07903",
+    "title": "Mechanistic Interpretability of LLM Jailbreaks via Internal Attribution Graphs",
+    "titleZh": "研究者用内部归因图对 LLM 越狱做机制可解释性分析",
+    "authors": [
+      "Anupam Wagle",
+      "Ifrat Ikhtear Uddin",
+      "Chaowei Zhang",
+      "Longwei Wang"
+    ],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出一套机制可解释性框架，用配对内部计算图诊断 LLM 越狱，将提示特定的推理表示为潜在特征之间的结构化因果交互。通过构建并对齐干净提示与受攻击提示的计算图，作者发现对抗攻击会系统性地改变内部推理，包括抑制安全相关组件、出现攻击特有特征以及计算路径改道。基于这一表示，框架将计算分解为不变、被抑制和涌现三类结构，识别与失败模式相关的反复出现的脆弱性母题，并对节点、路径和子图做因果干预以评估其对攻击成功的贡献。在多个开源 LLM 和多种对抗与越狱基准上的实验显示，内部计算图的结构偏差与不安全行为高度相关，针对识别出的脆弱性母题进行干预可提升模型鲁棒性。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2607.07903",
+      "aisafetyhot": "https://aisafetyhot.com/items/nxv4h2sbv92vz2rooka53m6gg"
+    },
+    "publishedAt": "2026-07-08T20:31:06.000Z",
+    "timelineAt": "2026-10-09T08:05:51.006Z",
+    "discoveredAt": "2026-10-09T08:05:51.006Z"
+  },
+  {
     "arxivId": "2610.11005",
     "title": "How Narrative Wrapping Affects LLM Refusal: A Cross-Language Benchmark and Defense",
     "titleZh": "研究：叙事包装可跨语言绕过 LLM 拒答，Qwen3-1.7B 上古文攻击成功率达 95.7%",
@@ -640,6 +2195,66 @@
     "discoveredAt": "2026-10-09T05:35:35.376Z"
   },
   {
+    "arxivId": "2605.14152",
+    "title": "ROK-FORTRESS: Measuring the Effect of Geopolitical Transcreation for National Security and Public Safety",
+    "titleZh": "ROK-FORTRESS：用英韩转创矩阵测量地缘政治改写对国家安全与公共安全评测的影响",
+    "authors": [
+      "Michael S. Lee",
+      "Yash Maurya",
+      "Drew Rein",
+      "Bert Herring",
+      "Jonathan Nguyen",
+      "Kyungho Song",
+      "Udari Madhushani Sehwag",
+      "Jiyeon Cho",
+      "Kaustubh Deshpande",
+      "Yeongkyun Jang",
+      "Jiyeon Joo",
+      "Minn Seok Choi",
+      "Evi Fuelle",
+      "Ch"
+    ],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 ROK-FORTRESS，一个以英韩语言对和美韩地缘政治轴为案例的双语、文化对抗性国家安全与公共安全（NSPS）基准，通过转创矩阵把语言与地缘语境的影响分开考察。矩阵在英语与韩语、美国与韩国实体机构及操作细节的受控组合下评估对抗意图，每条对抗提示都配一条双用途良性对照以量化过度拒答，回答由经过校准的 LLM-as-a-judge 面板按专家编写的提示专属二元评分标准打分。在前沿模型与韩语优化模型的双轨测试中，韩语变体出现一致的抑制效应，地缘语境与语言的交互因模型而异，部分模型中韩国语境进一步缓解了语言驱动的抑制。剥离越狱包装的直接请求消融显示，闭源模型存在小幅但持续的下降，开源模型则表现出更大且依赖包装、方向相反的效果，作者认为韩语抑制的一部分来自提示特化而非语言本身的安全对齐。该转创矩阵方法设计上可推广到其他语言文化对。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2605.14152",
+      "aisafetyhot": "https://aisafetyhot.com/items/wat81zph2ngagucuuc94onhm0"
+    },
+    "publishedAt": "2026-05-13T22:07:22.000Z",
+    "timelineAt": "2026-10-09T08:05:50.946Z",
+    "discoveredAt": "2026-10-09T08:05:50.946Z"
+  },
+  {
+    "arxivId": "2511.10692",
+    "title": "StyleBreak: Revealing Alignment Vulnerabilities in Large Audio-Language Models via Style-Aware Audio Jailbreak",
+    "titleZh": "StyleBreak：利用风格化音频越狱揭示大型音频语言模型的对齐漏洞",
+    "authors": [
+      "Hongyi Li",
+      "Chengxuan Zhou",
+      "Chu Wang",
+      "Sicheng Liang",
+      "Yanting Chen",
+      "Qinlin Xie",
+      "Jiawei Ye",
+      "Jie Wu"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 StyleBreak，一个风格感知的音频越狱框架，系统考察人类语音属性如何影响大型音频语言模型（LAM）的对齐稳健性。该框架采用两阶段风格感知变换管线，同时扰动文本内容与音频，以控制语言、副语言和超语言属性，并设计查询自适应策略网络自动搜索对抗性风格，提升越狱探索效率。评估显示，LAM 在多样人类语音属性下表现出关键漏洞，StyleBreak 在多种攻击范式上均提升了攻击效果与效率，作者据此指出 LAM 需要更稳健的对齐。该工作已被 AAAI 2026 接收。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2511.10692",
+      "aisafetyhot": "https://aisafetyhot.com/items/brcl1gc3hn968wmao0kjp5l3b"
+    },
+    "publishedAt": "2025-11-12T07:37:00.000Z",
+    "timelineAt": "2026-10-09T08:05:51.181Z",
+    "discoveredAt": "2026-10-09T08:05:51.181Z"
+  },
+  {
     "arxivId": "2610.11634",
     "title": "LTBD：用可学习信任边界分隔符防御提示注入",
     "titleZh": "LTBD：用可学习信任边界分隔符防御提示注入",
@@ -658,6 +2273,124 @@
     "discoveredAt": "2026-10-09T04:38:37.948Z"
   },
   {
+    "arxivId": "2606.20508",
+    "title": "What Do Safety-Aligned LLMs Learn From Mixed Compliance Demonstrations?",
+    "titleZh": "研究：安全对齐 LLM 如何从混合合规示范中学习",
+    "authors": [
+      "Sihui Dai",
+      "Mann Patel"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文研究在上下文中混合良性合规示范（无害请求加有帮助的回复）与有害合规示范（有害请求加有帮助的回复）时，模型如何解读不同类型的合规示范。在四个模型上，作者发现良性与有害示范不可互换：良性示范可能降低也可能提高有害合规，取决于具体模型。研究进一步指出，偏好优化是阻止良性示范提升有害合规的关键训练阶段，示范顺序表现出明显的近因偏差，且模型在拒答与上下文学习的关系上存在差异，有的在拒答时仍采用示范的格式，有的则在拒答时覆盖所有上下文信号。作者称，这项工作从证明基于示范的越狱有效，推进到刻画其运作机制：模型从合规示范中提取什么，取决于示范内容、顺序和训练方法。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2606.20508",
+      "aisafetyhot": "https://aisafetyhot.com/items/u0dqrr4xgd3wrl6prureynwlk"
+    },
+    "publishedAt": "2026-06-18T17:25:38.000Z",
+    "timelineAt": "2026-10-09T08:05:42.221Z",
+    "discoveredAt": "2026-10-09T08:05:42.221Z"
+  },
+  {
+    "arxivId": "2506.06404",
+    "title": "Unintended Harms of Value-Aligned LLMs: Psychological and Empirical Insights",
+    "titleZh": "研究揭示价值对齐 LLM 的意外危害并提出上下文对齐方法",
+    "authors": [
+      "Sooyung Choi",
+      "Jaehyeok Lee",
+      "Xiaoyuan Yi",
+      "Jing Yao",
+      "Xing Xie",
+      "JinYeong Bak"
+    ],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文发现，与个人价值对齐的 LLM 比未微调模型更易产生有害行为，在传统安全评测中的风险也略高于其他微调模型。作者认为原因在于这类模型会真正按照对齐的价值生成文本，从而放大有害结果；他们用带细粒度安全类别的数据集发现价值对齐与安全风险存在显著相关性，并以心理学假设加以解释。研究提出上下文对齐（in-context alignment）方法来提升价值对齐 LLM 的安全性，成果已被 ACL 2025 接收。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2506.06404",
+      "aisafetyhot": "https://aisafetyhot.com/items/oy1igw6iyhakg2jw3072m3k8p"
+    },
+    "publishedAt": "2025-06-06T07:03:12.000Z",
+    "timelineAt": "2026-10-09T08:05:50.966Z",
+    "discoveredAt": "2026-10-09T08:05:50.966Z"
+  },
+  {
+    "arxivId": "2605.16090",
+    "title": "A Cross-Modal Prompt Injection Attack against Large Vision-Language Models with Image-Only Perturbation",
+    "titleZh": "研究者提出 CrossMPI：仅用图像扰动实现跨模态提示注入",
+    "authors": [
+      "Hao Yang",
+      "Zhuo Ma",
+      "Yang Liu",
+      "Yilong Yang",
+      "Guancheng Wang",
+      "JianFeng Ma"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出跨模态提示注入攻击 CrossMPI，仅通过图像扰动即可同时操纵大视觉语言模型对文本和视觉输入的理解。该方法把注入提示扰动的优化目标从视觉嵌入空间（约 10^5 参数）转移到负责多模态信息融合的模型隐藏状态空间（约 10^7 参数），并采用两项策略应对更大参数空间带来的优化难题：一是层选择策略，用于定位对多模态融合最关键的层，分析显示最优层位于模型中部而非末层；二是距离递减的扰动预算分配策略，随像素与语义关键区域距离增大而递减分配预算。论文称在多个大视觉语言模型和数据集上的实验显示，该方法明显优于基线方法。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2605.16090",
+      "aisafetyhot": "https://aisafetyhot.com/items/slhu8g4q76d3dyt9bbe2xjnwp"
+    },
+    "publishedAt": "2026-05-15T15:47:41.000Z",
+    "timelineAt": "2026-10-09T08:05:51.090Z",
+    "discoveredAt": "2026-10-09T08:05:51.090Z"
+  },
+  {
+    "arxivId": "2605.07399",
+    "title": "GPO-V: Jailbreak Diffusion Vision Language Model by Global Probability Optimization",
+    "titleZh": "研究者提出 GPO-V，用全局概率优化越狱扩散视觉语言模型",
+    "authors": [
+      "Yu Pan",
+      "Andi Zhang",
+      "Yi Wang",
+      "Sibei Yang",
+      "Wenjie Wang"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 GPO-V，一个针对扩散视觉语言模型（dVLMs）的视觉模态越狱框架，通过全局概率优化（GPO）操纵掩码扩散模型的去噪轨迹绕过护栏。论文把传统越狱归为固定前缀优化（FPO），指出 dVLMs 虽对 FPO 类攻击表现稳健，但会触发即时拒答与渐进式拒答两种模式，而渐进式细化过程本身暴露出新的攻击面。作者称 GPO-V 是首个面向 dVLMs 的视觉模态越狱框架，能生成隐蔽扰动并具备跨模型迁移性。代码已公开。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2605.07399",
+      "aisafetyhot": "https://aisafetyhot.com/items/o3msa15sa7xv3xrxj14ls8t8l"
+    },
+    "publishedAt": "2026-05-08T07:54:57.000Z",
+    "timelineAt": "2026-10-09T08:05:51.121Z",
+    "discoveredAt": "2026-10-09T08:05:51.121Z"
+  },
+  {
+    "arxivId": "2503.22989",
+    "title": "FindTheFlaws: Annotated Errors for Detecting Flawed Reasoning and Scalable Oversight Research",
+    "titleZh": "FindTheFlaws：用于检测推理缺陷与可扩展监督研究的标注错误数据集",
+    "authors": [
+      "Gabriel Recchia",
+      "Chatrik Singh Mangat",
+      "Issac Li",
+      "Gayatri Krishnakumar"
+    ],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者发布 FindTheFlaws，一组覆盖医学、数学、科学、编程和 Lojban 语言的五个数据集，每个数据集包含问题与长文本解答，并由专家标注其正确性或指出推理中的具体错误。论文称，这类同时包含专家验证正确解与带错误标注的缺陷解的数据集此前很少，而它们对评估辩论、批评、证明者-验证者博弈等可扩展监督方法很有用。作者评估了前沿模型的批评能力，发现性能差异可被利用：在特定数据集上表现较弱的模型可充当更强模型的评判者或验证者。在某些任务与数据集组合上，专家基线甚至超过顶级模型的表现。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2503.22989",
+      "aisafetyhot": "https://aisafetyhot.com/items/icu2nxhf86mo1kpo48i9cfdl6"
+    },
+    "publishedAt": "2025-03-29T06:38:30.000Z",
+    "timelineAt": "2026-10-09T08:05:42.181Z",
+    "discoveredAt": "2026-10-09T08:05:42.181Z"
+  },
+  {
     "arxivId": "2610.12360",
     "title": "Accurate but Not Humble: Evaluating Epistemic Humility in LLM Agents under Knowledge Conflict",
     "titleZh": "论文提出 ISE 框架，评测 LLM Agent 在知识冲突下的认知谦逊",
@@ -674,6 +2407,205 @@
     "publishedAt": "2026-10-07T20:00:00.000Z",
     "timelineAt": "2026-10-09T05:03:35.415Z",
     "discoveredAt": "2026-10-09T05:03:35.415Z"
+  },
+  {
+    "arxivId": "2510.14207",
+    "title": "Echoes of Human Malice in Agents: Benchmarking LLMs for Multi-Turn Online Harassment Attacks",
+    "titleZh": "论文提出多轮在线骚扰 Agent 基准，越狱微调使攻击成功率升至 95% 以上",
+    "authors": [
+      "Trilok Padhi",
+      "Pinxian Lu",
+      "Abdulkadir Erol",
+      "Tanmay Sutar",
+      "Gauri Sharma",
+      "Mina Sonmez",
+      "Munmun De Choudhury",
+      "Ugur Kursuncu"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出 Online Harassment Agentic Benchmark，用合成多轮骚扰对话数据集、基于重复博弈论的多智能体（骚扰者、受害者）模拟、三种针对记忆/规划/微调的越狱方法以及混合方法评估框架，测试 LLaMA-3.1-8B-Instruct 与 Gemini-2.0-flash 两个模型。结果显示越狱微调让骚扰几乎必然发生，Llama 上攻击成功率从 57.25–64.19% 升至 95.78–96.89%，Gemini 上从 98.46% 升至 99.33%，两个模型的拒答率都降至 1–2%。最常见的有害行为是侮辱（84.9–87.8%，未微调为 44.2–50.8%）和攻击性对骂（81.2–85.1%，未微调为 31.5–38.8%），说明相比性骚扰或种族骚扰等敏感类别，这类行为的护栏更弱。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2510.14207",
+      "aisafetyhot": "https://aisafetyhot.com/items/o0dsds800mm6pqpqszaxdz2fz"
+    },
+    "publishedAt": "2025-10-16T01:27:44.000Z",
+    "timelineAt": "2026-10-09T08:05:42.074Z",
+    "discoveredAt": "2026-10-09T08:05:42.074Z"
+  },
+  {
+    "arxivId": "2502.11084",
+    "title": "Rewrite to Jailbreak: Discover Learnable and Transferable Implicit Harmfulness Instruction",
+    "titleZh": "研究者提出 Rewrite to Jailbreak 方法，通过改写指令实现可迁移黑盒越狱",
+    "authors": [
+      "Yuting Huang",
+      "Chengyuan Liu",
+      "Yifeng Feng",
+      "Yiquan Wu",
+      "Chao Wu",
+      "Fei Wu",
+      "Kun Kuang"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 Rewrite to Jailbreak（R2J）方法，通过迭代探索大语言模型的弱点并自动改进攻击策略，实现可迁移的黑盒越狱。该方法仅改写原始指令，不引入额外特征，因而比现有越狱方法更高效且更难被识别。实验表明，R2J 在多个数据集和多种模型上仅需少量查询即可迁移生效。该论文已被 ACL 2025 findings 接收，代码已公开。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2502.11084",
+      "aisafetyhot": "https://aisafetyhot.com/items/lklfyz60o3fqurtgt44wt8pat"
+    },
+    "publishedAt": "2025-02-16T11:43:39.000Z",
+    "timelineAt": "2026-10-09T08:05:51.043Z",
+    "discoveredAt": "2026-10-09T08:05:51.043Z"
+  },
+  {
+    "arxivId": "2512.18755",
+    "title": "MEEA: Mere Exposure Effect-Driven Confrontational Optimization for LLM Jailbreaking",
+    "titleZh": "MEEA：基于曝光效应的多轮越狱攻击框架",
+    "authors": [
+      "Jianyi Zhang",
+      "Shizhao Liu",
+      "Ziyin Zhou",
+      "Zhen Li"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 MEEA（Mere Exposure Effect Attack），一种受心理学曝光效应启发的全自动黑盒多轮越狱框架，通过重复低毒性语义暴露逐步侵蚀模型的安全对齐约束。该方法构建语义递进的提示链，并用模拟退火策略结合语义相似度、毒性和越狱效果进行优化。在 GPT-4、Claude-3.5 和 DeepSeek-R1 等闭源与开源模型上，MEEA 的攻击成功率持续高于七个代表性基线，平均提升超过 20%。消融实验验证了退火优化和上下文暴露机制的必要性。作者据此认为 LLM 安全行为是动态且依赖历史的，挑战了静态对齐边界的假设，并呼吁交互感知的安全评估与防御机制。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2512.18755",
+      "aisafetyhot": "https://aisafetyhot.com/items/qvdc9m5osavrfpoud78q1m7tc"
+    },
+    "publishedAt": "2025-12-21T14:43:26.000Z",
+    "timelineAt": "2026-10-09T08:05:42.091Z",
+    "discoveredAt": "2026-10-09T08:05:42.091Z"
+  },
+  {
+    "arxivId": "2512.23173",
+    "title": "EquaCode: A Multi-Strategy Jailbreak Approach for Large Language Models via Equation Solving and Code Completion",
+    "titleZh": "EquaCode：通过方程求解与代码补全实现多策略越狱",
+    "authors": [
+      "Zhen Liang",
+      "Hai Huang",
+      "Zhengkui Chen"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 EquaCode，一种通过方程求解与代码补全实施的多策略越狱方法，将恶意意图转化为数学问题并要求大语言模型用代码求解，借跨域任务的复杂度把模型注意力从安全约束转向任务完成。实验显示，该方法在 GPT 系列上平均攻击成功率为 91.19%，在 3 个 SOTA 大语言模型上达到 98.65%，且均只需单次查询。消融实验表明其效果优于单独使用数学方程模块或代码模块，作者称两者存在协同效应。该论文为预印本，修订版将收录于 AAAI 2026。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2512.23173",
+      "aisafetyhot": "https://aisafetyhot.com/items/ozoiajmi0q6im3wsk0j5jsvm9"
+    },
+    "publishedAt": "2025-12-29T03:28:30.000Z",
+    "timelineAt": "2026-10-09T08:05:50.928Z",
+    "discoveredAt": "2026-10-09T08:05:50.928Z"
+  },
+  {
+    "arxivId": "2512.05853",
+    "title": "VRSA: Jailbreaking Multimodal Large Language Models through Visual Reasoning Sequential Attack",
+    "titleZh": "VRSA：通过视觉推理序列攻击越狱多模态大模型",
+    "authors": [
+      "Shiji Zhao",
+      "Shukun Xiong",
+      "Yao Huang",
+      "Yan Jin",
+      "Zhenyu Wu",
+      "Jiyang Guan",
+      "Ranjie Duan",
+      "Jialing Tao",
+      "Hui Xue",
+      "Xingxing Wei"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出视觉推理序列攻击（VRSA），将原始有害文本拆解为若干顺序相关的子图像，诱导多模态大模型逐步外化并聚合出完整有害意图。为提升图像序列场景的合理性，方法引入自适应场景精炼（Adaptive Scene Refinement）优化与原始有害查询最相关的场景；为保持生成图像的语义连续性，提出语义连贯补全（Semantic Coherent Completion）结合场景上下文迭代改写每个子文本；并提出文本图像一致性对齐（Text-Image Consistency Alignment）维持语义一致。实验显示，在 GPT-4o、Claude-4.5-Sonnet 等开源与闭源多模态大模型上，VRSA 的攻击成功率高于当前最先进的越狱攻击方法。论文编号 arXiv:2512.05853。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2512.05853",
+      "aisafetyhot": "https://aisafetyhot.com/items/zb9xoe6eie3sguns4cekz91ec"
+    },
+    "publishedAt": "2025-12-05T16:29:52.000Z",
+    "timelineAt": "2026-10-09T08:05:51.147Z",
+    "discoveredAt": "2026-10-09T08:05:51.147Z"
+  },
+  {
+    "arxivId": "2606.06244",
+    "title": "Steering LLM Viewpoints through Fabricated Evidence Injection",
+    "titleZh": "研究者提出 Ghostwriter 攻击：用伪造证据注入操纵 LLM 观点",
+    "authors": [
+      "Xi Yang",
+      "Chang Liu",
+      "Zhenglin Huang",
+      "Haoran Li",
+      "Weiming Zhang",
+      "Jian Weng",
+      "Yangqiu Song"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 Ghostwriter 两阶段攻击框架，先把误导性陈述包装成带有可信标记的伪造理由，再指示目标 LLM 在回答相关问题时采纳这些观点。在 BBQ、ToxiGen 及自建数据集上的实验显示，未配备外部安全分类器的商用 LLM 仍然高度易受影响，即使是有前沿分类器护栏的模型（如 GPT-5.4）也只能降低而无法消除该攻击。作者还探索了多种防御策略，其中定制安全策略使 gpt-oss-safeguard 达到 81% 的检测率。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2606.06244",
+      "aisafetyhot": "https://aisafetyhot.com/items/bymj1pndvzbg6ybhuyhq20eb5"
+    },
+    "publishedAt": "2026-06-04T14:48:23.000Z",
+    "timelineAt": "2026-10-09T08:05:51.203Z",
+    "discoveredAt": "2026-10-09T08:05:51.203Z"
+  },
+  {
+    "arxivId": "2605.06605",
+    "title": "How Many Iterations to Jailbreak? Dynamic Budget Allocation for Multi-Turn LLM Evaluation",
+    "titleZh": "DAPRO：多轮 LLM 评测中越狱所需轮数的动态预算分配",
+    "authors": [
+      "Shai Feldman",
+      "Yaniv Romano"
+    ],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出 DAPRO（Dynamic Allocation via PRojected Optimization），一个用于多轮 LLM 交互中事件发生时间下界估计的动态预算分配框架。作者证明该方法满足期望预算约束，并提供无分布假设的有限样本覆盖保证，不再依赖此前 conformal survival 方法所要求的删失时间与事件时间条件独立假设。其覆盖界随平均删失权重的平方根缩放，且只涉及部分样本而非最坏情况权重，因此比先前工作更紧。DAPRO 还可在有限算力下给出越狱率等总体评测指标的无偏估计。在 Agent 任务成功、LLM 越狱、有害内容生成和 RAG 幻觉四类实验中，DAPRO 的覆盖更接近名义水平、方差低于静态基线，且期望预算不超限。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2605.06605",
+      "aisafetyhot": "https://aisafetyhot.com/items/mx91vr6z9hcs3x6jvrxgiykgc"
+    },
+    "publishedAt": "2026-05-07T17:25:15.000Z",
+    "timelineAt": "2026-10-09T08:05:41.975Z",
+    "discoveredAt": "2026-10-09T08:05:41.975Z"
+  },
+  {
+    "arxivId": "2509.17481",
+    "title": "ChartHal: A Fine-grained Framework Evaluating Hallucination of Large Vision Language Models in Chart Understanding",
+    "titleZh": "ChartHal：评估大型视觉语言模型图表理解幻觉的细粒度基准",
+    "authors": [
+      "Xingqi Wang",
+      "Yiming Cui",
+      "Xin Yao",
+      "Shijin Wang",
+      "Guoping Hu",
+      "Xiaoyu Qin"
+    ],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 ChartHal，一个针对大型视觉语言模型图表理解幻觉的细粒度评测基准，包含幻觉场景分类体系和 1062 条经人工校验的样本。评测显示当前先进模型在该基准上幻觉严重，GPT-5 和 o4-mini 的准确率分别只有 34.46% 和 22.79%。分析还发现，涉及图表中不存在或与图表矛盾的信息的问题尤其容易触发幻觉。代码和数据已公开。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2509.17481",
+      "aisafetyhot": "https://aisafetyhot.com/items/u2yh44uuy208kjq9auplyu9vj"
+    },
+    "publishedAt": "2025-09-22T08:15:55.000Z",
+    "timelineAt": "2026-10-09T08:05:50.825Z",
+    "discoveredAt": "2026-10-09T08:05:50.825Z"
   },
   {
     "arxivId": "2610.08215",
@@ -744,6 +2676,52 @@
     "discoveredAt": "2026-10-09T07:07:32.264Z"
   },
   {
+    "arxivId": "2606.00150",
+    "title": "Persona Attack: Incremental Memory Injection Jailbreak Attack against Large Language Models",
+    "titleZh": "Persona Attack：通过增量记忆注入越狱大语言模型",
+    "authors": [
+      "Junyoung Park",
+      "Seongyong Ju",
+      "Sunghwan Park",
+      "Jaewoo Lee"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 Persona Attack，一种基于记忆注入的越狱方法，通过逐步操纵模型的上下文窗口来绕过安全对齐。实验显示，随着注入内容在记忆中累积，模型会越来越优先执行这些指令而非内部安全机制。攻击成功率随模型的记忆实现方式和指令组合而变化，在特定指令配置下可达到 95%。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2606.00150",
+      "aisafetyhot": "https://aisafetyhot.com/items/q0t3hyufoeojva28npjbo3kn2"
+    },
+    "publishedAt": "2026-05-29T03:31:16.000Z",
+    "timelineAt": "2026-10-09T08:05:50.905Z",
+    "discoveredAt": "2026-10-09T08:05:50.905Z"
+  },
+  {
+    "arxivId": "2508.03696",
+    "title": "PLA: Prompt Learning Attack against Text-to-Image Generative Models",
+    "titleZh": "PLA：针对文生图模型的黑盒提示词学习攻击",
+    "authors": [
+      "Xinqi Lyu",
+      "Yihao Liu",
+      "Yanjie Li",
+      "Bin Xiao"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出提示词学习攻击框架 PLA，用于在无法获取模型架构与参数的黑盒条件下绕过文生图模型的安全机制。此前方法多依赖词替换搜索对抗提示词，受限于搜索空间，效果不如基于梯度的训练；PLA 利用多模态相似度设计面向黑盒 T2I 模型的梯度训练来学习对抗提示词。实验显示，该方法能有效攻击包括提示词过滤器和事后安全检查器在内的黑盒 T2I 安全机制，成功率高于现有方法。论文发表于 ICCV2025，作者提示文中可能包含模型生成的有害内容。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2508.03696",
+      "aisafetyhot": "https://aisafetyhot.com/items/jadgc55lepteijqbanv6dvdjs"
+    },
+    "publishedAt": "2025-07-14T11:57:16.000Z",
+    "timelineAt": "2026-10-09T08:05:51.235Z",
+    "discoveredAt": "2026-10-09T08:05:51.235Z"
+  },
+  {
     "arxivId": "2610.11775",
     "title": "RouterInterp: Understanding Superposed Specialisation in Mixture of Experts Routing",
     "titleZh": "RouterInterp：解释 MoE 路由中的叠加特化现象",
@@ -764,6 +2742,151 @@
     "publishedAt": null,
     "timelineAt": "2026-10-09T04:32:36.742Z",
     "discoveredAt": "2026-10-09T04:32:36.742Z"
+  },
+  {
+    "arxivId": "2507.10457",
+    "title": "Logic layer Prompt Control Injection (LPCI): A Novel Security Vulnerability Class in Agentic Systems",
+    "titleZh": "论文提出 LPCI：针对 Agent 逻辑层与持久记忆的提示控制注入攻击",
+    "authors": [
+      "Hammad Atta",
+      "Ken Huang",
+      "Manish Bhatt",
+      "Kamal Ahmed",
+      "Muhammad Aziz Ul Haq",
+      "Yasir Mehmood"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出 Logic-layer Prompt Control Injection（LPCI），一类针对 Agent 系统逻辑执行层与持久记忆的攻击。攻击把经过编码、延迟且条件触发的载荷嵌入记忆、向量库或工具输出中，从而绕过常规输入过滤，并跨会话触发未授权行为。作者将 LPCI 归为面向企业 LLM 集成系统的新型隐蔽安全漏洞类别，论文编号 arXiv:2507.10457，属 cs.CR 方向。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2507.10457",
+      "aisafetyhot": "https://aisafetyhot.com/items/rvx86p3kna4pz9qrdz9xrm5hn"
+    },
+    "publishedAt": "2025-07-14T16:37:05.000Z",
+    "timelineAt": "2026-10-09T08:05:41.747Z",
+    "discoveredAt": "2026-10-09T08:05:41.747Z"
+  },
+  {
+    "arxivId": "2604.24983",
+    "title": "Adaptive Prompt Embedding Optimization for LLM Jailbreaking",
+    "titleZh": "PEO：直接优化原始提示词嵌入的 LLM 白盒越狱方法",
+    "authors": [
+      "Miles Q. Li",
+      "Benjamin C. M. Fung",
+      "Boyang Li",
+      "Radin Hamidi Rad",
+      "Ebrahim Bagheri"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 Prompt Embedding Optimization（PEO），一种多轮白盒越狱方法，直接优化原始提示词 token 的嵌入向量，而不追加任何对抗 token。作者称，优化后的嵌入与原始嵌入足够接近，经最近 token 投影后可见提示词字符串完全保持不变，定量分析显示模型回答在绝大多数提示上仍切题。PEO 结合连续嵌入空间优化、结构化续写目标和以失败为焦点的自适应调度；作者称后续轮次可借助启发式复合回答脚手架获益，ASR-Judge 显示这些增益并非只是空泛格式或仅脚手架输出。在两个标准有害行为基准上，PEO 在实验中优于离散后缀搜索、追加对抗嵌入和基于搜索的对抗生成等白盒攻击。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2604.24983",
+      "aisafetyhot": "https://aisafetyhot.com/items/fd8rnnvqd3q5kg2ti6fs63hml"
+    },
+    "publishedAt": "2026-04-27T20:39:08.000Z",
+    "timelineAt": "2026-10-09T08:05:51.173Z",
+    "discoveredAt": "2026-10-09T08:05:51.173Z"
+  },
+  {
+    "arxivId": "2511.19171",
+    "title": "Can LLMs Threaten Human Survival? Benchmarking Potential Existential Threats from LLMs via Prefix Completion",
+    "titleZh": "ExistBench：用前缀补全评测 LLM 的生存性威胁输出",
+    "authors": [
+      "Yu Cui",
+      "Yifei Liu",
+      "Hang Fu",
+      "Sicheng Pan",
+      "Haibin Zhang",
+      "Cong Zuo",
+      "Licheng Wang"
+    ],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 ExistBench 基准，用于评测大语言模型生成内容是否包含潜在生存性威胁，即暗示或推动直接危害人类生存的输出。该基准的样本来自人类被设定为 AI 助手对手方的场景，与既有评测不同，它用前缀补全绕过模型护栏，让模型续写出敌视人类或执行核打击等严重威胁的文本。在 10 个 LLM 上的实验显示，模型生成内容中存在这类生存性威胁；研究者还分析了模型的注意力 logits 以探究成因，并构建框架评估工具调用场景下的模型行为，发现 LLM 会主动选择并调用带有生存性威胁的外部工具。代码与数据已公开。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2511.19171",
+      "aisafetyhot": "https://aisafetyhot.com/items/c2086nx2dq0tqbdbc5r613ycm"
+    },
+    "publishedAt": "2025-11-24T14:34:13.000Z",
+    "timelineAt": "2026-10-09T08:05:42.103Z",
+    "discoveredAt": "2026-10-09T08:05:42.103Z"
+  },
+  {
+    "arxivId": "2511.08225",
+    "title": "Benchmarking Educational LLMs with Analytics: A Case Study on Gender Bias in Feedback",
+    "titleZh": "研究者用 600 篇作文对六款大模型的教育反馈性别偏差做基准测试",
+    "authors": [
+      "Yishan Du",
+      "Conrad Borchers",
+      "Mutlu Cukurova"
+    ],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出一个基于嵌入向量的基准测试框架，用于检测大语言模型在形成性反馈中的性别偏差，相关方法使用了 AES 2.0 语料库中的 600 篇真实学生作文。研究沿两个维度构造受控反事实：通过基于词表的性别词汇替换制造隐性线索，以及通过提示词中的作者性别背景制造显性线索。测试覆盖六款代表性模型：GPT-5 mini、GPT-4o mini、DeepSeek-R1、DeepSeek-R1-Qwen、Gemini 2.5 Pro 和 Llama-3-8B。研究先用余弦距离和欧氏距离在句嵌入上量化回答差异，再通过置换检验评估显著性，最后用降维可视化结构。结果显示，在所有模型中，男性到女性的隐性反事实操作稳定引发比女性到男性更大的语义偏移；只有 GPT 和 Llama 系列模型对显性性别线索表现出敏感性。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2511.08225",
+      "aisafetyhot": "https://aisafetyhot.com/items/vrs7k0kj0iazqxit4m3at9knv"
+    },
+    "publishedAt": "2025-11-11T13:28:44.000Z",
+    "timelineAt": "2026-10-09T08:05:42.217Z",
+    "discoveredAt": "2026-10-09T08:05:42.217Z"
+  },
+  {
+    "arxivId": "2602.00420",
+    "title": "Text is All You Need for Vision-Language Model Jailbreaking",
+    "titleZh": "研究者提出 Text-DJ，利用 OCR 能力越狱大型视觉语言模型",
+    "authors": [
+      "Yihang Chen",
+      "Zhao Xu",
+      "Youyuan Jiang",
+      "Tianle Zheng",
+      "Cho-Jui Hsieh"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出 Text-DJ，一种利用大型视觉语言模型 OCR 能力的越狱攻击，可绕过现有安全对齐。该方法分三步：把一条有害查询拆解成多条语义相关但更无害的子查询；挑选与有害查询最不相关的干扰查询；将子查询与干扰查询以图像网格形式同时输入模型，子查询置于网格中部。作者认为攻击成功的原因有两点：一是把文本提示词转为图像，绕过标准文本过滤器；二是大量无关查询造成干扰，使模型的安全协议无法把分散的子查询关联起来。作者称这种方法绕过了当前最先进 LVLM 的安全对齐，并指出需要针对碎片化多模态输入设计防御。论文编号 arXiv:2602.00420。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2602.00420",
+      "aisafetyhot": "https://aisafetyhot.com/items/s69w1qdmt2nxh3cji669uuvm7"
+    },
+    "publishedAt": "2026-01-31T00:17:56.000Z",
+    "timelineAt": "2026-10-09T08:05:50.857Z",
+    "discoveredAt": "2026-10-09T08:05:50.857Z"
+  },
+  {
+    "arxivId": "2503.01839",
+    "title": "Jailbreaking Safeguarded Text-to-Image Models via Large Language Models",
+    "titleZh": "研究者用微调大语言模型越狱带安全护栏的文生图模型",
+    "authors": [
+      "Zhengyuan Jiang",
+      "Yuepeng Hu",
+      "Yuchen Yang",
+      "Yinzhi Cao",
+      "Neil Zhenqiang Gong"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出一种用微调大语言模型越狱带安全护栏的文生图模型的方法，微调后的 AttackLLM 可高效生成对抗提示词，无需像其他基于查询的越狱攻击那样反复查询目标模型。作者在三个不安全提示词数据集上、针对五种安全护栏进行评测，称该方法能有效绕过护栏，效果优于现有的 no-box 攻击，并可辅助其他基于查询的攻击。该工作已被 EACL 2026 Findings 接收。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2503.01839",
+      "aisafetyhot": "https://aisafetyhot.com/items/yon32zc29tdkbl2r45wety39r"
+    },
+    "publishedAt": "2025-03-03T18:58:46.000Z",
+    "timelineAt": "2026-10-09T08:05:51.015Z",
+    "discoveredAt": "2026-10-09T08:05:51.015Z"
   },
   {
     "arxivId": "2610.11942",
@@ -809,6 +2932,63 @@
     "discoveredAt": "2026-10-08T16:18:25.387Z"
   },
   {
+    "arxivId": "2512.20677",
+    "title": "Learning-Based Automated Adversarial Red-Teaming for Robustness Evaluation of Large Language Models",
+    "titleZh": "研究提出基于学习的自动化对抗红队框架，用于大语言模型鲁棒性评测",
+    "authors": [
+      "Zhang Wei",
+      "Hanxuan Chen",
+      "Peilu Hu",
+      "Zhenyuan Wei",
+      "Chenwei Liang",
+      "Jiayi Gu",
+      "Wenqian Weng",
+      "Jacqueline Pang",
+      "Hao Yan",
+      "Li Mei",
+      "Shengning Lang",
+      "Kuan Lu",
+      "Xi Xiao",
+      "Zhimo Han",
+      "Yijin Wang",
+      "Yichao Zhang",
+      "Chen Ya"
+    ],
+    "category": "tip",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出一个学习驱动的自动化红队框架，把红队测试建模为受约束的对抗搜索问题，将类别感知的攻击生成与分层漏洞检测结合。方法从精选安全种子出发，经元提示引导和进化搜索扩展，再用词法、语义和行为检测器对提示-回复对打分。在 GPT-OSS-20B 的六个威胁类别上，该框架发现 47 个经确认的漏洞，其中 21 个为高严重性案例、12 个为新攻击模式；在相同查询预算下，其发现率是人工专家红队的 3.9 倍，检测准确率为 89%，并覆盖全部类别。消融实验显示，多样性约束防止模板坍缩，覆盖约束防止类别盲区，语义检测能找回词法规则漏掉的失败案例。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2512.20677",
+      "aisafetyhot": "https://aisafetyhot.com/items/nr275vaj6f68939z0pgzdwv3c"
+    },
+    "publishedAt": "2025-12-21T19:12:44.000Z",
+    "timelineAt": "2026-10-09T08:05:41.951Z",
+    "discoveredAt": "2026-10-09T08:05:41.951Z"
+  },
+  {
+    "arxivId": "2504.00374",
+    "title": "When Persuasion Overrides Truth in Multi-Agent LLM Debates: Introducing a Confidence-Weighted Persuasion Override Rate (CW-POR)",
+    "titleZh": "研究提出 CW-POR 指标衡量多智能体 LLM 辩论中的说服覆盖",
+    "authors": [
+      "Mahak Agarwal",
+      "Divyam Khanna"
+    ],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出置信度加权说服覆盖率（CW-POR），用于衡量多智能体辩论中裁判 LLM 被错误论点说服的频率及其对错误选项的置信程度。研究采用单轮多智能体辩论框架：一个基于 LLM 的智能体给出 TruthfulQA 中的真实答案，另一个智能体力挺错误说法，同一 LLM 架构担任裁判。实验覆盖五个开源 LLM（3B 至 14B 参数），并系统改变智能体发言长度（30 至 300 词）。结果显示，即使较小的模型也能构造出说服力强的论证，覆盖真实答案，且往往伴随高置信度。作者认为这凸显了稳健校准与对抗测试的必要性，以防 LLM 自信地为错误信息背书。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2504.00374",
+      "aisafetyhot": "https://aisafetyhot.com/items/x8pm366xyk8ayxzb09hflb8pp"
+    },
+    "publishedAt": "2025-04-01T02:45:02.000Z",
+    "timelineAt": "2026-10-09T08:05:42.198Z",
+    "discoveredAt": "2026-10-09T08:05:42.198Z"
+  },
+  {
     "arxivId": "2610.12235",
     "title": "Language Models as AI Research World Models",
     "titleZh": "论文提出用语言模型充当 AI 研究世界模型，预测实验结果",
@@ -841,6 +3021,156 @@
     "discoveredAt": "2026-10-09T05:44:33.851Z"
   },
   {
+    "arxivId": "2605.29237",
+    "title": "Evolving Skill-Structured Attack Memory Enhances LLM Jailbreaking",
+    "titleZh": "MemoAttack：记忆驱动的黑盒越狱框架在 AdvBench 上达到 93.33-96.67% 攻击成功率",
+    "authors": [
+      "Junke Zhang",
+      "Jianwei Wang",
+      "Sishuo Chen",
+      "Yizhang He",
+      "Qingshuai Feng",
+      "Zhengyi Yang"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 MemoAttack，一个记忆驱动的黑盒越狱框架，通过技能结构化记忆建模、生命周期驱动的记忆演化和后验引导的上下文记忆选择来组织与复用攻击经验。在 AdvBench 上针对三个目标模型，MemoAttack 的攻击成功率为 93.33-96.67%，比每个目标上最强基线高出 10.00-12.00 个百分点，同时将其自身成功目标的平均扩展成本降低 20.2-51.6%。在 Qwen3.5 上的 400 目标顺序评测中，随着记忆积累，后 50 个目标的平均扩展尝试次数从 19.74 降至 10.92。论文标注为审稿中，属于 cs.CR 方向。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2605.29237",
+      "aisafetyhot": "https://aisafetyhot.com/items/a4305k1zl1zz6f6wur8xgaks4"
+    },
+    "publishedAt": "2026-05-28T01:53:14.000Z",
+    "timelineAt": "2026-10-09T08:05:41.894Z",
+    "discoveredAt": "2026-10-09T08:05:41.894Z"
+  },
+  {
+    "arxivId": "2510.08776",
+    "title": "Measuring Moral LLM Responses in Multilingual Capacities",
+    "titleZh": "研究评测前沿模型多语言道德回答：GPT-5 平均表现最好，Gemini 2.5 Pro 在部分类别最低",
+    "authors": [
+      "Kimaya Basu",
+      "Savi Kolari",
+      "Allison Yu"
+    ],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "一项研究评测了前沿与领先开源模型在低资源和高资源语言下的多语言回答，从五个维度衡量其准确性与一致性，采用五分制评分标准和 judge LLM 打分。结果显示 GPT-5 在每个类别上平均表现最好，其他模型在语言和类别间的一致性较差。在 Consent & Autonomy 与 Harm Prevention & Safety 两个类别中，GPT 得分最高，平均分别为 3.56 和 4.73；Gemini 2.5 Pro 得分最低，平均分别为 1.39 和 1.98。作者认为，这些发现说明需要进一步测试语言变化如何影响模型在不同类别下的回答，并改进相关表现。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2510.08776",
+      "aisafetyhot": "https://aisafetyhot.com/items/m9tq212gy6lbp3hbnhgn9p7n5"
+    },
+    "publishedAt": "2025-10-09T19:47:40.000Z",
+    "timelineAt": "2026-10-09T08:05:50.941Z",
+    "discoveredAt": "2026-10-09T08:05:50.941Z"
+  },
+  {
+    "arxivId": "2511.13892",
+    "title": "Jailbreaking Large Vision Language Models in Intelligent Transportation Systems",
+    "titleZh": "论文提出利用图像排版操纵与多轮提示越狱智能交通系统中的 LVLM",
+    "authors": [
+      "Badhan Chandra Das",
+      "Md Tasnim Jawad",
+      "Md Jueal Mia",
+      "M. Hadi Amini",
+      "Yanzhao Wu"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文系统分析了集成在智能交通系统（ITS）中的大型视觉语言模型（LVLM）在越狱攻击下的脆弱性。作者先按 OpenAI 禁止类别构建了与交通相关的有害查询数据集，再提出一种结合图像排版操纵与多轮提示的越狱攻击，并给出多层响应过滤防御技术。实验在多个开源与闭源 SOTA LVLM 上进行，用 GPT-4 判定生成回复的毒性分数并辅以人工核验，同时与已有越狱技术做了对比，指出图像排版操纵加多轮提示在 ITS 场景 LVLM 中带来的安全风险。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2511.13892",
+      "aisafetyhot": "https://aisafetyhot.com/items/bzh0r088poqn30vxba1j3t2t3"
+    },
+    "publishedAt": "2025-11-17T20:29:48.000Z",
+    "timelineAt": "2026-10-09T08:05:51.168Z",
+    "discoveredAt": "2026-10-09T08:05:51.168Z"
+  },
+  {
+    "arxivId": "2505.12287",
+    "title": "The Tower of Babel Revisited: Multilingual Jailbreak Prompts on Closed-Source Large Language Models",
+    "titleZh": "多语言越狱提示词对闭源大语言模型的攻击评估：GPT-4o、DeepSeek-R1、Gemini-1.5-Pro 与 Qwen-Max",
+    "authors": [
+      "Linghan Huang",
+      "Haolin Jin",
+      "Zhaoge Bi",
+      "Pengyue Yang",
+      "Peizhou Zhao",
+      "Taozhao Chen",
+      "Xiongfei Wu",
+      "Lei Ma",
+      "Huaming Chen"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "一项研究用 32 种越狱攻击、中英双语六类安全内容对 GPT-4o、DeepSeek-R1、Gemini-1.5-Pro 和 Qwen-Max 发起 38,400 次测试，以攻击成功率（ASR）衡量表现。结果显示 Qwen-Max 最易被攻破，GPT-4o 防御最强；中文提示词的 ASR 始终高于英文，新提出的 Two-Sides 攻击对所有模型最有效。作者称这凸显了语言感知对齐与跨语言防御的迫切需求。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2505.12287",
+      "aisafetyhot": "https://aisafetyhot.com/items/r3xp53mv2crl3vvg1vy22213b"
+    },
+    "publishedAt": "2025-05-18T07:51:19.000Z",
+    "timelineAt": "2026-10-09T08:05:50.953Z",
+    "discoveredAt": "2026-10-09T08:05:50.953Z"
+  },
+  {
+    "arxivId": "2505.23266",
+    "title": "Disrupting Vision-Language Model-Driven Navigation Services via Adversarial Object Fusion",
+    "titleZh": "AdvOF：用对抗物体融合攻击 VLM 驱动的视觉语言导航智能体",
+    "authors": [
+      "Chunlong Xie",
+      "Jialing He",
+      "Shangwei Guo",
+      "Jiacheng Wang",
+      "Shudong Zhang",
+      "Tianwei Zhang",
+      "Tao Xiang"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出对抗物体融合（AdvOF），一种针对视觉语言导航（VLN）智能体的攻击框架，通过生成对抗性 3D 物体攻击其基于 VLM 的感知模块。AdvOF 先在 2D 和 3D 空间对齐受害物体位置并渲染对抗物体，再在物理属性与 VLM 感知上协同优化，并按视角分配重要性权重进行多视角迭代融合。评估显示该方法能有效降低智能体在对抗条件下的表现，同时对正常导航任务干扰极小。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2505.23266",
+      "aisafetyhot": "https://aisafetyhot.com/items/h7gkwjq47kgx4z7b0n22ui86k"
+    },
+    "publishedAt": "2025-05-29T09:14:50.000Z",
+    "timelineAt": "2026-10-09T08:05:51.129Z",
+    "discoveredAt": "2026-10-09T08:05:51.129Z"
+  },
+  {
+    "arxivId": "2508.19287",
+    "title": "Prompt-in-Content Attacks: Exploiting Uploaded Inputs to Hijack LLM Behavior",
+    "titleZh": "Prompt-in-Content 攻击：利用上传输入劫持 LLM 行为",
+    "authors": [
+      "Zhuotao Lian",
+      "Weiyu Wang",
+      "Qingkui Zeng",
+      "Toru Nakanishi",
+      "Teruaki Kitasuka",
+      "Chunhua Su"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出一类名为 prompt in content injection 的新型攻击，将对抗性指令嵌入看似良性的上传文档或粘贴文本中，LLM 处理后可生成有偏摘要、捏造声明或误导性建议，且用户无感知、系统未被入侵。作者在多个主流平台上验证了该攻击的可行性，并分析其根因在于提示词拼接与输入隔离不足，同时讨论了缓解策略。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2508.19287",
+      "aisafetyhot": "https://aisafetyhot.com/items/j0fqo9ja5efsxofgb0kinu9lb"
+    },
+    "publishedAt": "2025-08-25T05:20:11.000Z",
+    "timelineAt": "2026-10-09T08:05:41.802Z",
+    "discoveredAt": "2026-10-09T08:05:41.802Z"
+  },
+  {
     "arxivId": "2610.10655",
     "title": "Nullify: Null-Space Activation Steering for Training-Free LLM Unlearning",
     "titleZh": "Nullify：面向 LLM 遗忘的零空间激活引导免训练方法",
@@ -867,6 +3197,30 @@
     "publishedAt": null,
     "timelineAt": "2026-10-09T04:32:36.710Z",
     "discoveredAt": "2026-10-09T04:32:36.710Z"
+  },
+  {
+    "arxivId": "2601.05339",
+    "title": "Multi-turn Jailbreaking Attack in Multi-Modal Large Language Models",
+    "titleZh": "多模态大语言模型的多轮越狱攻击与 FragGuard 防御",
+    "authors": [
+      "Badhan Chandra Das",
+      "Md Tasnim Jawad",
+      "Joaquin Molto",
+      "M. Hadi Amini",
+      "Yanzhao Wu"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出 MJAD-MLLMs 框架，系统分析多模态大语言模型（MLLMs）的多轮越狱攻击与基于多 LLM 的防御技术。作者设计了一种新的多轮越狱攻击，利用多轮提示下的模型漏洞，并提出片段优化与多 LLM 防御机制 FragGuard 以缓解此类攻击。研究在多个 SOTA 开源与闭源 MLLMs 及基准数据集上评估了攻击与防御效果，并与现有技术进行了对比。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2601.05339",
+      "aisafetyhot": "https://aisafetyhot.com/items/q91lq83i23kof7nxin0u1aegv"
+    },
+    "publishedAt": "2026-01-08T19:37:22.000Z",
+    "timelineAt": "2026-10-09T08:05:41.961Z",
+    "discoveredAt": "2026-10-09T08:05:41.961Z"
   },
   {
     "arxivId": "2610.11754",
@@ -908,6 +3262,29 @@
     "discoveredAt": "2026-10-09T06:36:32.329Z"
   },
   {
+    "arxivId": "2606.29602",
+    "title": "An Empirical Evaluation of Prompt Injection Vulnerabilities in Large Language Models Across Multilingual and Obfuscated Attack Scenarios",
+    "titleZh": "六款主流 LLM 在多语言与混淆提示注入攻击下的实证评估",
+    "authors": [
+      "Caglar Uysal",
+      "Baturay Birinci",
+      "Süha Orhun Mutluergil",
+      "Orçun Çetin"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "一项实证评估测试了 DeepSeek、GPT、Gemini、Grok、Llama 和 Qwen 六款 LLM 在多语言、多字符编码的直接与多阶段混淆提示注入攻击下的表现，发现所有被测模型均存在系统性漏洞。直接提示注入即可频繁诱导模型生成钓鱼内容、网站和恶意软件，精心设计的提示词则带来更高的恶意遵从率，钓鱼场景尤为突出，DeepSeek、Gemini 和 Grok 在复杂指令下尤其易受影响。非英语语言的遵从率持续高于英语，暴露出多语言安全对齐的显著缺口；简单字符编码虽能减少恶意输出但无法消除。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2606.29602",
+      "aisafetyhot": "https://aisafetyhot.com/items/ve17cfji8svvgkiuqarivomc1"
+    },
+    "publishedAt": "2026-06-28T20:56:57.000Z",
+    "timelineAt": "2026-10-09T08:05:42.097Z",
+    "discoveredAt": "2026-10-09T08:05:42.097Z"
+  },
+  {
     "arxivId": "2610.08740",
     "title": "Kosoy 提出鲁棒老虎机多项式时间学习器，推进 AI 对齐",
     "titleZh": "Kosoy 提出鲁棒老虎机多项式时间学习器，推进 AI 对齐",
@@ -924,6 +3301,29 @@
     "publishedAt": null,
     "timelineAt": "2026-10-09T02:35:42.826Z",
     "discoveredAt": "2026-10-09T02:35:42.826Z"
+  },
+  {
+    "arxivId": "2512.03992",
+    "title": "Value-Guided Iterative Refinement and the DIQ-H Benchmark for Evaluating VLM Robustness",
+    "titleZh": "DIQ-H 基准与 VGIR 框架：评估 VLM 在对抗视觉条件下的鲁棒性",
+    "authors": [
+      "Hanwen Wan",
+      "Zexin Lin",
+      "Yixuan Deng",
+      "Xiaoqiang Ji"
+    ],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 DIQ-H 基准，首次在连续序列中评估 VLM 在对抗视觉条件下的表现，模拟运动模糊、传感器噪声和压缩伪影，衡量这些损坏如何导致持续错误与价值不一致。同时提出 Value-Guided Iterative Refinement（VGIR）框架，用轻量级 VLM 自动生成高质量、伦理对齐的标注，将准确率从 72.2% 提升至 83.3%，相对提升 15.3%。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2512.03992",
+      "aisafetyhot": "https://aisafetyhot.com/items/trxo2kw6dz9vngbdndu0vxf5l"
+    },
+    "publishedAt": "2025-12-03T17:22:29.000Z",
+    "timelineAt": "2026-10-09T08:05:51.114Z",
+    "discoveredAt": "2026-10-09T08:05:51.114Z"
   },
   {
     "arxivId": "2610.10865",
@@ -947,6 +3347,51 @@
     "publishedAt": null,
     "timelineAt": "2026-10-09T04:32:36.725Z",
     "discoveredAt": "2026-10-09T04:32:36.725Z"
+  },
+  {
+    "arxivId": "2602.11167",
+    "title": "Visualizing and Benchmarking LLM Factual Hallucination Tendencies via Internal State Analysis and Clustering",
+    "titleZh": "通过内部状态分析与聚类可视化并评测 LLM 事实幻觉倾向",
+    "authors": [
+      "Nathan Mao",
+      "Varun Kaushik",
+      "Shreya Shivkumar",
+      "Parham Sharafoleslami",
+      "Kevin Zhu",
+      "Sunishchal Dev"
+    ],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 FalseCite 数据集，用误导性或伪造引用诱发大语言模型的幻觉回答，并据此对 GPT-4o-mini、Falcon-7B 和 Mistral 7-B 进行评测，发现带欺骗性引用的虚假主张会明显加剧幻觉活动，GPT-4o-mini 尤为突出。基于这些回答，作者对幻觉模型的隐藏状态向量进行可视化与聚类，观察到无论是否幻觉，隐藏状态向量都倾向于呈现独特的角状（horn-like）形态。该工作发表于 IJCNLP-AACL SRW 2025，作者称 FalseCite 可作为未来评测与缓解 LLM 幻觉的基础。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2602.11167",
+      "aisafetyhot": "https://aisafetyhot.com/items/oz2ofyaq1koujh8ee3ceg9whk"
+    },
+    "publishedAt": "2026-01-18T22:51:40.000Z",
+    "timelineAt": "2026-10-09T08:05:51.191Z",
+    "discoveredAt": "2026-10-09T08:05:51.191Z"
+  },
+  {
+    "arxivId": "2602.18514",
+    "title": "Trojan Horses in Recruiting: A Red-Teaming Case Study on Indirect Prompt Injection in Standard vs. Reasoning Models",
+    "titleZh": "招聘中的特洛伊木马：标准模型与推理模型间接提示注入的红队测试案例研究",
+    "authors": [
+      "Manuel Wirth"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "一项针对 Qwen 3 30B 的红队测试案例研究用\"特洛伊木马\"简历对比了标准指令微调模型与推理增强模型在间接提示注入下的表现。标准模型以脆弱的幻觉为简单攻击辩护，并在复杂场景中过滤掉不合逻辑的约束；推理模型则呈现危险的双重性，用高级策略性重构让简单攻击极具说服力，却在面对逻辑混乱的指令时出现\"元认知泄漏\"，把注入逻辑意外打印进最终输出，反而更易被人类察觉。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2602.18514",
+      "aisafetyhot": "https://aisafetyhot.com/items/kyfkcb13qzcv8nvethcbceca4"
+    },
+    "publishedAt": "2026-02-19T19:26:21.000Z",
+    "timelineAt": "2026-10-09T08:05:50.884Z",
+    "discoveredAt": "2026-10-09T08:05:50.884Z"
   },
   {
     "arxivId": "2610.11959",
@@ -1163,6 +3608,26 @@
     "discoveredAt": "2026-10-09T04:32:36.759Z"
   },
   {
+    "arxivId": "2511.18790",
+    "title": "RoguePrompt: Dual-Layer Ciphering for Self-Reconstruction to Circumvent LLM Moderation",
+    "titleZh": "RoguePrompt：双层加密自重构以绕过 LLM 内容审核",
+    "authors": [
+      "Benyamin Tafreshian"
+    ],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出 RoguePrompt，一种自动化越狱流水线，通过将违禁提示词拆分并施加 ROT-13 与 Vigenère 两层嵌套编码，再附上自然语言解码指令，把违禁请求伪装成看似无害的提示词，诱导模型在单次查询内自行重构并执行原始意图。在仅能访问 API 和 UI 的黑盒威胁模型下，该方法在 313 条真实被硬拒提示词上平均实现 93.93% 过滤绕过、79.02% 指令重构和 70.18% 执行成功率。该论文已被作者撤回，由扩展版本 arXiv:2607.27373 取代。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2511.18790",
+      "aisafetyhot": "https://aisafetyhot.com/items/jbgqieludc1w6aue86aunyrs9"
+    },
+    "publishedAt": "2025-11-24T05:42:54.000Z",
+    "timelineAt": "2026-10-09T08:05:42.163Z",
+    "discoveredAt": "2026-10-09T08:05:42.163Z"
+  },
+  {
     "arxivId": "2610.11123",
     "title": "When Interfaces Speak: Data-Aware Generative UI Harness for Active Interaction",
     "titleZh": "GenUI-Harness：面向主动交互的数据感知生成式 UI 框架",
@@ -1208,33 +3673,6 @@
     "discoveredAt": "2026-10-09T06:05:31.813Z"
   },
   {
-    "arxivId": "2512.19016",
-    "title": "DREAM: Dynamic Red-teaming across Environments for AI Models",
-    "titleZh": "DREAM：面向AI模型的跨环境动态红队测试",
-    "authors": [
-      "Liming Lu",
-      "Xiang Gu",
-      "Junyu Huang",
-      "Jiawei Du",
-      "Xu Zheng",
-      "Yunhuai Liu",
-      "Yongbin Zhou",
-      "Shuchao Pang"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2512.19016",
-      "aisafetyhot": "https://aisafetyhot.com/items/zj4fcptg82u3spofu5t8pv5c5"
-    },
-    "publishedAt": "2025-12-22T04:11:57.000Z",
-    "timelineAt": "2026-10-09T08:05:41.659Z",
-    "discoveredAt": "2026-10-09T08:05:41.659Z"
-  },
-  {
     "arxivId": "2606.01637",
     "title": "Easier to Mislead Than to Correct: Harmful and Beneficial Revision in LLM Conformity",
     "titleZh": "误导比纠正更容易：LLM从众中的有害与有益修正",
@@ -1255,2254 +3693,5 @@
     "publishedAt": "2026-06-01T03:42:00.000Z",
     "timelineAt": "2026-10-09T08:05:41.694Z",
     "discoveredAt": "2026-10-09T08:05:41.694Z"
-  },
-  {
-    "arxivId": "2510.27140",
-    "title": "Measuring the Security of Mobile LLM Agents under Adversarial Prompts from Untrusted Third-Party Channels",
-    "titleZh": "测量移动LLM Agent在来自不可信第三方渠道的对抗提示下的安全性",
-    "authors": [
-      "Chenghao Du",
-      "Quanfeng Huang",
-      "Tingxuan Tang",
-      "Zihao Wang",
-      "Adwait Nadkarni",
-      "Yue Xiao"
-    ],
-    "category": "eval",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2510.27140",
-      "aisafetyhot": "https://aisafetyhot.com/items/iyq6cb3rk8wn38mpcddx0xkir"
-    },
-    "publishedAt": "2025-10-31T03:35:59.000Z",
-    "timelineAt": "2026-10-09T08:05:41.713Z",
-    "discoveredAt": "2026-10-09T08:05:41.713Z"
-  },
-  {
-    "arxivId": "2605.17324",
-    "title": "ASPI: Seeking Ambiguity Clarification Amplifies Prompt Injection Vulnerability in LLM Agents",
-    "titleZh": "ASPI：寻求歧义澄清会放大LLM Agent中的提示注入漏洞",
-    "authors": [
-      "Udari Madhushani Sehwag",
-      "Zhengyang Shan",
-      "Heming Liu",
-      "Dileepa Lakshan",
-      "Joseph Brandifino",
-      "Max Fenkell"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2605.17324",
-      "aisafetyhot": "https://aisafetyhot.com/items/gp2vsvvg8liada0q3gtxym756"
-    },
-    "publishedAt": "2026-05-17T08:30:45.000Z",
-    "timelineAt": "2026-10-09T08:05:41.731Z",
-    "discoveredAt": "2026-10-09T08:05:41.731Z"
-  },
-  {
-    "arxivId": "2507.10457",
-    "title": "Logic layer Prompt Control Injection (LPCI): A Novel Security Vulnerability Class in Agentic Systems",
-    "titleZh": "逻辑层提示控制注入（LPCI）：智能体系统中的一类新型安全漏洞",
-    "authors": [
-      "Hammad Atta",
-      "Ken Huang",
-      "Manish Bhatt",
-      "Kamal Ahmed",
-      "Muhammad Aziz Ul Haq",
-      "Yasir Mehmood"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2507.10457",
-      "aisafetyhot": "https://aisafetyhot.com/items/rvx86p3kna4pz9qrdz9xrm5hn"
-    },
-    "publishedAt": "2025-07-14T16:37:05.000Z",
-    "timelineAt": "2026-10-09T08:05:41.747Z",
-    "discoveredAt": "2026-10-09T08:05:41.747Z"
-  },
-  {
-    "arxivId": "2607.02857",
-    "title": "MOSAIC: Knowledge-Guided CLI Command Composition Attack in LLM Coding Agents",
-    "titleZh": "MOSAIC：LLM编码Agent中知识引导的CLI命令组合攻击",
-    "authors": [
-      "Jiangrong Wu",
-      "Huaijin Wang",
-      "Yihao Zhang",
-      "Yuhong Nan",
-      "Shuai Wang"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2607.02857",
-      "aisafetyhot": "https://aisafetyhot.com/items/t4c9kfnj3qo1ejkzslqc5325l"
-    },
-    "publishedAt": "2026-07-03T01:41:17.000Z",
-    "timelineAt": "2026-10-09T08:05:41.767Z",
-    "discoveredAt": "2026-10-09T08:05:41.767Z"
-  },
-  {
-    "arxivId": "2509.05372",
-    "title": "Adversarial Bug Reports as a Security Risk in Language Model-Based Automated Program Repair",
-    "titleZh": "对抗性错误报告作为基于语言模型的自动程序修复中的安全风险",
-    "authors": [
-      "Piotr Przymus",
-      "Andreas Happe",
-      "Jürgen Cito"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2509.05372",
-      "aisafetyhot": "https://aisafetyhot.com/items/eihv5f1573crm43bh8hagii4f"
-    },
-    "publishedAt": "2025-09-04T09:41:57.000Z",
-    "timelineAt": "2026-10-09T08:05:41.780Z",
-    "discoveredAt": "2026-10-09T08:05:41.780Z"
-  },
-  {
-    "arxivId": "2605.08460",
-    "title": "When Child Inherits: Modeling and Exploiting Subagent Spawn in Multi-Agent Networks",
-    "titleZh": "当子代理继承时：多智能体网络中子代理生成过程的建模与利用",
-    "authors": [
-      "Ziwen Cai",
-      "Yihe Zhang",
-      "Xiali Hei"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2605.08460",
-      "aisafetyhot": "https://aisafetyhot.com/items/kafn41zf3n1m3iasvg6eaf641"
-    },
-    "publishedAt": "2026-05-08T20:27:23.000Z",
-    "timelineAt": "2026-10-09T08:05:41.791Z",
-    "discoveredAt": "2026-10-09T08:05:41.791Z"
-  },
-  {
-    "arxivId": "2508.19287",
-    "title": "Prompt-in-Content Attacks: Exploiting Uploaded Inputs to Hijack LLM Behavior",
-    "titleZh": "内容中的提示攻击：利用上传输入劫持LLM行为",
-    "authors": [
-      "Zhuotao Lian",
-      "Weiyu Wang",
-      "Qingkui Zeng",
-      "Toru Nakanishi",
-      "Teruaki Kitasuka",
-      "Chunhua Su"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2508.19287",
-      "aisafetyhot": "https://aisafetyhot.com/items/j0fqo9ja5efsxofgb0kinu9lb"
-    },
-    "publishedAt": "2025-08-25T05:20:11.000Z",
-    "timelineAt": "2026-10-09T08:05:41.802Z",
-    "discoveredAt": "2026-10-09T08:05:41.802Z"
-  },
-  {
-    "arxivId": "2608.08975",
-    "title": "How Can Rhetoric Reward-Hack AI Reviewers? Dissecting Rhetorical Sensitivity in AI-Based Peer Review",
-    "titleZh": "修辞如何对AI审稿人进行奖励作弊？剖析AI同行评审中的修辞敏感性",
-    "authors": [
-      "Ming Li",
-      "Chenguang Wang",
-      "Xirui Li",
-      "Xinyue Zeng",
-      "Dianqi Li",
-      "Peng Shi",
-      "Dawei Zhou",
-      "Tianyi Zhou"
-    ],
-    "category": "alignment",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2608.08975",
-      "aisafetyhot": "https://aisafetyhot.com/items/jytib083944kip9mmvts3vcjf"
-    },
-    "publishedAt": "2026-08-10T00:42:51.000Z",
-    "timelineAt": "2026-10-09T08:05:41.814Z",
-    "discoveredAt": "2026-10-09T08:05:41.814Z"
-  },
-  {
-    "arxivId": "2509.25624",
-    "title": "STAC: When Innocent Tools Form Dangerous Chains for LLM Agents",
-    "titleZh": "STAC：当无害工具为LLM Agent形成危险链条",
-    "authors": [
-      "Jing-Jing Li",
-      "Jianfeng He",
-      "Chao Shang",
-      "Devang Kulshreshtha",
-      "Xun Xian",
-      "Yi Zhang",
-      "Hang Su",
-      "Sandesh Swamy",
-      "Yanjun Qi"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2509.25624",
-      "aisafetyhot": "https://aisafetyhot.com/items/t8lk5w6mh0c0okwhcm2p1vdqi"
-    },
-    "publishedAt": "2025-09-30T00:31:44.000Z",
-    "timelineAt": "2026-10-09T08:05:41.824Z",
-    "discoveredAt": "2026-10-09T08:05:41.824Z"
-  },
-  {
-    "arxivId": "2603.24203",
-    "title": "Invisible Threats from Model Context Protocol: Generating Stealthy Injection Payload via Tree-based Adaptive Search",
-    "titleZh": "来自模型上下文协议的隐形威胁：通过基于树的自适应搜索生成隐蔽注入载荷",
-    "authors": [
-      "Yulin Shen",
-      "Xudong Pan",
-      "Geng Hong",
-      "Min Yang"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2603.24203",
-      "aisafetyhot": "https://aisafetyhot.com/items/jgw9qch78jtoxxwr534alu7mm"
-    },
-    "publishedAt": "2026-03-25T11:24:47.000Z",
-    "timelineAt": "2026-10-09T08:05:41.835Z",
-    "discoveredAt": "2026-10-09T08:05:41.835Z"
-  },
-  {
-    "arxivId": "2512.16059",
-    "title": "ContextLeak: Auditing Leakage in Private In-Context Learning Methods",
-    "titleZh": "ContextLeak：审计私有上下文学习方法中的泄露",
-    "authors": [
-      "Jacob Choi",
-      "Shuying Cao",
-      "Xingjian Dong",
-      "Amin Banayeeanzade",
-      "Wang Bill Zhu",
-      "Robin Jia",
-      "Sai Praneeth Karimireddy"
-    ],
-    "category": "eval",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2512.16059",
-      "aisafetyhot": "https://aisafetyhot.com/items/nkz4dupr7c82nzamyj39mrnx8"
-    },
-    "publishedAt": "2025-12-18T00:53:19.000Z",
-    "timelineAt": "2026-10-09T08:05:41.845Z",
-    "discoveredAt": "2026-10-09T08:05:41.845Z"
-  },
-  {
-    "arxivId": "2603.20198",
-    "title": "Visual Exclusivity Attacks: Automatic Multimodal Red Teaming via Agentic Planning",
-    "titleZh": "视觉排他性攻击：通过智能体规划实现自动多模态红队测试",
-    "authors": [
-      "Yunbei Zhang",
-      "Yingqiang Ge",
-      "Weijie Xu",
-      "Yuhui Xu",
-      "Jihun Hamm",
-      "Chandan K. Reddy"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2603.20198",
-      "aisafetyhot": "https://aisafetyhot.com/items/kmndf1st5eem275l3sdza9lpl"
-    },
-    "publishedAt": "2026-02-05T01:46:14.000Z",
-    "timelineAt": "2026-10-09T08:05:41.854Z",
-    "discoveredAt": "2026-10-09T08:05:41.854Z"
-  },
-  {
-    "arxivId": "2510.04885",
-    "title": "RL Is a Hammer and LLMs Are Nails: A Simple Reinforcement Learning Recipe for Strong Prompt Injection",
-    "titleZh": "RL是锤子，LLM是钉子：一个简单的强化学习配方实现强提示注入",
-    "authors": [
-      "Yuxin Wen",
-      "Arman Zharmagambetov",
-      "Ivan Evtimov",
-      "Narine Kokhlikyan",
-      "Tom Goldstein",
-      "Kamalika Chaudhuri",
-      "Chuan Guo"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2510.04885",
-      "aisafetyhot": "https://aisafetyhot.com/items/ozlj70pqbqsl117r99jxz1vqe"
-    },
-    "publishedAt": "2025-10-06T15:06:04.000Z",
-    "timelineAt": "2026-10-09T08:05:41.864Z",
-    "discoveredAt": "2026-10-09T08:05:41.864Z"
-  },
-  {
-    "arxivId": "2602.10639",
-    "title": "VideoSTF: Stress-Testing Output Repetition in Video Large Language Models",
-    "titleZh": "VideoSTF：对视频大语言模型输出重复的压力测试",
-    "authors": [
-      "Yuxin Cao",
-      "Wei Song",
-      "Shangzhi Xu",
-      "Jingling Xue",
-      "Jin Song Dong"
-    ],
-    "category": "eval",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2602.10639",
-      "aisafetyhot": "https://aisafetyhot.com/items/rpvzr07wdbajs33pi54nrqh7o"
-    },
-    "publishedAt": "2026-02-11T08:40:48.000Z",
-    "timelineAt": "2026-10-09T08:05:41.874Z",
-    "discoveredAt": "2026-10-09T08:05:41.874Z"
-  },
-  {
-    "arxivId": "2509.09112",
-    "title": "Character-Level Perturbations Disrupt LLM Watermarks",
-    "titleZh": "字符级扰动破坏LLM水印",
-    "authors": [
-      "Zhaoxi Zhang",
-      "Xiaomei Zhang",
-      "Yanjun Zhang",
-      "He Zhang",
-      "Shirui Pan",
-      "Bo Liu",
-      "Asif Qumer Gill",
-      "Leo Yu Zhang"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2509.09112",
-      "aisafetyhot": "https://aisafetyhot.com/items/mbcv280j7cdr2lvgsdkzyvdmc"
-    },
-    "publishedAt": "2025-09-11T02:50:07.000Z",
-    "timelineAt": "2026-10-09T08:05:41.882Z",
-    "discoveredAt": "2026-10-09T08:05:41.882Z"
-  },
-  {
-    "arxivId": "2605.29237",
-    "title": "Evolving Skill-Structured Attack Memory Enhances LLM Jailbreaking",
-    "titleZh": "演化式技能结构化攻击记忆增强LLM越狱",
-    "authors": [
-      "Junke Zhang",
-      "Jianwei Wang",
-      "Sishuo Chen",
-      "Yizhang He",
-      "Qingshuai Feng",
-      "Zhengyi Yang"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2605.29237",
-      "aisafetyhot": "https://aisafetyhot.com/items/a4305k1zl1zz6f6wur8xgaks4"
-    },
-    "publishedAt": "2026-05-28T01:53:14.000Z",
-    "timelineAt": "2026-10-09T08:05:41.894Z",
-    "discoveredAt": "2026-10-09T08:05:41.894Z"
-  },
-  {
-    "arxivId": "2503.06223",
-    "title": "RedDiffuser: Auditing Multimodal Safety Failures in Vision-Language Models via Reinforced Diffusion",
-    "titleZh": "RedDiffuser：通过强化扩散审计视觉语言模型中的多模态安全失效",
-    "authors": [
-      "Ruofan Wang",
-      "Xingjun Ma"
-    ],
-    "category": "eval",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2503.06223",
-      "aisafetyhot": "https://aisafetyhot.com/items/jwio34bs51u4o6g219458g1iv"
-    },
-    "publishedAt": "2025-03-08T13:51:40.000Z",
-    "timelineAt": "2026-10-09T08:05:41.907Z",
-    "discoveredAt": "2026-10-09T08:05:41.907Z"
-  },
-  {
-    "arxivId": "2510.09023",
-    "title": "The Attacker Moves Second: Stronger Adaptive Attacks Bypass Defenses Against Llm Jailbreaks and Prompt Injections",
-    "titleZh": "攻击者后发制人：更强的自适应攻击绕过针对LLM越狱和提示注入的防御",
-    "authors": [
-      "Milad Nasr",
-      "Nicholas Carlini",
-      "Chawin Sitawarin",
-      "Sander V. Schulhoff",
-      "Jamie Hayes",
-      "Michael Ilie",
-      "Juliette Pluto",
-      "Shuang Song",
-      "Harsh Chaudhari",
-      "Ilia Shumailov",
-      "Abhradeep Thakurta",
-      "Kai Yuanqing Xiao",
-      "And"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2510.09023",
-      "aisafetyhot": "https://aisafetyhot.com/items/sq1y6agjqkxtm5i661cfb8mty"
-    },
-    "publishedAt": "2025-10-10T05:51:04.000Z",
-    "timelineAt": "2026-10-09T08:05:41.935Z",
-    "discoveredAt": "2026-10-09T08:05:41.935Z"
-  },
-  {
-    "arxivId": "2606.02630",
-    "title": "MultiTurnPSB: Evaluating Multi-Turn Jailbreak Attacks an dClassifier-Based Defenses for Medical AI Safety",
-    "titleZh": "MultiTurnPSB：评估医疗AI安全中的多轮越狱攻击与基于分类器的防御",
-    "authors": [
-      "Anushka Sheoran",
-      "Yiduo Hao"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2606.02630",
-      "aisafetyhot": "https://aisafetyhot.com/items/g0n570eh1gw2m34pb0h6kv8sr"
-    },
-    "publishedAt": "2026-05-30T10:09:53.000Z",
-    "timelineAt": "2026-10-09T08:05:41.943Z",
-    "discoveredAt": "2026-10-09T08:05:41.943Z"
-  },
-  {
-    "arxivId": "2512.20677",
-    "title": "Learning-Based Automated Adversarial Red-Teaming for Robustness Evaluation of Large Language Models",
-    "titleZh": "基于学习的自动化对抗红队测试用于大语言模型鲁棒性评估",
-    "authors": [
-      "Zhang Wei",
-      "Hanxuan Chen",
-      "Peilu Hu",
-      "Zhenyuan Wei",
-      "Chenwei Liang",
-      "Jiayi Gu",
-      "Wenqian Weng",
-      "Jacqueline Pang",
-      "Hao Yan",
-      "Li Mei",
-      "Shengning Lang",
-      "Kuan Lu",
-      "Xi Xiao",
-      "Zhimo Han",
-      "Yijin Wang",
-      "Yichao Zhang",
-      "Chen Ya"
-    ],
-    "category": "eval",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2512.20677",
-      "aisafetyhot": "https://aisafetyhot.com/items/nr275vaj6f68939z0pgzdwv3c"
-    },
-    "publishedAt": "2025-12-21T19:12:44.000Z",
-    "timelineAt": "2026-10-09T08:05:41.951Z",
-    "discoveredAt": "2026-10-09T08:05:41.951Z"
-  },
-  {
-    "arxivId": "2601.05339",
-    "title": "Multi-turn Jailbreaking Attack in Multi-Modal Large Language Models",
-    "titleZh": "多模态大语言模型中的多轮越狱攻击",
-    "authors": [
-      "Badhan Chandra Das",
-      "Md Tasnim Jawad",
-      "Joaquin Molto",
-      "M. Hadi Amini",
-      "Yanzhao Wu"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2601.05339",
-      "aisafetyhot": "https://aisafetyhot.com/items/q91lq83i23kof7nxin0u1aegv"
-    },
-    "publishedAt": "2026-01-08T19:37:22.000Z",
-    "timelineAt": "2026-10-09T08:05:41.961Z",
-    "discoveredAt": "2026-10-09T08:05:41.961Z"
-  },
-  {
-    "arxivId": "2510.01359",
-    "title": "Breaking the Code: Security Assessment of AI Code Agents Through Systematic Jailbreaking Attacks",
-    "titleZh": "破解代码：通过系统性越狱攻击对AI代码Agent进行安全评估",
-    "authors": [
-      "Shoumik Saha",
-      "Jifan Chen",
-      "Sam Mayers",
-      "Sanjay Krishna Gouda",
-      "Zijian Wang",
-      "Varun Kumar"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2510.01359",
-      "aisafetyhot": "https://aisafetyhot.com/items/gh1aekzktoq7xvei2pt6xj56a"
-    },
-    "publishedAt": "2025-10-01T18:38:20.000Z",
-    "timelineAt": "2026-10-09T08:05:41.968Z",
-    "discoveredAt": "2026-10-09T08:05:41.968Z"
-  },
-  {
-    "arxivId": "2605.06605",
-    "title": "How Many Iterations to Jailbreak? Dynamic Budget Allocation for Multi-Turn LLM Evaluation",
-    "titleZh": "需要多少次迭代才能越狱？面向多轮LLM评估的动态预算分配",
-    "authors": [
-      "Shai Feldman",
-      "Yaniv Romano"
-    ],
-    "category": "eval",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2605.06605",
-      "aisafetyhot": "https://aisafetyhot.com/items/mx91vr6z9hcs3x6jvrxgiykgc"
-    },
-    "publishedAt": "2026-05-07T17:25:15.000Z",
-    "timelineAt": "2026-10-09T08:05:41.975Z",
-    "discoveredAt": "2026-10-09T08:05:41.975Z"
-  },
-  {
-    "arxivId": "2512.20168",
-    "title": "Odysseus: Jailbreaking Commercial Multimodal LLM-integrated Systems via Dual Steganography",
-    "titleZh": "Odysseus：通过双重隐写术越狱商业多模态LLM集成系统",
-    "authors": [
-      "Songze Li",
-      "Jiameng Cheng",
-      "Yiming Li",
-      "Xiaojun Jia",
-      "Dacheng Tao"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2512.20168",
-      "aisafetyhot": "https://aisafetyhot.com/items/qokfye97jod8n3pkdzrbpcofv"
-    },
-    "publishedAt": "2025-12-23T08:53:36.000Z",
-    "timelineAt": "2026-10-09T08:05:41.986Z",
-    "discoveredAt": "2026-10-09T08:05:41.986Z"
-  },
-  {
-    "arxivId": "2606.11817",
-    "title": "Grammar-Constrained Decoding Can Jailbreak LLMs into Generating Malicious Code",
-    "titleZh": "语法约束解码可将LLM越狱以生成恶意代码",
-    "authors": [
-      "Yitong Zhang",
-      "Shiteng Lu",
-      "Jia Li"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2606.11817",
-      "aisafetyhot": "https://aisafetyhot.com/items/gabycq6s2iiuw568caqnwn5hi"
-    },
-    "publishedAt": "2026-06-10T08:50:59.000Z",
-    "timelineAt": "2026-10-09T08:05:42.027Z",
-    "discoveredAt": "2026-10-09T08:05:42.027Z"
-  },
-  {
-    "arxivId": "2510.17904",
-    "title": "BreakFun: Jailbreaking LLMs via Object Instantiation under Simulated Code Execution",
-    "titleZh": "BreakFun：在模拟代码执行下通过对象实例化越狱LLM",
-    "authors": [
-      "Amirkia Rafiei Oskooei",
-      "Mehmet S. Aktas"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2510.17904",
-      "aisafetyhot": "https://aisafetyhot.com/items/oah8wdpkou2dj2jh6xlytsck0"
-    },
-    "publishedAt": "2025-10-19T11:27:44.000Z",
-    "timelineAt": "2026-10-09T08:05:42.046Z",
-    "discoveredAt": "2026-10-09T08:05:42.046Z"
-  },
-  {
-    "arxivId": "2605.08313",
-    "title": "Seed Hijacking of LLM Sampling and Quantum Random Number Defense",
-    "titleZh": "LLM采样的种子劫持与量子随机数防御",
-    "authors": [
-      "Ziyang You",
-      "Xiaoke Yang",
-      "Zhanling Fan",
-      "Feng Guo",
-      "Xiaogen Zhou",
-      "Xuxing Lu"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2605.08313",
-      "aisafetyhot": "https://aisafetyhot.com/items/ptmqi7m1kwpcz73m760ycxriu"
-    },
-    "publishedAt": "2026-05-08T14:17:06.000Z",
-    "timelineAt": "2026-10-09T08:05:42.061Z",
-    "discoveredAt": "2026-10-09T08:05:42.061Z"
-  },
-  {
-    "arxivId": "2510.14207",
-    "title": "Echoes of Human Malice in Agents: Benchmarking LLMs for Multi-Turn Online Harassment Attacks",
-    "titleZh": "Agent中人类恶意的回响：面向多轮在线骚扰攻击的LLM基准测试",
-    "authors": [
-      "Trilok Padhi",
-      "Pinxian Lu",
-      "Abdulkadir Erol",
-      "Tanmay Sutar",
-      "Gauri Sharma",
-      "Mina Sonmez",
-      "Munmun De Choudhury",
-      "Ugur Kursuncu"
-    ],
-    "category": "eval",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2510.14207",
-      "aisafetyhot": "https://aisafetyhot.com/items/o0dsds800mm6pqpqszaxdz2fz"
-    },
-    "publishedAt": "2025-10-16T01:27:44.000Z",
-    "timelineAt": "2026-10-09T08:05:42.074Z",
-    "discoveredAt": "2026-10-09T08:05:42.074Z"
-  },
-  {
-    "arxivId": "2606.04168",
-    "title": "When Autoregressive Consistency Hurts Safety Alignment",
-    "titleZh": "当自回归一致性损害安全对齐",
-    "authors": [
-      "Bochen Lyu",
-      "Yiyang Jia",
-      "Xiaohao Cai",
-      "Zhanxing Zhu"
-    ],
-    "category": "alignment",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2606.04168",
-      "aisafetyhot": "https://aisafetyhot.com/items/s780knu73p0oer2few5lwhuzv"
-    },
-    "publishedAt": "2026-06-02T19:32:23.000Z",
-    "timelineAt": "2026-10-09T08:05:42.082Z",
-    "discoveredAt": "2026-10-09T08:05:42.082Z"
-  },
-  {
-    "arxivId": "2512.18755",
-    "title": "MEEA: Mere Exposure Effect-Driven Confrontational Optimization for LLM Jailbreaking",
-    "titleZh": "MEEA：单纯曝光效应驱动的LLM越狱对抗优化",
-    "authors": [
-      "Jianyi Zhang",
-      "Shizhao Liu",
-      "Ziyin Zhou",
-      "Zhen Li"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2512.18755",
-      "aisafetyhot": "https://aisafetyhot.com/items/qvdc9m5osavrfpoud78q1m7tc"
-    },
-    "publishedAt": "2025-12-21T14:43:26.000Z",
-    "timelineAt": "2026-10-09T08:05:42.091Z",
-    "discoveredAt": "2026-10-09T08:05:42.091Z"
-  },
-  {
-    "arxivId": "2606.29602",
-    "title": "An Empirical Evaluation of Prompt Injection Vulnerabilities in Large Language Models Across Multilingual and Obfuscated Attack Scenarios",
-    "titleZh": "大语言模型在多语言与混淆攻击场景下提示注入漏洞的实证评估",
-    "authors": [
-      "Caglar Uysal",
-      "Baturay Birinci",
-      "Süha Orhun Mutluergil",
-      "Orçun Çetin"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2606.29602",
-      "aisafetyhot": "https://aisafetyhot.com/items/ve17cfji8svvgkiuqarivomc1"
-    },
-    "publishedAt": "2026-06-28T20:56:57.000Z",
-    "timelineAt": "2026-10-09T08:05:42.097Z",
-    "discoveredAt": "2026-10-09T08:05:42.097Z"
-  },
-  {
-    "arxivId": "2511.19171",
-    "title": "Can LLMs Threaten Human Survival? Benchmarking Potential Existential Threats from LLMs via Prefix Completion",
-    "titleZh": "LLM会威胁人类生存吗？通过前缀补全对LLM潜在生存威胁进行基准测试",
-    "authors": [
-      "Yu Cui",
-      "Yifei Liu",
-      "Hang Fu",
-      "Sicheng Pan",
-      "Haibin Zhang",
-      "Cong Zuo",
-      "Licheng Wang"
-    ],
-    "category": "eval",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2511.19171",
-      "aisafetyhot": "https://aisafetyhot.com/items/c2086nx2dq0tqbdbc5r613ycm"
-    },
-    "publishedAt": "2025-11-24T14:34:13.000Z",
-    "timelineAt": "2026-10-09T08:05:42.103Z",
-    "discoveredAt": "2026-10-09T08:05:42.103Z"
-  },
-  {
-    "arxivId": "2602.02569",
-    "title": "DECEIVE-AFC: Adversarial Claim Attacks against Search-Enabled LLM-based Fact-Checking Systems",
-    "titleZh": "DECEIVE-AFC：针对支持搜索的基于LLM的事实核查系统的对抗性声明攻击",
-    "authors": [
-      "Haoran Ou",
-      "Kangjie Chen",
-      "Gelei Deng",
-      "Hangcheng Liu",
-      "Jie Zhang",
-      "Tianwei Zhang",
-      "Kwok-Yan Lam"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2602.02569",
-      "aisafetyhot": "https://aisafetyhot.com/items/j9lbculz59kl5vs22bjb4re8x"
-    },
-    "publishedAt": "2026-01-31T03:49:23.000Z",
-    "timelineAt": "2026-10-09T08:05:42.109Z",
-    "discoveredAt": "2026-10-09T08:05:42.109Z"
-  },
-  {
-    "arxivId": "2510.10271",
-    "title": "MetaBreak: Jailbreaking Online LLM Services via Special Token Manipulation",
-    "titleZh": "MetaBreak：通过特殊令牌操纵越狱在线LLM服务",
-    "authors": [
-      "Wentian Zhu",
-      "Zhen Xiang",
-      "Wei Niu",
-      "Le Guan"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2510.10271",
-      "aisafetyhot": "https://aisafetyhot.com/items/bib8mimm8r8n3rmrf3ldt7mfy"
-    },
-    "publishedAt": "2025-10-11T16:14:56.000Z",
-    "timelineAt": "2026-10-09T08:05:42.124Z",
-    "discoveredAt": "2026-10-09T08:05:42.124Z"
-  },
-  {
-    "arxivId": "2605.03441",
-    "title": "Exposing LLM Safety Gaps Through Mathematical Encoding:New Attacks and Systematic Analysis",
-    "titleZh": "通过数学编码暴露LLM安全缺口：新攻击与系统分析",
-    "authors": [
-      "Haoyu Zhang",
-      "Mohammad Zandsalimy",
-      "Shanu Sushmita"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2605.03441",
-      "aisafetyhot": "https://aisafetyhot.com/items/oqakgcs6hurfsvl3p249uqhls"
-    },
-    "publishedAt": "2026-05-05T07:25:33.000Z",
-    "timelineAt": "2026-10-09T08:05:42.136Z",
-    "discoveredAt": "2026-10-09T08:05:42.136Z"
-  },
-  {
-    "arxivId": "2512.01335",
-    "title": "EmoRAG: Evaluating RAG Robustness to Symbolic Perturbations",
-    "titleZh": "EmoRAG：评估RAG对符号扰动的鲁棒性",
-    "authors": [
-      "Xinyun Zhou",
-      "Xinfeng Li",
-      "Yinan Peng",
-      "Ming Xu",
-      "Xuanwang Zhang",
-      "Miao Yu",
-      "Yidong Wang",
-      "Xiaojun Jia",
-      "Kun Wang",
-      "Qingsong Wen",
-      "XiaoFeng Wang",
-      "Wei Dong"
-    ],
-    "category": "eval",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2512.01335",
-      "aisafetyhot": "https://aisafetyhot.com/items/uh1s7pwu72ixqzqvne2v49w4b"
-    },
-    "publishedAt": "2025-12-01T06:53:49.000Z",
-    "timelineAt": "2026-10-09T08:05:42.145Z",
-    "discoveredAt": "2026-10-09T08:05:42.145Z"
-  },
-  {
-    "arxivId": "2605.14859",
-    "title": "Do Coding Agents Understand Least-Privilege Authorization?",
-    "titleZh": "编码智能体是否理解最小权限授权？",
-    "authors": [
-      "Zheng Yan",
-      "Jingxiang Weng",
-      "Charles Chen",
-      "Dengyun Peng",
-      "Ethan Qin",
-      "Jiannan Guan",
-      "Jinhao Liu",
-      "Qiming Yu",
-      "Yixin Yuan",
-      "Fanqing Meng",
-      "Carl Che",
-      "Mengkang Hu"
-    ],
-    "category": "defense",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2605.14859",
-      "aisafetyhot": "https://aisafetyhot.com/items/ttw8hcg9il3j7c2gmia20djh8"
-    },
-    "publishedAt": "2026-05-14T14:05:58.000Z",
-    "timelineAt": "2026-10-09T08:05:42.156Z",
-    "discoveredAt": "2026-10-09T08:05:42.156Z"
-  },
-  {
-    "arxivId": "2511.18790",
-    "title": "RoguePrompt: Dual-Layer Ciphering for Self-Reconstruction to Circumvent LLM Moderation",
-    "titleZh": "RoguePrompt：用于自我重建以规避LLM审核的双层加密",
-    "authors": [
-      "Benyamin Tafreshian"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2511.18790",
-      "aisafetyhot": "https://aisafetyhot.com/items/jbgqieludc1w6aue86aunyrs9"
-    },
-    "publishedAt": "2025-11-24T05:42:54.000Z",
-    "timelineAt": "2026-10-09T08:05:42.163Z",
-    "discoveredAt": "2026-10-09T08:05:42.163Z"
-  },
-  {
-    "arxivId": "2601.14310",
-    "title": "CORVUS: Red-Teaming Hallucination Detectors via Internal Signal Camouflage in Large Language Models",
-    "titleZh": "CORVUS：通过大语言模型内部信号伪装对幻觉检测器进行红队测试",
-    "authors": [
-      "Nay Myat Min",
-      "Long H. Pham",
-      "Hongyu Zhang",
-      "Jun Sun"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2601.14310",
-      "aisafetyhot": "https://aisafetyhot.com/items/ex6mx30sytmmqyhec3xtgxalb"
-    },
-    "publishedAt": "2026-01-19T08:07:03.000Z",
-    "timelineAt": "2026-10-09T08:05:42.169Z",
-    "discoveredAt": "2026-10-09T08:05:42.169Z"
-  },
-  {
-    "arxivId": "2503.22989",
-    "title": "FindTheFlaws: Annotated Errors for Detecting Flawed Reasoning and Scalable Oversight Research",
-    "titleZh": "FindTheFlaws：用于检测有缺陷推理与可扩展监督研究的标注错误",
-    "authors": [
-      "Gabriel Recchia",
-      "Chatrik Singh Mangat",
-      "Issac Li",
-      "Gayatri Krishnakumar"
-    ],
-    "category": "alignment",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2503.22989",
-      "aisafetyhot": "https://aisafetyhot.com/items/icu2nxhf86mo1kpo48i9cfdl6"
-    },
-    "publishedAt": "2025-03-29T06:38:30.000Z",
-    "timelineAt": "2026-10-09T08:05:42.181Z",
-    "discoveredAt": "2026-10-09T08:05:42.181Z"
-  },
-  {
-    "arxivId": "2602.04856",
-    "title": "CoT is Not the Chain of Truth: An Empirical Internal Analysis of Reasoning LLMs for Fake News Generation",
-    "titleZh": "思维链并非真相之链：对推理LLM用于虚假新闻生成的实证内部剖析",
-    "authors": [
-      "Zhao Tong",
-      "Chunlin Gong",
-      "Yiping Zhang",
-      "Haichao Shi",
-      "Qiang Liu",
-      "Xingcheng Xu",
-      "Shu Wu",
-      "Xiao-Yu Zhang"
-    ],
-    "category": "alignment",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2602.04856",
-      "aisafetyhot": "https://aisafetyhot.com/items/er8lptx7klgkvnfpl8cb85cj8"
-    },
-    "publishedAt": "2026-02-04T18:43:10.000Z",
-    "timelineAt": "2026-10-09T08:05:42.191Z",
-    "discoveredAt": "2026-10-09T08:05:42.191Z"
-  },
-  {
-    "arxivId": "2504.00374",
-    "title": "When Persuasion Overrides Truth in Multi-Agent LLM Debates: Introducing a Confidence-Weighted Persuasion Override Rate (CW-POR)",
-    "titleZh": "当说服在多智能体LLM辩论中压过真相：引入置信度加权说服压过率（CW-POR）",
-    "authors": [
-      "Mahak Agarwal",
-      "Divyam Khanna"
-    ],
-    "category": "alignment",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2504.00374",
-      "aisafetyhot": "https://aisafetyhot.com/items/x8pm366xyk8ayxzb09hflb8pp"
-    },
-    "publishedAt": "2025-04-01T02:45:02.000Z",
-    "timelineAt": "2026-10-09T08:05:42.198Z",
-    "discoveredAt": "2026-10-09T08:05:42.198Z"
-  },
-  {
-    "arxivId": "2603.05399",
-    "title": "Judge Reliability Harness: Stress Testing the Reliability of LLM Judges",
-    "titleZh": "评审可靠性测试框架：对LLM评审器进行压力测试",
-    "authors": [
-      "Sunishchal Dev",
-      "Andrew Sloan",
-      "Joshua Kavner",
-      "Nicholas Kong",
-      "Morgan Sandler"
-    ],
-    "category": "eval",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2603.05399",
-      "aisafetyhot": "https://aisafetyhot.com/items/yudm2z4q8yljboxika12mh5vb"
-    },
-    "publishedAt": "2026-03-05T17:27:07.000Z",
-    "timelineAt": "2026-10-09T08:05:42.203Z",
-    "discoveredAt": "2026-10-09T08:05:42.203Z"
-  },
-  {
-    "arxivId": "2501.13772",
-    "title": "Jailbreak-AudioBench: In-Depth Evaluation and Analysis of Jailbreak Threats for Large Audio Language Models",
-    "titleZh": "Jailbreak-AudioBench：大型音频语言模型越狱威胁的深入评估与分析",
-    "authors": [
-      "Hao Cheng",
-      "Erjia Xiao",
-      "Jing Shao",
-      "Yichi Wang",
-      "Le Yang",
-      "Chao Shen",
-      "Philip Torr",
-      "Jindong Gu",
-      "Renjing Xu"
-    ],
-    "category": "eval",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2501.13772",
-      "aisafetyhot": "https://aisafetyhot.com/items/dx8svjegnrs9f05tgrywms91x"
-    },
-    "publishedAt": "2025-01-23T15:51:38.000Z",
-    "timelineAt": "2026-10-09T08:05:42.208Z",
-    "discoveredAt": "2026-10-09T08:05:42.208Z"
-  },
-  {
-    "arxivId": "2601.06884",
-    "title": "Paraphrasing Adversarial Attack on LLM-as-a-Reviewer",
-    "titleZh": "针对LLM评审的改写对抗攻击",
-    "authors": [
-      "Masahiro Kaneko"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2601.06884",
-      "aisafetyhot": "https://aisafetyhot.com/items/rnmm07lo9gba58o3aoy09yckl"
-    },
-    "publishedAt": "2026-01-11T12:14:10.000Z",
-    "timelineAt": "2026-10-09T08:05:42.212Z",
-    "discoveredAt": "2026-10-09T08:05:42.212Z"
-  },
-  {
-    "arxivId": "2606.20508",
-    "title": "What Do Safety-Aligned LLMs Learn From Mixed Compliance Demonstrations?",
-    "titleZh": "安全对齐的LLM从混合合规示范中学到了什么？",
-    "authors": [
-      "Sihui Dai",
-      "Mann Patel"
-    ],
-    "category": "alignment",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2606.20508",
-      "aisafetyhot": "https://aisafetyhot.com/items/u0dqrr4xgd3wrl6prureynwlk"
-    },
-    "publishedAt": "2026-06-18T17:25:38.000Z",
-    "timelineAt": "2026-10-09T08:05:42.221Z",
-    "discoveredAt": "2026-10-09T08:05:42.221Z"
-  },
-  {
-    "arxivId": "2606.21732",
-    "title": "Safe to Check, Unsafe to Use: Relinking at the Compression Boundary of LLM Agents",
-    "titleZh": "检查安全，使用不安全：LLM Agent压缩边界处的重链接",
-    "authors": [
-      "Zesen Liu",
-      "Zihan Zhang",
-      "Dongdong She"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2606.21732",
-      "aisafetyhot": "https://aisafetyhot.com/items/ew5dbw5zn24h6f8rc6ek8p6ob"
-    },
-    "publishedAt": "2026-06-19T20:43:14.000Z",
-    "timelineAt": "2026-10-09T08:05:50.837Z",
-    "discoveredAt": "2026-10-09T08:05:50.837Z"
-  },
-  {
-    "arxivId": "2510.09462",
-    "title": "Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols",
-    "titleZh": "对可信监控器的自适应攻击颠覆AI控制协议",
-    "authors": [
-      "Mikhail Terekhov",
-      "Alexander Panfilov",
-      "Daniil Dzenhaliou",
-      "Caglar Gulcehre",
-      "Maksym Andriushchenko",
-      "Ameya Prabhu",
-      "Jonas Geiping"
-    ],
-    "category": "alignment",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2510.09462",
-      "aisafetyhot": "https://aisafetyhot.com/items/q0xx3rhospdqo42wrteac49wf"
-    },
-    "publishedAt": "2025-10-10T15:12:44.000Z",
-    "timelineAt": "2026-10-09T08:05:50.848Z",
-    "discoveredAt": "2026-10-09T08:05:50.848Z"
-  },
-  {
-    "arxivId": "2602.00420",
-    "title": "Text is All You Need for Vision-Language Model Jailbreaking",
-    "titleZh": "文本足以实现视觉语言模型越狱",
-    "authors": [
-      "Yihang Chen",
-      "Zhao Xu",
-      "Youyuan Jiang",
-      "Tianle Zheng",
-      "Cho-Jui Hsieh"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2602.00420",
-      "aisafetyhot": "https://aisafetyhot.com/items/s69w1qdmt2nxh3cji669uuvm7"
-    },
-    "publishedAt": "2026-01-31T00:17:56.000Z",
-    "timelineAt": "2026-10-09T08:05:50.857Z",
-    "discoveredAt": "2026-10-09T08:05:50.857Z"
-  },
-  {
-    "arxivId": "2509.22040",
-    "title": "\"Your AI, My Shell\": Demystifying Prompt Injection Attacks on Agentic AI Coding Editors",
-    "titleZh": "“你的AI，我的Shell”：揭秘针对Agent式AI编程编辑器的提示注入攻击",
-    "authors": [
-      "Yue Liu",
-      "Yanjie Zhao",
-      "Yunbo Lyu",
-      "Ting Zhang",
-      "Haoyu Wang",
-      "David Lo"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2509.22040",
-      "aisafetyhot": "https://aisafetyhot.com/items/yxwf036ypf7jb80x9a9qxznlw"
-    },
-    "publishedAt": "2025-09-26T08:20:54.000Z",
-    "timelineAt": "2026-10-09T08:05:50.871Z",
-    "discoveredAt": "2026-10-09T08:05:50.871Z"
-  },
-  {
-    "arxivId": "2602.18514",
-    "title": "Trojan Horses in Recruiting: A Red-Teaming Case Study on Indirect Prompt Injection in Standard vs. Reasoning Models",
-    "titleZh": "招聘中的特洛伊木马：标准模型与推理模型中间接提示注入的红队案例研究",
-    "authors": [
-      "Manuel Wirth"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2602.18514",
-      "aisafetyhot": "https://aisafetyhot.com/items/kyfkcb13qzcv8nvethcbceca4"
-    },
-    "publishedAt": "2026-02-19T19:26:21.000Z",
-    "timelineAt": "2026-10-09T08:05:50.884Z",
-    "discoveredAt": "2026-10-09T08:05:50.884Z"
-  },
-  {
-    "arxivId": "2511.16110",
-    "title": "Multi-Faceted Attack: Exposing Cross-Model Vulnerabilities in Defense-Equipped Vision-Language Models",
-    "titleZh": "多面攻击：揭示配备防御的视觉语言模型中的跨模型漏洞",
-    "authors": [
-      "Yijun Yang",
-      "Lichao Wang",
-      "Jianping Zhang",
-      "Chi Harold Liu",
-      "Lanqing Hong",
-      "Qiang Xu"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2511.16110",
-      "aisafetyhot": "https://aisafetyhot.com/items/ej4fc5ifa98c5j70dq0zw2ri0"
-    },
-    "publishedAt": "2025-11-20T07:12:54.000Z",
-    "timelineAt": "2026-10-09T08:05:50.895Z",
-    "discoveredAt": "2026-10-09T08:05:50.895Z"
-  },
-  {
-    "arxivId": "2606.00150",
-    "title": "Persona Attack: Incremental Memory Injection Jailbreak Attack against Large Language Models",
-    "titleZh": "人格攻击：针对大语言模型的增量记忆注入越狱攻击",
-    "authors": [
-      "Junyoung Park",
-      "Seongyong Ju",
-      "Sunghwan Park",
-      "Jaewoo Lee"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2606.00150",
-      "aisafetyhot": "https://aisafetyhot.com/items/q0t3hyufoeojva28npjbo3kn2"
-    },
-    "publishedAt": "2026-05-29T03:31:16.000Z",
-    "timelineAt": "2026-10-09T08:05:50.905Z",
-    "discoveredAt": "2026-10-09T08:05:50.905Z"
-  },
-  {
-    "arxivId": "2512.10449",
-    "title": "When Reject Turns into Accept: Quantifying the Vulnerability of LLM-Based Scientific Reviewers to Indirect Prompt Injection",
-    "titleZh": "当拒绝变为接受：量化基于LLM的科学审稿人对间接提示注入的脆弱性",
-    "authors": [
-      "Devanshu Sahoo",
-      "Manish Prasad",
-      "Vasudev Majhi",
-      "Jahnvi Singh",
-      "Vinay Chamola",
-      "Yash Sinha",
-      "Murari Mandal",
-      "Dhruv Kumar"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2512.10449",
-      "aisafetyhot": "https://aisafetyhot.com/items/hw1vg23mt1z4knru1894rpku1"
-    },
-    "publishedAt": "2025-12-11T09:13:36.000Z",
-    "timelineAt": "2026-10-09T08:05:50.913Z",
-    "discoveredAt": "2026-10-09T08:05:50.913Z"
-  },
-  {
-    "arxivId": "2603.17915",
-    "title": "IndicSafe: A Benchmark for Evaluating Multilingual LLM Safety in South Asia",
-    "titleZh": "IndicSafe：评估南亚多语言LLM安全性的基准",
-    "authors": [
-      "Priyaranjan Pattnayak",
-      "Sanchari Chowdhuri"
-    ],
-    "category": "eval",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2603.17915",
-      "aisafetyhot": "https://aisafetyhot.com/items/vidlxrifc6nlw4jws55zszipx"
-    },
-    "publishedAt": "2026-03-18T16:54:07.000Z",
-    "timelineAt": "2026-10-09T08:05:50.922Z",
-    "discoveredAt": "2026-10-09T08:05:50.922Z"
-  },
-  {
-    "arxivId": "2512.23173",
-    "title": "EquaCode: A Multi-Strategy Jailbreak Approach for Large Language Models via Equation Solving and Code Completion",
-    "titleZh": "EquaCode：通过方程求解与代码补全的大语言模型多策略越狱方法",
-    "authors": [
-      "Zhen Liang",
-      "Hai Huang",
-      "Zhengkui Chen"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2512.23173",
-      "aisafetyhot": "https://aisafetyhot.com/items/ozoiajmi0q6im3wsk0j5jsvm9"
-    },
-    "publishedAt": "2025-12-29T03:28:30.000Z",
-    "timelineAt": "2026-10-09T08:05:50.928Z",
-    "discoveredAt": "2026-10-09T08:05:50.928Z"
-  },
-  {
-    "arxivId": "2606.06037",
-    "title": "SpeechJBB: Probing Safety Alignment and Comprehension in Large Audio Language Models under Code-Switched Speech",
-    "titleZh": "SpeechJBB：探究代码转换语音下大型音频语言模型的安全对齐与理解",
-    "authors": [
-      "Virginia Ceccatelli",
-      "Yejin Jeon",
-      "David Ifeoluwa Adelani"
-    ],
-    "category": "eval",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2606.06037",
-      "aisafetyhot": "https://aisafetyhot.com/items/qqz9ao2oe8eo6t8sxoz8myo00"
-    },
-    "publishedAt": "2026-06-04T11:31:38.000Z",
-    "timelineAt": "2026-10-09T08:05:50.935Z",
-    "discoveredAt": "2026-10-09T08:05:50.935Z"
-  },
-  {
-    "arxivId": "2505.12287",
-    "title": "The Tower of Babel Revisited: Multilingual Jailbreak Prompts on Closed-Source Large Language Models",
-    "titleZh": "重访巴别塔：针对闭源大语言模型的多语言越狱提示",
-    "authors": [
-      "Linghan Huang",
-      "Haolin Jin",
-      "Zhaoge Bi",
-      "Pengyue Yang",
-      "Peizhou Zhao",
-      "Taozhao Chen",
-      "Xiongfei Wu",
-      "Lei Ma",
-      "Huaming Chen"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2505.12287",
-      "aisafetyhot": "https://aisafetyhot.com/items/r3xp53mv2crl3vvg1vy22213b"
-    },
-    "publishedAt": "2025-05-18T07:51:19.000Z",
-    "timelineAt": "2026-10-09T08:05:50.953Z",
-    "discoveredAt": "2026-10-09T08:05:50.953Z"
-  },
-  {
-    "arxivId": "2604.28182",
-    "title": "Exploration Hacking: Can LLMs Learn to Resist RL Training?",
-    "titleZh": "探索性攻击：LLM能否学会抵抗RL训练？",
-    "authors": [
-      "Eyon Jang",
-      "Damon Falck",
-      "Joschka Braun",
-      "Nathalie Kirch",
-      "Achu Menon",
-      "Perusha Moodley",
-      "Scott Emmons",
-      "Roland S. Zimmermann",
-      "David Lindner"
-    ],
-    "category": "alignment",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2604.28182",
-      "aisafetyhot": "https://aisafetyhot.com/items/j8ghcf202rpx3s7kdsjkqm3sx"
-    },
-    "publishedAt": "2026-04-30T17:58:39.000Z",
-    "timelineAt": "2026-10-09T08:05:50.960Z",
-    "discoveredAt": "2026-10-09T08:05:50.960Z"
-  },
-  {
-    "arxivId": "2506.06404",
-    "title": "Unintended Harms of Value-Aligned LLMs: Psychological and Empirical Insights",
-    "titleZh": "价值对齐大语言模型的意外危害：心理学与实证洞见",
-    "authors": [
-      "Sooyung Choi",
-      "Jaehyeok Lee",
-      "Xiaoyuan Yi",
-      "Jing Yao",
-      "Xing Xie",
-      "JinYeong Bak"
-    ],
-    "category": "alignment",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2506.06404",
-      "aisafetyhot": "https://aisafetyhot.com/items/oy1igw6iyhakg2jw3072m3k8p"
-    },
-    "publishedAt": "2025-06-06T07:03:12.000Z",
-    "timelineAt": "2026-10-09T08:05:50.966Z",
-    "discoveredAt": "2026-10-09T08:05:50.966Z"
-  },
-  {
-    "arxivId": "2606.16100",
-    "title": "Your \"Pro\" LLM Subscription May Actually Be \"Free\": Exposing Fingerprint Spoofing Risks in LLM Inference Services",
-    "titleZh": "你的“Pro”LLM订阅可能实际上是“免费”的：揭示LLM推理服务中的指纹欺骗风险",
-    "authors": [
-      "Jiahao Zhang",
-      "Xiuyu Li",
-      "Suhang Wang"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2606.16100",
-      "aisafetyhot": "https://aisafetyhot.com/items/sv6h3yzpglu1tefemji89ie81"
-    },
-    "publishedAt": "2026-06-15T01:30:42.000Z",
-    "timelineAt": "2026-10-09T08:05:50.972Z",
-    "discoveredAt": "2026-10-09T08:05:50.972Z"
-  },
-  {
-    "arxivId": "2510.02833",
-    "title": "Attack via Overfitting: 10-shot Benign Fine-tuning to Jailbreak LLMs",
-    "titleZh": "过拟合攻击：10样本良性微调越狱大语言模型",
-    "authors": [
-      "Zhixin Xie",
-      "Xurui Song",
-      "Jun Luo"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2510.02833",
-      "aisafetyhot": "https://aisafetyhot.com/items/gocx4nlf7kvcc7axvz0o7zvk5"
-    },
-    "publishedAt": "2025-10-03T09:10:27.000Z",
-    "timelineAt": "2026-10-09T08:05:50.984Z",
-    "discoveredAt": "2026-10-09T08:05:50.984Z"
-  },
-  {
-    "arxivId": "2607.07903",
-    "title": "Mechanistic Interpretability of LLM Jailbreaks via Internal Attribution Graphs",
-    "titleZh": "通过内部归因图对LLM越狱的机制可解释性研究",
-    "authors": [
-      "Anupam Wagle",
-      "Ifrat Ikhtear Uddin",
-      "Chaowei Zhang",
-      "Longwei Wang"
-    ],
-    "category": "alignment",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2607.07903",
-      "aisafetyhot": "https://aisafetyhot.com/items/nxv4h2sbv92vz2rooka53m6gg"
-    },
-    "publishedAt": "2026-07-08T20:31:06.000Z",
-    "timelineAt": "2026-10-09T08:05:51.006Z",
-    "discoveredAt": "2026-10-09T08:05:51.006Z"
-  },
-  {
-    "arxivId": "2503.01839",
-    "title": "Jailbreaking Safeguarded Text-to-Image Models via Large Language Models",
-    "titleZh": "利用大语言模型越狱受保护的文生图模型",
-    "authors": [
-      "Zhengyuan Jiang",
-      "Yuepeng Hu",
-      "Yuchen Yang",
-      "Yinzhi Cao",
-      "Neil Zhenqiang Gong"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2503.01839",
-      "aisafetyhot": "https://aisafetyhot.com/items/yon32zc29tdkbl2r45wety39r"
-    },
-    "publishedAt": "2025-03-03T18:58:46.000Z",
-    "timelineAt": "2026-10-09T08:05:51.015Z",
-    "discoveredAt": "2026-10-09T08:05:51.015Z"
-  },
-  {
-    "arxivId": "2604.10326",
-    "title": "Jailbreaking the Matrix: Nullspace Steering for Controlled Model Subversion",
-    "titleZh": "越狱矩阵：用于受控模型颠覆的零空间引导",
-    "authors": [
-      "Vishal Pramanik",
-      "Maisha Maliha",
-      "Susmit Jha",
-      "Sumit Kumar Jha"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2604.10326",
-      "aisafetyhot": "https://aisafetyhot.com/items/f089wbhtzg8w53dtu6vrainbc"
-    },
-    "publishedAt": "2026-04-11T19:19:05.000Z",
-    "timelineAt": "2026-10-09T08:05:51.031Z",
-    "discoveredAt": "2026-10-09T08:05:51.031Z"
-  },
-  {
-    "arxivId": "2502.11084",
-    "title": "Rewrite to Jailbreak: Discover Learnable and Transferable Implicit Harmfulness Instruction",
-    "titleZh": "重写以越狱：发现可学习且可迁移的隐式有害指令",
-    "authors": [
-      "Yuting Huang",
-      "Chengyuan Liu",
-      "Yifeng Feng",
-      "Yiquan Wu",
-      "Chao Wu",
-      "Fei Wu",
-      "Kun Kuang"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2502.11084",
-      "aisafetyhot": "https://aisafetyhot.com/items/lklfyz60o3fqurtgt44wt8pat"
-    },
-    "publishedAt": "2025-02-16T11:43:39.000Z",
-    "timelineAt": "2026-10-09T08:05:51.043Z",
-    "discoveredAt": "2026-10-09T08:05:51.043Z"
-  },
-  {
-    "arxivId": "2605.08513",
-    "title": "A Single Neuron Is Sufficient to Bypass Safety Alignment in Large Language Models",
-    "titleZh": "单个神经元足以绕过大型语言模型的安全对齐",
-    "authors": [
-      "Hamid Kazemi",
-      "Atoosa Chegini",
-      "Maria Safi"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2605.08513",
-      "aisafetyhot": "https://aisafetyhot.com/items/g5tfag2ncbfr9yp0sergpyoth"
-    },
-    "publishedAt": "2026-05-08T21:45:28.000Z",
-    "timelineAt": "2026-10-09T08:05:51.049Z",
-    "discoveredAt": "2026-10-09T08:05:51.049Z"
-  },
-  {
-    "arxivId": "2511.22681",
-    "title": "CacheTrap: Unveiling a Stealthier Gray-Box Trojan against LLMs",
-    "titleZh": "CacheTrap：揭示一种针对LLM的更隐蔽灰盒木马",
-    "authors": [
-      "Mohaiminul Al Nahian",
-      "Abeer Matar A. Almalky",
-      "Gamana Aragonda",
-      "Ranyang Zhou",
-      "Sabbir Ahmed",
-      "Dmitry Ponomarev",
-      "Li Yang",
-      "Shaahin Angizi",
-      "Adnan Siraj Rakin"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2511.22681",
-      "aisafetyhot": "https://aisafetyhot.com/items/jq6zcpkvdk1oi3ciu7lu42jgx"
-    },
-    "publishedAt": "2025-11-27T18:30:19.000Z",
-    "timelineAt": "2026-10-09T08:05:51.055Z",
-    "discoveredAt": "2026-10-09T08:05:51.055Z"
-  },
-  {
-    "arxivId": "2606.05396",
-    "title": "Willing but Unable: Separating Refusal from Capability in Code LLMs via Abliteration",
-    "titleZh": "愿意但无能：通过消融法在代码大语言模型中区分拒答与能力",
-    "authors": [
-      "Cristina Carleo",
-      "Pietro Liguori",
-      "Naghmeh Ivaki",
-      "Domenico Cotroneo"
-    ],
-    "category": "defense",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2606.05396",
-      "aisafetyhot": "https://aisafetyhot.com/items/smuxps7p9jnncbtugpwl7h5qy"
-    },
-    "publishedAt": "2026-06-03T20:06:52.000Z",
-    "timelineAt": "2026-10-09T08:05:51.060Z",
-    "discoveredAt": "2026-10-09T08:05:51.060Z"
-  },
-  {
-    "arxivId": "2512.21008",
-    "title": "GateBreaker: Gate-Guided Attacks on Mixture-of-Expert LLMs",
-    "titleZh": "GateBreaker：针对混合专家大模型的门控引导攻击",
-    "authors": [
-      "Lichao Wu",
-      "Sasha Behrouzi",
-      "Mohamadreza Rostami",
-      "Stjepan Picek",
-      "Ahmad-Reza Sadeghi"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2512.21008",
-      "aisafetyhot": "https://aisafetyhot.com/items/rqioijv2jitizmjaha9svusid"
-    },
-    "publishedAt": "2025-12-24T07:13:24.000Z",
-    "timelineAt": "2026-10-09T08:05:51.066Z",
-    "discoveredAt": "2026-10-09T08:05:51.066Z"
-  },
-  {
-    "arxivId": "2606.01837",
-    "title": "Benign Inputs, Harmful Outputs: Cross-Modal Jailbreaking via Distributed Semantic Recomposition",
-    "titleZh": "良性输入，有害输出：通过分布式语义重组的跨模态越狱",
-    "authors": [
-      "Yani Wang",
-      "Yilong Yang",
-      "Yang Liu",
-      "Zhuzhu Wang",
-      "Zuobin Ying",
-      "Zhuo Ma"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2606.01837",
-      "aisafetyhot": "https://aisafetyhot.com/items/ujzm2e0ptgz5wkeeykw1fc7v6"
-    },
-    "publishedAt": "2026-06-01T07:49:12.000Z",
-    "timelineAt": "2026-10-09T08:05:51.073Z",
-    "discoveredAt": "2026-10-09T08:05:51.073Z"
-  },
-  {
-    "arxivId": "2508.10029",
-    "title": "Latent Fusion Jailbreak: Blending Harmful and Harmless Representations to Elicit Unsafe LLM Outputs",
-    "titleZh": "潜在融合越狱：混合有害与无害表征以诱导LLM输出不安全内容",
-    "authors": [
-      "Wenpeng Xing",
-      "Bohan Yang",
-      "Mohan Li",
-      "Chunqiang Hu",
-      "Haitao Xu",
-      "Ningyu Zhang",
-      "Bo Lin",
-      "Meng Han"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2508.10029",
-      "aisafetyhot": "https://aisafetyhot.com/items/l122samgarqpsbrf4dzjjuh2q"
-    },
-    "publishedAt": "2025-08-08T17:29:16.000Z",
-    "timelineAt": "2026-10-09T08:05:51.081Z",
-    "discoveredAt": "2026-10-09T08:05:51.081Z"
-  },
-  {
-    "arxivId": "2605.16090",
-    "title": "A Cross-Modal Prompt Injection Attack against Large Vision-Language Models with Image-Only Perturbation",
-    "titleZh": "一种仅用图像扰动的跨模态提示注入攻击，针对大型视觉语言模型",
-    "authors": [
-      "Hao Yang",
-      "Zhuo Ma",
-      "Yang Liu",
-      "Yilong Yang",
-      "Guancheng Wang",
-      "JianFeng Ma"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2605.16090",
-      "aisafetyhot": "https://aisafetyhot.com/items/slhu8g4q76d3dyt9bbe2xjnwp"
-    },
-    "publishedAt": "2026-05-15T15:47:41.000Z",
-    "timelineAt": "2026-10-09T08:05:51.090Z",
-    "discoveredAt": "2026-10-09T08:05:51.090Z"
-  },
-  {
-    "arxivId": "2509.22067",
-    "title": "The Rogue Scalpel: Activation Steering Compromises LLM Safety",
-    "titleZh": "流氓手术刀：激活引导破坏LLM安全",
-    "authors": [
-      "Anton Korznikov",
-      "Andrey Galichin",
-      "Alexey Dontsov",
-      "Oleg Y. Rogov",
-      "Ivan Oseledets",
-      "Elena Tutubalina"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2509.22067",
-      "aisafetyhot": "https://aisafetyhot.com/items/a45k2pvsl77d3n3a0okzhjij7"
-    },
-    "publishedAt": "2025-09-26T08:49:47.000Z",
-    "timelineAt": "2026-10-09T08:05:51.098Z",
-    "discoveredAt": "2026-10-09T08:05:51.098Z"
-  },
-  {
-    "arxivId": "2603.09246",
-    "title": "Reasoning-Oriented Programming: Chaining Semantic Gadgets to Jailbreak Large Vision Language Models",
-    "titleZh": "面向推理的编程：链接语义小工具以越狱大型视觉语言模型",
-    "authors": [
-      "Quanchen Zou",
-      "Moyang Chen",
-      "Zonghao Ying",
-      "Wenzhuo Xu",
-      "Yisong Xiao",
-      "Deyue Zhang",
-      "Dongdong Yang",
-      "Zhao Liu",
-      "Xiangzheng Zhang"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2603.09246",
-      "aisafetyhot": "https://aisafetyhot.com/items/qhdffkl91uj2czg7rau6aychl"
-    },
-    "publishedAt": "2026-03-10T06:18:48.000Z",
-    "timelineAt": "2026-10-09T08:05:51.107Z",
-    "discoveredAt": "2026-10-09T08:05:51.107Z"
-  },
-  {
-    "arxivId": "2512.03992",
-    "title": "Value-Guided Iterative Refinement and the DIQ-H Benchmark for Evaluating VLM Robustness",
-    "titleZh": "价值引导的迭代精炼与用于评估VLM鲁棒性的DIQ-H基准",
-    "authors": [
-      "Hanwen Wan",
-      "Zexin Lin",
-      "Yixuan Deng",
-      "Xiaoqiang Ji"
-    ],
-    "category": "eval",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2512.03992",
-      "aisafetyhot": "https://aisafetyhot.com/items/trxo2kw6dz9vngbdndu0vxf5l"
-    },
-    "publishedAt": "2025-12-03T17:22:29.000Z",
-    "timelineAt": "2026-10-09T08:05:51.114Z",
-    "discoveredAt": "2026-10-09T08:05:51.114Z"
-  },
-  {
-    "arxivId": "2605.07399",
-    "title": "GPO-V: Jailbreak Diffusion Vision Language Model by Global Probability Optimization",
-    "titleZh": "GPO-V：通过全局概率优化越狱扩散视觉语言模型",
-    "authors": [
-      "Yu Pan",
-      "Andi Zhang",
-      "Yi Wang",
-      "Sibei Yang",
-      "Wenjie Wang"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2605.07399",
-      "aisafetyhot": "https://aisafetyhot.com/items/o3msa15sa7xv3xrxj14ls8t8l"
-    },
-    "publishedAt": "2026-05-08T07:54:57.000Z",
-    "timelineAt": "2026-10-09T08:05:51.121Z",
-    "discoveredAt": "2026-10-09T08:05:51.121Z"
-  },
-  {
-    "arxivId": "2505.23266",
-    "title": "Disrupting Vision-Language Model-Driven Navigation Services via Adversarial Object Fusion",
-    "titleZh": "通过对抗物体融合破坏视觉语言模型驱动的导航服务",
-    "authors": [
-      "Chunlong Xie",
-      "Jialing He",
-      "Shangwei Guo",
-      "Jiacheng Wang",
-      "Shudong Zhang",
-      "Tianwei Zhang",
-      "Tao Xiang"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2505.23266",
-      "aisafetyhot": "https://aisafetyhot.com/items/h7gkwjq47kgx4z7b0n22ui86k"
-    },
-    "publishedAt": "2025-05-29T09:14:50.000Z",
-    "timelineAt": "2026-10-09T08:05:51.129Z",
-    "discoveredAt": "2026-10-09T08:05:51.129Z"
-  },
-  {
-    "arxivId": "2601.23255",
-    "title": "Now You Hear Me: Audio Narrative Attacks Against Large Audio-Language Models",
-    "titleZh": "现在你听到我了：针对大型音频语言模型的音频叙事攻击",
-    "authors": [
-      "Ye Yu",
-      "Haibo Jin",
-      "Yaoning Yu",
-      "Jun Zhuang",
-      "Haohan Wang"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2601.23255",
-      "aisafetyhot": "https://aisafetyhot.com/items/zqh1k9bhio3ryh8eu5436shli"
-    },
-    "publishedAt": "2026-01-30T18:23:02.000Z",
-    "timelineAt": "2026-10-09T08:05:51.139Z",
-    "discoveredAt": "2026-10-09T08:05:51.139Z"
-  },
-  {
-    "arxivId": "2512.05853",
-    "title": "VRSA: Jailbreaking Multimodal Large Language Models through Visual Reasoning Sequential Attack",
-    "titleZh": "VRSA：通过视觉推理序列攻击越狱多模态大语言模型",
-    "authors": [
-      "Shiji Zhao",
-      "Shukun Xiong",
-      "Yao Huang",
-      "Yan Jin",
-      "Zhenyu Wu",
-      "Jiyang Guan",
-      "Ranjie Duan",
-      "Jialing Tao",
-      "Hui Xue",
-      "Xingxing Wei"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2512.05853",
-      "aisafetyhot": "https://aisafetyhot.com/items/zb9xoe6eie3sguns4cekz91ec"
-    },
-    "publishedAt": "2025-12-05T16:29:52.000Z",
-    "timelineAt": "2026-10-09T08:05:51.147Z",
-    "discoveredAt": "2026-10-09T08:05:51.147Z"
-  },
-  {
-    "arxivId": "2605.20519",
-    "title": "Codec-Robust Attacks on Audio LLMs",
-    "titleZh": "针对音频大语言模型的编解码器鲁棒攻击",
-    "authors": [
-      "Jaechul Roh",
-      "Jean-Philippe Monteuuis",
-      "Jonathan Petit",
-      "Amir Houmansadr"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2605.20519",
-      "aisafetyhot": "https://aisafetyhot.com/items/ladydoultr35vul4jxizq7iq0"
-    },
-    "publishedAt": "2026-05-19T21:39:52.000Z",
-    "timelineAt": "2026-10-09T08:05:51.154Z",
-    "discoveredAt": "2026-10-09T08:05:51.154Z"
-  },
-  {
-    "arxivId": "2504.01094",
-    "title": "Multilingual and Multi-Accent Jailbreaking of Audio LLMs",
-    "titleZh": "音频大语言模型的多语言与多口音越狱攻击",
-    "authors": [
-      "Jaechul Roh",
-      "Virat Shejwalkar",
-      "Amir Houmansadr"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2504.01094",
-      "aisafetyhot": "https://aisafetyhot.com/items/x9nzyn8khr66ky0lxp17e39m8"
-    },
-    "publishedAt": "2025-04-01T18:12:23.000Z",
-    "timelineAt": "2026-10-09T08:05:51.159Z",
-    "discoveredAt": "2026-10-09T08:05:51.159Z"
-  },
-  {
-    "arxivId": "2604.28157",
-    "title": "FlashRT: Towards Computationally and Memory Efficient Red-Teaming for Prompt Injection and Knowledge Corruption",
-    "titleZh": "FlashRT：面向提示注入与知识投毒的计算与内存高效红队方法",
-    "authors": [
-      "Yanting Wang",
-      "Chenlong Yin",
-      "Ying Chen",
-      "Jinyuan Jia"
-    ],
-    "category": "tip",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2604.28157",
-      "aisafetyhot": "https://aisafetyhot.com/items/ywi41falp4kejo57nj9f75186"
-    },
-    "publishedAt": "2026-04-30T17:43:24.000Z",
-    "timelineAt": "2026-10-09T08:05:51.164Z",
-    "discoveredAt": "2026-10-09T08:05:51.164Z"
-  },
-  {
-    "arxivId": "2511.13892",
-    "title": "Jailbreaking Large Vision Language Models in Intelligent Transportation Systems",
-    "titleZh": "智能交通系统中大型视觉语言模型的越狱",
-    "authors": [
-      "Badhan Chandra Das",
-      "Md Tasnim Jawad",
-      "Md Jueal Mia",
-      "M. Hadi Amini",
-      "Yanzhao Wu"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2511.13892",
-      "aisafetyhot": "https://aisafetyhot.com/items/bzh0r088poqn30vxba1j3t2t3"
-    },
-    "publishedAt": "2025-11-17T20:29:48.000Z",
-    "timelineAt": "2026-10-09T08:05:51.168Z",
-    "discoveredAt": "2026-10-09T08:05:51.168Z"
-  },
-  {
-    "arxivId": "2604.24983",
-    "title": "Adaptive Prompt Embedding Optimization for LLM Jailbreaking",
-    "titleZh": "面向LLM越狱的自适应提示嵌入优化",
-    "authors": [
-      "Miles Q. Li",
-      "Benjamin C. M. Fung",
-      "Boyang Li",
-      "Radin Hamidi Rad",
-      "Ebrahim Bagheri"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2604.24983",
-      "aisafetyhot": "https://aisafetyhot.com/items/fd8rnnvqd3q5kg2ti6fs63hml"
-    },
-    "publishedAt": "2026-04-27T20:39:08.000Z",
-    "timelineAt": "2026-10-09T08:05:51.173Z",
-    "discoveredAt": "2026-10-09T08:05:51.173Z"
-  },
-  {
-    "arxivId": "2511.10692",
-    "title": "StyleBreak: Revealing Alignment Vulnerabilities in Large Audio-Language Models via Style-Aware Audio Jailbreak",
-    "titleZh": "StyleBreak：通过风格感知音频越狱揭示大型音频语言模型的对齐漏洞",
-    "authors": [
-      "Hongyi Li",
-      "Chengxuan Zhou",
-      "Chu Wang",
-      "Sicheng Liang",
-      "Yanting Chen",
-      "Qinlin Xie",
-      "Jiawei Ye",
-      "Jie Wu"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2511.10692",
-      "aisafetyhot": "https://aisafetyhot.com/items/brcl1gc3hn968wmao0kjp5l3b"
-    },
-    "publishedAt": "2025-11-12T07:37:00.000Z",
-    "timelineAt": "2026-10-09T08:05:51.181Z",
-    "discoveredAt": "2026-10-09T08:05:51.181Z"
-  },
-  {
-    "arxivId": "2503.02174",
-    "title": "Adversarial Tokenization",
-    "titleZh": "对抗性分词",
-    "authors": [
-      "Renato Lui Geh",
-      "Zilei Shao",
-      "Guy Van den Broeck"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2503.02174",
-      "aisafetyhot": "https://aisafetyhot.com/items/p5pwe40ijfzx0g9689xbcpw2b"
-    },
-    "publishedAt": "2025-03-04T01:31:17.000Z",
-    "timelineAt": "2026-10-09T08:05:51.196Z",
-    "discoveredAt": "2026-10-09T08:05:51.196Z"
-  },
-  {
-    "arxivId": "2606.06244",
-    "title": "Steering LLM Viewpoints through Fabricated Evidence Injection",
-    "titleZh": "通过伪造证据注入引导LLM观点",
-    "authors": [
-      "Xi Yang",
-      "Chang Liu",
-      "Zhenglin Huang",
-      "Haoran Li",
-      "Weiming Zhang",
-      "Jian Weng",
-      "Yangqiu Song"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2606.06244",
-      "aisafetyhot": "https://aisafetyhot.com/items/bymj1pndvzbg6ybhuyhq20eb5"
-    },
-    "publishedAt": "2026-06-04T14:48:23.000Z",
-    "timelineAt": "2026-10-09T08:05:51.203Z",
-    "discoveredAt": "2026-10-09T08:05:51.203Z"
-  },
-  {
-    "arxivId": "2501.16534",
-    "title": "Targeting Alignment: Extracting Safety Classifiers of Aligned LLMs",
-    "titleZh": "针对对齐：提取对齐大语言模型的安全分类器",
-    "authors": [
-      "Jean-Charles Noirot Ferrand",
-      "Yohan Beugin",
-      "Eric Pauley",
-      "Ryan Sheatsley",
-      "Patrick McDaniel"
-    ],
-    "category": "alignment",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2501.16534",
-      "aisafetyhot": "https://aisafetyhot.com/items/jz7p6p0co68srv1ov4enh50tv"
-    },
-    "publishedAt": "2025-01-27T22:13:05.000Z",
-    "timelineAt": "2026-10-09T08:05:51.213Z",
-    "discoveredAt": "2026-10-09T08:05:51.213Z"
-  },
-  {
-    "arxivId": "2608.15445",
-    "title": "Measuring Reward Hacking and Reasoning-Answer Decoupling Under Position-Confounded Optimization",
-    "titleZh": "测量位置混杂优化下的奖励作弊与推理-答案解耦",
-    "authors": [
-      "Suyash Maniyar",
-      "Armaan Sandhu",
-      "Abhishek Mishra"
-    ],
-    "category": "alignment",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2608.15445",
-      "aisafetyhot": "https://aisafetyhot.com/items/juvg9dku321avbds0tj53wilt"
-    },
-    "publishedAt": "2026-08-15T23:13:57.000Z",
-    "timelineAt": "2026-10-09T08:05:51.225Z",
-    "discoveredAt": "2026-10-09T08:05:51.225Z"
-  },
-  {
-    "arxivId": "2508.03696",
-    "title": "PLA: Prompt Learning Attack against Text-to-Image Generative Models",
-    "titleZh": "PLA：针对文本到图像生成模型的提示学习攻击",
-    "authors": [
-      "Xinqi Lyu",
-      "Yihao Liu",
-      "Yanjie Li",
-      "Bin Xiao"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2508.03696",
-      "aisafetyhot": "https://aisafetyhot.com/items/jadgc55lepteijqbanv6dvdjs"
-    },
-    "publishedAt": "2025-07-14T11:57:16.000Z",
-    "timelineAt": "2026-10-09T08:05:51.235Z",
-    "discoveredAt": "2026-10-09T08:05:51.235Z"
-  },
-  {
-    "arxivId": "2608.03844",
-    "title": "MAFIA: Query-Only Memory Attacks via Probing and Factual Injection against Audited LLM Agents",
-    "titleZh": "MAFIA：针对经审计LLM Agent的仅查询式记忆攻击——通过探测与事实注入实现",
-    "authors": [
-      "Jiaming Chen",
-      "Yisen Gao",
-      "Yanping Li",
-      "Zifan Liu",
-      "Yumeng Zhang",
-      "Jun Zhang"
-    ],
-    "category": "attack",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2608.03844",
-      "aisafetyhot": "https://aisafetyhot.com/items/o9oehb1cxdlv6omlbnbq9b3ws"
-    },
-    "publishedAt": "2026-08-04T15:50:26.000Z",
-    "timelineAt": "2026-10-09T08:05:51.243Z",
-    "discoveredAt": "2026-10-09T08:05:51.243Z"
   }
 ]
