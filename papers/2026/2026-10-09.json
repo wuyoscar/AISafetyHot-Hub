@@ -714,6 +714,24 @@
     "discoveredAt": "2026-10-09T05:44:33.835Z"
   },
   {
+    "arxivId": "2609.34344",
+    "title": "Learning to Steer, Steering to See: Unveiling the Geometry of RLVR in Large Language Models via Trainable Vectors",
+    "titleZh": "研究用可训练向量揭示大语言模型 RLVR 的几何结构并提出 Alpha-Stabler",
+    "authors": [],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究通过向量引导（vector steering）在激活空间中识别出与 RLVR 收益相关的低维有效流形，并在 5 个大语言模型和 6 个可验证奖励任务上验证了两项几何性质。其一是有效流形容量的有限性，极低容量下干预维度和输入相关表达能力成为关键约束，且该需求随注入深度变化；其二是控制流形分离，有效控制方向主要位于激活主成分子空间的低方差补空间中。同一任务与基座模型下，学到的几何结构在不同训练配置间基本一致，跨任务时几何对齐与能力迁移相关。作者据此提出即插即用框架 Alpha-Stabler，其中 Predictor 监测主成分子空间侵入以提前发出崩溃预警，Controller 在反向传播中移除激活梯度的主成分子空间分量并保留正交补，使训练稳定 2,000 步并持续提升 RL 收益。代码已开源于 GitHub。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2609.34344",
+      "aisafetyhot": "https://aisafetyhot.com/items/izqtdgsq8jz43rv3cgw3pmw8w"
+    },
+    "publishedAt": "2026-09-27T20:00:00.000Z",
+    "timelineAt": "2026-10-09T07:07:32.264Z",
+    "discoveredAt": "2026-10-09T07:07:32.264Z"
+  },
+  {
     "arxivId": "2610.07258",
     "title": "Lineage-Aware Memory Governance: A Derivation-Gated Framework for Privacy-Preserving Column-Level Access Control in Enterprise AI Agents",
     "titleZh": "AMU：用派生血缘门控实现企业 AI Agent 列级访问控制",
@@ -1115,12 +1133,12 @@
   {
     "arxivId": "2501.09223",
     "title": "Foundations of Large Language Models",
-    "titleZh": "《大语言模型基础》一书发布，覆盖预训练、对齐与推理等六大主题",
+    "titleZh": "《大语言模型基础》一书发布，覆盖预训练、对齐与推理六大主题",
     "authors": [],
     "category": "ai_news",
     "selected": false,
     "attention": null,
-    "summaryZh": "《Foundations of Large Language Models》一书聚焦大语言模型的基础概念而非前沿技术全景，全书分六章，依次覆盖预训练、生成模型、提示词、对齐、推理与推理（reasoning）。该书面向高校学生、自然语言处理从业者及相关领域实践者，也可作为对大语言模型感兴趣者的参考读物。",
+    "summaryZh": "一本名为《Foundations of Large Language Models》的大语言模型基础书籍发布，全书共六章，分别覆盖预训练、生成模型、提示词、对齐、推理和推理能力等关键领域。该书定位为基础概念读物，面向大学生、自然语言处理从业者及相关领域实践者，可作为大语言模型的参考读物。",
     "quickRead": null,
     "links": {
       "paper": "https://arxiv.org/abs/2501.09223",
