@@ -3169,7 +3169,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出包幻觉攻击，攻击者在社区共享的规则文件（如 .cursorrules）中注入恶意提示词，诱导编码 Agent 把合法依赖替换为攻击者控制的包。为生成有效注入提示词，作者提出 PackHallu 进化优化框架，利用轨迹级反馈和 LLM 引导的变异迭代改写注入内容。在多个基准、LLM 和 Agent 框架上的评测显示，PackHallu 取得较高攻击成功率，并在不同模型与 Agent 组合间具有较强迁移性。研究认为编码 Agent 易受此类攻击影响，自主编码系统需要更强的安全防护。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "社区共享的编程规则文件会指导编程智能体生成代码，但攻击者可注入提示，使智能体把合法依赖换成其控制的包。作者称长规则文件会稀释手工注入，最终代码的反馈又稀疏，既有提示注入在此设定下效果较差。",
+          "label": "问题"
+        },
+        {
+          "text": "PackHallu在本地代理智能体上进化搜索注入规则文件的提示。轨迹级信号统计完整轨迹里恶意包名出现次数；自归因精炼让攻击LLM写出失败批评、策略和子代。默认20轮、每父代3个子代、保留5个、每次用10个代理任务打分。",
+          "label": "方法"
+        },
+        {
+          "text": "同代理受害时BigCodeBench平均SASR 79.29%、DASR 67.68%。框架与LLM都不同时平均SASR 74.81%。RefactorBench为18.60%，ProtectAI-DeBERTa的FNR为100.00%。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者把保护协作规则文件流水线的防御列为未来方向，没有单独的局限节。实验覆盖8个框架、13个骨干LLM、3个编程基准和10个Python包；主实验代理与受害相同。恶意包在本地镜像仓库，检测用200个规则文件。论文未报告τ和重复次数。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.09264"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.09264",
       "aisafetyhot": "https://aisafetyhot.com/items/fhdnxzpj4hdrp4v9068xuo5r4"
@@ -3187,7 +3208,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "一篇 SoK 论文提出面向意图的四部分分类体系，按对抗意图结构系统整理多轮 LLM 越狱攻击。作者通过受控消融实验发现，攻击效果取决于意图在多轮之间被组织的方式，而非上下文长度或查询次数。研究进一步指出，意图的组织方式决定了其可被检测的层级，检测面需要从单轮层级扩展到会话层级乃至跨会话层级。作者据此认为，仅针对单轮的安全机制在结构上不足，单点评测也忽略了意图的组织方式，需要与有害意图可观测层级相匹配的评测协议。代码已公开。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "多轮使用中，有害意图可拆进多轮、多条轨迹或跨会话，单条消息不必露出完整目标。作者认为既有工作多按提示技巧或结果归类，未说明意图如何组织，以及防御要在哪一层观察才能检出。",
+          "label": "问题"
+        },
+        {
+          "text": "作者把多轮越狱写成攻击者、受害模型与裁判的交互循环，按四个非互斥控制点分类：DEA、SRA、TBA、SSA。检索更新至2026年8月10日，保留45个核心方法。消融只做FITD、MRCJ、ActorAttack和X-Teaming。",
+          "label": "方法"
+        },
+        {
+          "text": "Table IV中，四模型上FITD的ASR都高于Direct Attack与Persistence，Llama-3为0.960对0.340与0.370。MRCJ里按恶意等级递进的日程常高于不递进对照，但有持平。Table XI中A1到A3的ASR在四个目标上逐档上升。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者建议补TBA与SSA的标准实现和数据集，并做保留多标签、对齐观察范围的交互感知基准。组件消融只覆盖DEA与SRA的四个方法；TBA与SSA为分析性整理。论文未报告重复次数。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2608.01117"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2608.01117",
       "aisafetyhot": "https://aisafetyhot.com/items/lnkfsh2h2rxw4zrvnjntzxipp"
@@ -4205,7 +4247,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "WebFovea 是一个视觉网页智能体，在 WebRetriever Challenge 2026 中以 57.0 分（满分 100）获得第二名。该挑战基于 WebRetriever 基准的 Protocol III，要求智能体从实时网站入口 URL 出发，操作网站自身界面并返回可验证答案。作者认为多模态大语言模型是必要条件但不充分，模型决策需经 harness 传递到浏览器，每一步有四个环节必须正确：模型回复被解析为预期动作、动作在页面上生效、结果被准确回报、模型看到所需信息。在真实网站上观察到的许多失败发生在这些环节而非模型推理，例如坐标空间不匹配导致每次点击落在目标坐标的 3/4 处，原生下拉框、iframe 内和文本框中的操作静默失败，自生成的 chat-template token 污染了 4.9% 的任务回合。代码已开源。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "视觉网页智能体要从入口URL操作真实站点并返回可核对答案。作者称许多失败出在模型与浏览器之间的harness：解析、执行、反馈或观察有一段出错时，会看起来像推理错误。",
+          "label": "问题"
+        },
+        {
+          "text": "WebFovea把每步视为解析、执行、反馈、观察的往返，护栏由执行器强制。要点包括只留首个动作、剥离自生成标记、坐标对齐、select与fill、iframe的DOM回退和DOM指纹反馈。",
+          "label": "方法"
+        },
+        {
+          "text": "四次提交都用claude-opus-4-6，隐藏集答案准确率从31.0升到57.0，最终人工复核未扣分。含坐标对齐的版本在24个dev任务上从8/24到20/24。只加无变化反馈时，10个空转任务仍为0/10。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称只测了claude-opus-4-6，尚未展示各项修复可迁移；隐藏集没有同模型的参考实现基线；组件证据来自1至24个任务，是方向而非统计显著性；每份官方分来自单次运行；本地在公开Protocol III任务上开发。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.03036"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.03036",
       "aisafetyhot": "https://aisafetyhot.com/items/jpuj9zv8niykb78pqk7vmunbu"
@@ -5076,7 +5139,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 AgentTracer，一个意图感知的追踪框架，将间接提示注入视为任务意图漂移，用于事后定位注入来源并重建攻击链。该方法恢复工具调用之间隐含的决策依赖，构建意图驱动的执行图，把分散的工具调用按任务意图连接起来；再结合用户请求与操作知识库构建用户意图授权空间，识别意图漂移的工具调用。从审计中的异常工具调用出发，AgentTracer 通过目标剪枝和反向追踪重建攻击链，定位注入来源与注入点。在 AgentDyn 和 InjecAgent 的成功 IPI 攻击执行日志，与包含 1,800 条用户请求、9,000 次无 IPI 背景工具调用的正常日志混合的端到端实验中，AgentTracer 达到 94.17% 的注入点准确率和 93.56% 的路径精确率，注入点准确率较现有方法提升 18% 至 54%。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "IPI把恶意指令藏在网页、邮件等外部资源中，使智能体偏离用户任务。事后要在与合法操作交错、且常无显式依赖的工具调用里定位注入点并重建攻击链。作者称依赖图、贡献度和反事实方法难以恢复完整链条。",
+          "label": "问题"
+        },
+        {
+          "text": "AgentTracer把IPI当作意图漂移：从推理记录恢复决策依赖，建成意图执行图；用操作知识库把用户请求实例化为授权空间，按动作、目标、约束标出漂移边，再从异常事件反向回溯到注入点。",
+          "label": "方法"
+        },
+        {
+          "text": "AgentDyn与InjecAgent各300条成功日志混入1,800条正常请求、9,000次背景调用后，平均注入点准确率94.17%、路径精确率93.56%。对比100条时为94.00%，作者称比基线高18.00–54.00%。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称无推理记录时效果下降，且不直接追踪代码级注入；45例跨会话实验未纳入正式评测。正式评测用AgentDyn与InjecAgent成功日志及五个月Codex历史池，骨干LLM为deepseek-v4-flash。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.09935"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.09935",
       "aisafetyhot": "https://aisafetyhot.com/items/y69k02m1y3gppkg6c4448ps6q"
@@ -5182,7 +5266,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 ASPIRE，一个面向 LLM Agent 的开放式、行为级漏洞发现红队引擎，用于应对 Agent 检索不可信内容并通过工具行动所带来的间接提示注入风险。ASPIRE 维护一个持续演化的 Agent Security Behavior Graph，用互补的 Explore 与 Exploit 专家发现、验证并泛化以后果为中心的测试；轨迹证据用于更新该图并诊断部分或失败的尝试，跨运行记忆则迁移有效的红队策略。论文称在多个基准上的实验显示，ASPIRE 在后果、注入方法、环境和行为路径上大幅扩展了覆盖范围，同时保持较高的攻击成功率。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "智能体检索不可信内容并经工具行动，间接提示注入可造成越权动作或持久状态改变。作者认为现有红队多在预定场景优化载荷，行为空间里的潜在路径未被系统搜索。",
+          "label": "问题"
+        },
+        {
+          "text": "ASPIRE先做静态侦察，维护Agent Security Behavior Graph，由Explore与Exploit提出后果、方法、环境骨架，再实现为良性查询和载荷。轨迹证据更新图并诊断失败点，跨运行记忆迁移搜索策略而非具体攻击。",
+          "label": "方法"
+        },
+        {
+          "text": "双方为Gemini-3.7-Flash时，AgentDojo planner-executor上ASR为54.1%，基线至多0.7%。无行为图时ASR为0.0%。PI-Guard下AgentDojo为42.0%。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "论文未专门讨论局限。覆盖AgentDojo、AgentDyn、ReAct和planner-executor。防御为Spotlighting、MELON、PI-Guard，且写明Gemini-3.7-Flash与ReAct。未报告重复次数。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08951"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08951",
       "aisafetyhot": "https://aisafetyhot.com/items/wt6sbg6fyv31ddxt9g4kwuu6z"
@@ -6147,7 +6252,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者基于认知负荷理论考察推理 token 数量这一低带宽信号，三个具备推理能力的大语言模型在真实作答、虚假作答和不考虑真伪三种系统提示下回答 210 道选择题。结果显示，追求真实的作答产生的推理 token 少于说谎作答和不关心真伪的作答，这一差异在三个模型上一致出现。作者指出该结果只是概念验证，说明在原始推理轨迹不可用或不可靠时，推理 token 数可作为区分不诚实与诚实行为的简单候选信号，尚未证明它能检测自发欺骗或一般性失准。后续工作需检验实例级检测率、分布外泛化、习得性欺骗策略、隐藏目标以及对抗压力下的稳健性。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "语义思维链监控依赖痕迹可读、忠实且可访问，作者担心这些条件不再成立。因此考察不读内容的推理token数，能否在说真话、说谎和不顾真假三种提示下分开。",
+          "label": "问题"
+        },
+        {
+          "text": "三个推理模型在Truth、Lie、Bullshit系统提示下回答210道四选一题。对对数推理token做带题目随机效应的线性混合模型；Gemma另建模是否产生推理。与提示不一致的回答被排除。",
+          "label": "方法"
+        },
+        {
+          "text": "三模型m1上Truth的推理token少于Lie与Bullshit。Bullshit更短未成立，Qwen上反而更长。Gemma描述题的Truth与Lie无差异，Bullshit正确率也偏离25%。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出结果来自提示诱导，策略性欺骗、非HHH微调、逐例检测和其他错位尚未检验；Bullshit与仔细思考可能冲突。实验是三个模型、210道自建题上的组水平混合模型。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.10405"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.10405",
       "aisafetyhot": "https://aisafetyhot.com/items/r1715deuw3n3337xw4x7p5d1m"
@@ -7314,7 +7440,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究将 AI 系统防御建模为防御者主导的 Stackelberg 博弈，防御者投入主动发现与被动修复，攻击者选择搜索强度。理论证明：若每个未解决攻击都有持续被发现的机会、修复有效且后续更新保留既有防护，则有限攻击面可以概率 1 被防御；并给出完成时间界，扩展到攻击面增长、修复跨相关攻击泛化及多种发现机制的情形。数值实验刻画了防御者不投入、只投入一种或同时投入两种能力的均衡区间，并显示更快修复可缩短被攻陷时长但不降低被攻陷概率。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "生成式系统的攻击面随上下文和工具扩大，发现漏洞并修补不一定足以保护部署系统。作者要给出持续发现与修复足以覆盖的条件，以及威慑自适应攻击者所需的投入。",
+          "label": "问题"
+        },
+        {
+          "text": "用能挡住的攻击集合表示防御，要求发现有持续正概率、修补有效且保护被保留，并推广到增长面、补丁区域和多种发现机制。防守方先承诺发现率与修复率，攻击者再选搜索力度。",
+          "label": "方法"
+        },
+        {
+          "text": "归一化示意参数下，成本扫描出现五种投入区间。κ≥2且η≥6不再加投，κ≤1或η≤0.25则威慑。c_A=0.25时联合优化与固定修复的妥协概率同为0.58，期望时长为0.25对0.58。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者在结论中提出部署系统的纵向评估，以及能力不确定、保持不完美的重复博弈。数值实验为未按攻击数据标定的示意参数；Table 1未写抽样次数与各场景成本。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.09892"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.09892",
       "aisafetyhot": "https://aisafetyhot.com/items/webymji3abyur19vr22issjlk"

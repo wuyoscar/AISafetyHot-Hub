@@ -8,7 +8,28 @@
     "selected": true,
     "attention": 78,
     "summaryZh": "研究者基于 GitSkills 中每个 SKILL.md 的 git 历史，重建了首个带日期和方向的 Agent 技能复制网络，覆盖 GitHub 上 2,193,119 次技能采用，并提供了交互式查看器。技能以 SKILL.md 指令和脚本形式被 Claude Code、Codex 等编码 Agent 以用户权限执行，开发者靠仓库间复制分享技能，形成没有注册表、版本和来源记录的软件供应链。研究发现少数仓库是几乎所有复制的源头，GitHub star 无法识别它们；技能副本几乎不随源更新，源头的修复很少传到副本，只有 20.9% 的技能副本跟随了源头的后续修改。作者拟合了一个仓库选择复制源的模型用于审计排序，按该模型排名最高的 100 个仓库可阻止 14.9% 的后续高风险技能采用，而 100 个 star 最多的仓库只能阻止 0.5%。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "AI 编码代理（如 Claude Code、Codex）通过 SKILL.md 形式的 agent skills 扩展能力，开发者靠仓库间复制来分享，形成没有注册表、版本和来源记录的软件供应链。复制来源、修复传播范围、该审查哪些仓库都不清楚，而快照式研究无法揭示谁复制了谁。",
+          "label": "问题"
+        },
+        {
+          "text": "作者从 GitSkills 数据集中每个 SKILL.md 的 git 历史重建带日期的有向复制网络，覆盖 2,193,119 次 skill adoption，并配套交互式查看器。用条件 logit 建模复制事件选择哪个上游仓库作为来源，并按该分数对仓库排序以推荐审计目标；另用脚本化 LLM 标注与人工复核做验证和风险标记。",
+          "label": "方法"
+        },
+        {
+          "text": "少数仓库贡献几乎全部复制，GitHub stars 既不能识别来源、也无法预测未来来源。skill 副本几乎不随源更新，源上的修复很少传播到副本；只有 11.1% 的 clone group 变更是一致的，仅 20.9% 的副本跟随源后续修改。审计模型评分最高的 100 个仓库可阻止 14.9% 的后续高风险 skill adoption，而最多 star 的 100 个仅 0.5%。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "重建日期与顺序仅与安装器记录一致，审计评估只依赖哪些仓库是来源、不涉及作者身份；风险标记代表能力而非恶意，高精确率低召回使风险计数只是下界。数据仅覆盖该格式在公开 GitHub 上的前 10 个月，这也是分发实践形成的时期。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文全文（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.11169"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.11169",
       "aisafetyhot": "https://aisafetyhot.com/items/lqvgsrfg28ywli6ha5m9f9jgx"
@@ -70,5 +91,23 @@
     "publishedAt": "2026-10-07T01:58:25.000Z",
     "timelineAt": "2026-10-09T17:19:19.856Z",
     "discoveredAt": "2026-10-09T17:19:19.856Z"
+  },
+  {
+    "arxivId": "2610.11233",
+    "title": "MiniVer-V：以证据充分性检验短视频事实的基准",
+    "titleZh": "MiniVer-V：以证据充分性检验短视频事实的基准",
+    "authors": [],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "作者发布 MiniVer-V 基准，含 195 段短视频、5510 个多模态证据单元，用于区分视频内部一致性与需外部佐证的事实判断，证据池耗尽仍不充分时输出 insufficient。作者报告 Claude Sonnet 4 平均使用 4.5 个证据单元（约全量 16%），Macro-F1 为 0.510，全量为 0.518，差异未达统计显著；GPT-5.5 复现效率结论，Qwen2.5-72B 仅部分成立。外部检索未排除已有同题事实核查文章且未设事前日期截止，样本规模小、claim 均为中文，数据与代码仅计划发布。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.11233",
+      "aisafetyhot": "https://aisafetyhot.com/items/wjxromusnhtmcp5a3jrhklxob"
+    },
+    "publishedAt": "2026-10-08T04:33:14.000Z",
+    "timelineAt": "2026-10-09T22:00:28.308Z",
+    "discoveredAt": "2026-10-09T22:00:28.308Z"
   }
 ]
