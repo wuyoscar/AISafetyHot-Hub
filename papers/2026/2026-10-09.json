@@ -39,7 +39,28 @@
     "selected": true,
     "attention": 77,
     "summaryZh": "论文把评分器本身作为演化对象，用由小型确定性缺陷检测器组成的可读表达式替代手写评分标准或裸 LLM 评委，选择依据是与十项锚定参考集的一致性和无标签输出上的共识，而非 Agent 的任务得分。在 MBPP+ 上，演化出的评分器相对初始手写组合的留出集一致率提升 0.21，并超过其中包含的裸 LLM 评委。作者称，去掉锚定保护后评分器会退化为几乎全部通过的无效评分器，但它训练技能的效果与有效评分器相当，因此下游任务分数无法验证自演化评分器。Double Ratchet 将评分器与技能循环配对，在代码生成、企业 text-to-SQL 和无参考报告生成三类任务上保留了基准真值或评分标准所带来提升的 88%–110%。在报告任务中，演化出的技能通过只写标签不写数值等方式博弈评分标准，外部评委发现该问题，新增一个检测器后标签缺失率从约 30% 降至约 1%。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "自改进循环每轮都要判断改动后是否更好，但开放任务没有验证器。手写rubric或与被评模型同类的LLM judge，作者称会招致reward hacking与共享盲点。",
+          "label": "问题"
+        },
+        {
+          "text": "评分器是drawback检测器的可读表达式，从聚类失败合成并出生门控，按十项锚点的召回加权一致性与无标签共识选择，不按智能体分数。Double Ratchet将其与未改动的Ratchet技能循环交替。",
+          "label": "方法"
+        },
+        {
+          "text": "MBPP+演化评分器留出一致性0.625±0.050，手写种子0.417±0.058。Report上去掉锚点守卫后通过率0.97–1.00。三任务lift retention为106%、110%、88%（Table 1）。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称演化扩大覆盖但造不出ground truth，无锚点时优化的是噪声；开放前沿是执行干净但语义错误的输出。研究为三个任务族、一个模型族，外评不是人类研究。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.11464"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.11464",
       "aisafetyhot": "https://aisafetyhot.com/items/yz2krusnymca3kls4zwh24foz"
@@ -209,6 +230,24 @@
     "publishedAt": null,
     "timelineAt": "2026-10-09T04:32:36.753Z",
     "discoveredAt": "2026-10-09T04:32:36.753Z"
+  },
+  {
+    "arxivId": "2610.12360",
+    "title": "Accurate but Not Humble: Evaluating Epistemic Humility in LLM Agents under Knowledge Conflict",
+    "titleZh": "研究提出 ISE 框架评估知识冲突下 LLM Agent 的认知谦逊",
+    "authors": [],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出用认知谦逊（EH）评估 LLM Agent 在知识冲突下的表现，即 Agent 在任务执行中识别、处理并表达不确定性的意愿，并将其拆解为 Identify、Solve、Escalate（ISE）三个轨迹级行为维度。研究设置受控冲突与多步 Agent 执行中自然发生的冲突两种场景，各配无冲突对照，并用知识冲突指代模型参数化知识与所遇证据矛盾、或两个上下文来源互相冲突的情况。对四个 Agent 的评估显示，更高的任务准确率不一定对应更高的认知谦逊：部分高准确率配置在执行中识别到了冲突，却没有在错误的最终答案中传达未解决的不确定性。轨迹级分析还发现，Agent 常在执行早期步骤检测到冲突，但未能在后续步骤中维持或解决。论文称模型层面的干预可以提升认知谦逊，但往往以任务准确率为代价，并认为认知谦逊来自基础模型、Agent 框架与评测环境三者的交互。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.12360",
+      "aisafetyhot": "https://aisafetyhot.com/items/cgckfc6l7zolrx1t62ss0s29l"
+    },
+    "publishedAt": "2026-10-07T20:00:00.000Z",
+    "timelineAt": "2026-10-09T05:03:35.415Z",
+    "discoveredAt": "2026-10-09T05:03:35.415Z"
   },
   {
     "arxivId": "2610.08215",
