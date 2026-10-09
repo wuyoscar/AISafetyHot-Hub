@@ -4115,5 +4115,25 @@
     "publishedAt": "2025-01-16T01:03:56.000Z",
     "timelineAt": "2026-10-09T06:05:31.813Z",
     "discoveredAt": "2026-10-09T06:05:31.813Z"
+  },
+  {
+    "arxivId": "2610.11012",
+    "title": "蒸馏能让模型说出隐藏行为吗？",
+    "titleZh": "蒸馏能让模型说出隐藏行为吗？",
+    "authors": [
+      "Sebastian Prasanna; Jacqueline Tay; Alek Westover"
+    ],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": null,
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.11012",
+      "aisafetyhot": "https://aisafetyhot.com/items/dqw1bq4qh2vbqgcmml0o9ajjy"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T12:04:00.785Z",
+    "discoveredAt": "2026-10-09T12:04:00.785Z"
   }
 ]

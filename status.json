@@ -1,12 +1,12 @@
 {
   "note": "days 是网站上每天（北京时间，按 timelineAt 分天）进站、判定为 AI 安全的论文：信源为 arXiv、Hugging Face Daily Papers 和论文追踪，同一篇 arXiv 论文一天只算一次（arXiv 编号取网站 /api/site/items/<id> 的 links.original；留哪一条：精选优先，再按网站的 score 高，非精选也按 score，再按 timelineAt 早，最后按 id 字典序）。ids 是网站条目 id（网站上的 /items/<id>），按字典序排列；idsSha256 是排好的 ids 用换行连起来（末尾不加换行）的 SHA-256。论文在网站上出现以后（从第一次能在网站上看到算起，不是 timelineAt：回填的论文 timelineAt 早于出现的时间），slaMinutes 分钟内应出现在 papers/<年>/<日期>.json。这个文件只在内容变化时随那次提交更新；generatedAt 是那次生成的时间，siteFetchedAt 是读网站接口的时间。",
-  "generatedAt": "2026-10-09T11:32:24.957Z",
-  "siteFetchedAt": "2026-10-09T11:32:22.221Z",
+  "generatedAt": "2026-10-09T12:15:46.472Z",
+  "siteFetchedAt": "2026-10-09T12:15:44.521Z",
   "slaMinutes": 60,
   "days": {
     "2026-10-09": {
-      "count": 161,
-      "idsSha256": "3fcd9de4c85990e3260e7b8695a0c5b0dd96d0d601b053fb222c761a675ced8a",
+      "count": 162,
+      "idsSha256": "1f3fea6fb64f8bcb1f0a54a06eff382a01dae0ff12873718d07a034b2a217688",
       "ids": [
         "a1f0isxzej9r2coyxwuuduetd",
         "a4305k1zl1zz6f6wur8xgaks4",
@@ -30,6 +30,7 @@
         "cgckfc6l7zolrx1t62ss0s29l",
         "d15u51z8rfbzm2syr3ydhrm47",
         "dd057r8pclclrakyz3c5ivk52",
+        "dqw1bq4qh2vbqgcmml0o9ajjy",
         "drcnifojkbxag6q99y0hflfkd",
         "dx8svjegnrs9f05tgrywms91x",
         "dzvy6j9g6llrzx65aeoaby95x",
