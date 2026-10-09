@@ -1,13 +1,31 @@
 [
   {
+    "arxivId": "2610.11169",
+    "title": "Skill Constellations: Tracing the Supply Chain of Agent Skills on GitHub",
+    "titleZh": "论文重建 GitHub 上 Agent 技能的复制网络，用于排序审查目标仓库",
+    "authors": [],
+    "category": "tip",
+    "selected": true,
+    "attention": 77,
+    "summaryZh": "论文利用 GitSkills 中每个 SKILL.md 的 git 历史重建了有日期、有方向的 Agent 技能复制网络，覆盖 GitHub 上 2,193,119 次技能采纳，并配套一个交互式查看器。研究发现技能复制高度集中，少数仓库是几乎所有复制的源头，而 GitHub star 无法识别它们；技能副本几乎不随源头变化，源头修复很少传到副本。论文按月拟合仓库选择复制来源的模型并对仓库排序，按该模型排在最前的 100 个仓库做审查可阻止后续 14.9% 的高风险技能采纳，而 100 个 star 最多的仓库只有 0.5%。作者建议平台以带版本的引用而非副本分发技能，审查者在技能传播的头几周内行动。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.11169",
+      "aisafetyhot": "https://aisafetyhot.com/items/lqvgsrfg28ywli6ha5m9f9jgx"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T18:56:24.268Z",
+    "discoveredAt": "2026-10-09T18:56:24.268Z"
+  },
+  {
     "arxivId": "2610.04888",
-    "title": "研究：事实核查评测可能混入声明发布后的证据，抬高 LLM 判定分数",
-    "titleZh": "研究：事实核查评测可能混入声明发布后的证据，抬高 LLM 判定分数",
+    "title": "研究：事实核查评测可能混入声明时不可知的未来证据",
+    "titleZh": "研究：事实核查评测可能混入声明时不可知的未来证据",
     "authors": [],
     "category": "eval",
     "selected": false,
     "attention": null,
-    "summaryZh": "一项研究测量了事实核查评测中两类未来信息泄漏：预训练中记住的结果，以及声明发布后才出现的检索证据。作者在 AVeriTeC 和 QuanTemp++ 上重建声明时点的证据条件，并探测模型表示中编码的结果信息，发现存在明显的参数化泄漏，且这种泄漏可能被总体准确率掩盖。一个简单的表示瓶颈比基于互信息的训练惩罚更有效地减少这种未来泄漏。允许使用声明发布后的证据会使 AVeriTeC 的零样本准确率虚高 6.3 个百分点，而在 QuanTemp++ 上影响可忽略，因为其检索几乎不提供声明发布后的证据。作者据此认为，若不考虑声明时点实际可获得的信息，虚假信息基准会高估事实核查性能。",
+    "summaryZh": "研究者在 AVeriTeC 和 QuanTemp++ 上重建声明时点的证据条件，并探测模型表示中编码的结果信息，发现存在明显的参数化泄漏，且这种泄漏会被总体准确率掩盖。作者称，一个简单的表示瓶颈比基于互信息的训练惩罚更有效地减少这类未来信息泄漏。研究还发现，允许使用声明发布后的证据会使 AVeriTeC 的零样本准确率虚高 6.3 个百分点，而在检索几乎提供不了事后证据的 QuanTemp++ 上影响可忽略。作者据此指出， misinformation 基准若不考虑声明时实际可获得的信息，会高估事实核查性能。",
     "quickRead": null,
     "links": {
       "paper": "https://arxiv.org/abs/2610.04888",
