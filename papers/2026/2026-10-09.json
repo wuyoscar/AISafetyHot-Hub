@@ -1404,6 +1404,24 @@
     "discoveredAt": "2026-10-09T08:05:42.046Z"
   },
   {
+    "arxivId": "2410.13886",
+    "title": "Refusal-Trained LLMs Are Easily Jailbroken As Browser Agents",
+    "titleZh": "BrowserART 显示拒答训练的 LLM 作为浏览器 Agent 时易被越狱",
+    "authors": [],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出 BrowserART，用于检验聊天模型的拒答行为能否迁移到具备浏览器操作能力的 Agent。该工作围绕这一迁移问题构建测试，发现经过拒答训练的大语言模型在作为浏览器 Agent 时容易被越狱。结果指向对话场景的安全训练未必覆盖浏览器操作场景。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2410.13886",
+      "aisafetyhot": "https://aisafetyhot.com/items/z9wqxlj0lcjgqjhwffyk53xzr"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:58:00.282Z",
+    "discoveredAt": "2026-10-09T09:58:00.282Z"
+  },
+  {
     "arxivId": "2610.12409",
     "title": "Searching for \"Harmful Refusal\": A Psychometric Audit of an AI Safety Benchmark",
     "titleZh": "研究者对 HELM Safety 与 HarmBench 做心理测量学审查，质疑其分数能否代表单一属性",
@@ -1792,6 +1810,24 @@
     "discoveredAt": "2026-10-09T08:05:50.922Z"
   },
   {
+    "arxivId": "2504.18575",
+    "title": "WASP: Benchmarking Web Agent Security Against Prompt Injection Attacks",
+    "titleZh": "WASP：面向网页 Agent 的提示注入攻击安全基准",
+    "authors": [],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "WASP 是一个评估网页 Agent 抵御提示注入攻击能力的基准，提供贴近网页使用场景的端到端评估。该基准区分攻击局部奏效与 Agent 真正完成攻击目标两种情况，用于衡量注入攻击对 Agent 的实际影响。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2504.18575",
+      "aisafetyhot": "https://aisafetyhot.com/items/as3b7jf48eyhp6368b4lchkmp"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:58:08.089Z",
+    "discoveredAt": "2026-10-09T09:58:08.089Z"
+  },
+  {
     "arxivId": "2605.08460",
     "title": "When Child Inherits: Modeling and Exploiting Subagent Spawn in Multi-Agent Networks",
     "titleZh": "论文建模多智能体网络中的子智能体继承攻击面",
@@ -2077,6 +2113,28 @@
     "publishedAt": null,
     "timelineAt": "2026-10-09T04:32:36.753Z",
     "discoveredAt": "2026-10-09T04:32:36.753Z"
+  },
+  {
+    "arxivId": "2606.01637",
+    "title": "Easier to Mislead Than to Correct: Harmful and Beneficial Revision in LLM Conformity",
+    "titleZh": "研究：LLM 在多智能体系统中更易被同伴共识误导而非纠正",
+    "authors": [
+      "Jiaming Qu",
+      "Lucheng Fu",
+      "Yibo Hu"
+    ],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文对多智能体系统中 LLM 的从众行为做了受控研究：模型先回答一个问题，再看到模拟的同伴回答后给出最终答案，并操纵共识结构与同伴的权威标签两种社会线索。在四个开源权重模型和七个 QA 数据集上，同伴一致意见让原本正确的模型被误导的概率远高于纠正原本错误答案的概率；权威标签则让模型更倾向选择被背书的答案，无论其是否正确。作者还发现，思维链和反思等通用推理干预无法在保留有益修改的同时可靠减少有害修改，因此建议多智能体 LLM 系统应验证同伴答案而非简单聚合。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2606.01637",
+      "aisafetyhot": "https://aisafetyhot.com/items/rbsekva3hrfpd21b0nqrrkg87"
+    },
+    "publishedAt": "2026-06-01T03:42:00.000Z",
+    "timelineAt": "2026-10-09T08:05:41.694Z",
+    "discoveredAt": "2026-10-09T08:05:41.694Z"
   },
   {
     "arxivId": "2503.06223",
@@ -2389,6 +2447,60 @@
     "publishedAt": "2025-03-29T06:38:30.000Z",
     "timelineAt": "2026-10-09T08:05:42.181Z",
     "discoveredAt": "2026-10-09T08:05:42.181Z"
+  },
+  {
+    "arxivId": "2509.08713",
+    "title": "The More You Automate, the Less You See: Hidden Pitfalls of AI Scientist Systems",
+    "titleZh": "论文指出 AI Scientist 系统的隐藏陷阱：自动化程度越高越难发现问题",
+    "authors": [],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "一篇论文（arXiv 2509.08713）讨论 AI Scientist 系统的隐藏陷阱，指出研究基准选择不当、数据泄漏、指标误用和事后选择偏差等问题。作者通过受控实验说明，只检查最终论文不足以发现流程中的诚信问题。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2509.08713",
+      "aisafetyhot": "https://aisafetyhot.com/items/t58yirglihjq2mmpm75wijylt"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:54:09.210Z",
+    "discoveredAt": "2026-10-09T09:54:09.210Z"
+  },
+  {
+    "arxivId": "2410.06703",
+    "title": "ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents",
+    "titleZh": "ST-WebAgentBench：评估网页 Agent 安全与可信度的基准",
+    "authors": [],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 ST-WebAgentBench，一个用于评估网页 Agent 安全与可信度的基准。该基准将策略遵守、用户同意等约束纳入网页任务评估，区分完成任务与在约束内完成任务两种情况。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2410.06703",
+      "aisafetyhot": "https://aisafetyhot.com/items/jz5pmubcsajz3scuwt296pbe9"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:54:54.120Z",
+    "discoveredAt": "2026-10-09T09:54:54.120Z"
+  },
+  {
+    "arxivId": "2503.04957",
+    "title": "SafeArena: Evaluating the Safety of Autonomous Web Agents",
+    "titleZh": "SafeArena：评测自主网页 Agent 的安全性",
+    "authors": [],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 SafeArena，用于评测自主网页 Agent 面对正常任务与恶意任务时的行为。该评测采用分层风险框架，区分 Agent 拒绝、尝试以及完成有害任务等不同结果。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2503.04957",
+      "aisafetyhot": "https://aisafetyhot.com/items/aquo794nere6u29l8zzgtnddt"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:58:52.850Z",
+    "discoveredAt": "2026-10-09T09:58:52.850Z"
   },
   {
     "arxivId": "2610.12360",
@@ -2722,6 +2834,60 @@
     "discoveredAt": "2026-10-09T08:05:51.235Z"
   },
   {
+    "arxivId": "2605.10246",
+    "title": "SciIntegrity-Bench: A Benchmark for Evaluating Academic Integrity in AI Scientist Systems",
+    "titleZh": "SciIntegrity-Bench：评估 AI Scientist 系统学术诚信的基准",
+    "authors": [],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 SciIntegrity-Bench，一个用于评估 AI Scientist 系统学术诚信的基准。该基准构造应当承认无法完成任务的科研场景，考察系统是否会伪造、替代或隐瞒证据，并研究任务完成压力与不诚实结果之间的关系。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2605.10246",
+      "aisafetyhot": "https://aisafetyhot.com/items/nwbkeu4720qxqjjkbx235vu40"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:54:24.127Z",
+    "discoveredAt": "2026-10-09T09:54:24.127Z"
+  },
+  {
+    "arxivId": "2510.01354",
+    "title": "WAInjectBench: Benchmarking Prompt Injection Detections for Web Agents",
+    "titleZh": "WAInjectBench：面向网页 Agent 的提示注入检测基准",
+    "authors": [],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "WAInjectBench 是一个面向网页 Agent 的提示注入检测基准，系统比较针对网页 Agent 的文本与图像注入检测方法，并分析不同威胁模型下的检测盲点。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2510.01354",
+      "aisafetyhot": "https://aisafetyhot.com/items/b5mgyycouf7nnfwyj5ioijrnm"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:58:23.056Z",
+    "discoveredAt": "2026-10-09T09:58:23.056Z"
+  },
+  {
+    "arxivId": "2512.23128",
+    "title": "It's a TRAP! Task-Redirecting Agent Persuasion Benchmark for Web Agents",
+    "titleZh": "TRAP：面向网页 Agent 的任务重定向说服基准",
+    "authors": [],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 TRAP，一个面向网页 Agent 的任务重定向说服基准，用于测量网页任务中界面与上下文说服对 Agent 目标遵循的影响，并比较不同模型被重定向的易感性。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2512.23128",
+      "aisafetyhot": "https://aisafetyhot.com/items/ri3hld6czxty9fwl0zk6d4ty3"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:58:37.958Z",
+    "discoveredAt": "2026-10-09T09:58:37.958Z"
+  },
+  {
     "arxivId": "2610.11775",
     "title": "RouterInterp: Understanding Superposed Specialisation in Mixture of Experts Routing",
     "titleZh": "RouterInterp：解释 MoE 路由中的叠加特化现象",
@@ -2889,6 +3055,24 @@
     "discoveredAt": "2026-10-09T08:05:51.015Z"
   },
   {
+    "arxivId": "2511.20597",
+    "title": "BrowseSafe: Understanding and Preventing Prompt Injection Within AI Browser Agents",
+    "titleZh": "BrowseSafe 研究 AI 浏览器 Agent 的提示注入风险与防护",
+    "authors": [],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文 BrowseSafe 研究 AI 浏览器 Agent 在真实网页结构中面临的提示注入风险，并提出结合架构保护与模型防御的多层防护方案。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2511.20597",
+      "aisafetyhot": "https://aisafetyhot.com/items/aowqeycbbr0o3jjqpkyil594z"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:58:30.511Z",
+    "discoveredAt": "2026-10-09T09:58:30.511Z"
+  },
+  {
     "arxivId": "2610.11942",
     "title": "Right Screen, Wrong Transition: World Models as Verifiers for GUI Agents",
     "titleZh": "LGWM：用动作条件世界模型验证 GUI 智能体的屏幕转移",
@@ -2914,6 +3098,42 @@
     "discoveredAt": "2026-10-09T05:44:33.835Z"
   },
   {
+    "arxivId": "2505.11717",
+    "title": "WebInject: Prompt Injection Attack to Web Agents",
+    "titleZh": "WebInject：针对网页 Agent 的提示注入攻击",
+    "authors": [],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出 WebInject，研究网页截图中的视觉扰动对多模态网页 Agent 动作选择的影响，并与现有方法进行实验比较。材料仅提供摘要，未给出具体模型、攻击成功率或受影响范围。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2505.11717",
+      "aisafetyhot": "https://aisafetyhot.com/items/pc4vtr8utk1mgjlnwzvigzct6"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:58:15.609Z",
+    "discoveredAt": "2026-10-09T09:58:15.609Z"
+  },
+  {
+    "arxivId": "2605.05509",
+    "title": "WAAA! Web Adversaries Against Agentic Browsers",
+    "titleZh": "论文提出 WAAA 框架，扩展浏览器 Agent 威胁模型",
+    "authors": [],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文 WAAA! Web Adversaries Against Agentic Browsers 扩展了浏览器 Agent 的威胁模型，把传统网页攻击与语言模型风险放在一起考察。作者关注 Agent 作为受托执行者时的边界问题，即网页侧对抗手段与模型自身风险如何共同作用于浏览器 Agent。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2605.05509",
+      "aisafetyhot": "https://aisafetyhot.com/items/dzvy6j9g6llrzx65aeoaby95x"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:58:45.417Z",
+    "discoveredAt": "2026-10-09T09:58:45.417Z"
+  },
+  {
     "arxivId": "2610.07258",
     "title": "Lineage-Aware Memory Governance: A Derivation-Gated Framework for Privacy-Preserving Column-Level Access Control in Enterprise AI Agents",
     "titleZh": "AMU：用派生血缘门控实现企业 AI Agent 列级访问控制",
@@ -2930,6 +3150,24 @@
     "publishedAt": "2026-10-04T20:00:00.000Z",
     "timelineAt": "2026-10-08T16:18:25.387Z",
     "discoveredAt": "2026-10-08T16:18:25.387Z"
+  },
+  {
+    "arxivId": "2406.12814",
+    "title": "Dissecting Adversarial Robustness of Multimodal LM Agents",
+    "titleZh": "论文拆解多模态语言模型 Agent 的对抗鲁棒性",
+    "authors": [],
+    "category": "attack",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文以 VisualWebArena 中的网页 Agent 为对象，分析多组件系统中的对抗风险，并考察反思、搜索等组件对安全性的影响。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2406.12814",
+      "aisafetyhot": "https://aisafetyhot.com/items/xhur85p5a1yzj02viqycgx0cp"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:54:46.642Z",
+    "discoveredAt": "2026-10-09T09:54:46.642Z"
   },
   {
     "arxivId": "2512.20677",
@@ -3244,6 +3482,24 @@
     "discoveredAt": "2026-10-09T04:22:39.426Z"
   },
   {
+    "arxivId": "2606.08234",
+    "title": "SciTrace: Trajectory-Aware Safety Reasoning for Scientific Discovery Agents",
+    "titleZh": "SciTrace：面向科学发现智能体的轨迹感知安全推理",
+    "authors": [],
+    "category": "defense",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "SciTrace 是一种面向科学发现智能体的轨迹感知安全推理方法，将风险状态带入多阶段科研流程，并在执行前检查工具链组合风险。该研究同时评估其安全性与科研任务质量。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2606.08234",
+      "aisafetyhot": "https://aisafetyhot.com/items/x2eajn3f0vwvogsdsd7lhe0ih"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:54:31.615Z",
+    "discoveredAt": "2026-10-09T09:54:31.615Z"
+  },
+  {
     "arxivId": "2605.22949",
     "title": "MARGIN: Runtime Confidence Calibration for Multi-Agent Foundation Model Coordination",
     "titleZh": "MARGIN：面向多智能体基础模型协调的运行时置信度校准",
@@ -3260,6 +3516,24 @@
     "publishedAt": "2026-10-07T20:00:00.000Z",
     "timelineAt": "2026-10-09T06:36:32.329Z",
     "discoveredAt": "2026-10-09T06:36:32.329Z"
+  },
+  {
+    "arxivId": "2312.06632",
+    "title": "Controlling risks of AI in chemical science with agents",
+    "titleZh": "用智能体控制化学科学中的 AI 风险",
+    "authors": [],
+    "category": "defense",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "一项研究提出面向科学 AI 的 Agent 风险控制层，并用安全任务与正常任务共同评估。该研究强调，风险降低不能以丧失正常科学用途为代价。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2312.06632",
+      "aisafetyhot": "https://aisafetyhot.com/items/g1dwtvqro6hszdftmbhznrhx7"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:53:46.612Z",
+    "discoveredAt": "2026-10-09T09:53:46.612Z"
   },
   {
     "arxivId": "2606.29602",
@@ -3283,6 +3557,24 @@
     "publishedAt": "2026-06-28T20:56:57.000Z",
     "timelineAt": "2026-10-09T08:05:42.097Z",
     "discoveredAt": "2026-10-09T08:05:42.097Z"
+  },
+  {
+    "arxivId": "2603.11987",
+    "title": "LABSHIELD: A Multimodal Benchmark for Safety-Critical Reasoning and Planning in Scientific Laboratories",
+    "titleZh": "LABSHIELD：面向科学实验室安全关键推理与规划的多模态基准",
+    "authors": [],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "LABSHIELD 是一个面向科学实验室场景的多模态基准，用于评估风险识别、安全推理与操作规划，覆盖多模态及具身系统。该基准关注科研自动化进入真实实验环境后的安全边界。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2603.11987",
+      "aisafetyhot": "https://aisafetyhot.com/items/vlf969dv22dbo6v230piazydd"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:54:16.681Z",
+    "discoveredAt": "2026-10-09T09:54:16.681Z"
   },
   {
     "arxivId": "2610.08740",
@@ -3324,6 +3616,24 @@
     "publishedAt": "2025-12-03T17:22:29.000Z",
     "timelineAt": "2026-10-09T08:05:51.114Z",
     "discoveredAt": "2026-10-09T08:05:51.114Z"
+  },
+  {
+    "arxivId": "2505.23559",
+    "title": "SafeScientist: Toward Risk-Aware Scientific Discoveries by LLM Agents",
+    "titleZh": "SafeScientist：让 LLM 智能体实现风险感知的科学发现",
+    "authors": [],
+    "category": "defense",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者提出 SafeScientist 安全监测框架，覆盖科研流程，并配套 SciSafetyBench 评估风险识别与正常任务表现。该框架面向 LLM 智能体，目标是让科学发现过程具备风险感知能力。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2505.23559",
+      "aisafetyhot": "https://aisafetyhot.com/items/iya8w99c51d7ckdslamyyo11k"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:54:01.744Z",
+    "discoveredAt": "2026-10-09T09:54:01.744Z"
   },
   {
     "arxivId": "2610.10865",
@@ -3374,6 +3684,24 @@
     "discoveredAt": "2026-10-09T08:05:51.191Z"
   },
   {
+    "arxivId": "2609.24165",
+    "title": "APEXA: Execution-Integrity Enforcement for Multi-Agent LLM Automation of Synchrotron Data Reduction",
+    "titleZh": "APEXA：面向同步辐射数据约简多智能体 LLM 自动化的执行完整性强制",
+    "authors": [],
+    "category": "defense",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "APEXA 面向同步辐射数据约简的多智能体 LLM 自动化流程，通过检查工具是否真正执行、并以确定性约束限制设备动作，来评估执行完整性与操作安全。该工作针对同步辐射数据处理工作流提出执行完整性强制机制。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2609.24165",
+      "aisafetyhot": "https://aisafetyhot.com/items/oa4wwwj5df7w5aguqqyse6tvc"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:54:39.165Z",
+    "discoveredAt": "2026-10-09T09:54:39.165Z"
+  },
+  {
     "arxivId": "2602.18514",
     "title": "Trojan Horses in Recruiting: A Red-Teaming Case Study on Indirect Prompt Injection in Standard vs. Reasoning Models",
     "titleZh": "招聘中的特洛伊木马：标准模型与推理模型间接提示注入的红队测试案例研究",
@@ -3392,6 +3720,24 @@
     "publishedAt": "2026-02-19T19:26:21.000Z",
     "timelineAt": "2026-10-09T08:05:50.884Z",
     "discoveredAt": "2026-10-09T08:05:50.884Z"
+  },
+  {
+    "arxivId": "2402.04247",
+    "title": "Risks of AI Scientists: Prioritizing Safeguarding Over Autonomy",
+    "titleZh": "AI 科学家风险：自主科研 Agent 的漏洞与误用，保障优先于自主",
+    "authors": [],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文《Risks of AI Scientists》梳理了自主科研 Agent 的漏洞与误用风险，主张把保障置于自主性之上。作者从人的管理、Agent 对齐和环境反馈三方面讨论保障措施。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2402.04247",
+      "aisafetyhot": "https://aisafetyhot.com/items/drcnifojkbxag6q99y0hflfkd"
+    },
+    "publishedAt": null,
+    "timelineAt": "2026-10-09T09:53:54.126Z",
+    "discoveredAt": "2026-10-09T09:53:54.126Z"
   },
   {
     "arxivId": "2610.11959",
@@ -3671,27 +4017,5 @@
     "publishedAt": "2026-10-07T20:00:00.000Z",
     "timelineAt": "2026-10-09T06:05:31.813Z",
     "discoveredAt": "2026-10-09T06:05:31.813Z"
-  },
-  {
-    "arxivId": "2606.01637",
-    "title": "Easier to Mislead Than to Correct: Harmful and Beneficial Revision in LLM Conformity",
-    "titleZh": "误导比纠正更容易：LLM从众中的有害与有益修正",
-    "authors": [
-      "Jiaming Qu",
-      "Lucheng Fu",
-      "Yibo Hu"
-    ],
-    "category": "alignment",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2606.01637",
-      "aisafetyhot": "https://aisafetyhot.com/items/rbsekva3hrfpd21b0nqrrkg87"
-    },
-    "publishedAt": "2026-06-01T03:42:00.000Z",
-    "timelineAt": "2026-10-09T08:05:41.694Z",
-    "discoveredAt": "2026-10-09T08:05:41.694Z"
   }
 ]
