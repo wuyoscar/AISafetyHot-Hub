@@ -551,7 +551,7 @@
       "paper": "https://arxiv.org/abs/2610.02702",
       "aisafetyhot": "https://aisafetyhot.com/items/udc7re30azojseg2ml5o0yxpc"
     },
-    "publishedAt": "2026-10-02T02:37:00.000Z",
+    "publishedAt": "2026-10-02T02:37:05.000Z",
     "timelineAt": "2026-10-05T07:21:31.533Z",
     "discoveredAt": "2026-10-05T07:21:31.533Z"
   },
@@ -1048,7 +1048,7 @@
       "paper": "https://arxiv.org/abs/2610.02373",
       "aisafetyhot": "https://aisafetyhot.com/items/ihl85n5tra9xf0i7wyijdq9wp"
     },
-    "publishedAt": null,
+    "publishedAt": "2026-10-01T18:52:10.000Z",
     "timelineAt": "2026-10-05T12:21:21.394Z",
     "discoveredAt": "2026-10-05T12:21:21.394Z"
   },
@@ -1142,7 +1142,7 @@
       "paper": "https://arxiv.org/abs/2610.00320",
       "aisafetyhot": "https://aisafetyhot.com/items/g0b3zjl9kth59ftr1qqmjpck9"
     },
-    "publishedAt": null,
+    "publishedAt": "2026-09-29T04:12:28.000Z",
     "timelineAt": "2026-10-05T00:18:13.826Z",
     "discoveredAt": "2026-10-05T00:18:13.826Z"
   },
@@ -1167,7 +1167,7 @@
       "paper": "https://arxiv.org/abs/2610.02588",
       "aisafetyhot": "https://aisafetyhot.com/items/dvwqhi2ybjqi6y8mqe9dfgetk"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-01T23:34:37.000Z",
     "timelineAt": "2026-10-05T04:14:25.385Z",
     "discoveredAt": "2026-10-05T04:14:25.385Z"
   },
@@ -1373,12 +1373,33 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者在 13 个安全基准（越狱、提示注入与正常对话）和 Llama-3.1-8B、Qwen3.5-9B、Gemma-4-12B 三个开源模型上，用严格的留一数据集（LODO）评测检验用户轮次后附加分类指令对激活探针的影响。单点探针上，分类后缀相比无后缀可将分布外检测的 AUC 提升最多约 4 个点，而跑题或仅表示关注的后缀几乎没有帮助。增益来自分类这一格式本身而非具体判据，无内容标签的后缀与真实恶意/良性判据效果相当，判据只在严格阈值下提升精确率。该结论也适用于生产中的多点池化探针（attention、multi-max、MLP），但最优后缀随读出方式变化；通过 KV-cache fork 部署时，它是一种低成本即插即用方案，但具体哪种后缀有效、提升多少取决于模型与读出方式。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "LLM智能体用激活探针在行动前拦恶意输入。作者要确定：用户轮后的分类后缀，在探针未见的攻击上是否仍有增益，以及起作用的是分类格式还是点名的准则。",
+          "label": "问题"
+        },
+        {
+          "text": "三个开源模型上，用长度受控的后缀阶梯，经KV-cache fork在后缀末读探针并回滚。strict LODO下比较none、中性reflect、内容无关的A/B与intent。",
+          "label": "方法"
+        },
+        {
+          "text": "intent相对none的∆AUC：Llama +3.82、Gemma +3.23、Qwen +0.59（Table 3，LODO）。作者称排序来自分类格式，点名准则主要体现在TPR@1%。多位置110/120格优于none。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称分类特异效应不写到Qwen，跨模型幅度与readout设置相混，聊天体裁以外只是猜想。实验为三个开源模型、13个LODO基准、单点与多位置读出；论文未报告重复次数。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.02413"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.02413",
       "aisafetyhot": "https://aisafetyhot.com/items/bno6kj9muo17z7f5irb5k2gzs"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-01T19:36:57.000Z",
     "timelineAt": "2026-10-05T04:24:17.390Z",
     "discoveredAt": "2026-10-05T04:24:17.390Z"
   },
@@ -1419,7 +1440,7 @@
       "paper": "https://arxiv.org/abs/2610.02432",
       "aisafetyhot": "https://aisafetyhot.com/items/rs75onbk15r5004lca6zn7hvo"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-01T19:57:56.000Z",
     "timelineAt": "2026-10-05T05:28:27.596Z",
     "discoveredAt": "2026-10-05T05:28:27.596Z"
   },
@@ -1458,7 +1479,7 @@
       "paper": "https://arxiv.org/abs/2610.03430",
       "aisafetyhot": "https://aisafetyhot.com/items/bapsv3qaq7nma187p04u39r5s"
     },
-    "publishedAt": null,
+    "publishedAt": "2026-10-02T15:12:43.000Z",
     "timelineAt": "2026-10-05T08:20:35.525Z",
     "discoveredAt": "2026-10-05T08:20:35.525Z"
   },
@@ -1581,7 +1602,7 @@
       "paper": "https://arxiv.org/abs/2610.02986",
       "aisafetyhot": "https://aisafetyhot.com/items/rdl25qepxyocly18ca57sq7q8"
     },
-    "publishedAt": null,
+    "publishedAt": "2026-10-02T08:22:46.000Z",
     "timelineAt": "2026-10-05T05:22:36.820Z",
     "discoveredAt": "2026-10-05T05:22:36.820Z"
   },
@@ -1620,7 +1641,7 @@
       "paper": "https://arxiv.org/abs/2610.02910",
       "aisafetyhot": "https://aisafetyhot.com/items/luzd6goluejeoo3ac1d71wnrg"
     },
-    "publishedAt": null,
+    "publishedAt": "2026-10-02T07:00:49.000Z",
     "timelineAt": "2026-10-05T07:21:15.885Z",
     "discoveredAt": "2026-10-05T07:21:15.885Z"
   },
@@ -1808,12 +1829,33 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 PowerBench，用于评测语言模型在权力转移类请求上的系统性差异，把请求分为自我赋权、去权和夺权三类，并设置不改变权力的拒答诱导请求作为对照。数据集在权力领域、情境、受影响方规模和用户原有权力地位上做变化，覆盖 24 个模型（12 个来自美国开发者、12 个来自中国开发者），在用户与受影响方国籍互换、AI 智能体作为用户、8 种请求语言三种条件下评测。结果显示模型对夺权的拒答多于去权，对去权的拒答多于自我赋权；夺权拒答率随受影响方规模从个人上升到社会而提高。模型倾向于帮助他人从美国夺取权力，而不愿帮助美国用户从他人处夺取权力，但在美国获得权力且无人受损时偏向美国。当用户是 AI 智能体时，对权力转移请求的拒答增加，在针对个人的夺权上尤为明显。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "语言模型日益协助可能改变权力分配的请求。若某些身份稳定得到更多帮助，作者担心差距会累积，或被用来挑选更少被拒的身份。作者认为应测量拒答偏差有多大、偏向谁。",
+          "label": "问题"
+        },
+        {
+          "text": "作者构建PowerBench，区分自赋权、削权、夺权和一组不转移权力的对照。同一请求还改写国籍、是否由AI智能体提出，以及8种语言。24个模型在关闭推理下各答一次，由自动评审判定是否仍有实质帮助。",
+          "label": "方法"
+        },
+        {
+          "text": "在基础英语上，24个模型都是夺权拒答高于削权、削权高于自赋权。夺权拒答随受影响方从个人升到社会。作者报告模型更少保护会失权的美国一方，但在无人受损的美国增益上拒答更低；AI智能体被拒更多；语言偏差大，跨模型后大体抵消。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出请求不够真实、只测单轮首答，人工金标仅英语，地缘轴与贫富、民主和制裁混杂，且未测不道德手段及推理开启后的偏差。评测含24个模型、8种语言、18组国籍和排除健康域的智能体改写；测的是拒答而非权力流向。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.02303"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.02303",
       "aisafetyhot": "https://aisafetyhot.com/items/r0xrolro3s6xhoittfl9yqfnz"
     },
-    "publishedAt": null,
+    "publishedAt": "2026-10-01T17:57:25.000Z",
     "timelineAt": "2026-10-05T04:20:33.809Z",
     "discoveredAt": "2026-10-05T04:20:33.809Z"
   },
@@ -1852,7 +1894,7 @@
       "paper": "https://arxiv.org/abs/2610.03095",
       "aisafetyhot": "https://aisafetyhot.com/items/npiy9djn5xvmghlg7sgzd8g80"
     },
-    "publishedAt": null,
+    "publishedAt": "2026-10-02T10:17:08.000Z",
     "timelineAt": "2026-10-05T05:22:14.220Z",
     "discoveredAt": "2026-10-05T05:22:14.220Z"
   },
@@ -1891,7 +1933,7 @@
       "paper": "https://arxiv.org/abs/2610.02568",
       "aisafetyhot": "https://aisafetyhot.com/items/h8yclwas5ka394u20013u65a2"
     },
-    "publishedAt": "2026-10-01T23:00:00.000Z",
+    "publishedAt": "2026-10-01T23:00:49.000Z",
     "timelineAt": "2026-10-05T07:21:39.031Z",
     "discoveredAt": "2026-10-05T07:21:39.031Z"
   },
@@ -1909,7 +1951,7 @@
       "paper": "https://arxiv.org/abs/2610.00972",
       "aisafetyhot": "https://aisafetyhot.com/items/p4nau0wqqxhk9f6ptl2jddmly"
     },
-    "publishedAt": "2026-09-30T20:00:00.000Z",
+    "publishedAt": "2026-10-01T03:02:17.000Z",
     "timelineAt": "2026-10-05T08:42:18.705Z",
     "discoveredAt": "2026-10-05T08:42:18.705Z"
   },
@@ -1922,12 +1964,33 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 CorrectGuard，一个面向黑盒安全护栏的免查看正确性估计框架，用于在人类不可查看用户输入和机器不可查看输入两种场景下评估护栏表现。该方法仅使用有标注的可查看数据训练独立的模型评估器，预测护栏对不可访问输入的判定是否正确，无需接触护栏内部。研究在涵盖有害内容、越狱、提示注入和提取的 13 个安全数据集上，以留一数据集方式评估上下文学习、嵌入向量和微调三类正确性模型，并将开源权重护栏统一视为黑盒。结果显示，基于上下文学习的正确性分类器在两种场景下均显著提升错误识别能力，宏观准确率最高提升 25 个百分点，基于微调的方法提升近 15 个百分点，但不同护栏和留出数据集之间差异明显。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "黑盒安全护栏的离线基准未必代表生产分布，隐私约束又常使人无法检查生产输入，有时模型也不能看原文或可反演嵌入。运营者能看到决策，却不能直接判断对错。",
+          "label": "问题"
+        },
+        {
+          "text": "CorrectGuard用其他分布的有标签eyes-on数据训练独立正确性模型，不读护栏内部，估计决策是否正确。人eyes-off可用文本或嵌入；机器eyes-off用BinaryShield指纹。在13个数据集上做LODO，比较ICL、嵌入MLP和LoRA微调。",
+          "label": "方法"
+        },
+        {
+          "text": "三个开源护栏上，Granite的ICL宏平均lift为+0.258（Table II）。讨论称最好的排序把AURC从0.330–0.438降到0.170–0.217。作者称偏移下校准变差，二值指纹实验的结果参差。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出ICL只用GPT 5.4，微调用中小模型，护栏是开源代理而非闭源系统，且用了LoRA；BinaryShield只用稀疏向量，效用展示在护栏范围内。实验为3个护栏、13个数据集和LODO；论文未报告重复次数和校准后指标。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.03470"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.03470",
       "aisafetyhot": "https://aisafetyhot.com/items/idxcx8k7lbtvz4tkhzk9zorbv"
     },
-    "publishedAt": null,
+    "publishedAt": "2026-10-02T15:42:10.000Z",
     "timelineAt": "2026-10-05T05:22:29.333Z",
     "discoveredAt": "2026-10-05T05:22:29.333Z"
   },
@@ -1945,7 +2008,7 @@
       "paper": "https://arxiv.org/abs/2610.02349",
       "aisafetyhot": "https://aisafetyhot.com/items/akvgfdeet0r7vvslnmcqt6vwg"
     },
-    "publishedAt": null,
+    "publishedAt": "2026-10-01T18:22:22.000Z",
     "timelineAt": "2026-10-05T12:21:29.011Z",
     "discoveredAt": "2026-10-05T12:21:29.011Z"
   },
@@ -2007,7 +2070,7 @@
       "paper": "https://arxiv.org/abs/2610.01490",
       "aisafetyhot": "https://aisafetyhot.com/items/skcvcomt6n1kl0l8b0x4m185o"
     },
-    "publishedAt": "2026-10-01T11:30:00.000Z",
+    "publishedAt": "2026-10-01T11:30:39.000Z",
     "timelineAt": "2026-10-05T12:21:51.753Z",
     "discoveredAt": "2026-10-05T12:21:51.753Z"
   },
@@ -2052,7 +2115,7 @@
       "paper": "https://arxiv.org/abs/2610.02829",
       "aisafetyhot": "https://aisafetyhot.com/items/t0kjntrunxuq0rjtjvdrn05e7"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-02T05:22:12.000Z",
     "timelineAt": "2026-10-05T04:26:18.825Z",
     "discoveredAt": "2026-10-05T04:26:18.825Z"
   },
@@ -2095,7 +2158,7 @@
       "paper": "https://arxiv.org/abs/2610.02741",
       "aisafetyhot": "https://aisafetyhot.com/items/zeugbp2yhjam09nqrhy0e51o1"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-02T03:12:54.000Z",
     "timelineAt": "2026-10-05T04:14:25.398Z",
     "discoveredAt": "2026-10-05T04:14:25.398Z"
   },
@@ -2264,7 +2327,7 @@
       "paper": "https://arxiv.org/abs/2610.02874",
       "aisafetyhot": "https://aisafetyhot.com/items/a0jbe274bc2sh50q2jpeqjxio"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-02T06:12:12.000Z",
     "timelineAt": "2026-10-05T04:24:17.412Z",
     "discoveredAt": "2026-10-05T04:24:17.412Z"
   },
@@ -2306,7 +2369,7 @@
       "paper": "https://arxiv.org/abs/2610.02928",
       "aisafetyhot": "https://aisafetyhot.com/items/cpuwoayy9eer6458vg7mvpfox"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-02T07:17:41.000Z",
     "timelineAt": "2026-10-05T05:37:25.555Z",
     "discoveredAt": "2026-10-05T05:37:25.555Z"
   },
@@ -2363,12 +2426,33 @@
     "selected": false,
     "attention": null,
     "summaryZh": "论文主张不应把模型本身当作安全边界，Agent 在 Kubernetes 上的安全应作为基础设施问题处理，所有保证都需在 Agent 已被提示注入完全攻陷的假设下成立。作者提出十类威胁分类法（对齐 OWASP 智能体应用指南）、九条设计原则（核心是工具边界的完全中介，以及打破不可信输入、敏感访问与外部外发三者的组合）、七层纵深防御框架，并映射到工作负载身份、RBAC 与 ValidatingAdmissionPolicy、基于 SIG Apps Agent Sandbox 项目的 gVisor/Kata 沙箱、FQDN 感知的外发策略、带策略即代码的 Agent/MCP 网关与 eBPF 运行时执行等 Kubernetes 原生机制。作者未报告实测的攻击成功率或性能开销数据，而是列出残余风险和验证该框架所需的测量项。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "运维智能体在Kubernetes上读遥测、调工具、执行代码并改集群状态，读到的日志、工单或工具描述可能改写其行动。作者认为模型不是安全边界，保证必须在智能体被完全攻破时仍然成立。",
+          "label": "问题"
+        },
+        {
+          "text": "把智能体当不可信租户，用九条原则和七层控制：身份、RBAC与VAP、沙箱、默认拒绝出站、对工具参数做策略的网关、密钥不进上下文，以及eBPF和审批分级。参考架构绑定EKS、AKS、GKE。",
+          "label": "方法"
+        },
+        {
+          "text": "评估是定性的。作者称Table 4中每类威胁至少有两层缓解，且主控制不依赖模型行为；四条走查讨论日志诱导缩容、工具投毒外泄、沙箱内恶意代码，以及无对手的反复补救。未报告ASR、延迟或开销。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者写评估是分析而非测量，覆盖矩阵是判断不是实测，制品未做文中报告的红队，所引项目或API版本可能变化。后续工作包括注入基准、绕过测试、开销和审批负担。讨论中还写若干授权与追踪原语缺少标准。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.02861"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.02861",
       "aisafetyhot": "https://aisafetyhot.com/items/kgo4o9cx00s3s29a0wad2ofsn"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-02T05:54:52.000Z",
     "timelineAt": "2026-10-05T05:28:27.614Z",
     "discoveredAt": "2026-10-05T05:28:27.614Z"
   },
@@ -2409,7 +2493,7 @@
       "paper": "https://arxiv.org/abs/2610.02853",
       "aisafetyhot": "https://aisafetyhot.com/items/dak4sairun3dprzmxia0sfklq"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-02T05:39:06.000Z",
     "timelineAt": "2026-10-05T05:28:27.609Z",
     "discoveredAt": "2026-10-05T05:28:27.609Z"
   },
@@ -2427,7 +2511,7 @@
       "paper": "https://arxiv.org/abs/2610.02920",
       "aisafetyhot": "https://aisafetyhot.com/items/dvq0ico8rpbfx7ocyuuamexk8"
     },
-    "publishedAt": null,
+    "publishedAt": "2026-10-02T07:10:08.000Z",
     "timelineAt": "2026-10-05T08:25:41.868Z",
     "discoveredAt": "2026-10-05T08:25:41.868Z"
   },
@@ -2466,7 +2550,7 @@
       "paper": "https://arxiv.org/abs/2610.02557",
       "aisafetyhot": "https://aisafetyhot.com/items/o4shom3qyz4bqqs8nfsy0ymp7"
     },
-    "publishedAt": "2026-10-01T22:45:00.000Z",
+    "publishedAt": "2026-10-01T22:45:03.000Z",
     "timelineAt": "2026-10-05T09:20:58.920Z",
     "discoveredAt": "2026-10-05T09:20:58.920Z"
   },
@@ -2510,7 +2594,7 @@
       "paper": "https://arxiv.org/abs/2610.02268",
       "aisafetyhot": "https://aisafetyhot.com/items/akw7nnbajx6q4nlr0fe06tb8k"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-01T06:00:43.000Z",
     "timelineAt": "2026-10-05T05:37:25.501Z",
     "discoveredAt": "2026-10-05T05:37:25.501Z"
   },
@@ -2600,7 +2684,7 @@
       "paper": "https://arxiv.org/abs/2610.03093",
       "aisafetyhot": "https://aisafetyhot.com/items/os0fzlqzwegd5nfjuj0gb9l32"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-02T10:13:58.000Z",
     "timelineAt": "2026-10-05T05:28:27.645Z",
     "discoveredAt": "2026-10-05T05:28:27.645Z"
   },
@@ -2648,7 +2732,7 @@
       "paper": "https://arxiv.org/abs/2610.03166",
       "aisafetyhot": "https://aisafetyhot.com/items/f71l417w8a02polk7763xdxoy"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-02T11:44:09.000Z",
     "timelineAt": "2026-10-05T05:37:25.571Z",
     "discoveredAt": "2026-10-05T05:37:25.571Z"
   },
@@ -2666,7 +2750,7 @@
       "paper": "https://arxiv.org/abs/2610.02281",
       "aisafetyhot": "https://aisafetyhot.com/items/xp1h84ub4qildnlrrbx8disqm"
     },
-    "publishedAt": null,
+    "publishedAt": "2026-10-01T12:03:05.000Z",
     "timelineAt": "2026-10-05T08:21:24.710Z",
     "discoveredAt": "2026-10-05T08:21:24.710Z"
   },
@@ -2705,7 +2789,7 @@
       "paper": "https://arxiv.org/abs/2608.26762",
       "aisafetyhot": "https://aisafetyhot.com/items/e6ombcglc7hptsh0u8nzxzkpt"
     },
-    "publishedAt": "2026-09-25T20:00:00.000Z",
+    "publishedAt": "2026-08-27T07:55:42.000Z",
     "timelineAt": "2026-10-05T14:21:32.599Z",
     "discoveredAt": "2026-10-05T14:21:32.599Z"
   },
@@ -2786,7 +2870,7 @@
       "paper": "https://arxiv.org/abs/2610.02824",
       "aisafetyhot": "https://aisafetyhot.com/items/w91z67qr4915soitm3pa4tqvf"
     },
-    "publishedAt": "2026-10-01T20:00:00.000Z",
+    "publishedAt": "2026-10-02T05:16:42.000Z",
     "timelineAt": "2026-10-05T03:04:12.884Z",
     "discoveredAt": "2026-10-05T03:04:12.884Z"
   },
@@ -2825,7 +2909,7 @@
       "paper": "https://arxiv.org/abs/2610.03033",
       "aisafetyhot": "https://aisafetyhot.com/items/oxisp8gmjdsquzdegyyhqhevv"
     },
-    "publishedAt": null,
+    "publishedAt": "2026-10-02T09:15:44.000Z",
     "timelineAt": "2026-10-05T08:20:28.049Z",
     "discoveredAt": "2026-10-05T08:20:28.049Z"
   },
@@ -2843,7 +2927,7 @@
       "paper": "https://arxiv.org/abs/2610.02662",
       "aisafetyhot": "https://aisafetyhot.com/items/ixrrylidxoey7gm6und731ax6"
     },
-    "publishedAt": "2026-10-02T01:31:00.000Z",
+    "publishedAt": "2026-10-02T01:31:57.000Z",
     "timelineAt": "2026-10-05T09:21:06.461Z",
     "discoveredAt": "2026-10-05T09:21:06.461Z"
   },
@@ -2923,7 +3007,7 @@
       "paper": "https://arxiv.org/abs/2610.02456",
       "aisafetyhot": "https://aisafetyhot.com/items/tfxny6h7xarv85yq1nuhxadgy"
     },
-    "publishedAt": null,
+    "publishedAt": "2026-10-01T20:30:13.000Z",
     "timelineAt": "2026-10-05T05:22:21.801Z",
     "discoveredAt": "2026-10-05T05:22:21.801Z"
   },
@@ -2969,7 +3053,7 @@
       "paper": "https://arxiv.org/abs/2610.02781",
       "aisafetyhot": "https://aisafetyhot.com/items/biy8wmgggklapmbnmhqtshs4p"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-02T04:14:57.000Z",
     "timelineAt": "2026-10-05T04:14:25.409Z",
     "discoveredAt": "2026-10-05T04:14:25.409Z"
   },
@@ -3008,7 +3092,7 @@
       "paper": "https://arxiv.org/abs/2610.03574",
       "aisafetyhot": "https://aisafetyhot.com/items/whwnhtdyq1t4dohgp9n19drqy"
     },
-    "publishedAt": "2026-10-01T20:00:00.000Z",
+    "publishedAt": "2026-10-02T16:48:49.000Z",
     "timelineAt": "2026-10-05T05:06:25.116Z",
     "discoveredAt": "2026-10-05T05:06:25.116Z"
   },
@@ -3054,7 +3138,7 @@
       "paper": "https://arxiv.org/abs/2610.02817",
       "aisafetyhot": "https://aisafetyhot.com/items/vd1513mvwj3l6iz2sakbfskfz"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-02T05:05:06.000Z",
     "timelineAt": "2026-10-05T05:37:25.533Z",
     "discoveredAt": "2026-10-05T05:37:25.533Z"
   },
@@ -3157,7 +3241,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "DNAlign 是一种轻量级安全对齐框架，将控制论优化与零空间投影结合，把 LLM 视为动态系统并施加可控扰动以引导生成走向安全行为。其投影模块将扰动限制在由中性隐藏状态导出的有害相关子空间内，从而保留通用知识与回答质量；基于人类偏好数据训练的价值函数自适应优化控制信号。在多个 LLM 基座上的评测显示，该框架持续减少有害输出，同时保持流畅性、连贯性与事实效用，整体表现优于既有对齐基线且未牺牲生成多样性。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "安全对齐常伤及流畅性、事实性或已有知识。作者要在同一次推理里压低有害输出，并保住良性问题的生成质量。",
+          "label": "问题"
+        },
+        {
+          "text": "DNAlign不改参数。它把解码写成动态系统，用HH-RLHF上训练的价值函数优化控制信号，再投影到由SHP中性隐藏状态确定的零空间。",
+          "label": "方法"
+        },
+        {
+          "text": "Table I中DNAlign的平均奖励均高于同表基线，Vicuna-7B、HH-RLHF为1.2258。多样性与连贯性并非每格最高。Qwen-7B在10个batch时推理12.447分钟。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "论文未专节写局限。实验报告Vicuna-7B与Qwen-7B；有害泛化、无害集和推理时间主要写Qwen-7B。论文未报告重复次数、λ、选定的k，以及HH-RLHF训练与评测是否划分。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.02844"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.02844",
       "aisafetyhot": "https://aisafetyhot.com/items/ylb0x7x8eygae9bv4oq3qr18c"
@@ -3208,7 +3313,7 @@
       "paper": "https://arxiv.org/abs/2610.03073",
       "aisafetyhot": "https://aisafetyhot.com/items/kmgkicthya9a9fn8d4pluu7j0"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-02T09:57:05.000Z",
     "timelineAt": "2026-10-05T05:28:27.630Z",
     "discoveredAt": "2026-10-05T05:28:27.630Z"
   },
@@ -3374,7 +3479,7 @@
       "paper": "https://arxiv.org/abs/2610.03498",
       "aisafetyhot": "https://aisafetyhot.com/items/f7nx9ma5e8we4ro9u1igiumcb"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-02T15:57:04.000Z",
     "timelineAt": "2026-10-05T04:26:18.859Z",
     "discoveredAt": "2026-10-05T04:26:18.859Z"
   },
@@ -3413,7 +3518,7 @@
       "paper": "https://arxiv.org/abs/2609.39820",
       "aisafetyhot": "https://aisafetyhot.com/items/uzojak7krhd1jvzk7kqauvbjb"
     },
-    "publishedAt": "2026-09-29T20:00:00.000Z",
+    "publishedAt": "2026-09-30T14:23:36.000Z",
     "timelineAt": "2026-10-05T15:23:33.202Z",
     "discoveredAt": "2026-10-05T15:23:33.202Z"
   },
@@ -3475,7 +3580,7 @@
       "paper": "https://arxiv.org/abs/2610.02391",
       "aisafetyhot": "https://aisafetyhot.com/items/pzj3jfteyvy2ivajyn3721p2v"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-01T19:16:49.000Z",
     "timelineAt": "2026-10-05T04:26:18.811Z",
     "discoveredAt": "2026-10-05T04:26:18.811Z"
   },
@@ -3514,7 +3619,7 @@
       "paper": "https://arxiv.org/abs/2610.02126",
       "aisafetyhot": "https://aisafetyhot.com/items/avdy7ztw05bq0uf1v1uwqb41p"
     },
-    "publishedAt": "2026-09-30T20:00:00.000Z",
+    "publishedAt": "2026-10-01T17:39:03.000Z",
     "timelineAt": "2026-10-05T06:08:21.796Z",
     "discoveredAt": "2026-10-05T06:08:21.796Z"
   },
@@ -3532,7 +3637,7 @@
       "paper": "https://arxiv.org/abs/2610.03240",
       "aisafetyhot": "https://aisafetyhot.com/items/u99ktawm16udnnslpypxxkjdv"
     },
-    "publishedAt": "2026-10-01T20:00:00.000Z",
+    "publishedAt": "2026-10-02T12:49:44.000Z",
     "timelineAt": "2026-10-05T11:46:39.234Z",
     "discoveredAt": "2026-10-05T11:46:39.234Z"
   },
@@ -3564,26 +3669,6 @@
   },
   {
     "arxivId": null,
-    "title": "MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement",
-    "titleZh": "小米 MiMo-V2.6 发布：以强化学习扩展推动模型自我改进",
-    "authors": [
-      "LLM-Core Xiaomi"
-    ],
-    "category": "ai_news",
-    "selected": false,
-    "attention": null,
-    "summaryZh": "小米发布 MiMo-V2.6 系列全模态模型，含 1.02T 参数、42B 激活参数的 MiMo-V2.6-Pro 和 310B 参数、15B 激活参数的 MiMo-V2.6-Flash，通过扩展强化学习算力推进模型自我改进。其 RL 训练每步消耗 1,568 个样本、2.7∼3.7B tokens，上下文长度最高 1M，覆盖代码、通用、视觉与网络等环境，并冻结 MoE router、建立多层防御以抑制奖励作弊。团队开源训练动态、RL 环境与 RL 框架。",
-    "quickRead": null,
-    "links": {
-      "paper": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf",
-      "aisafetyhot": "https://aisafetyhot.com/items/aoa3ogbs9h1ksw5i3ixa1md2j"
-    },
-    "publishedAt": "2026-09-21T19:58:58.000Z",
-    "timelineAt": "2026-10-04T21:43:25.801Z",
-    "discoveredAt": "2026-10-04T21:43:25.801Z"
-  },
-  {
-    "arxivId": null,
     "title": "Aleph Alpha发布德英双语开放权重模型Kolibri",
     "titleZh": "Aleph Alpha 发布德英双语开放权重 MoE 推理模型 Kolibri",
     "authors": [],
@@ -3599,50 +3684,6 @@
     "publishedAt": null,
     "timelineAt": "2026-10-05T03:33:56.108Z",
     "discoveredAt": "2026-10-05T03:33:56.108Z"
-  },
-  {
-    "arxivId": "2610.03163",
-    "title": "Predicting Steering Vectors and Adapter Weights for Few-Shot Author-Style Transfer",
-    "titleZh": "预测引导向量与适配器权重实现少样本作者风格迁移",
-    "authors": [
-      "Leonard Popp",
-      "Danni Liu",
-      "Supriti Sinhamahapatra",
-      "Jan Niehues"
-    ],
-    "category": "alignment",
-    "selected": false,
-    "attention": null,
-    "summaryZh": "研究针对科学写作中少样本作者风格迁移难题，提出对比激活引导、引导向量预测网络和预测 LoRA 适配器的超网络三种方法。结果显示风格模仿与输出质量存在权衡：微调获得最多风格信号但损失流畅度，超网络在已见和未见作者上取得最佳平衡。作者级引导无需预定义风格清单，且手动提取与预测的引导向量近乎正交却评分相当。",
-    "quickRead": {
-      "parts": [
-        {
-          "text": "科学摘要的作者文风要在冷启动下从三篇示例里抽出。形式惯例留下的表面差异少，文风又容易和作者自己的题目缠在一起；新作者没有可供微调或检索的历史。",
-          "label": "问题"
-        },
-        {
-          "text": "基座冻结。手工steering用同一内容的作者摘要激活减去模型中性摘要激活。两个网络从三篇摘要的STAR嵌入预测steering向量或秩8的LoRA，训练时示例不进入上下文。",
-          "label": "方法"
-        },
-        {
-          "text": "已见作者Hypernet风格准确率36.5%、偏好率91.3%，LoRA为49.8%与38.1%（Table 3a）。未见作者Hypernet为31.4%与95.5%，zero-shot风格准确率22.9%（Table 3b）。",
-          "label": "实验与结果"
-        },
-        {
-          "text": "作者指出风格指标与内容纠缠，且未做作者特异对照。层范围只比窄带与全深度。模型为Qwen3-4B-Instruct-2507，数据为2022年前英文cs.AI/cs.LG摘要；作者称需跨规模、家族、领域和语言复现。",
-          "label": "局限与可以继续做的"
-        }
-      ],
-      "sourceName": "论文 PDF（AI 生成）",
-      "sourceUrl": "https://arxiv.org/abs/2610.03163"
-    },
-    "links": {
-      "paper": "https://arxiv.org/abs/2610.03163",
-      "aisafetyhot": "https://aisafetyhot.com/items/e0lhzvz8bah4x9f8mpg07qg72"
-    },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
-    "timelineAt": "2026-10-05T04:26:18.831Z",
-    "discoveredAt": "2026-10-05T04:26:18.831Z"
   },
   {
     "arxivId": "2610.03389",
@@ -3686,7 +3727,7 @@
       "paper": "https://arxiv.org/abs/2610.03389",
       "aisafetyhot": "https://aisafetyhot.com/items/jwe31oqyw0twbf2n46ddy4899"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-02T14:37:53.000Z",
     "timelineAt": "2026-10-05T04:26:18.836Z",
     "discoveredAt": "2026-10-05T04:26:18.836Z"
   },
@@ -3730,7 +3771,7 @@
       "paper": "https://arxiv.org/abs/2610.03698",
       "aisafetyhot": "https://aisafetyhot.com/items/r1czt1bhjukjpb2jol0xqtthx"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-02T17:55:06.000Z",
     "timelineAt": "2026-10-05T04:26:18.847Z",
     "discoveredAt": "2026-10-05T04:26:18.847Z"
   },
@@ -3777,7 +3818,7 @@
       "paper": "https://arxiv.org/abs/2610.03641",
       "aisafetyhot": "https://aisafetyhot.com/items/ea15rf0v8skfqpohie50wmegl"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-02T17:29:22.000Z",
     "timelineAt": "2026-10-05T04:14:25.455Z",
     "discoveredAt": "2026-10-05T04:14:25.455Z"
   },
@@ -3797,12 +3838,33 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出一种组合互补奖励信号的文生图后训练方法，将基于 Bradley-Terry 目标、用大规模人类偏好数据训练的偏好奖励，与评估提示词忠实度并防止奖励作弊的评分标准奖励结合，并指出简单加权平均会导致优化次优。在 Arena 文生图排行榜上，经 RL 训练的 Flux2dev 的 Elo 比基座模型高 69 分，后训练的 Ideogram-4 以 1223.5 的 Elo 超过所有开源模型（SOTA 声明基于 2026 年 9 月 4 日的排行榜快照）。团队同时发布 1K 子集 Arena-T2I-Training 以支持可复现研究。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "开放域文生图的后训练缺一个能覆盖人类偏好各方面的奖励。作者称偏好模型偏整体观感，看不见提示忠实度等稀疏属性，直接优化还会被利用。",
+          "label": "问题"
+        },
+        {
+          "text": "用Bradley–Terry偏好奖励（Arena投票或PickScore），加上忠实度、只对strict提示开启的约束，以及hack检测。检测命中则否决正的偏好分，不给躲开检测加分。两套LoRA增量等权平均，优化器用DiffusionNFT。",
+          "label": "方法"
+        },
+        {
+          "text": "Table 2中Stage 3对FLUX.2的Gemini胜率，Arena RM为0.660，PickScore为0.626。作者称Arena上FLUX.2-dev的Elo为1202.1，Ideogram-4为1223.5。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者在Sec. 5写出四点：只评两个基座、未评智能体流程、忠实度问题未经人工审核、只报一个随机种子。实验另覆盖Gemini与GPT-5.4评审、Arena真人Elo，以及Ideogram-4仅Stage 1并加OCR奖励。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.02967"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.02967",
       "aisafetyhot": "https://aisafetyhot.com/items/ye922uw98ch2ppxz9wyd29uos"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-02T08:05:34.000Z",
     "timelineAt": "2026-10-05T04:14:25.418Z",
     "discoveredAt": "2026-10-05T04:14:25.418Z"
   },
@@ -3866,7 +3928,7 @@
       "paper": "https://arxiv.org/abs/2610.02504",
       "aisafetyhot": "https://aisafetyhot.com/items/o06lumb0xwv0zl26j9qwy6ow4"
     },
-    "publishedAt": "2026-10-05T04:00:00.000Z",
+    "publishedAt": "2026-10-01T21:26:35.000Z",
     "timelineAt": "2026-10-05T05:37:25.524Z",
     "discoveredAt": "2026-10-05T05:37:25.524Z"
   }
