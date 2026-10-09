@@ -3357,36 +3357,6 @@
     "discoveredAt": "2026-10-04T07:17:02.738Z"
   },
   {
-    "arxivId": null,
-    "title": "A scoping review on the mental health harms of LLM-based chatbots",
-    "titleZh": "范围综述梳理 LLM 聊天机器人对心理健康的 119 篇相关文献",
-    "authors": [
-      "Alexander Diel",
-      "John Torous",
-      "Pim Cuijpers",
-      "Jens Kleesiek",
-      "Felix Nensa",
-      "Niels Weber",
-      "Franziska Faust",
-      "Tania Josan Lalgi",
-      "Finley Sam Mellis",
-      "Martin Teufel",
-      "Alexander Bäuerle"
-    ],
-    "category": "eval",
-    "selected": false,
-    "attention": null,
-    "summaryZh": "一篇发表于 npj Digital Medicine 的范围综述系统梳理了 119 篇关于 LLM 聊天机器人（LLM-CB）心理健康危害的文献，将其归纳为概念性工作、心理健康支持使用、认知过度依赖、AI 依赖和 AI 精神病五类主题。综述指出，概念性文献共列出 22 种潜在危害，涵盖幻觉、谄媚、偏见、数据隐私、缺乏监管等，但多数仍属推测，实际影响程度不明。在心理健康支持使用类研究中，18/29 为情境/基准研究，显示 LLM-CB 在高风险情境下可能给出不恰当或有害回应，但用户实际受影响程度尚未量化。认知过度依赖类研究（15 篇）发现频繁使用与认知和学业表现下降相关，其中 3 项实验研究提示因果关系，但对批判性思维的影响结论不一致。综述还提到 OpenAI 2025 年自报数据估计超过百万 ChatGPT 用户（约 0.15%）表现出严重心理困扰迹象，该数据基于内部分类器、未经独立验证。",
-    "quickRead": null,
-    "links": {
-      "paper": "https://nature.com/articles/s41746-026-03054-x",
-      "aisafetyhot": "https://aisafetyhot.com/items/mxv63eg3ub8xbyw0qoqo16or2"
-    },
-    "publishedAt": "2026-08-20T00:00:00.000Z",
-    "timelineAt": "2026-10-04T08:49:10.658Z",
-    "discoveredAt": "2026-10-04T08:49:10.658Z"
-  },
-  {
     "arxivId": "2608.30387",
     "title": "Attesting Outputs and Delegation Ancestry in Multi-Agent AI Systems",
     "titleZh": "研究者提出多智能体系统输出与委派链路双层存证方案",
@@ -5008,7 +4978,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "Shobhan Roy 的论文指出，基于物理的求解器必须让编译器读取某些模块，但同一批知识产权不应被编码 Agent 读取，而现有工具链并不自带这条规则。作者针对容器、权限规则和沙箱三种隔离手段，对十五条读取路径做了分类，结论是三者都无法判断究竟是哪个程序在读取文件。论文共 6 页，含 1 张图和 1 张表，随附分类与历史脚本及其输出，归入 cs.CR、cs.AI 与 cs.SE，编号 arXiv:2609.35557。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "物理求解器里，本组材料与反应模型是编译必须读的知识产权，编码智能体却不能读：字节一进上下文就会离开本机。容器、权限规则和沙箱都判不了是哪个程序在读。",
+          "label": "问题"
+        },
+        {
+          "text": "作者把十五条到达上下文的路径，按所跑配置分到容器、权限规则、沙箱和指令文件。覆盖指该机制的规则作用到该路径并拒绝它。另记拒绝列表修订和拒绝事件。",
+          "label": "方法"
+        },
+        {
+          "text": "作者称两者都覆盖2条、仅沙箱7条、仅权限规则1条、都不覆盖5条。直接读在分类中被拒，编译器的打印式输出模式不被拒。四次修订后规则数为586，起点14。七周64次拒绝里54次是复合命令整行被拒。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "论文无局限专节。作者称负结果限于不能改harness、不能加载内核策略的普通用户，不约束宿主机root，也不考察指定对手或敌对智能体。分类有60格，仅两条在诱饵树上见过拒绝。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2609.35557"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2609.35557",
       "aisafetyhot": "https://aisafetyhot.com/items/vz0kjn9mvb292ndu1mkeece38"

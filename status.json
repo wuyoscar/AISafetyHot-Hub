@@ -1,7 +1,7 @@
 {
   "note": "days 是网站上每天（北京时间，按 timelineAt 分天）进站、判定为 AI 安全的论文：信源为 arXiv、Hugging Face Daily Papers 和论文追踪，同一篇 arXiv 论文一天只算一次（arXiv 编号取网站 /api/site/items/<id> 的 links.original；留哪一条：精选优先，再按网站的 score 高，非精选也按 score，再按 timelineAt 早，最后按 id 字典序）。ids 是网站条目 id（网站上的 /items/<id>），按字典序排列；idsSha256 是排好的 ids 用换行连起来（末尾不加换行）的 SHA-256。论文在网站上出现以后（从第一次能在网站上看到算起，不是 timelineAt：回填的论文 timelineAt 早于出现的时间），slaMinutes 分钟内应出现在 papers/<年>/<日期>.json。这个文件只在内容变化时随那次提交更新；generatedAt 是那次生成的时间，siteFetchedAt 是读网站接口的时间。",
-  "generatedAt": "2026-10-09T12:15:46.472Z",
-  "siteFetchedAt": "2026-10-09T12:15:44.521Z",
+  "generatedAt": "2026-10-09T15:10:13.261Z",
+  "siteFetchedAt": "2026-10-09T15:10:09.699Z",
   "slaMinutes": 60,
   "days": {
     "2026-10-09": {
@@ -595,8 +595,8 @@
       ]
     },
     "2026-10-05": {
-      "count": 99,
-      "idsSha256": "0adb6016804e8bbdc3d18eb4e139dfe218ac02832eb945f76a8918344a78ce47",
+      "count": 98,
+      "idsSha256": "ace71f048f09e7641c1fbab6a997dd0886fcde60b066038f2435637d5eea6db4",
       "ids": [
         "a0jbe274bc2sh50q2jpeqjxio",
         "akmgpfv9b24w73i4y7thjz84g",
@@ -663,7 +663,6 @@
         "p4nau0wqqxhk9f6ptl2jddmly",
         "paiag3tu6reha0301fkom0pd3",
         "pd3wxu236uitcwquf7fd8nf91",
-        "pgo2h25ajp1foz4fqqrdpblha",
         "pjt5f472h3t7zsdqm2c7ajdi0",
         "pzj3jfteyvy2ivajyn3721p2v",
         "qi3apk6gwnqw25atfywbdnh47",
@@ -700,8 +699,8 @@
       ]
     },
     "2026-10-04": {
-      "count": 144,
-      "idsSha256": "6feb76db426ca24d43f53593adcbfe8cea86623f851e0313d953dd1c51b429a2",
+      "count": 143,
+      "idsSha256": "18c3e80568624781f9f031f540cb503244348d8767bdceafb05b4814570a0f8e",
       "ids": [
         "a4uf2s08t1zl5uwt9ha4r0jge",
         "a84mzcx2dsiftmfda8tr11b9h",
@@ -776,7 +775,6 @@
         "mklfk0m4pr45ofcfpoap2gt8a",
         "msfvtsfpc76u90cw9ayh1e9p1",
         "mv7xq19jmztwc65x7usck0aq0",
-        "mxv63eg3ub8xbyw0qoqo16or2",
         "nh6jkjk895uqmqxh0kpfcgq3b",
         "nheqtjdeyi1h3tu9pqw130jvg",
         "nj7irs369ao49ivtkawej57xf",

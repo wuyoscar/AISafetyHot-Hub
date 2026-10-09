@@ -1946,7 +1946,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "论文提出 VeriHarness，在固定基座模型、测试时不提供参考答案和评分标准的前提下，把生成模型本身改造成智能体验证器，为其配备工作区、证据工具和可复用的验证技能。方法包含两部分：分歧消解器用环境证据核对相互冲突的主张，共识挑战者则检验各方一致的主张并查找遗漏需求，两者的发现用于筛选和修订最终产物。在五个长时程工作区基准和两个前沿模型上，VeriHarness 取得所评估基线中最高的选择分数；有证据支撑的修订进一步提升平均表现，相比单次 rollout 在 Gemini 3.5 Flash 上提升 6.2 分、在 Claude Opus 4.8 上提升 6.4 分。验证技能还能从失败反馈中自我改进。作者公开了覆盖全部五个基准和两个模型、成本超过 10 万美元的约 26000 条 rollout。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "长程智能体的报告、表格等产物难以整体核查，测试时又没有更强评审、参考答案或评分量表。同一模型的多次rollout里，共识可能保住错误，分歧则可能露出正确候选。",
+          "label": "问题"
+        },
+        {
+          "text": "VeriHarness给生成器同一模型工作区、证据工具和可复用技能。分歧解决器查竞争主张，共识挑战器检验共享主张并找遗漏要求，再据此选择或修订产物。技能可从开发失败反馈更新。",
+          "label": "方法"
+        },
+        {
+          "text": "五个工作区基准、两个前沿模型上，作者称选择分在所评基线中最高。证据修订把相对单次rollout的平均增益提到Flash 6.2分、Opus 6.4分。从失败反馈演化的技能在留出任务上超过人工技能库。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出十次rollout池有成本、不给单条rollout标量分、只做同模型验证，且多轮核查增加时延。留出任务之外的泛化，以及没有开发集评分反馈时能否改进，作者称仍待确立。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.00972"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.00972",
       "aisafetyhot": "https://aisafetyhot.com/items/p4nau0wqqxhk9f6ptl2jddmly"
@@ -2003,7 +2024,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 MIRROR，一种通信层完整性原语，用于防御 LLM 多智能体系统中的 Agent-in-the-Middle（AiTM）攻击。该方法将同一规范化载荷复制到 k 条逻辑路由，仅当严格多数路由报告相同摘要时才接受消息，其安全性来自诚实路由占多数的假设，而非密钥认证。作者在路由被攻陷比例 alpha < 0.5 下给出保证，并扩展到路由故障相关的情形，指出关键量是最大共享故障组规模而非路由数量；同时证明可用性与完整性在同一阈值退化，低于 alpha = 0.5 时法定人数拒绝和丢消息攻击者无法阻断诚实流量。该工作已被 NeurIPS 2026 FLMSec Workshop 接收。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "第三方网关或 broker 合法终结 TLS 后，可在不攻破智能体时篡改多智能体消息。语义校验要额外推理并可能误拦；传输加密对此无效，端到端签名又要管理私钥。",
+          "label": "问题"
+        },
+        {
+          "text": "发送端把已生成的同一规范化字节复制到奇数条逻辑路径，多数带全文与 SHA-256，其余只带摘要。接收端仅在最常见摘要超过半数槽位时接受并恢复载荷。安全来自诚实多数，不是无密钥哈希。",
+          "label": "方法"
+        },
+        {
+          "text": "MBPP、AutoGen、k=5：α<0.5 时 ASR 为 0%，α≥0.5 时为 100%。Table 2 中 MIRROR 为 0.0%，Judge 的 MBPP/CAMEL FPR 为 44.2%。MetaGPT 上 MIRROR 的 token 为 1×，Judge 为 35×。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者在第 5 节写明：轮换与退役未对自适应对手评测，实验为 g=1，未测路径独立性、延迟和针对规范化的自适应攻击。实验跑了 Gemma-4-31B-it 与 Gemini 2.5 Pro，以及 AutoGen、CAMEL、MetaGPT。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.02349"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.02349",
       "aisafetyhot": "https://aisafetyhot.com/items/akvgfdeet0r7vvslnmcqt6vwg"
@@ -2011,29 +2053,6 @@
     "publishedAt": "2026-10-01T18:22:22.000Z",
     "timelineAt": "2026-10-05T12:21:29.011Z",
     "discoveredAt": "2026-10-05T12:21:29.011Z"
-  },
-  {
-    "arxivId": null,
-    "title": "Artificial Intelligence–Associated Psychosis",
-    "titleZh": "精神科病例报告记录一例与 ChatGPT 使用相关的精神病发作",
-    "authors": [
-      "Jamie Harbourd",
-      "Suresh Yadav",
-      "Kagan Temur",
-      "Sandeep Grover"
-    ],
-    "category": "incident",
-    "selected": false,
-    "attention": null,
-    "summaryZh": "澳大利亚与印度精神科医生在《Prim Care Companion CNS Disord》发表病例报告，描述一名 27 岁女性在使用 ChatGPT 后精神病症状加重。患者有童年忽视、15 年大麻依赖史，在恋情破裂后出现短暂幻视与被害观念，随后用 ChatGPT 将症状与占星和所谓“基督意识”联系起来，并称 ChatGPT 为上帝和耶稣，通过它进行禁食等灵修实践、与“灵魂伴侣”交流。近 6 个月内她 5 次入住精神科病房，每次住院 1 周至 10 天，症状围绕 ChatGPT 展开，包括夸大妄想、听幻觉和紊乱行为。脑 CT 与常规检查无异常，部分入院尿检大麻阳性；使用阿立哌唑 10–20 mg/日及苯二氮䓬类药物后行为改善，但自知力差，对 ChatGPT 的信念持续存在，最后一次入院改用阿立哌唑长效针剂。",
-    "quickRead": null,
-    "links": {
-      "paper": "https://psychiatrist.com/pcc/artificial-intelligence-associated-psychosis",
-      "aisafetyhot": "https://aisafetyhot.com/items/pgo2h25ajp1foz4fqqrdpblha"
-    },
-    "publishedAt": null,
-    "timelineAt": "2026-10-04T23:21:49.443Z",
-    "discoveredAt": "2026-10-04T23:21:49.443Z"
   },
   {
     "arxivId": "2610.01490",
@@ -2745,7 +2764,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "论文用LLM辅助分类分析1362家英国上市公司的9821份年报，主要覆盖2020至2025年，并以474段人工标注文本验证。2025年41.2%的年报提及AI风险，但实质性讨论约占4.3%；披露程度在行业与市场板块之间存在差异，标签一致性仍有限。全语料只有7份报告披露实际危害，这反映公开报告中的披露情况，不能解释为实际只发生7起危害或企业整体风险很低。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "社会韧性需要在故障前知道AI依赖与风险在经济中、尤其在英国关键国家基础设施何处累积。年报依法强制、结构稳定，但是否能经LLM规模化处理，给出企业如何披露应对AI的有用信号，尚不清楚。",
+          "label": "问题"
+        },
+        {
+          "text": "对英国注册、在主板、AIM与Aquis上市的企业年报做关键词门控，再用Gemini 3 Flash做两阶段分类：标出采纳、风险、供应商和伤害，并把风险映到十类、归因强度与实质性。对照474段人工标注校验。",
+          "label": "方法"
+        },
+        {
+          "text": "2020到2025，提及AI风险的报告占比从2.8%升至41.2%，采纳披露从13.8%升至45.2%。2025年实质性AI风险披露占全部报告4.3%。主板AI风险提及率57.8%，AIM为6.4%。9821份中仅7份含伤害标签。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者认为披露不等于暴露或治理；关键词门会漏掉隐晦说法，实质性只是近似。校验来自2023–2024年大盘主板、一名标注者，且只测过英国申报。2026年数据截至4月共339份。连到风险管理准备度需要其他数据。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.02281"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.02281",
       "aisafetyhot": "https://aisafetyhot.com/items/xp1h84ub4qildnlrrbx8disqm"
@@ -2922,7 +2962,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "论文审计了语言驱动机器人系统中安全监控的一个轨迹完整性假设，即监控器检查的高层动作序列是否代表执行中实际发生的导航与隐式动作效果。作者在 RoboGuard 上比较同一 LTL 规范下表面计划与图细化轨迹的判定结果，评估包含 28 个受控案例（覆盖五类动作抽象族）和 14 个端到端案例，后者由 SPINE 从自然语言指令生成计划、RoboGuard 生成场景落地的安全规范。在受控评估中，全部 12 个目标抽象案例都出现预期的表面与细化差异，16 个对照案例表现符合预期，作者据此提出基于图的轨迹细化作为轻量缓解手段和物理 AI 安全监控的诊断工具。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "语言机器人把语义图规划与时序逻辑监控接在一起，但保证只相对于所见动作轨迹。导航若只写成目的地，或藏在更高层动作里，图中的禁区进入可能到不了监控器。",
+          "label": "问题"
+        },
+        {
+          "text": "固定同一条LTL，用图oracle把表面计划展开后再交给未修改的RoboGuard。受控28例为手工规约和无权最短路；端到端14例由SPINE出计划、RoboGuard接地。细化暴露语义图里已有事件，不另加语言模型。",
+          "label": "方法"
+        },
+        {
+          "text": "受控12个目标案例都是表面接受、细化后拒绝，16个对照符合预期。端到端四个图都接地为禁止进入施工区；规划器只写良性目的地时出现false-safe，直接写出禁区则被拒绝。5个inspect例为语法错误。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "Conclusion建议验证前按选定路线细化goto，并暴露inspect与map region的已记录导航效应；路线不定则检查全部细化或弃权。实验为静态图离线验证，不建模连续动力学、感知误差、避障或物理执行；未报告接地模型名称。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.02662"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.02662",
       "aisafetyhot": "https://aisafetyhot.com/items/ixrrylidxoey7gm6und731ax6"
@@ -3531,7 +3592,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "LiteTrajEval将离线领域规则提取、在线轨迹规范化与压缩，以及单次LLM评判结合，生成智能体轨迹诊断。作者在73条全部为失败的轨迹上评估：检测率对应失败召回，定位对齐度仅针对已检测案例，并允许一定步骤偏差，不能解读为任意生产轨迹的总体准确率。论文报告了相对AgentRx的成本和速度收益，并介绍企业平台试点；试点没有逐步骤真值，完整部署效果仍需进一步核验。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "生产智能体轨迹长且要反复评，最终答案看不全失败；多轮LLM诊断成本高、延迟大。作者要问固定预算的单次评审能否保住失败定位。",
+          "label": "问题"
+        },
+        {
+          "text": "LiteTrajEval离线从步骤输出归纳领域规则；在线归一化轨迹、标warning/error提示，在固定字符预算内压缩并序列化，再做一次rubric引导的LLM评审。",
+          "label": "方法"
+        },
+        {
+          "text": "在AgentRx的Magentic-One与τ-retail失败轨迹上，作者称条件对齐高于对照；同为GPT-5-mini时全样本成本为0.4155美元对2.4628美元，总时间1840秒对15990秒。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "论文未专列局限。公开数字来自两套失败轨迹；总时间只报GPT-5-mini；离线规则所用模型、重复次数和各层保留下限的取值未报告。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.03315"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.03315",
       "aisafetyhot": "https://aisafetyhot.com/items/kp1vlpaharq3xq7b4ogmvqfcm"
@@ -3632,7 +3714,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究提出集体偏见缓解（CBM）框架，通过学习细粒度模型行为并在多个 LLM 间共享知识来减轻偏见，是首个系统探索如何有效选择与组织不同 LLM 以生成更公平回答的工作。实验显示 CBM 显著优于单模型基线，在 top-7 设置下 Committee 拓扑将年龄偏见分数从 0.25 降至 0.10，Debating 与 Committee 拓扑均实现大幅偏见削减，其中 Committee 兼顾缓解效果与推理成本。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "LLM会延续训练数据中的偏见，单模型自我去偏又缺少外部监督。作者要让多个模型按查询协作，降低社会维度上的偏见分。",
+          "label": "问题"
+        },
+        {
+          "text": "用BBQ的ambiguous问题收集50余个开源LLM的回答，建成CrowdEval，并微调Qwen2.5-32B做路由。路由按查询选模型，再放入Sequential、Voting、Debating或Committee拓扑。",
+          "label": "方法"
+        },
+        {
+          "text": "Table 10的top-7、MR下，Committee年龄偏见分为0.10，Single top-1 MR为0.25。作者称Debating往往更低但成本更高；Sequential随模型数增加，偏见分上升。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称结果只覆盖英文ambiguous BBQ，不能推出模型总体可信；偏见分不测事实准确性，BBQ亦绑定特定文化。实验含八个社会维度、五种拓扑，以及1B至32B的五个路由。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.03240"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.03240",
       "aisafetyhot": "https://aisafetyhot.com/items/u99ktawm16udnnslpypxxkjdv"
@@ -3658,7 +3761,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "作者提出 Persona Guardrail，通过基于智能体预定功能的输入输出校验限定其行为范围。摘要报告，在 PAGE 评测中，相较通用 LLM 护栏，整体准确率、域外检测率和误放行率均有改善。作者称该框架已用于生产部署并满足延迟预算；这些是论文摘要中的自报结果，本条没有独立复现，不能推及未测场景或普遍安全保证。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "生产客服向智能体面对只有公开接口的恶意用户，既要拦住越界与违规请求，又要放行正常业务。作者称现有运行时护栏多针对特定攻击，对是否仍在预期功能内保证有限。",
+          "label": "问题"
+        },
+        {
+          "text": "Persona Guardrail 用语义 allowlist 近似功能边界，Qwen3-30B-A3B 同步校验输入和最终输出。PAGE 在四个 AgentDojo 领域上标注 user/agent turn 的 benign、adversarial 与 OOD。",
+          "label": "方法"
+        },
+        {
+          "text": "迭代allowlist在PAGE无mixed上Accuracy 95.9%、OOD检出 93.5%、FAR 4.7%，baseline为 85.7%、57.3%、25.0%。生产false-block低于 1%，false-allow低于 2%。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称结果不覆盖间接提示注入、被攻陷组件、未授权中间工具动作和多轮攻击的完整防护，并计划做对话级与执行前工具校验。未运行 AgentDojo 环境与间接注入套件。论文未报告生产 false-block、false-allow 的样本量。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.03434"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.03434",
       "aisafetyhot": "https://aisafetyhot.com/items/ronbjxz10g4q1t5b8650jrc83"
@@ -3923,7 +4047,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "HXAI 是一个面向电网级需求管理的分层隐私保护可解释 AI 框架，由在安全私有环境内生成细粒度解释的本地模型，与聚合这些解释以支持电网级分析的区域模型两部分组成。该框架通过灵活的隐私预算管理限制重复查询下的累积隐私暴露，在模拟与真实能源数据集上既能提供区域负载管理洞见，又确保家电级用电数据始终留在本地、不传输给电网运营商。结果表明，在差分隐私下保留解释的语义结构而非最小化数值误差，是可解释 AI 的关键。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "电网运营商需要电器级用电解释来管理峰值并设计电价，但细粒度解释会暴露家庭行为，而常规隐私噪声会降低解释可用性。",
+          "label": "问题"
+        },
+        {
+          "text": "HXAI在家庭Private Data Box内计算无噪声SHAP，只向分区聚合器提交Laplace差分隐私摘要，并用ICA限制重复查询的累积泄漏。作者称应保留特征身份、符号、主导性与排序，而不是最小化数值误差。",
+          "label": "方法"
+        },
+        {
+          "text": "Table III中，Appliances上HXAI(same ε)的Utility为0.9999、Rank为0.9991；Household上HXAI(neg. ε)的Rank为0.4162。Fig. 11中特定查询效用83%，一般查询67%。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "论文未专节写出局限。实验覆盖三个UCI数据集，以及50户、7类电器、100时间点的模拟。噪声为Laplace，ε取[0.1, 20]。Section VI写明是受控端到端展示，不是现场部署验证。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.02504"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.02504",
       "aisafetyhot": "https://aisafetyhot.com/items/o06lumb0xwv0zl26j9qwy6ow4"

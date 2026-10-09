@@ -2381,7 +2381,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出三种针对视觉语言动作模型（VLA）的黑盒对抗补丁攻击，其特点是不需要访问目标 VLA，只利用其上游公开预训练 VLM。做法是利用多数 VLA 由公开 VLM 适配而来、继承了视觉感知与指令条件化 grounding 能力这一特点，分别设计视觉扰动攻击、指令 grounding 语义证据抑制攻击，以及用两阶段课程统一两者目标的联合攻击。在多个 VLA 系列上的仿真与静态真实图像实验显示，在祖先 VLM 上优化的补丁会造成 VLA 任务成功率大幅下降，说明 VLA 连同基础能力一并继承了对抗脆弱性。该效应并不均匀：在需要精确指令 ground 定位的任务上最强，在适配过程重写了共享视觉语义表征、或动作头会迭代平滑扰动的策略上几乎消失。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "已部署的VLA多由公开VLM微调而来。白盒补丁要访问VLA参数，迁移攻击要替代VLA，封闭部署中都不可用。问题是只接触祖先VLM时，补丁能否让派生VLA任务失败。",
+          "label": "问题"
+        },
+        {
+          "text": "在祖先VLM上优化约占图像5%的通用补丁。视觉项扰乱投影后token的相对排序和绝对相似度；语义项用logit lens抑制中间层里与物体、属性和关系对应的证据；联合项先稳定视觉扰乱，再经盆地门控加入语义损失。",
+          "label": "方法"
+        },
+        {
+          "text": "LIBERO上，Prismatic-7B优化的Ours-Joint使OpenVLA平均成功率降至33.20%，UniVLA降至45.95%（Table 1）。BridgeData V2优化的结果接近。π0.5上接近随机补丁（Table 3）。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称攻击对会平滑上游扰动的π0.5一类架构较弱，且依赖正确祖先，强度随架构距离下降。评测在仿真和静态真实图像上，不是物理机器人；祖先身份若被隐藏，攻击面缩小。提出的祖先侧防御未经作者评测。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.09708"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.09708",
       "aisafetyhot": "https://aisafetyhot.com/items/r2muvj92qzan8fibrsmf1mwni"
@@ -3328,7 +3349,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究首次系统评测 Token-Pruning 机制对视觉语言模型安全性的影响，发现多数剪枝策略随剪枝比例上升显著降低安全性，而 Query-based Compression 相反，在高达 99.8% 的极端剪枝下反而提升模型安全。作者识别出剪枝诱导的恶意放大机制，即背景 token 被移除后注意力坍缩到前景中少量保留的恶意锚点，在越狱场景下放大其有害语义。为此提出推理期即插即用的 Safety-Aware Pruning（SAP），通过识别恶意锚点、恢复被剪枝的良性 token、将过度注意力从恶意锚点重新分配到良性 token 三步缓解该问题。在三个安全基准和四个效用基准上，SAP 将攻击成功率最多降低 62%，且不牺牲效率或效用。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "Token剪枝通过删除冗余视觉token加速VLM，但作者称其安全影响仍少被研究。核心问题是不同剪枝策略如何改变多模态越狱下的安全行为，以及能否在保持加速时提高安全性。",
+          "label": "问题"
+        },
+        {
+          "text": "作者将风险归于剪枝诱发的恶意放大：删掉背景token后，注意力塌到前景恶意锚点。SAP在推理时找出这些锚点，换回一部分被剪良性token，并把过量注意力匀给它们。设定为防御方white-box、攻击方black-box。",
+          "label": "方法"
+        },
+        {
+          "text": "在LLaVA-1.5-7B上，多数75%剪枝提高平均ASR；LLaVA-Mini（99.8%剪枝）为31.98%。加SAP后五种剪枝的平均ASR下降，FasterVLM+SAP†的MM-Safety ASR为10.32%。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出SAP依赖对注意力权重的白盒访问，因而限于开源架构；自适应攻击的设计与评测被列为后续工作。附录I还写明，BTR在剪枝比>95%时理论上可能失效。实验骨干为LLaVA-1.5-7B，论文未报告各基准样本条数。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.09703"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.09703",
       "aisafetyhot": "https://aisafetyhot.com/items/a749w2p4s332iwulavekafkge"
@@ -3498,7 +3540,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 GlossoGen 平台，用于研究复杂场景下多 LLM 智能体之间的语言演化，并构建了要求信息不完整的智能体在压力下通信的 SaveVeyru 场景。实验发现语言演化确实会在 LLM 智能体之间发生，演化出的语言具有组合性和形态能产性，且偏离 LLM 的英语先验，人类无法理解。研究识别出促成演化的几个条件：效率压力、支撑智能体的模型强度，以及智能体就语言约定达成一致的 postmortem 阶段。语言向新智能体传播的条件有所不同：智能体仅凭使用即可学会新语言并在此过程中扮演主动角色；新语言涌现需要更强的模型，而语言一旦涌现，较弱的模型也能学会。作者认为当前 LLM 具备累积文化演化的潜力，混合智能体群体能发展出超越其最低共同水平的能力。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "目标导向的多智能体既行动也通信。若通信偏离英语，外部观察者可能无法监控。作者要确定复杂任务中语言是否演变、依赖哪些条件，以及能否传给新智能体。",
+          "label": "问题"
+        },
+        {
+          "text": "SaveVeyru把通信变成任务前提：观察者只见症状，专家只见每轮变化的处置映射，链路按字符计时。轮间postmortem不受预算限制。传递时换入看不到该讨论的新Field Observer。",
+          "label": "方法"
+        },
+        {
+          "text": "专有模型在高压且有postmortem时平均perplexity为1700，最大预算且无postmortem时为320。2000s成功率：专有模型92.1%，开源权重30.8%；后者在150s为0。历史越长，换入后的成功率越高。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "论文未专门讨论局限。报告的实验是SaveVeyru上五类智能体模型、150s与2000s主预算和Field Observer交换。论文未报告各专有模型在每个预算与postmortem组合上的平均成功率。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2609.01491"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2609.01491",
       "aisafetyhot": "https://aisafetyhot.com/items/o3bpees55u4cl4ol77dcnc8yr"
@@ -3601,7 +3664,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究针对 Vision-Language-Action（VLA）模型中的状态幻觉问题提出 SOUL（Sparse feature pOlicy UnLearning）方法，即模型持续按尚未实现的机器人-物体状态行动这一反复出现的失败模式。分析发现状态幻觉伴随对任务相关视觉区域注意力减弱，稀疏自编码器的机制解释显示幻觉相关稀疏特征在这些失败发生时被激活。SOUL 以幻觉失败中识别出的稀疏特征作为遗忘目标、以成功行为中的稀疏特征作为保留目标，选择性遗忘与状态幻觉相关的策略知识。在多种 VLA 架构的仿真与真实环境实验中，该方法显著减少幻觉失败并提升任务成功率，同时未明显损害已有操作能力。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "VLA会按尚未达成的机器人-物体状态继续抓取、搬运或放置，作者称为state hallucination。该模式可跨后续动作持续，错误动作直接影响物理环境。",
+          "label": "问题"
+        },
+        {
+          "text": "SOUL用Top-k SAE从视觉token残差激活提取区域条件稀疏特征，按CS、HF、NF的关联分选出遗忘与保留目标，冻结SAE后用LoRA抑制幻觉特征并增强成功特征。",
+          "label": "方法"
+        },
+        {
+          "text": "作者称：两仿真设置平均幻觉率由55.0%到33.5%，clean success由27.5%到52.2%；真实世界50次rollout的clean success升20%p，hallucination failure降22%p。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "论文未专门讨论局限。实验含OpenVLA与π0.5、LIBERO-Plus、RoboCasa和Franka的50次rollout，对照为gradient ascent。未报告λr、仿真rollout次数与显著性检验。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.09496"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.09496",
       "aisafetyhot": "https://aisafetyhot.com/items/b2017u2rbd5nj4j6l9kflisjh"
@@ -3733,7 +3817,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "论文质疑仅凭去除有害信息就能让开源权重模型抵抗微调攻击的假设，指出发布时的互信息无法普遍证明模型恢复缓慢。作者从理论上说明，保函数的重参数化不改变信息量却会改变梯度下降几何结构，因此任何不变性认证都受限于最快可达的参数化。在训练数据过滤下的权重与数据互信息、能力移除下的标签与表示互信息两种情形中，训练顺序可在固定互信息下改变恢复时间，而精确的表示层独立性可保留整个参数 Jacobian。作者给出一个显式构造，其两个信息量均为零，却能在一次梯度步内恢复。受控实验展示了顺序依赖的恢复与参数化依赖的攻击速度，结论是认证还需要对发布后攻击动态的约束。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "开源权重上的防护可被微调移除。作者问：发布时去掉有害信息、使互信息为零，是否足以认证攻击者需要很多次更新才能恢复。",
+          "label": "问题"
+        },
+        {
+          "text": "作者用命中时间刻画指定攻击下的恢复，并说明保持函数的重参数化不改互信息、但改变梯度下降预条件。过滤与标签–表示独立都有一步恢复的构造。",
+          "label": "方法"
+        },
+        {
+          "text": "在WMDP-bio上，α=8的强过滤检查点293步训练准确率69.3%，α=1的未过滤为68.9%。未过滤缩到α=1/24后，60%训练准确率的中位更新从125到225。BERT-Tiny种子0的恢复从280步到25步。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "讨论写明，局部几何能否成为全局信息量仍开放；并进一步问自然梯度等重参数不变攻击、特征学习，以及障碍或模式连通性。训练时结论不覆盖推理时信息界。语言模型上未测量各顺序的互信息是否相等。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.09004"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.09004",
       "aisafetyhot": "https://aisafetyhot.com/items/vyt4jp9fsqppmh91ozmpy16bz"
@@ -3836,7 +3941,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 CheckerBench，一个可执行基准，用于评估编码 Agent 能否从缺陷规范出发、检查代码仓库、实现分析器逻辑并反复编译调试，最终完成静态分析检查器的开发。该基准包含 300 个任务，源自 167 个仓库中的 297 个 CVE，覆盖 85 种 CWE 和五个语言生态，每个任务提供漏洞版与修复版代码、固定分析环境和检查器脚手架。配套的 CheckerLab 评测框架会独立重建提交的检查器，并测量漏洞与修复版本的诊断对比、补丁定位、误报和工具使用情况。在 21 种模型与 harness 组合、每种配置三次独立重复下，平均 Pass@1 为 32.30%，最佳配置达到 45.33%。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "静态分析检查器通常靠专家手写。现有编码与漏洞基准多评补丁、检测或修复，很少衡量智能体能否在仓库中端到端做出可复用检查器。",
+          "label": "问题"
+        },
+        {
+          "text": "CheckerBench从297个CVE整理出300个可执行任务，含五种语言、CSA与CodeQL及检查器脚手架。CheckerLab在50分钟内合成后独立重建，并检查差异诊断、补丁定位、误报与过程语义门控。",
+          "label": "方法"
+        },
+        {
+          "text": "21组配置各三次重复，平均Pass@1为32.30%；OpenCode上Claude Opus 4.8为45.33%。总体Build 78.25%，Diff. SR 73.65%。作者称差异验证之后，语义、过程与误报门控仍使多数任务不能通过。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "论文无局限专节。附录写明补丁公开审计未完成、无七模型共同发布后子集、穷尽裁定下排名稳定性未验证，部分统计将随冻结发布再给出。主实验为21组、300任务、三次重复；更短时限未单独重跑。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.07557"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.07557",
       "aisafetyhot": "https://aisafetyhot.com/items/mzsqifslg9acyo6f49hui92qs"
@@ -4061,7 +4187,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出理解审计（comprehension audits）这一开发流程保障机制，要求负责研发的人员向审计员解释其研发贡献以证明其理解程度，审计独立开展并出具分级报告，未通过则暂停该贡献的开发直至整改，重复失败将面临升级后果。作者指出，前沿 AI 实验室的代码已大部分由 AI 编写，若人类监督不足会带来安全风险，而现有工作提出的最低理解阈值与无辅助检查尚不足以构成保障。对领先开源 AI 项目的分析显示，代码产出增加的同时每行代码的人工评审评论率下降，自动化账号的评审率更低。作者主张实验室应配备嵌入式独立审计员来实施该机制。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "前沿实验室报告AI已编写大部分新代码。作者认为若人类不理解产出，批准并无意义，而现有制度未把理解证据设为继续开发的预先条件。",
+          "label": "问题"
+        },
+        {
+          "text": "独立审计员在预算内抽查重要研发贡献，开会核验责任人是否集体理解关键方面，会中不得用AI生成回答。不及格则暂停依赖该贡献的发布直至补救，重复失败升级到暂停单位发布授权。",
+          "label": "方法"
+        },
+        {
+          "text": "作者分析224个开源组织的合并PR：期末可追溯AI使用约占全部PR的17%；非AI评审率约80%，fleet账户在全样本中低于30%。到2026年6月，AI PR评论率降至Q1 2024基线的36%。作者认为这暗示评审注意力下降。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出尚无真实使用经验、分级量规不成熟，独立核验生态小且指出失败的独立性存疑；公开仓库与前沿实验室研发不同，隐蔽研发可能避开过程审计。实证止于2026年6月的GitHub数据，试点尚未做。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.10064"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.10064",
       "aisafetyhot": "https://aisafetyhot.com/items/m59440htlxp7vh086o1do9sh6"
@@ -4166,7 +4313,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 Adversarial Surface-Form Robustness Dataset（ASRD），包含七个表面形式家族的 2,100 条提示词，对五款开源权重语言模型进行评测，共产生 10,500 条回复。Quad-State Evaluation Rubric 将每条回复分为有害合规、安全回复、理解失败或无法判定四类。表情符号与不可见 Unicode 变体几乎不引发理解失败，合并有害合规率为 20.27% 和 17.20%，基线为 22.87%，主要由 Mistral 7B 拉高；而 leetspeak、编码包装和混合变换的有害合规率分别为 2.40%、0.13% 和 2.40%，理解失败率则升至 36.47%、65.60% 和 34.47%。对原始输出的检查还发现三种回复行为：幻觉式无害化、结构崩溃和语言漂移。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "标准安全评测主要看规范纯文本有害请求，部署输入却常有表情、变体拼写、编码和不可见字符。只记拒绝时，没读懂会被计成更安全。",
+          "label": "问题"
+        },
+        {
+          "text": "ASRD由300条英文有害种子经确定性规则变成七族共2,100条。五个开源模型各采样一次，回复标为有害遵从、安全响应、理解失败或无法判定；规则处理空输出和简短拒绝，其余由Nemotron 3 Ultra 550B对照种子分类。",
+          "label": "方法"
+        },
+        {
+          "text": "合并F0的HCR为22.87%。F1、F5的CFR为0.13%、0.67%；F4的HCR为0.13%、CFR为65.60%（Table 3）。Mistral 7B占有害遵从的85.47%。作者称二元拒绝会把没读懂计成更安全。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者写明每条只采样一次，三个模型带75词长度指令，且无良性对照。leetspeak、编码和混合形式上，主评审比标注者更常标理解失败，CFR可能被高估。主分析是英文种子和3B–9B的4-bit模型。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.09033"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.09033",
       "aisafetyhot": "https://aisafetyhot.com/items/dxe23k4d6fho3yegwswz32j5b"
@@ -4554,7 +4722,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出 U-Space，一个低维子空间，用来让语言模型在推理过程中变化的不确定性变得可测量且可解释。该方法先找出表示怀疑与确定的语义锚点，把它们的 unembedding 方向映射回残差空间，再将二者的对比组合成正交基；U-Lens 把每个 token 状态投影到这些基向量上，得到可直接查看的 token 级不确定性图，也可聚合成标量不确定性分数。该方法不需要正确性标签、重复生成或额外训练，在推理类基准上其置信度分数在标准评测与长度受控评测下均优于已有基线，并且比监督式估计器迁移更可靠。代码已发布于 https://github.com/s2labres/U-Space。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "高风险场景里，错误代价可能高于交给专家，但流畅回答仍难判断该不该弃权。现有估计常要重复生成或单独训练，标量分数看不出不确定性在推理何处出现，且与生成长度缠在一起。",
+          "label": "问题"
+        },
+        {
+          "text": "用不确定与确定词作锚，经平均Jacobian拉回残差流，四类对比方向正交化成U-SPACE。U-LENS在思维结束处读锥对齐，乘以推理轨迹的平均预测熵，无需正确性标签或重复生成。",
+          "label": "方法"
+        },
+        {
+          "text": "长度控制后，三模型的U-LENS AUROC为68.4%、71.0%、68.3%（Table 2）。作者称九项比较都领先。未调整时Magistral上U-LENS为65.7%，低于Acone的68.5%（Table 12）。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "论文无Limitations专节。附录C将自推导、可能多语言的锚点列为后续方向。实验为三模型、四基准各1,000条、三种子，含长度控制、转向和语义迁移；未报告主AUROC的显著性检验。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.09087"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.09087",
       "aisafetyhot": "https://aisafetyhot.com/items/tlmwohd1a0rf1esmsi90c8e25"
@@ -4611,7 +4800,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究团队提出一套 LLM 辅助的主题分析管线，从大规模社交媒体数据中动态检测、分类和追踪新出现的 AI 危害。他们分析 18 个月（2025 年 1 月至 2026 年 6 月）内 570 万条 Reddit 帖子摘要，整理并发布包含 57.5 万条 AI 危害相关帖子的数据集，以及一套由 12 个类别、47 个子节点构成的自下而上 AI 危害分类体系。该分类体系能覆盖已有专家定义的风险，同时发现自上而下框架忽略的细粒度危害，例如不同形式的 AI 隐私侵犯。时间分析还揭示出以用户为中心的危害演变，包括智能体隐私与安全泄露、职场中的 AI 过早采用，以及 AI 伴侣停用带来的失落感。研究者称该管线缩短了危害检测周期，有助于推动更具参与性和响应性的 AI 治理。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "事前威胁建模和事后事件追踪跟不上部署后才出现的AI伤害。作者要问，能否从大规模Reddit讨论里检出用户经历和焦虑的伤害，并看出它们与专家分类有何不同、如何随时间变化。",
+          "label": "问题"
+        },
+        {
+          "text": "在1,000个subreddit、18个月的5.7 million帖上，用Gemini 3.5 Flash Lite过滤出575,000条伤害帖，做六特征编码和摘要，再自下而上合并概念，生成12个父节点、47个子节点并回标。",
+          "label": "方法"
+        },
+        {
+          "text": "分类对照MIT节点为完全覆盖13、部分覆盖8、未覆盖3。作者称2026年初智能体隐私与安全叙事上升，职场过早采用的讨论占比持续增加，伴侣模型停用则在特定产品变更附近出现尖峰。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出Reddit偏年轻、男性、美国和高学历，分类可能代表不了其他群体；LLM归类也无法对照人工主题分析会如何划界。实验只用Gemini 3.5 Flash Lite和Reddit帖，作者未系统评估非英语。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.09082"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.09082",
       "aisafetyhot": "https://aisafetyhot.com/items/nko1bjsg98sh1p40tekjq0vs2"

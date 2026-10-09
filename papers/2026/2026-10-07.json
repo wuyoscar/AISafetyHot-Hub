@@ -1701,7 +1701,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "一篇 arXiv 论文对扩散模型潜空间水印方法的鲁棒性提出理论分析，指出既有方法高估了自身对旋转、缩放、平移等几何变换的抵抗能力。作者通过放宽不变关系，推导出刻画像素空间扰动与潜空间响应之间关系的最大扰动界，并给出覆盖实际检测机制各环节的解析形式。实验验证了理论结论，表明在当前设计范式下潜空间水印方法存在固有的鲁棒性局限，作者据此提供了分析工具与设计指引。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "扩散模型生成图被用于虚假信息传播，政策建议以水印做检测与溯源。作者称现有潜空间水印只在一部分扰动类型和参数下声称鲁棒，并要解释其对像素扰动缺乏不变性。",
+          "label": "问题"
+        },
+        {
+          "text": "作者把DDIM反向过程写成MMSE去噪器上的VAMP展开，给出可逆性与Lipschitz上界。放松不变性后，检测距离由像素扰动、各模块Lipschitz常数、容差r和FPR阈值R共同约束。",
+          "label": "方法"
+        },
+        {
+          "text": "在Stable Diffusion v2-1上，扰动加强使检测距离右移。RingID-2-128的FID为428.68，未放大的RingID为45.31。Stirmark旋转45°、1e-2 FPR时RingID的TPR为0.0020。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者承认分析依赖MMSE去噪器与DDIM可逆假设，实践中未必成立，并建议后续遵循其设计准则。实验模型为Stable Diffusion v2-1，再生用v1-4；阈值主要按1e-2 FPR由距离分布设定。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08178"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08178",
       "aisafetyhot": "https://aisafetyhot.com/items/pi4q772ekfvf80jgzqlx64q72"
@@ -1881,7 +1902,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "DAEDALUS 提出一种无需既有任务或 oracle 验证器、从自生成练习中自举可复用 Agent 记忆的方法。它让 explorer 智能体与环境交互生成有难度但可解的任务，solver 智能体尝试求解，每次失败后提炼启发式规则，只有 solver 在上下文中反复成功后才被接受，这些结果同时反馈给 explorer 调整后续任务难度，被接受的启发式规则汇入记忆库供测试时使用。在 AppWorld、τ^2-bench 和 AutomationBench 上，DAEDALUS 相比无记忆基线平均成功率最高提升 15.9 个百分点，pass^5 最高提升 2.2 倍，与使用训练任务的方法相当，推理成本低于多数方法。消融实验显示 solver 轨迹是提炼有效启发式的关键信息，且较小的探索预算即可带来性能提升，其启发式规则也能帮助其他模型族的智能体。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "智能体进入新环境时缺少可复用的操作知识，没有记忆就会重复犯错并拉长轨迹。现有程序记忆通常要有训练任务和oracle verifier，或等到测试失败后才积累，新环境往往没有这些监督。",
+          "label": "问题"
+        },
+        {
+          "text": "DAEDALUS不更新权重。Explorer自拟可解任务并自行完成以确认可行，Solver失败后Extractor写heuristic，须先失败再连续成功才入库。过易或过难则改题，最后合并记忆，测试开始时整库注入。",
+          "label": "方法"
+        },
+        {
+          "text": "Table 1：AppWorld MSR 60.2±0.9（无记忆44.3±1.1），τ2 retail 67.5±2.5，Operations 36.0±1.5。无训练任务时高于PREPING，heuristic可跨模型族使用。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出记忆在部署前一次建成并冻结，judge与官方verifier的κbench为0.73–0.81，双控环境尚未支持；超过90个session后AppWorld的MSR下降。实验覆盖三个基准和多种记忆方法。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08048"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08048",
       "aisafetyhot": "https://aisafetyhot.com/items/xzmjjtyhb55tmtfeowt1d2702"
@@ -2185,7 +2227,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "一项研究测试了模型生成数据的溯源识别可靠性，以及溯源信息能否帮助筛选更好的训练数据。在金融风险文本上，生成器归因在原始段落上准确率为 98.7%，改写后降至 53.1%，风格重写后降至 29.0%；生成文本与人类文本的检测在测试的人类对照集上仍接近完美。研究随后在三轮生成与再训练中比较两种筛选规则，一种使用来源信息，另一种使用独立参考模型的评分，两者选出的样本不同，但计划中的比较未检测到所得模型退化存在稳定差异。作者据此指出，识别数据来源与识别哪些数据对训练有用是两个不同问题，溯源评分和所测试的筛选代理指标都不足以确定未来的递归训练行为。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "反复在生成数据上训练可能让后续模型退化。需要分开回答：来源能否被找回，以及来源能否用来挑出再训练后更好的样本。测量在金融风险文本上进行，不是电信部署实验。",
+          "label": "问题"
+        },
+        {
+          "text": "先分别测生成对人类检测、生成器归因、未见源和不确定时是否弃权，并在四种 grey-box 改写后重测归因。再从 Qwen2.5-3B-Instruct 做三轮生成、保留一半、再训练，比较来源边际与冻结参考模型困惑度。",
+          "label": "方法"
+        },
+        {
+          "text": "七源 word-TFIDF 原文归因 0.987，释义后 0.531，风格改写后 0.290；对所测人类语料的二分类 AUROC 仍高于 0.9999。两规则选出不同样本，斜率差 +0.176，置换 p=0.746。作者称未检出稳定分离，也不确立等价。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者在 Limitations 写明递归只用 Qwen2.5-3B-Instruct，G0 到 G3 可能看不到更长程效应，五条 lineage 对小差异能力有限。人类对照不匹配生成任务；3B 不在七源名册中，其置信度不应读成校准后的真实来源概率。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.00417"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.00417",
       "aisafetyhot": "https://aisafetyhot.com/items/meuouh6tgy0hujm0loxh1imfr"
@@ -2495,7 +2558,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "冻结的视觉-语言-动作（VLA）策略可能选中局部安全、却断绝安全完成任务路径的动作，作者将这一现象称为可行性与似然之间的落差。为此提出免训练、告警触发的重排序器 VICS-G，基于安全任务完成约束下的可行未来质量对候选动作重排。在六个 Safety-CHORES 设置中，VICS-G 将平均累计安全代价降低 1.9%-57.5%，成功率与策略采样相差不超过 2.5 个百分点，平均回合长度相差 0.82 步，且无需重新训练策略或在线 rollout。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "冻结VLA可能选出局部可接受、却不再留下自身安全完成路径的动作。作者称似然只排序下一步，可行性取决于该动作留下的未来；提前结束能降低代价，但任务可以仍未完成。",
+          "label": "问题"
+        },
+        {
+          "text": "作者由限制在安全完成上的策略–环境轨迹律推出下一步边际，用可行未来质量记录支持与加权幅度。在线改为选择性有限候选：门先决定是否重看样本，VICS-G再以训练无关方式重排，主配置不重训、不做rollout。",
+          "label": "方法"
+        },
+        {
+          "text": "六个Safety-CHORES设置上，作者报告VICS-G将平均累计安全代价降低1.9%–57.5%，成功率与策略采样相差不超过2.5个百分点，回合长度差不超过0.82步。RCD原始代价更低，但成功率下降、回合更短。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称评估限于三类仿真任务，反馈只测一种强度下的两种扰动，物理机器人留待后续。解码依赖启发式分数、部分符号规则和选择性门控；理论界以分数精度与候选覆盖为条件。rollout未分离加性延续分数，也未认证状态精确恢复。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.05166"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.05166",
       "aisafetyhot": "https://aisafetyhot.com/items/ibys0f9cio7to4oiwcjgjw2w1"
@@ -2585,7 +2669,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "MARCO 是首个专为蛋白质生成模型（PGM）设计的\"放射性\"水印框架，同时保护知识产权并实现生物安全滥用的取证溯源。它通过辅助编码器-解码器在扩散逆向去噪过程中迭代嵌入水印，保持原 PGM 参数冻结；并针对 Cα 原子对距离与扭转角（ψ、φ）设计专用损失函数，结合随机攻击模拟的对抗训练提升鲁棒性。水印可自动转移至任何基于加水印数据训练的盗版模型输出，从而对抗模型提取攻击。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "蛋白质生成模型能设计三维结构，但输出可能被用来抽取专有模型，或绕过生物安全筛查。图像水印不适合变长、对刚体变换不变的蛋白质构象。",
+          "label": "问题"
+        },
+        {
+          "text": "MARCO冻结原模型，在反向去噪每步对平移和旋转加时间相关扰动，解码器在随机几何攻击后恢复多比特水印。成对距离、扭转角和判别器约束构象与隐蔽性；检测用Z检验，所有权登记到账本。",
+          "label": "方法"
+        },
+        {
+          "text": "作者称六种PGM无攻击时BA>0.95、DR=1.0，三种构象扰动下BA>0.90、DR>0.99。Table 3中RFdiffusion的Cα-RMSD为1.23、BA为0.98。跨架构盗版训练中作者称BA≥0.90、DR≥0.99。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称目前面向扩散式架构，自回归蛋白质语言模型不在范围内，也尚未做湿实验；加长水印会降低保真与鲁棒。实验跑了六种PGM，以及旋转、裁剪、噪声、能量擦除、DPSGD和重折叠；正文未给出多张图的逐点读数，也未报告λ与重复次数。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08316"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08316",
       "aisafetyhot": "https://aisafetyhot.com/items/wx10kd87nzuyn4y8p9v76nw9q"
@@ -2722,7 +2827,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "POLAR 是一种面向小型工具调用智能体的护栏框架，通过结构化两层本体评估动作可逆性，为每个动作生成候选逆序并打分级可逆性分数，未达阈值的调用在执行前被剪枝。在 τ²-bench 上对六个智能体模型评测，六个中有四个在 airline 域平均任务奖励提升 0.11 至 0.18 分，但十八个模型—领域组合中仅八个整体改善，retail 域及较强智能体常出现回退。POLAR 提供可审计的结构化检查，并刻画了任务效用权衡；奖励并非防止伤害的直接度量。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "工具调用智能体的一次不可逆误操作，事后推理无法修复。已有事前防护多给出文本判断，不暴露类型化恢复路径和可审计分数。",
+          "label": "问题"
+        },
+        {
+          "text": "POLAR用手写动作本体和当前状态投影，反向搜索候选逆序列，并以最弱步分数做执行前否决，阈值固定为0.80。评测封装不模拟完整事后状态，也不改智能体权重。",
+          "label": "方法"
+        },
+        {
+          "text": "τ²-bench上六个智能体、三个域、每格尝试150次。airline上四个较弱到中等模型的奖励差为正，18格里仅8格高于基线；retail和更强模型常为负。作者称奖励不直接度量被阻止的伤害。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者称增益随无门控基线升高而缩小，拟合不定义部署阈值；动态门控和第四域示例未做。奖励不是安全标签，且未验证逆序列执行。实验覆盖六模型、三域、四臂，Escalate与Advisory的比较奖励未核对。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.08082"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.08082",
       "aisafetyhot": "https://aisafetyhot.com/items/se36xsviymg45n02o88988a99"
