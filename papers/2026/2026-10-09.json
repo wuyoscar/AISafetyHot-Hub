@@ -18,6 +18,24 @@
     "discoveredAt": "2026-10-08T21:50:24.912Z"
   },
   {
+    "arxivId": "2610.10845",
+    "title": "Real Long-Term Memory for AI: A 50-Million-Token Window That Is Faster and Cheaper Than Recompute",
+    "titleZh": "galahad-kv 在单张 H100 上实现 5000 万 token 的 KV 状态复用",
+    "authors": [],
+    "category": "tip",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "研究者测试了公开软件包 galahad-kv，它把每块约 16,000 token 的 KV 状态按字节精确存入加密本地 NVMe 磁盘，之后直接加载而无需重新计算。测试在单张 NVIDIA H100 上通过 vLLM 服务 5000 万 token 的公开文本，使用 Gemma 4 12B 和 Gemma 4 31B，在 0 到 5000 万 token 深度上探测的 100 个块全部从加密存储加载且未重算。加载一个块比重新计算快 2.8 至 4.3 倍，GPU 能耗低 8.8 至 12.3 倍，整个 5000 万 token 流中 GPU 显存保持平稳。对数百万 token 之前植入的事实提问，12B 模型 100 次中答对 82 次，31B 模型答对 98 次，两者均未编造答案。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.10845",
+      "aisafetyhot": "https://aisafetyhot.com/items/q08gsuv2g64qfcmo7w2buzku3"
+    },
+    "publishedAt": "2026-10-06T20:00:00.000Z",
+    "timelineAt": "2026-10-09T00:24:34.356Z",
+    "discoveredAt": "2026-10-09T00:24:34.356Z"
+  },
+  {
     "arxivId": "2610.07258",
     "title": "Lineage-Aware Memory Governance: A Derivation-Gated Framework for Privacy-Preserving Column-Level Access Control in Enterprise AI Agents",
     "titleZh": "AMU：用派生血缘门控实现企业 AI Agent 列级访问控制",
@@ -34,23 +52,5 @@
     "publishedAt": "2026-10-04T20:00:00.000Z",
     "timelineAt": "2026-10-08T16:18:25.387Z",
     "discoveredAt": "2026-10-08T16:18:25.387Z"
-  },
-  {
-    "arxivId": "2609.30541",
-    "title": "AutoResearch at Production Scale: Failure Modes and a Multi-Agent Framework",
-    "titleZh": "生产规模下的 AutoResearch：失败模式与多智能体框架",
-    "authors": [],
-    "category": "alignment",
-    "selected": false,
-    "attention": null,
-    "summaryZh": "研究团队将 Andrej Karpathy 的 AutoResearch 范式（让大语言模型迭代修改训练脚本、保留能提升留出集标量指标的改动）用于生产级推荐流水线的嵌入系统优化，在两个独立开发的图书推荐表示学习系统上运行十二周、完成 220+ 次实验。实验观察到五种原设定中不存在的反复出现的失败模式：基础设施脆弱、智能体记忆衰减、搜索方向停滞、迭代成本不对称和指标固着，并提出「预防、持久化、重定向」三原则脚手架设计，将每种失败模式映射到结构性补救措施。该框架相对人工调优基线取得 1.82x 的 Recall@6 提升和 2.1x 的一致性提升，智能体还自主设计了纯文本回退方案，使目录覆盖扩大 5.8x；两套系统的单次迭代成本相差近三个数量级却呈现相同失败模式，提示这些是生产级自主研究的结构性属性。",
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2609.30541",
-      "aisafetyhot": "https://aisafetyhot.com/items/p1wxo4bmr95u94n43ntzdg96t"
-    },
-    "publishedAt": "2026-09-23T20:00:00.000Z",
-    "timelineAt": "2026-10-08T23:23:25.355Z",
-    "discoveredAt": "2026-10-08T23:23:25.355Z"
   }
 ]
