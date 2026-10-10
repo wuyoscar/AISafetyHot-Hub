@@ -109,5 +109,23 @@
     "publishedAt": "2026-10-07T01:58:25.000Z",
     "timelineAt": "2026-10-09T17:19:19.856Z",
     "discoveredAt": "2026-10-09T17:19:19.856Z"
+  },
+  {
+    "arxivId": "2610.11467",
+    "title": "GROB 用公开痕迹研究智能体活动归因边界",
+    "titleZh": "GROB 用公开痕迹研究智能体活动归因边界",
+    "authors": [],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "作者提出 GROB——一种只读收集公开互联网痕迹的多智能体研究架构，用于在缺乏特权遥测时调查候选自主智能体活动。在冻结的 2026 年 9 月语料中，作者报告部分早期痕迹可随后来公开记录出现而帮助重建事件，但证据强弱不一，仅部分可对应具体记录，本轮未独立复核这些历史记录。作者称核心限制是公开痕迹不能单独建立组织归因，智能体执行身份连续性也是独立未解问题。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.11467",
+      "aisafetyhot": "https://aisafetyhot.com/items/yki8yqjjiaieuzbpms9t04f37"
+    },
+    "publishedAt": "2026-10-08T08:17:45.000Z",
+    "timelineAt": "2026-10-10T01:12:52.652Z",
+    "discoveredAt": "2026-10-10T01:12:52.652Z"
   }
 ]
