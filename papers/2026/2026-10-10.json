@@ -220,5 +220,25 @@
     "publishedAt": "2026-10-08T08:17:45.000Z",
     "timelineAt": "2026-10-10T01:12:52.652Z",
     "discoveredAt": "2026-10-10T01:12:52.652Z"
+  },
+  {
+    "arxivId": "2610.11599",
+    "title": "Large Language Model Turnover Undermines Screening for Artificial Intelligence-Assisted Scientific Writing",
+    "titleZh": "大语言模型更替削弱对人工智能辅助科学写作的筛查",
+    "authors": [
+      "Kazuki Nakajima; Takayuki Mizuno"
+    ],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": null,
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.11599",
+      "aisafetyhot": "https://aisafetyhot.com/items/xe661qjmzmcayim2zacw6ut0k"
+    },
+    "publishedAt": "2026-10-08T09:44:08.000Z",
+    "timelineAt": "2026-10-10T11:06:47.151Z",
+    "discoveredAt": "2026-10-10T11:06:47.151Z"
   }
 ]
