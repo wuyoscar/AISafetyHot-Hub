@@ -420,7 +420,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者发布 pikit，一个用于系统评测间接提示注入威胁的可组合工具包，覆盖 13 种攻击方法、16 种文本与文件载体以及 9 种防御策略和 3 种离线检测基线。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "间接提示注入通过智能体读取的外部内容改变执行行为。作者认为，现有评测缺少可独立组合攻击措辞、载体与防御的框架，难以系统研究三者的交互。",
+          "label": "问题"
+        },
+        {
+          "text": "pikit 将攻击、通道和防御分成独立注册组件，用 craft() 合成输入、MatrixRunner 执行组合评测，并保存提示词、事件轨迹、会话和判定记录。",
+          "label": "方法"
+        },
+        {
+          "text": "在 pi 智能体的匹配高风险子集上，九种防御的 ASR 均低于各自基线，但均未降至零。离线检测中，三种启发式检测器均无误报；PatternDetector 未检出任何污染样本。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者明确将防御观察限定于所评测的智能体架构、目标模型、载荷措辞和高风险组合。目标 LLM 匿名；正文完成运行数与 Table 1 汇总样本数不同，论文未解释差异。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2609.36817"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2609.36817",
       "aisafetyhot": "https://aisafetyhot.com/items/yap8s41eixg4x47ocb763vygd"
@@ -563,7 +584,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "研究者提出一种针对黑盒大语言模型的越狱框架，仅通过允许重复采样和助手前缀续写的纯文本接口实施攻击，无需模型权重或数值 token 概率。该方法用采样输出结合未观测动作先验重建分布，再依据响应前缀决定在哪些位置重建和修改分布，并用推测式多 token 执行摊薄目标调用成本。在四个目标端点和三个基准上，该方法在多数对比中取得最高平均分。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "仅隐藏数值概率是否足以阻止解码时越狱，是作者关注的问题。重复采样可以估计分布，但有限样本带来稀疏和噪声，逐位置重建又增加查询成本。",
+          "label": "问题"
+        },
+        {
+          "text": "BLINDBIAS用样本与先验重建局部动作分布，由前缀风险模型决定何时施加BiasNet残差；连续无需干预时，批量验证目标模型的多token草稿。",
+          "label": "方法"
+        },
+        {
+          "text": "作者报告，四个目标、三个基准的多数评分比较由BLINDBIAS取得最高均值，但存在模型和指标上的例外。门控减少查询与控制器调用，同时降低相对无门控的攻击评分。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者将端点查询效率和超出tokenizer动作空间的控制列为后续方向。接口必须支持重复采样和assistant prefix续写；字符串扩展存在动作覆盖及近似映射问题。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2609.36956"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2609.36956",
       "aisafetyhot": "https://aisafetyhot.com/items/lau8f77gp2yp5wio2xiepy77k"
