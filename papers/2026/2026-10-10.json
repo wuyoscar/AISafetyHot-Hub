@@ -11,23 +11,23 @@
     "quickRead": {
       "parts": [
         {
-          "text": "AI 编码代理（如 Claude Code、Codex）通过 SKILL.md 形式的 agent skills 扩展能力，开发者靠仓库间复制来分享，形成没有注册表、版本和来源记录的软件供应链。复制来源、修复传播范围、该审查哪些仓库都不清楚，而快照式研究无法揭示谁复制了谁。",
+          "text": "AI 编码智能体通过包含指令与脚本的 SKILL.md 扩展能力，但跨仓库复制使之缺乏依赖图与版本记录。现有快照研究无法还原复制时序与传播链，导致安全团队难以确定高风险技能扩散源头与修复范围。",
           "label": "问题"
         },
         {
-          "text": "作者从 GitSkills 数据集中每个 SKILL.md 的 git 历史重建带日期的有向复制网络，覆盖 2,193,119 次 skill adoption，并配套交互式查看器。用条件 logit 建模复制事件选择哪个上游仓库作为来源，并按该分数对仓库排序以推荐审计目标；另用脚本化 LLM 标注与人工复核做验证和风险标记。",
+          "text": "作者提取 GitSkills 中所有 SKILL.md 的提交历史，构建带时间戳的有向复制网络；使用条件 logit 模型拟合仓库选择复制源的行为机制，并根据历史得分对代码库进行排序以推荐优先审计目标。",
           "label": "方法"
         },
         {
-          "text": "少数仓库贡献几乎全部复制，GitHub stars 既不能识别来源、也无法预测未来来源。skill 副本几乎不随源更新，源上的修复很少传播到副本；只有 11.1% 的 clone group 变更是一致的，仅 20.9% 的副本跟随源后续修改。审计模型评分最高的 100 个仓库可阻止 14.9% 的后续高风险 skill adoption，而最多 star 的 100 个仅 0.5%。",
+          "text": "在 1 April 2026 切分下，审计源选择模型排名前 100 仓库可预防 14.9% 的后续高风险采用，远高于 stars 的 0.5%；此外，仅 20.9% 的副本会跟随源仓库后续修改更新。",
           "label": "实验与结果"
         },
         {
-          "text": "重建日期与顺序仅与安装器记录一致，审计评估只依赖哪些仓库是来源、不涉及作者身份；风险标记代表能力而非恶意，高精确率低召回使风险计数只是下界。数据仅覆盖该格式在公开 GitHub 上的前 10 个月，这也是分发实践形成的时期。",
+          "text": "作者指出风险标签标记能力而非恶意意图，属于风险下界；数据仅覆盖公开 GitHub 前十个月。实验基于 GitSkills 数据集，审计策略在单一主时间切分及前后各一个月对照切分下进行了验证。",
           "label": "局限与可以继续做的"
         }
       ],
-      "sourceName": "论文全文（AI 生成）",
+      "sourceName": "论文 PDF（Gemini 生成）",
       "sourceUrl": "https://arxiv.org/abs/2610.11169"
     },
     "links": {
@@ -47,7 +47,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "一篇被 AACL IJCNLP 2026 接收的论文对 LLM-as-a-Judge 做了系统性的可靠性审计，在四个基准、五种提示格式、两种呈现顺序、三个采样温度下对六款前沿模型各重复十次测试。结果显示：温度为零时同一条件下的判定仍会变化；交换候选位置顺序会让困难任务上的多数判定翻转；一致性最完美的裁判只是机械重复错误判定，与标准答案一致的比例仅 51%。作者提出可信判定率（T）指标，用以刻画判定同时满足可复现、顺序不变且准确的概率，并据此推导位置偏差给准确率带来的理论上界，指出可靠性是逐条目而非模型级别的属性。作者还发现，从成对胜负判定改为整体评分量表评分，对可信度的提升超过任何单一提示格式干预。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "LLM-as-a-Judge的判决常被当作可复现、且与展示顺序无关的真值，并进入奖励、排行榜和模型选择。作者称重复查询和交换候选顺序都会改变判决，确定性不等于可信度。",
+          "label": "问题"
+        },
+        {
+          "text": "六名裁判在四个基准、五种提示格式、两种顺序和十次重复上接受审计。强制二选一下，可信判决率写作T=C·(A−φ/2)，要求判决可复现、换序不变且正确。另在两个客观基准上比较Direct、FLASK与G-Eval。",
+          "label": "方法"
+        },
+        {
+          "text": "Ts=0、JudgeBench、VF-XML下，Gemini-2.0-Flash的φ为98.0%、T为2.0%。G-Eval使Gemini-2.5-Pro在该基准的T从28.9%到77.9%；FLASK多格压低C。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出仅四个英文成对偏好基准，闭源模型无对数概率，可延伸到list-wise。Ts=0覆盖六名裁判、五格式与十次重复；两名推理模型无温度扫描；范式对比只在JudgeBench与LLMBar。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.12083"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.12083",
       "aisafetyhot": "https://aisafetyhot.com/items/raqu6wbr4ibd0qgtyms0zxvhc"
@@ -55,6 +76,24 @@
     "publishedAt": "2026-10-08T14:55:29.000Z",
     "timelineAt": "2026-10-09T23:01:43.997Z",
     "discoveredAt": "2026-10-09T23:01:43.997Z"
+  },
+  {
+    "arxivId": "2610.10422",
+    "title": "研究：在线 RL 行为归因信号可能被梯度大小与流畅度混淆",
+    "titleZh": "研究：在线 RL 行为归因信号可能被梯度大小与流畅度混淆",
+    "authors": [],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "一篇论文在 GRPO 在线 RL 微调上研究行为归因是否可信，用植入已知成因的行为做受控实验，并发布开源评测框架 BehaviorTrace。在 Qwen2.5-1.5B 的三个随机种子上，相当一部分归因信号来自混淆因素：仅按梯度大小对训练步骤排序、不设行为目标的对照方法达到随机水平的 4.2 至 4.5 倍，并在三个种子中的两个上达到或超过最佳定向估计器。在饱和检查点上，模型流畅度对行为标签的预测能力不弱于所比较的任何梯度方法；控制流畅度后，逐 rollout 结果在不同种子和不同生成抽样之间变化，单次运行无法定论。作者称唯一在三个种子上都成立的信号是触发 token 的梯度与行为实际发生处构建的目标对齐。论文测试了包括 GAS（renormalized TracInCP）和 TRAK 类估计器在内的现有方法，未提出新估计器，并将结论整理为评估 RL 归因的检查清单。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.10422",
+      "aisafetyhot": "https://aisafetyhot.com/items/tf5cngqw2nj2565sglybbbtm9"
+    },
+    "publishedAt": "2026-10-07T17:01:37.000Z",
+    "timelineAt": "2026-10-10T06:04:17.391Z",
+    "discoveredAt": "2026-10-10T06:04:17.391Z"
   },
   {
     "arxivId": "2610.07309",
@@ -70,7 +109,7 @@
       "paper": "https://arxiv.org/abs/2610.07309",
       "aisafetyhot": "https://aisafetyhot.com/items/exzp15zm6i2zfalgju2km6c5s"
     },
-    "publishedAt": null,
+    "publishedAt": "2026-10-05T19:47:43.000Z",
     "timelineAt": "2026-10-10T03:02:54.107Z",
     "discoveredAt": "2026-10-10T03:02:54.107Z"
   },
@@ -163,5 +202,23 @@
     "publishedAt": "2026-10-08T08:17:45.000Z",
     "timelineAt": "2026-10-10T01:12:52.652Z",
     "discoveredAt": "2026-10-10T01:12:52.652Z"
+  },
+  {
+    "arxivId": "2610.10833",
+    "title": "Agent准时停机不等于有效使用预算",
+    "titleZh": "Agent准时停机不等于有效使用预算",
+    "authors": [],
+    "category": "tip",
+    "selected": false,
+    "attention": null,
+    "summaryZh": null,
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.10833",
+      "aisafetyhot": "https://aisafetyhot.com/items/a96zojasssfyepiv1oigbpqb5"
+    },
+    "publishedAt": "2026-10-07T19:35:08.000Z",
+    "timelineAt": "2026-10-10T07:14:26.537Z",
+    "discoveredAt": "2026-10-10T07:14:26.537Z"
   }
 ]
