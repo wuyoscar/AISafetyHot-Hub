@@ -35,7 +35,7 @@ Use UTF-8, descriptive Markdown headings, relative repository links, and existin
 
 There is no testing framework or coverage threshold. For changed exports, compare paper identities and counts across Markdown, JSON, BibTeX, navigation, and `status.json`. Verify source links, duplicate handling, and rendered tables. Preserve the documented hash calculation in `status.json` when IDs change.
 
-Paper lists use Beijing calendar days based on `timelineAt`; digests cover the preceding 08:00–08:00 window. Do not force their contents to match.
+Paper lists use Beijing calendar days based on `timelineAt`; each daily digest uses original publication dates from the preceding day at 08:00 Beijing time through its latest update on the edition date. The first edition is scheduled for 08:00; later developments update the same issue. Do not force their contents to match.
 
 ## Commit & Pull Request Guidelines
 

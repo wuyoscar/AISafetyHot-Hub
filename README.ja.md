@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://aisafetyhot.com"><img src="https://img.shields.io/badge/%F0%9F%8C%90%20%E3%82%A6%E3%82%A7%E3%83%96%E3%82%B5%E3%82%A4%E3%83%88-aisafetyhot.com-2563eb?style=flat-square" alt="🌐 ウェブサイト：aisafetyhot.com"></a>
-  <a href="https://aisafetyhot.com"><img src="https://img.shields.io/badge/%E6%97%A5%E5%A0%B1-%E6%AF%8E%E6%97%A5%2008%3A00%20%E5%8C%97%E4%BA%AC%E6%99%82%E9%96%93-d97706?style=flat-square" alt="毎日北京時間08:00に日報を公開"></a>
+  <a href="https://aisafetyhot.com"><img src="https://img.shields.io/badge/%E6%97%A5%E5%A0%B1-%E5%BD%93%E6%97%A5%E9%9A%8F%E6%99%82%E6%9B%B4%E6%96%B0-d97706?style=flat-square" alt="当日1号、新しい動きに合わせて更新"></a>
   <a href="#agent"><img src="https://img.shields.io/badge/%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88-MCP-2563eb?style=flat-square" alt="エージェント接続：MCP"></a>
   <a href="#papers"><img src="https://img.shields.io/badge/%E8%AB%96%E6%96%87-Markdown%20%2F%20BibTeX%20%2F%20JSON-16856b?style=flat-square" alt="3つの形式で提供する論文リスト"></a>
 </p>
@@ -129,7 +129,7 @@ claude mcp add --transport http --scope user aisafetyhot https://aisafetyhot.com
 - [日報アーカイブ（中国語）](daily)
 - [ウェブサイトで日報を読む（中国語）](https://aisafetyhot.com/daily)
 
-> 日報は毎日北京時間（UTC+8）**08:00**に公開され、Hubは**15分ごと**に更新を確認します。中国語版READMEでは新しい号の公開後に日報欄が置き換わり、過去の号は[日報アーカイブ（中国語）](daily)に保存されます。
+> 日報の初版は毎日北京時間（UTC+8）**08:00**に公開され、当日の新しい動きに合わせて同じ号を更新します。Hubは**15分ごと**に更新を確認します。中国語版READMEでは新しい号の公開後に日報欄が置き換わり、過去の号は[日報アーカイブ（中国語）](daily)に保存されます。
 
 <a id="papers"></a>
 
@@ -154,7 +154,7 @@ arXiv論文のLaTeXソースファイル（source）をダウンロードする�
 - [2026年の目次（中国語）](archive/2026.md)
 - [論文リスト（中国語）](papers)
 
-論文リストは北京時間（UTC+8）の暦日（00:00から24:00まで）ごとに、サイトのタイムライン上の時刻を基準に分類します。日報の対象期間は、北京時間の前日08:00から当日08:00までです。日付の区切りが異なるため、同じ日付の日報と論文リストに含まれる論文は完全には一致せず、隣接する日付の日報に掲載されることもあります。直近7日分について、サイトでの論文の取り下げ、修正、追加を1時間ごとに確認し、変更があれば該当日のリストに同期します。
+論文リストは北京時間（UTC+8）の暦日（00:00から24:00まで）ごとに、サイトのタイムライン上の時刻を基準に分類します。日報は原文の公開日時を基準に、北京時間の前日08:00から当日の最新更新時点までを対象とします。日付の区切りが異なるため、同じ日付の日報と論文リストに含まれる論文は完全には一致せず、隣接する日付の日報に掲載されることもあります。直近7日分について、サイトでの論文の取り下げ、修正、追加を1時間ごとに確認し、変更があれば該当日のリストに同期します。
 
 [status.json](status.json)には、各日の論文数、IDのダイジェスト、同期の制限時間を記録しています。`slaMinutes`は、サイト上の論文がこのリポジトリに反映されるまでの最大許容時間を分単位で表します。
 

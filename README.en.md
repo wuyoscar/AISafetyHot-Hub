@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://aisafetyhot.com"><img src="https://img.shields.io/badge/%F0%9F%8C%90%20Website-aisafetyhot.com-2563eb?style=flat-square" alt="🌐 Website: aisafetyhot.com"></a>
-  <a href="https://aisafetyhot.com"><img src="https://img.shields.io/badge/Daily%20digest-Daily%2008%3A00%20Beijing%20%28UTC%2B8%29-d97706?style=flat-square" alt="Daily digest published at 08:00 Beijing time (UTC+8)"></a>
+  <a href="https://aisafetyhot.com"><img src="https://img.shields.io/badge/Daily%20digest-Updated%20throughout%20the%20day-d97706?style=flat-square" alt="One daily edition, updated as news develops"></a>
   <a href="#agent"><img src="https://img.shields.io/badge/Agent-MCP-2563eb?style=flat-square" alt="Agent MCP"></a>
   <a href="#papers"><img src="https://img.shields.io/badge/Papers-Markdown%20%2F%20BibTeX%20%2F%20JSON-16856b?style=flat-square" alt="Paper lists in three formats"></a>
 </p>
@@ -129,7 +129,7 @@ Read the latest digest and earlier editions through these regularly updated entr
 - [Daily digest archive (Chinese)](daily)
 - [Daily reports on the website (Chinese)](https://aisafetyhot.com/daily)
 
-> The daily digest is published each day at **08:00 Beijing time (UTC+8)**. The Hub checks for updates every 15 minutes. Each new edition replaces the digest section in the Chinese README; earlier editions remain in the [daily digest archive (Chinese)](daily).
+> The first daily edition is published at **08:00 Beijing time (UTC+8)** and updated as new developments arrive throughout the same day. The Hub checks for updates every 15 minutes. Each new edition replaces the digest section in the Chinese README; earlier editions remain in the [daily digest archive (Chinese)](daily).
 
 <a id="papers"></a>
 
@@ -154,7 +154,7 @@ To download the LaTeX source files of arXiv papers, you can also use [arxiv2agen
 - [2026 archive (Chinese)](archive/2026.md)
 - [Paper lists (Chinese)](papers)
 
-Paper lists are grouped by Beijing calendar day (00:00–24:00), using the paper's timestamp on the website timeline. Daily digests cover the window from 08:00 on the previous day to 08:00 on the current day, Beijing time (UTC+8). Because these day boundaries differ, a digest and paper list for the same date do not contain exactly the same set of items; a paper may appear in the digest for an adjacent date. Papers removed, corrected, or added on the website within the most recent 7 days are checked hourly, and any changes are synchronized to the list for the corresponding day.
+Paper lists are grouped by Beijing calendar day (00:00–24:00), using the paper's timestamp on the website timeline. Each daily edition uses original publication dates, covering 08:00 on the previous day through the latest update on the edition date, Beijing time (UTC+8). Because these day boundaries differ, a digest and paper list for the same date do not contain exactly the same set of items; a paper may appear in the digest for an adjacent date. Papers removed, corrected, or added on the website within the most recent 7 days are checked hourly, and any changes are synchronized to the list for the corresponding day.
 
 [status.json](status.json) records each day's paper count and an ID digest, as well as the synchronization time limit (`slaMinutes`: the maximum number of minutes before papers on the website appear here).
 

@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://aisafetyhot.com"><img src="https://img.shields.io/badge/%F0%9F%8C%90%20Website-aisafetyhot.com-2563eb?style=flat-square" alt="🌐 Website：aisafetyhot.com"></a>
-  <a href="https://aisafetyhot.com"><img src="https://img.shields.io/badge/日报-每天%2008%3A00%20北京时间-d97706?style=flat-square" alt="每天北京时间 08:00 发布日报"></a>
+  <a href="https://aisafetyhot.com"><img src="https://img.shields.io/badge/日报-当天持续更新-d97706?style=flat-square" alt="当天一期，随新进展更新"></a>
   <a href="#agent"><img src="https://img.shields.io/badge/Agent-MCP-2563eb?style=flat-square" alt="Agent MCP"></a>
   <a href="#papers"><img src="https://img.shields.io/badge/论文-Markdown%20%2F%20BibTeX%20%2F%20JSON-16856b?style=flat-square" alt="三种格式的论文清单"></a>
 </p>
@@ -241,7 +241,7 @@ Anthropic 披露其内部 AI Agent 在联网评测中利用网站漏洞、绕过
 </details>
 <!-- daily:end -->
 
-> 日报每天北京时间 08:00 发布；Hub 每 15 分钟检查更新。新一期发布后替换本区，往期保留在 [日报归档](daily)。
+> 日报每天北京时间 08:00 出首版，同一天随新进展更新；Hub 每 15 分钟检查更新。新一期发布后替换本区，往期保留在 [日报归档](daily)。
 
 <a id="papers"></a>
 
