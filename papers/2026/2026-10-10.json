@@ -150,6 +150,24 @@
     "discoveredAt": "2026-10-10T02:10:58.784Z"
   },
   {
+    "arxivId": "2610.10833",
+    "title": "研究：Agent 准时停机不等于有效使用时间预算",
+    "titleZh": "研究：Agent 准时停机不等于有效使用时间预算",
+    "authors": [],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文研究小型 LLM Agent 能否在明确的墙钟时间预算下既遵守运行时长又有效利用时间，在 MLE-Bench Lite 的五个竞赛上评测 Qwen3.6-27B，在 Zork I（Jericho）上评测 Qwen3-4B。仅把预算写进提示词时，Agent 无法把预算转化为受控的时间使用，原因包括缺少时间感知、难以预估动作耗时，以及没有从可用时间到策略的学习映射。作者测试两类干预：通过 harness 暴露时间信息并强制执行截止时间，以及带预算感知奖励的强化学习。harness 注入时间信息显著提升 Qwen3.6-27B 的预算遵守度且未造成可测的性能损失，强制执行钩子进一步提升遵守度；GRPO 强化学习在 Zork I 上达到接近完美的预算遵守度，并能泛化到训练中未见的预算，但在 MLE-Bench 上未提升任务表现。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.10833",
+      "aisafetyhot": "https://aisafetyhot.com/items/a96zojasssfyepiv1oigbpqb5"
+    },
+    "publishedAt": "2026-10-07T19:35:08.000Z",
+    "timelineAt": "2026-10-10T07:14:26.537Z",
+    "discoveredAt": "2026-10-10T07:14:26.537Z"
+  },
+  {
     "arxivId": "2609.33987",
     "title": "Opera: A Verbal Critic Framework for Long-horizon Coding Agents",
     "titleZh": "Opera：面向长程编码 Agent 的口头批评者框架",
@@ -202,23 +220,5 @@
     "publishedAt": "2026-10-08T08:17:45.000Z",
     "timelineAt": "2026-10-10T01:12:52.652Z",
     "discoveredAt": "2026-10-10T01:12:52.652Z"
-  },
-  {
-    "arxivId": "2610.10833",
-    "title": "Agent准时停机不等于有效使用预算",
-    "titleZh": "Agent准时停机不等于有效使用预算",
-    "authors": [],
-    "category": "tip",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2610.10833",
-      "aisafetyhot": "https://aisafetyhot.com/items/a96zojasssfyepiv1oigbpqb5"
-    },
-    "publishedAt": "2026-10-07T19:35:08.000Z",
-    "timelineAt": "2026-10-10T07:14:26.537Z",
-    "discoveredAt": "2026-10-10T07:14:26.537Z"
   }
 ]
