@@ -1803,23 +1803,23 @@
     "quickRead": {
       "parts": [
         {
-          "text": "单次前向的幻觉检测器依赖模型内部信号（不确定性、隐状态几何、注意力），隐含假设幻觉在这些信号中留下可分离痕迹。在开放权重或自托管部署中，白盒攻击者可以微调模型来掩盖这些痕迹，而现有评估通常把模型当作被动的。",
+          "text": "单次前向幻觉检测器依赖模型的内部计算遥测（如不确定性、隐藏状态几何和注意力）。以往评估假定模型是被动的，未考虑在开源权重或自托管部署中，模型侧对抗者通过修改模型内部表征来规避检测的风险。",
           "label": "问题"
         },
         {
-          "text": "作者提出 CORVUS，一种模型侧红队方法：冻结基座模型和检测器，只训练轻量 LoRA 适配器，在 teacher forcing 下直接优化三个可微 telemetry 信号——token entropy（TE）、hidden log-volume（HV）和 attention diagonality（AD），并加入一步 embedding 空间 FGSM 注意力压力测试。训练只用 1,000 条分布外 Alpaca 指令，不含检测器标签。",
+          "text": "作者提出 CORVUS 方法，冻结基座模型并训练轻量 LoRA 适配器。在教师强制下直接优化回答词元的标记熵与隐藏对数体积，并通过单步嵌入空间 FGSM 扰动引入对抗注意力对角性损失，在保持表面回答不变的同时伪装内部遥测。",
           "label": "方法"
         },
         {
-          "text": "在 FAVA-Annotation 上对 Llama-2、Vicuna、Llama-3、Qwen2.5 四个开放权重模型做固定答案 teacher-forced 重放，CORVUS 适配器零样本迁移后降低了训练无关检测器（PPL、Window-Entropy、LLM-Check 及其 Hidden/Attention 分量）和探针检测器（SEP、ICR-probe）的效果。干净模型上校准的阈值在适配后常出现 FPR 升高、TPR 下降，注意力/表示类信号最脆弱，LLM-Check Attention Score 最多掉 25.5 AUROC 点。消融显示 AD 项是规避注意力类特征的主要杠杆，TE 和 HV 提供次要调节。",
+          "text": "适配器在 1,000 条 Alpaca 指令上训练后零样本迁移到 FAVA-Annotation。作者报告其降低了 Llama-2、Vicuna、Llama-3 和 Qwen2.5 上的免训练检测器与探测器性能，Llama-2 上注意力分数 AUROC 降至 48.08。",
           "label": "实验与结果"
         },
         {
-          "text": "CORVUS 假设白盒访问，主要适用于开源或自托管模型，对闭源 API 只能通过替代模型攻击。评估仅限单模型内部的单次检测器，未涵盖检索式事实核查等更强防御。该方法只针对模型内部信号而非事实性，能隐藏幻觉但不修正它；作者提出未来可做提升事实性的攻击或显式监控事实一致性的防御。",
+          "text": "方法假设具有白盒访问权限，不直接适用于闭源 API；实验局限于单次前向内部检测器；方法仅伪装内部信号而不优化事实性，无法修复幻觉本身；论文未报告针对检索增强等外部检测的防御效果。",
           "label": "局限与可以继续做的"
         }
       ],
-      "sourceName": "论文全文（AI 生成）",
+      "sourceName": "论文 PDF（Gemini 生成）",
       "sourceUrl": "https://arxiv.org/abs/2601.14310"
     },
     "links": {

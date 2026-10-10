@@ -127,5 +127,23 @@
     "publishedAt": "2026-10-08T08:17:45.000Z",
     "timelineAt": "2026-10-10T01:12:52.652Z",
     "discoveredAt": "2026-10-10T01:12:52.652Z"
+  },
+  {
+    "arxivId": "2610.09167",
+    "title": "Persist-3 研究识别未见越狱来源",
+    "titleZh": "Persist-3 研究识别未见越狱来源",
+    "authors": [],
+    "category": "defense",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出防御方法 Persist-3，用于检测未见攻击来源的越狱，并在两种既有防御上进行评估。该方法利用目标模型的隐藏表示，按分段独立同分布的流假设建模，指出来源新颖性判断与有害性判断不能直接等同。作者还讨论了有限窗口与新来源分离条件。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.09167",
+      "aisafetyhot": "https://aisafetyhot.com/items/mek7qa97peombxtebbf9oum6y"
+    },
+    "publishedAt": "2026-10-06T22:10:21.000Z",
+    "timelineAt": "2026-10-10T02:10:58.784Z",
+    "discoveredAt": "2026-10-10T02:10:58.784Z"
   }
 ]
