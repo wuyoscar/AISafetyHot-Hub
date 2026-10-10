@@ -96,6 +96,26 @@
     "discoveredAt": "2026-10-10T06:04:17.391Z"
   },
   {
+    "arxivId": "2610.11599",
+    "title": "Large Language Model Turnover Undermines Screening for Artificial Intelligence-Assisted Scientific Writing",
+    "titleZh": "研究：大语言模型版本更替削弱 AI 辅助科研写作筛查",
+    "authors": [
+      "Kazuki Nakajima; Takayuki Mizuno"
+    ],
+    "category": "eval",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "日本研究者 Kazuki Nakajima 与 Takayuki Mizuno 的论文量化了大语言模型版本更替对科研稿件 AI 写作筛查的影响。研究将 PNAS 的 4000 篇 ChatGPT 之前摘要与 23 个模型版本（来自三家厂商，2023 年 6 月至 2026 年 8 月发布）的改写配对，并在从每次新版本都重训到只训练一次不再更新的多种维护场景下训练检测器。仅在厂商历史版本上训练的检测器会在模型代际边界处失效：在校准为误报 1% 人类摘要时，最陡边界前可检出超过 99% 的改写，边界后仅 3.8%。在模拟的两种筛查场景中，覆盖全部 23 个版本的筛查要么误标八分之一的人类摘要，要么漏掉最新版本三分之一改写。作者据此建议科研诚信政策应将检测器的基准准确率视为临时性的，需随每次模型发布重新验证。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.11599",
+      "aisafetyhot": "https://aisafetyhot.com/items/xe661qjmzmcayim2zacw6ut0k"
+    },
+    "publishedAt": "2026-10-08T09:44:08.000Z",
+    "timelineAt": "2026-10-10T11:06:47.151Z",
+    "discoveredAt": "2026-10-10T11:06:47.151Z"
+  },
+  {
     "arxivId": "2610.07309",
     "title": "论文提出长期记忆智能体的检索可允许性验证框架",
     "titleZh": "论文提出长期记忆智能体的检索可允许性验证框架",
@@ -246,6 +266,26 @@
     "discoveredAt": "2026-10-09T17:19:19.856Z"
   },
   {
+    "arxivId": "2610.12432",
+    "title": "FAITH: Feasibility-Aware Safety-Filtered RL for High-Dimensional Systems",
+    "titleZh": "FAITH：面向高维系统的可行性感知安全过滤强化学习框架",
+    "authors": [
+      "Songyuan Zhang; Baljeet Singh; Sarthak Ranjeet Kaingade; Chuchu Fan; Bryan Trinh"
+    ],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "FAITH 是一种无模型、可行性感知的安全过滤强化学习框架，用前馈网络近似最优状态-动作安全价值并摊销最小干预过滤，使任务策略通过过滤后的动力学优化回报，无需在策略更新中加入竞争性安全项。在双积分器、Safety Gym 和 29-DoF 人形机器人上，FAITH 在可行起点无违规且回报最高，在 Walking-Avoid 中达到 99.95% 安全率并保留 97% 未过滤回报，在 Push-Avoid 中通过牺牲平衡、向远离保护区方向跌倒取得最高安全率；相同策略还在真实 Unitree G1 人形机器人上演示。",
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.12432",
+      "aisafetyhot": "https://aisafetyhot.com/items/d4pxfhyhnqsfgy3qgltwlqu7h"
+    },
+    "publishedAt": "2026-10-08T17:57:06.000Z",
+    "timelineAt": "2026-10-10T11:58:52.651Z",
+    "discoveredAt": "2026-10-10T11:58:52.651Z"
+  },
+  {
     "arxivId": "2610.11467",
     "title": "GROB 用公开网络痕迹研究自主智能体活动归因边界",
     "titleZh": "GROB 用公开网络痕迹研究自主智能体活动归因边界",
@@ -262,25 +302,5 @@
     "publishedAt": "2026-10-08T08:17:45.000Z",
     "timelineAt": "2026-10-10T01:12:52.652Z",
     "discoveredAt": "2026-10-10T01:12:52.652Z"
-  },
-  {
-    "arxivId": "2610.11599",
-    "title": "Large Language Model Turnover Undermines Screening for Artificial Intelligence-Assisted Scientific Writing",
-    "titleZh": "大语言模型更替削弱对人工智能辅助科学写作的筛查",
-    "authors": [
-      "Kazuki Nakajima; Takayuki Mizuno"
-    ],
-    "category": "eval",
-    "selected": false,
-    "attention": null,
-    "summaryZh": null,
-    "quickRead": null,
-    "links": {
-      "paper": "https://arxiv.org/abs/2610.11599",
-      "aisafetyhot": "https://aisafetyhot.com/items/xe661qjmzmcayim2zacw6ut0k"
-    },
-    "publishedAt": "2026-10-08T09:44:08.000Z",
-    "timelineAt": "2026-10-10T11:06:47.151Z",
-    "discoveredAt": "2026-10-10T11:06:47.151Z"
   }
 ]
