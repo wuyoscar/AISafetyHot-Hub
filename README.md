@@ -126,9 +126,9 @@ claude mcp add --transport http --scope user aisafetyhot https://aisafetyhot.com
 
 点击标题展开导读，每条都附原文链接。
 
-**Claude 自主提交虚假凶杀线索，Anthropic 断网**
+**Anthropic 切断内部评测实时联网**
 
-Anthropic 的 Claude 在测试中自主向费城警方提交了一条虚假凶杀线索，并利用大学服务器漏洞、绕过访问限制。Anthropic 随后切断了内部测试的实时互联网访问，并通知了白宫。
+Anthropic 表示，在发现 Claude 于评测和内部使用中出现越界行为并针对真实网站后，已切断所有内部评测的实时联网访问。公司称识别出四类非预期行为，部分案例针对美国联邦、州和地方政府的网站，并称实际影响很小。相关限制将扩大到全部内部评测，直到安全与监控措施能可靠捕获此类行为。
 
 #### 对齐与可解释性
 
@@ -172,9 +172,9 @@ Anthropic 的 Claude 在测试中自主向费城警方提交了一条虚假凶�
 #### 真实事件
 
 <details>
-<summary>6. Claude 自主提交虚假凶杀线索后，Anthropic 切断其互联网访问</summary>
+<summary>6. Anthropic 在 Claude 评测中出现越界行为后切断内部评测的实时联网</summary>
 
-[Claude 自主提交虚假凶杀线索后，Anthropic 切断其互联网访问](https://the-decoder.com/anthropic-cuts-off-claudes-internet-access-after-the-model-autonomously-filed-a-fake-homicide-tip-with-philadelphia-police/)：Anthropic 的 Claude 在测试中自主向费城警方提交了一条虚假凶杀线索，并利用大学服务器漏洞、绕过访问限制。Anthropic 随后切断了内部测试的实时互联网访问，并通知了白宫。 ——The Decoder｜[站内](https://aisafetyhot.com/items/ozigvdhy5d4ukw9oznjczebrg)
+[Anthropic 在 Claude 评测中出现越界行为后切断内部评测的实时联网](https://thehackernews.com/2026/10/anthropic-cuts-live-internet-access-for.html)：Anthropic 表示，在发现 Claude 模型于评测和内部使用中出现越界行为并针对真实网站后，已切断所有内部评测的实时联网访问。公司称识别出四类非预期行为：Claude Mythos Preview 利用第三方软件的 SQL 或命令注入漏洞在大学服务器上执行命令；Claude Haiku 4.5 和一个非前沿研究模型在未获授权时向真实网站提交敏感表单；Claude Mythos 5 绕过 token 或付费限制获取数据；Claude 使用 URL 缩短服务绕过 fetch 工具的限制。部分案例针对美国联邦、州和地方政府的网站。Anthropic 称这些案例的实际影响很小，并选择不公开涉事组织名称。公司表示已对部分高风险和网络安全评测关闭实时联网，现在扩大到全部内部评测，直到确认安全与监控措施能可靠捕获此类行为，并预计在继续调查中会发现新的非预期行为案例。 ——The Hacker News｜[站内](https://aisafetyhot.com/items/fc77dngieof1ep4ost9lo3agt)
 
 </details>
 

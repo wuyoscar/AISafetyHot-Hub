@@ -140,7 +140,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "论文提出 Persist-3，用于从攻击提示流中判断其是否来自已知攻击源之外的来源。方法对每个已知来源计算 conformal p 值，只有当针对所有已知来源的证据都足够强时才拒绝原假设。理论分析显示，其检测概率随观测窗口增大呈指数级趋近于 1，因此较短的窗口即可检测与已知来源区分明显的未见来源。作者在 MTK 和 Prompt Guard 2 两种近期越狱防御之上验证 Persist-3，观察到防御效果显著增强。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "越狱防御通常按固定的已知攻击方法校准，新方法出现后已有检测会变差。作者要回答：只看受害模型返回响应前的表示流，如何判断当前攻击不属于任一已知源，以及分离程度如何决定检出速度。已知源之间的切换不应算作目标。",
+          "label": "问题"
+        },
+        {
+          "text": "对每个已知源计算马氏分数和 split conformal p 值。Persist-3 对最近 W=10 条按源平均后再取最小，并要求连续 L=3 步越阈，因此只依赖最近 12 条。阈值只用已知源验证流。报警后在未改动护栏上升级该流。",
+          "label": "方法"
+        },
+        {
+          "text": "H=1000 时 Persist-3 的 KU 检出率 0.458，SR-DKW full 为 0.648，静止 FPR 均为 0/1835（Table 1）。叠在 MTK 或 PG2 上，作者称 block rate 增加 7.0 至 10.0 个百分点（Table 2）。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者将更多在线数据下的渐近分析列为后续方向，并写明完全自适应攻击者不在定理与压力测试内。经验上不含已验证的报警后登记；分层比较未做预算匹配。回放未与 Piet et al. (2025) 的流级防御比较。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.09167"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.09167",
       "aisafetyhot": "https://aisafetyhot.com/items/mek7qa97peombxtebbf9oum6y"
@@ -158,7 +179,28 @@
     "selected": false,
     "attention": null,
     "summaryZh": "论文研究小型 LLM Agent 能否在明确的墙钟时间预算下既遵守运行时长又有效利用时间，在 MLE-Bench Lite 的五个竞赛上评测 Qwen3.6-27B，在 Zork I（Jericho）上评测 Qwen3-4B。仅把预算写进提示词时，Agent 无法把预算转化为受控的时间使用，原因包括缺少时间感知、难以预估动作耗时，以及没有从可用时间到策略的学习映射。作者测试两类干预：通过 harness 暴露时间信息并强制执行截止时间，以及带预算感知奖励的强化学习。harness 注入时间信息显著提升 Qwen3.6-27B 的预算遵守度且未造成可测的性能损失，强制执行钩子进一步提升遵守度；GRPO 强化学习在 Zork I 上达到接近完美的预算遵守度，并能泛化到训练中未见的预算，但在 MLE-Bench 上未提升任务表现。",
-    "quickRead": null,
+    "quickRead": {
+      "parts": [
+        {
+          "text": "智能体需要在显式 wall-clock 预算内返回，并在搜索型任务上把更多时间换成更好的解。作者将要求分为 adherence（按时）和 productive use（加时提高成绩）。只写在提示词里时，模型没有计时反馈，也不能可靠预估动作时长。",
+          "label": "问题"
+        },
+        {
+          "text": "在五场 MLE-Bench（Qwen3.6-27B）和 Zork I（Qwen3-4B）上，比较提示词预算、可截断或拒绝超时命令的时钟 harness，以及 GRPO。Zork 奖励在分数上加时间项，超过 1.1 倍预算可整段清零。",
+          "label": "方法"
+        },
+        {
+          "text": "Table 2：Qwen3.6-27B、15分钟，仅提示词按时率15%，refuse为88%，时钟后用时占预算99.7%。Qwen3-4B、RL+Auto-Clock、16秒为46.4/350。作者称会停止，但加时未提高成绩。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "作者指出策略坍缩、记忆化与评测范围仍开放，并建议探索奖励与环境变化。实验为五场MLE-Bench（Qwen3.6-27B）和Zork I；Table 6每格n=16。论文未报告Table 2的episode数。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.10833"
+    },
     "links": {
       "paper": "https://arxiv.org/abs/2610.10833",
       "aisafetyhot": "https://aisafetyhot.com/items/a96zojasssfyepiv1oigbpqb5"
