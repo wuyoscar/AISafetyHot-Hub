@@ -1,0 +1,22 @@
+[
+  {
+    "arxivId": "2610.12445",
+    "title": "Caught in the Act: Probes Effectively Detect Sabotage and Catch Unverbalized Deception",
+    "titleZh": "当场抓获：探针能有效检测破坏行为并捕捉未言明的欺骗",
+    "authors": [
+      "Oskar J. Hollinsworth; Alex F. Spies; Tigist Diriba; Adam Gleave; Chris Cundy"
+    ],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": null,
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.12445",
+      "aisafetyhot": "https://aisafetyhot.com/items/bp1e2e7mg03hqoq6khww30za7"
+    },
+    "publishedAt": "2026-10-08T17:58:13.000Z",
+    "timelineAt": "2026-10-10T17:01:19.739Z",
+    "discoveredAt": "2026-10-10T17:01:19.739Z"
+  }
+]
