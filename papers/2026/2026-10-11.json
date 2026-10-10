@@ -59,5 +59,23 @@
     "publishedAt": "2026-10-08T06:45:24.000Z",
     "timelineAt": "2026-10-10T18:02:20.283Z",
     "discoveredAt": "2026-10-10T18:02:20.283Z"
+  },
+  {
+    "arxivId": "2610.12410",
+    "title": "Predicting Alignment Generalization with Value Representations",
+    "titleZh": "用价值表征预测对齐泛化",
+    "authors": [],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": null,
+    "quickRead": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.12410",
+      "aisafetyhot": "https://aisafetyhot.com/items/qaiv4nqmbku6uivr0b5hh8hzl"
+    },
+    "publishedAt": "2026-10-08T17:47:26.000Z",
+    "timelineAt": "2026-10-10T23:05:42.828Z",
+    "discoveredAt": "2026-10-10T23:05:42.828Z"
   }
 ]
