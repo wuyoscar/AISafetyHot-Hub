@@ -41,6 +41,45 @@
     "discoveredAt": "2026-10-10T17:01:19.739Z"
   },
   {
+    "arxivId": "2610.12410",
+    "title": "Predicting Alignment Generalization with Value Representations",
+    "titleZh": "论文提出对齐泛化预测任务，用激活表征预测微调价值观的跨情境影响",
+    "authors": [],
+    "category": "alignment",
+    "selected": false,
+    "attention": null,
+    "summaryZh": "论文提出对齐泛化预测任务，即预测将模型微调为遵循某一价值观后，其在大量未见的其他价值观上行为会如何变化。作者对现代对齐目标中的 66 种价值观做了大规模泛化效应分析，并在该预测任务上评测多种表征方法：基于模型在上下文中应用价值观时激活的表征显著优于基于价值观文本描述的方法，最佳激活方法与该泛化矩阵的相关性为 0.45，描述类基线为 0.05。作者还用这类表征衡量多价值观对齐目标中各价值观的相似度，发现其与模型鲁棒性显著相关，并给出存在共享、与模型无关的价值观空间的初步证据，据此构建了首个基于实证泛化动态的 LLM 价值观分类体系。",
+    "quickRead": {
+      "parts": [
+        {
+          "text": "alignment target 中的价值经后训练写入模型后，窄行为仍可能意外改变未见情境中的行为。作者要在训练前预测：微调遵循某一价值，会如何改变大量未训练价值上的倾向。",
+          "label": "问题"
+        },
+        {
+          "text": "在 CONSTITUTION 上做单价值 DPO 与 SFT，用 ConflictScope 得到泛化矩阵 G。比较描述嵌入、行为嵌入和 PERSONA、GRADIENT、WEIGHT 的相似度能否预测 G，再用于多价值连贯性与 VALUE MAP。",
+          "label": "方法"
+        },
+        {
+          "text": "PERSONA 对 G 的汇总 ρ 为 0.45，描述嵌入为 0.05（Table 1）。Qwen-3-8B 上连贯性与 prefill 鲁棒性 ρ 为 0.43（图3，PERSONA）。VALUE MAP 汇总分数 2.61±0.13，高于两既有分类（Table 3）。",
+          "label": "实验与结果"
+        },
+        {
+          "text": "结论提出可更稳健地预测对齐泛化、考察特质如何写入微调数据，并把 VALUE MAP 用于更现实的对齐训练。实验覆盖四个基座的 DPO 与 SFT、49 个 DPO 价值、Qwen-3-8B 上 64 个六价值目标，以及 266 个价值的分类；未报告训练重复次数。",
+          "label": "局限与可以继续做的"
+        }
+      ],
+      "sourceName": "论文 PDF（AI 生成）",
+      "sourceUrl": "https://arxiv.org/abs/2610.12410"
+    },
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.12410",
+      "aisafetyhot": "https://aisafetyhot.com/items/qaiv4nqmbku6uivr0b5hh8hzl"
+    },
+    "publishedAt": "2026-10-08T17:47:26.000Z",
+    "timelineAt": "2026-10-10T23:05:42.828Z",
+    "discoveredAt": "2026-10-10T23:05:42.828Z"
+  },
+  {
     "arxivId": "2610.11352",
     "title": "RL-ARC: Calibrating Large Reasoning Models via Reasoning-guided Uncertainty",
     "titleZh": "RL-ARC：用推理引导的不确定性校准大型推理模型",
@@ -61,21 +100,21 @@
     "discoveredAt": "2026-10-10T18:02:20.283Z"
   },
   {
-    "arxivId": "2610.12410",
-    "title": "Predicting Alignment Generalization with Value Representations",
-    "titleZh": "用价值表征预测对齐泛化",
+    "arxivId": "2610.11586",
+    "title": "Measuring Cultural Alignment Beyond the Average: A Framework for Evaluating Maternal-Health LLM Interactions in Indian Contexts",
+    "titleZh": "MH-INDIC：面向印度城市与半城市语境孕产妇健康 LLM 交互的文化对齐评估框架",
     "authors": [],
-    "category": "alignment",
+    "category": "eval",
     "selected": false,
     "attention": null,
-    "summaryZh": null,
+    "summaryZh": "研究者提出 MH-INDIC，一个面向印度北部城市与半城市语境孕产妇健康交互的文化对齐评估框架，用十维度孕产妇健康推理刻画文化行为。基于对 102 名孕产妇的 26 项调查，团队评估了 10 个 LLM，发现多个模型接近人群层面的文化分布，但所有系统在人口与家庭画像上的行为差异都明显低于人类队列。用对齐度最高的专有与开源模型生成对话时，人类接地条件提示带来更强的画像对齐与对话质量评分。",
     "quickRead": null,
     "links": {
-      "paper": "https://arxiv.org/abs/2610.12410",
-      "aisafetyhot": "https://aisafetyhot.com/items/qaiv4nqmbku6uivr0b5hh8hzl"
+      "paper": "https://arxiv.org/abs/2610.11586",
+      "aisafetyhot": "https://aisafetyhot.com/items/plv4ki45epodovlf9m1h7n3gv"
     },
-    "publishedAt": "2026-10-08T17:47:26.000Z",
-    "timelineAt": "2026-10-10T23:05:42.828Z",
-    "discoveredAt": "2026-10-10T23:05:42.828Z"
+    "publishedAt": "2026-10-08T09:35:15.000Z",
+    "timelineAt": "2026-10-11T00:06:50.690Z",
+    "discoveredAt": "2026-10-11T00:06:50.690Z"
   }
 ]
