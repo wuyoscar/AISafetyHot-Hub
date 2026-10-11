@@ -4,7 +4,7 @@
 
 <h1 align="center">AI Safety HOT Hub</h1>
 
-<p align="center"><strong>Let your Agent find news, read papers, follow events, and prepare AI safety briefings.</strong></p>
+<p align="center"><strong>Follow AI safety news and events, read papers, and connect your Agent.</strong></p>
 
 <p align="center">Attacks and jailbreaks · Defenses and guardrails · Alignment and safety evaluations · AI incidents · Multi-agent safety risks · Governance and policy</p>
 
@@ -19,14 +19,16 @@
   <a href="#agent">Connect your Agent</a> ·
   <a href="#examples">See how to use it</a> ·
   <a href="#daily">Daily digest</a> ·
-  <a href="https://aisafetyhot.com/all?view=graph">Visualization</a> ·
+  <a href="https://aisafetyhot.com/">Visual overview</a> ·
+  <a href="https://aisafetyhot.com/featured">News only</a> ·
+  <a href="https://aisafetyhot.com/papers">Papers only</a> ·
   <a href="#papers">Related papers</a> ·
   <a href="https://aisafetyhot.com/hot">Trending events</a> ·
   <a href="https://aisafetyhot.com">Visit the website ↗</a>
 </p>
 
 <p align="center">
-  <a href="https://aisafetyhot.com"><img src="assets/news-monitor-demo.gif" width="1000" alt="Animated demo of the AI Safety HOT news list and visualization"></a>
+  <a href="https://aisafetyhot.com"><img src="assets/news-monitor-demo.gif" width="1000" alt="Animated demo of AI Safety HOT News Monitor"></a>
 </p>
 
 <p align="center">The demo interface is in Chinese.</p>
@@ -36,6 +38,21 @@ This is the **Agent connection guide and public content archive** for [AI Safety
 This is the English guide. Linked documentation, daily digests, archives, and service content are currently primarily in Chinese.
 
 **If you find it useful, please give the project a Star on GitHub.**
+
+<a id="website"></a>
+
+## 🌐 Explore the website
+
+| Page | What you can find |
+|---|---|
+| [Overview](https://aisafetyhot.com/) | News Monitor, trending events, and an animated news flow connecting sources → topics → news cards |
+| [News only](https://aisafetyhot.com/featured) | Up to 20 news events in the current editorial window; reports and discussions about the same event appear together as updates, with papers listed separately |
+| [Papers only](https://aisafetyhot.com/papers) | Organized entries first by default, ordered within each group by original publication date; switch to newest publication or filter by research type, risk, setting, and component |
+| [Trending events](https://aisafetyhot.com/hot) | Event-level attention, coverage from multiple sources, and related discussions |
+| [Daily digest](https://aisafetyhot.com/daily) | One edition per day, updated as news develops, with earlier editions available |
+| [Conference papers](https://aisafetyhot.com/conferences) | Browse collected AI safety papers by conference |
+
+News and digests use original publication dates to assess freshness; the editorial window includes the previous day's news from North America. Paper ordering is not a quality ranking. Existing quick reads and detailed commentary are available on paper detail pages.
 
 <a id="agent"></a>
 
@@ -117,7 +134,7 @@ The linked example results were sampled on 2026-10-07 (Melbourne). Actual query 
 
 Keep both the site links and original source links in your answers. If `page.hasMore` is true, continue paginating; check `completeness` for missing or truncated content. The service reads existing public content. Paper commentary is secondary material, so verify key facts against the original source.
 
-[Agent usage and parameter guide (Skill, Chinese)](skills/aisafetyhot/SKILL.md) · [Calls and example results (Chinese)](docs/mcp-examples.md) · [Reading scope and caveats (Chinese)](docs/agent.md#读取范围)
+[MCP connection and parameter guide (Chinese)](docs/agent.md) · [Calls and example results (Chinese)](docs/mcp-examples.md) · [Reading scope and caveats (Chinese)](docs/agent.md#读取范围)
 
 <a id="daily"></a>
 
@@ -162,7 +179,7 @@ Paper lists are grouped by Beijing calendar day (00:00–24:00), using the paper
 
 ## 🔎 More to explore on the website
 
-[All updates](https://aisafetyhot.com/all) are continuously updated · [Trending events](https://aisafetyhot.com/hot) tracks event developments · [Visualization](https://aisafetyhot.com/all?view=graph) shows how sources, news, and papers connect to research areas · [Weekly reports](https://aisafetyhot.com/weekly) review the week · [Monthly reports](https://aisafetyhot.com/monthly) recap the month
+[All updates](https://aisafetyhot.com/all) lists incoming public content · [Weekly reports](https://aisafetyhot.com/weekly) review the week · [Monthly reports](https://aisafetyhot.com/monthly) recap the month
 
 **Subscribe in your own feed reader:** [Selected items RSS](https://aisafetyhot.com/feed.xml) · [All updates RSS](https://aisafetyhot.com/feed/all.xml) · [Daily digest RSS](https://aisafetyhot.com/feed/daily.xml)
 
@@ -181,6 +198,6 @@ To report an error or request a correction or removal, visit the [message board 
 
 ---
 
-AI Safety HOT is built on the open-source framework [AIHOT](https://github.com/KKKKhazix/AIHOT), with thanks to its original author. Reading guides are generated by models. Paper quick reads are prepared from paper PDFs using Gemini or from arXiv full text; each record identifies the specific source. Refer to the original sources for important numbers and conclusions.
+AI Safety HOT is built on the open-source framework [AIHOT](https://github.com/KKKKhazix/AIHOT), with thanks to its original author. Reading guides are generated by models. Paper quick reads are prepared from paper PDFs or from arXiv full text; each record identifies the specific source. Refer to the original sources for important numbers and conclusions.
 
 Reading guides, quick reads, and daily digest text in this repository are licensed under [CC BY-NC 4.0](LICENSE). When republishing, credit AI Safety HOT and retain the source attribution; commercial use is not permitted. Copyright in the original articles and papers belongs to their respective authors and sources.

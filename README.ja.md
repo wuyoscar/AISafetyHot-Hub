@@ -4,7 +4,7 @@
 
 <h1 align="center">AI Safety HOT Hub</h1>
 
-<p align="center"><strong>エージェントでニュースを調べ、論文を読み、出来事を追い、AI安全性のブリーフィングをまとめましょう。</strong></p>
+<p align="center"><strong>AI安全性のニュースと出来事を追い、論文を読み、エージェントからも利用できます。</strong></p>
 
 <p align="center">攻撃とジェイルブレイク · 防御とガードレール · アラインメントと安全性評価 · AIインシデント · マルチエージェントの安全性リスク · ガバナンスと政策</p>
 
@@ -19,14 +19,16 @@
   <a href="#agent">エージェントを接続</a> ·
   <a href="#examples">使い方を見る</a> ·
   <a href="#daily">最新の日報</a> ·
-  <a href="https://aisafetyhot.com/all?view=graph">可視化</a> ·
+  <a href="https://aisafetyhot.com/">総覧・可視化</a> ·
+  <a href="https://aisafetyhot.com/featured">ニュースのみ</a> ·
+  <a href="https://aisafetyhot.com/papers">論文のみ</a> ·
   <a href="#papers">関連論文</a> ·
   <a href="https://aisafetyhot.com/hot">注目の出来事</a> ·
   <a href="https://aisafetyhot.com">ウェブサイトを見る ↗</a>
 </p>
 
 <p align="center">
-  <a href="https://aisafetyhot.com"><img src="assets/news-monitor-demo.gif" width="1000" alt="AI Safety HOTのニュース一覧と可視化のデモ"></a>
+  <a href="https://aisafetyhot.com"><img src="assets/news-monitor-demo.gif" width="1000" alt="AI Safety HOT News Monitorのデモ"></a>
 </p>
 
 <p align="center">デモの操作画面は中国語です。</p>
@@ -36,6 +38,21 @@
 このREADMEは日本語のガイドです。リンク先の補足ドキュメント、日報、アーカイブ、およびサービスが提供するコンテンツは、現在主に中国語です。最新の日報と論文一覧は、以下の中国語版・アーカイブへのリンクから確認できます。
 
 **役に立ったら、GitHubでStarを付けていただけるとうれしいです。**
+
+<a id="website"></a>
+
+## 🌐 ウェブサイトで見る
+
+| ページ | 見られるもの |
+|---|---|
+| [総覧](https://aisafetyhot.com/) | News Monitor、注目の出来事、情報源 → トピック → ニュースカードをつなぐアニメーション |
+| [ニュースのみ](https://aisafetyhot.com/featured) | 当日の編集対象期間から最大20件の出来事を掲載。同じ出来事の報道や議論を「事件進展」にまとめ、論文は別ページに掲載 |
+| [論文のみ](https://aisafetyhot.com/papers) | 初期表示は整理済みを優先し、各グループ内は原論文の公開日順。「最新発表」への切り替えや、研究種別・リスク・利用場面・構成要素での絞り込みが可能 |
+| [注目ランキング](https://aisafetyhot.com/hot) | 出来事ごとの注目度、複数の情報源による報道、関連する議論 |
+| [AI安全性日報](https://aisafetyhot.com/daily) | 当日1号を新しい動きに合わせて更新。過去の号も閲覧可能 |
+| [会議論文](https://aisafetyhot.com/conferences) | 収録されたAI安全性の論文を会議別に閲覧 |
+
+ニュースと日報は原文の公開日時で新しさを判断し、編集対象期間には北米の前日のニュースも含みます。論文の表示順は質のランキングではありません。生成済みの要約や詳しい解説は論文の詳細ページで読めます。
 
 <a id="agent"></a>
 
@@ -117,7 +134,7 @@ claude mcp add --transport http --scope user aisafetyhot https://aisafetyhot.com
 
 回答にはサイト内リンクと原文リンクを残してください。`page.hasMore`がtrueなら次のページも読み、欠落や切り詰めの有無は`completeness`で確認してください。インターフェースは既存の公開コンテンツを読み取ります。論文解説は二次資料なので、重要な事実は原文で確認してください。
 
-[エージェントの使い方とパラメータ説明（Skill、中国語）](skills/aisafetyhot/SKILL.md) · [呼び出しと結果の例（中国語）](docs/mcp-examples.md) · [取得範囲と注意事項（中国語）](docs/agent.md#读取范围)
+[MCP接続とパラメータ説明（中国語）](docs/agent.md) · [呼び出しと結果の例（中国語）](docs/mcp-examples.md) · [取得範囲と注意事項（中国語）](docs/agent.md#读取范围)
 
 <a id="daily"></a>
 
@@ -162,7 +179,7 @@ arXiv論文のLaTeXソースファイル（source）をダウンロードする�
 
 ## 🔎 ウェブサイトで見られるもの
 
-[全記事（中国語）](https://aisafetyhot.com/all)は随時更新 · [注目ランキング（中国語）](https://aisafetyhot.com/hot)で出来事の進展を追跡 · [可視化（中国語）](https://aisafetyhot.com/all?view=graph)で情報源・ニュース・論文と研究分野のつながりを確認 · [週報（中国語）](https://aisafetyhot.com/weekly)で1週間を振り返る · [月報（中国語）](https://aisafetyhot.com/monthly)で1か月を振り返る
+[全記事（中国語）](https://aisafetyhot.com/all)で新しく公開されたコンテンツを確認 · [週報（中国語）](https://aisafetyhot.com/weekly)で1週間を振り返る · [月報（中国語）](https://aisafetyhot.com/monthly)で1か月を振り返る
 
 **お使いのRSSリーダーで購読：** [厳選記事RSS（中国語）](https://aisafetyhot.com/feed.xml) · [全記事RSS（中国語）](https://aisafetyhot.com/feed/all.xml) · [日報RSS（中国語）](https://aisafetyhot.com/feed/daily.xml)
 
@@ -181,6 +198,6 @@ arXiv論文のLaTeXソースファイル（source）をダウンロードする�
 
 ---
 
-AI Safety HOTはオープンソースフレームワーク[AIHOT](https://github.com/KKKKhazix/AIHOT)を基に構築しています。原作者に感謝します。導入解説はモデルによって生成されています。論文要約は、論文PDF（Geminiを使用）またはarXivの全文を基に作成しており、具体的な出典は各記録に記載しています。重要な数値や結論は原文を確認してください。
+AI Safety HOTはオープンソースフレームワーク[AIHOT](https://github.com/KKKKhazix/AIHOT)を基に構築しています。原作者に感謝します。導入解説はモデルによって生成されています。論文要約は、論文PDFまたはarXivの全文を基に作成しており、具体的な出典は各記録に記載しています。重要な数値や結論は原文を確認してください。
 
 このリポジトリの導入解説、論文要約、日報の文章は[CC BY-NC 4.0](LICENSE)で提供します。転載する場合はAI Safety HOTをクレジットし、出典を残してください。商用利用は認められません。原文と論文の著作権は、それぞれの著者および情報源に帰属します。

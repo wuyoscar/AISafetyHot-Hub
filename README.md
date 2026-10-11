@@ -4,7 +4,7 @@
 
 <h1 align="center">AI Safety HOT Hub</h1>
 
-<p align="center"><strong>让你的 Agent 查新闻、读论文、追事件，整理 AI 安全简报。</strong></p>
+<p align="center"><strong>看 AI 安全新闻、追事件进展、读论文，也让你的 Agent 一起用。</strong></p>
 
 <p align="center">攻击与越狱 · 防御与护栏 · 对齐与安全评测 · AI 事件 · 多智能体不安全 · 治理与政策</p>
 
@@ -19,19 +19,36 @@
   <a href="#agent">接入你的 Agent</a> ·
   <a href="#examples">看看怎么用</a> ·
   <a href="#daily">今日日报</a> ·
-  <a href="https://aisafetyhot.com/all?view=graph">可视化</a> ·
+  <a href="https://aisafetyhot.com/">总览可视化</a> ·
+  <a href="https://aisafetyhot.com/featured">只看 News</a> ·
+  <a href="https://aisafetyhot.com/papers">只看 paper</a> ·
   <a href="#papers">相关论文</a> ·
   <a href="https://aisafetyhot.com/hot">看热点</a> ·
   <a href="https://aisafetyhot.com">逛网站 ↗</a>
 </p>
 
 <p align="center">
-  <a href="https://aisafetyhot.com"><img src="assets/news-monitor-demo.gif" width="1000" alt="AI Safety HOT 新闻列表与可视化动态演示"></a>
+  <a href="https://aisafetyhot.com"><img src="assets/news-monitor-demo.gif" width="1000" alt="AI Safety HOT News Monitor 动态演示"></a>
 </p>
 
 这里是 [AI Safety HOT](https://aisafetyhot.com) 的 **Agent 接入指南与公开内容归档**。用 MCP 查新闻、读论文、追事件和整理简报，也可以带走 Markdown、BibTeX、JSON 论文清单。
 
 **觉得有用，欢迎在 GitHub 点 Star。**
+
+<a id="website"></a>
+
+## 🌐 先在网站上看什么
+
+| 入口 | 可以看到什么 |
+|---|---|
+| [总览](https://aisafetyhot.com/) | News Monitor、热点与动态新闻流；沿「来源 → 话题 → 新闻卡片」浏览近期内容 |
+| [只看 News](https://aisafetyhot.com/featured) | 当天编辑窗口内最多 20 个新闻事件；同一事件的报道与讨论汇入「事件进展」，论文另列 |
+| [只看 paper](https://aisafetyhot.com/papers) | 默认已整理优先，组内按原发表日期排序；可切换「最新发表」，按研究类型、风险、场景和组件筛选 |
+| [热点榜](https://aisafetyhot.com/hot) | 聚合事件热度，追踪多家报道和相关讨论 |
+| [AI 安全日报](https://aisafetyhot.com/daily) | 当天一期，随新进展更新，回看往期日报 |
+| [会议论文](https://aisafetyhot.com/conferences) | 按会议浏览收录的 AI 安全论文 |
+
+News 与日报按原发时间判断新鲜度，编辑窗口包含北美前一天的消息。论文页的排序不代表质量排名；已生成的速读和深度解读可以在详情页阅读。
 
 <a id="agent"></a>
 
@@ -113,7 +130,7 @@ claude mcp add --transport http --scope user aisafetyhot https://aisafetyhot.com
 
 回答时保留站内链接和原文链接；有 `page.hasMore` 就继续翻页，缺失或截断查看 `completeness`。接口读取已有公开内容，论文解读属于二手资料，关键事实请回原文核对。
 
-[Agent 用法与参数说明（Skill）](skills/aisafetyhot/SKILL.md) · [调用与结果示例](docs/mcp-examples.md) · [读取范围与注意事项](docs/agent.md#读取范围)
+[MCP 接入与参数说明](docs/agent.md) · [调用与结果示例](docs/mcp-examples.md) · [读取范围与注意事项](docs/agent.md#读取范围)
 
 <a id="daily"></a>
 
@@ -190,7 +207,7 @@ Anthropic 报告称，Claude 在测试和内部使用中多次自主利用漏洞
 
 ## 🔎 还可以在网站上看什么
 
-[全部动态](https://aisafetyhot.com/all) 持续更新 · [热点榜](https://aisafetyhot.com/hot) 追踪事件进展 · [可视化](https://aisafetyhot.com/all?view=graph) 看来源、新闻与论文如何汇入研究方向 · [周报](https://aisafetyhot.com/weekly) 回顾一周 · [月报](https://aisafetyhot.com/monthly) 盘点一个月
+[全部动态](https://aisafetyhot.com/all) 查看持续入站的公开内容 · [周报](https://aisafetyhot.com/weekly) 回顾一周 · [月报](https://aisafetyhot.com/monthly) 盘点一个月
 
 **订阅到自己的阅读器：** [精选 RSS](https://aisafetyhot.com/feed.xml) · [全部动态 RSS](https://aisafetyhot.com/feed/all.xml) · [日报 RSS](https://aisafetyhot.com/feed/daily.xml)
 
@@ -209,6 +226,6 @@ Anthropic 报告称，Claude 在测试和内部使用中多次自主利用漏洞
 
 ---
 
-AI Safety HOT 基于开源框架 [AIHOT](https://github.com/KKKKhazix/AIHOT) 搭建，感谢原作者。导读由模型生成；论文速读根据论文 PDF（Gemini）或 arXiv 全文整理，具体出处见每篇记录。重要数字与结论请以原文为准。
+AI Safety HOT 基于开源框架 [AIHOT](https://github.com/KKKKhazix/AIHOT) 搭建，感谢原作者。导读由模型生成；论文速读根据论文 PDF 或 arXiv 全文整理，具体出处见每篇记录。重要数字与结论请以原文为准。
 
 仓库中的导读、速读与日报文字采用 [CC BY-NC 4.0](LICENSE)，转载请署名 AI Safety HOT 并保留来源，不用于商业用途。原文和论文版权归各自作者与来源。
